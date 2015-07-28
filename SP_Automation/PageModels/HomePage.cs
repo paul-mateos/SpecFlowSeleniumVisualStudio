@@ -36,7 +36,8 @@ namespace SP_Automation.PageModels
         internal void ClickFolderNavButton()
         { 
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until(drv => drv.FindElement(By.XPath("//div[@class='loadmask']")));
+           // wait.Until(drv => drv.FindElement(By.XPath("//div[@class='loadmask']")));
+            wait.Until(drv => drv.FindElement(By.Id("Folder")));
             UICommon.ClickButton(By.Id("Folder"), d);
         }
 

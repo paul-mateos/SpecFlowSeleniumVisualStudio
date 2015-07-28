@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SP_Automation</RootNamespace>
     <AssemblyName>SP_Automation</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,10 +38,6 @@
   <ItemGroup>
     <Reference Include="Selenium.WebDriverBackedSelenium">
       <HintPath>F:\TestAutomationFiles\Selenium\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
-    </Reference>
-    <Reference Include="SP_Automation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\SP_Automation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="ThoughtWorks.Selenium.Core">
@@ -71,6 +68,7 @@
     <Compile Include="Environments\EnvironmentType.cs" />
     <Compile Include="Environments\TestEnvironment.cs" />
     <Compile Include="PageModels\BasePage.cs" />
+    <Compile Include="PageModels\NavBarPage.cs" />
     <Compile Include="PageModels\InitialPage.cs" />
     <Compile Include="PageModels\HomePage.cs" />
     <Compile Include="PageModels\CertificateErrorPage.cs" />
@@ -85,6 +83,7 @@
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Tests\PoCTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
+    <Compile Include="Tests\FolderNavTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

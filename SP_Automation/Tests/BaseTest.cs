@@ -15,10 +15,26 @@ namespace SP_Automation.Tests
     [TestClass]
     public abstract class BaseTest
     {
-        protected static IWebDriver driver;
+        protected IWebDriver driver;
         protected TestEnvironment environment;
         
         
+        public IWebDriver getDriver()
+        {
+            return driver;
+        }
+
+        public void setDriver(IWebDriver d)
+        {
+            driver = d;
+        }
+
+        public BaseTest setPrevTest(BaseTest t)
+        {
+            driver = t.getDriver();
+            return this;
+        }
+
         [TestInitialize]
         public void Initialize()
         {
@@ -30,13 +46,14 @@ namespace SP_Automation.Tests
             switch (Properties.Settings.Default.Browser)
             {
                 case BrowserType.IE:
+                    //driver = new InternetExplorerDriver(options);
                     driver = new InternetExplorerDriver(options);
                     break;
                 case BrowserType.Chrome:
                     driver = new ChromeDriver();
                     break;
                 case BrowserType.NodeWebkit:
-                    driver = new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer");
+                    driver = new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\");
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");

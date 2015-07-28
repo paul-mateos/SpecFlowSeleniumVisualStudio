@@ -5,8 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using System.Threading;
 using System.Threading.Tasks;
+
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 
 namespace SP_Automation.Tests
 {
@@ -18,23 +23,45 @@ namespace SP_Automation.Tests
 
         }
 
+        public void initBrowser()
+        {
+            //Log on to site as user.
+            InitialPage initialPage = new InitialPage(driver);
+            string BaseWindow = driver.CurrentWindowHandle; 
+            UICommon.SwitchToNewBrowserWithTitle(driver, BaseWindow, "Login");
+   
+        }
+
+        public void SuccessfulLogin(String name, String password)
+        {
+            LoginPage loginPage = new LoginPage(driver);
+
+            
+            loginPage.SetUserName(name);
+            loginPage.SetPassword(password);
+            loginPage.ClickLogOnButton();
+            //loginPage.GetObjValue();
+            HomePage homePage = new HomePage(driver);
+            Assert.IsTrue(homePage.GetWelcomeTitleDisplayProperty());
+        }
+
+
 
         [TestCategory("Regression")]
         [TestMethod]
         public void SuccessfulLogin()
         {
-
-            //Log on to site as user.
-            InitialPage initialPage = new InitialPage(driver);
-            string BaseWindow = driver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(driver, BaseWindow, "Login");
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.SetUserName("Paul");
-            loginPage.SetPassword("p");
-            loginPage.ClickLogOnButton();
+            SuccessfulLogin("Paul", "p");
             //loginPage.GetObjValue();
-            HomePage homePage = new HomePage(driver);
-            
+          //  HomePage homePage = new HomePage(driver);
+     
+
+        }
+
+        public void LogOut()
+        {
+            NavBarPage nav = new NavBarPage(driver);
+            nav.ClickUserLogOff();
         }
 
     }

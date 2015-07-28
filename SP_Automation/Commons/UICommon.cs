@@ -60,16 +60,19 @@ namespace SP_Automation.Commons
             for (int i = 1; i < 30; i++)
             {
                 if (d.WindowHandles.Count == 1)
-                { Thread.Sleep(2000); }
+                {
+                    Thread.Sleep(2000); 
+                }
                 else { break; }
             }
-            handles = d.WindowHandles;
 
-
+            for (int i = 1; i < 10; i++) { 
+            
+                handles = d.WindowHandles;
             foreach (string handle in handles)
             {
                 //var Handles = handle;
-                if (BaseWindow != handle)
+              //  if (BaseWindow != handle)
                 {
                     NewWindow = handle;
                     if (d.SwitchTo().Window(handle).Title.Contains(title))
@@ -77,8 +80,9 @@ namespace SP_Automation.Commons
                         return d;
                     }
                 }
+            }
+            Thread.Sleep(1000);
             } throw new Exception("Error switching to new browser");
-
         }
     }
 }

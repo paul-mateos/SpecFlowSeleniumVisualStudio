@@ -9,10 +9,10 @@ namespace SP_Automation.PageModels
 {
     public abstract class BasePage
     {
-        protected IWebDriver d;
+       static protected IWebDriver d;
         public BasePage(IWebDriver driver)
         {
-            this.d = driver;
+            d = driver;
             d.SwitchTo().DefaultContent();
             d.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(60));
         }

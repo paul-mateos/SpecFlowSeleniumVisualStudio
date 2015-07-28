@@ -17,9 +17,12 @@ namespace SP_Automation.PageModels
         {
             this.d = driver; 
             //Wait for title to be displayed 
+            System.Diagnostics.Debug.WriteLine("wait4title");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return d.Title.Contains("Login : SupportPoint"); }); 
-
+            wait.Until((d) => {
+                System.Diagnostics.Debug.WriteLine("testTitle:" + d.Title);
+                return d.Title.Contains("Login : SupportPoint"); });
+            System.Diagnostics.Debug.WriteLine("done");
         }
 
         public void SetUserName(string username)
