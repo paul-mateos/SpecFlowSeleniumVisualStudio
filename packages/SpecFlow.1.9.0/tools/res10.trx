@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="11216a3a-c4dd-4283-844e-c3931366eeca" name="rsong@L-7-KLAU 2015-07-30 11:05:55" runUser="PV\rsong" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="857086b4-9a81-49a9-aa83-1355791b0a2b">
+    <Deployment userDeploymentRoot="C:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\packages\SpecFlow.1.9.0\tools" useDefaultDeploymentRoot="false" runDeploymentRoot="rsong_L-7-KLAU 2015-07-30 11_05_55" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Properties />
+  </TestSettings>
+  <Times creation="2015-07-30T11:05:55.1183424+10:00" queuing="2015-07-30T11:05:55.4643770+10:00" start="2015-07-30T11:05:55.5453851+10:00" finish="2015-07-30T11:07:56.0734367+10:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="5" executed="5" passed="3" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LoginAsAdvancedUser" storage="c:\users\rsong\documents\visual studio 2013\projects\unittestproject2\unittestproject2\bin\debug\specflow_supportpoint.dll" id="30cd69aa-e9c3-0151-ad1b-d118d0597a9f">
+      <Description>login as advanced user</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="folderNav" />
+      </TestCategory>
+      <Execution id="7ac863a7-5fef-4a00-ad67-f68862a0b5f5" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Folder Navigation</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/rsong/Documents/Visual Studio 2013/Projects/UnitTestProject2/UnitTestProject2/bin/Debug/SpecFlow_SupportPoint.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SpecFlow_SupportPoint.SpecFlowFeatures.FolderNavigationFeature, SpecFlow_SupportPoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoginAsAdvancedUser" />
+    </UnitTest>
+    <UnitTest name="LoginAsConfiguratorUser" storage="c:\users\rsong\documents\visual studio 2013\projects\unittestproject2\unittestproject2\bin\debug\specflow_supportpoint.dll" id="04de6a28-e6f5-d061-eebe-b6ca90639376">
+      <Description>login as configurator user</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="folderNav" />
+      </TestCategory>
+      <Execution id="1925d795-81f2-42bf-bd87-a570f4f8e5d5" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Folder Navigation</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/rsong/Documents/Visual Studio 2013/Projects/UnitTestProject2/UnitTestProject2/bin/Debug/SpecFlow_SupportPoint.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SpecFlow_SupportPoint.SpecFlowFeatures.FolderNavigationFeature, SpecFlow_SupportPoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoginAsConfiguratorUser" />
+    </UnitTest>
+    <UnitTest name="DisplayAnInvalidDocument" storage="c:\users\rsong\documents\visual studio 2013\projects\unittestproject2\unittestproject2\bin\debug\specflow_supportpoint.dll" id="b8117078-536a-55c0-f4a4-475f802f9b5d">
+      <Description>Display an invalid document</Description>
+      <Execution id="ad064f55-eef3-4785-9936-f1a7f1de30a4" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>LiveAPI Display Document</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/rsong/Documents/Visual Studio 2013/Projects/UnitTestProject2/UnitTestProject2/bin/Debug/SpecFlow_SupportPoint.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SpecFlow_SupportPoint.SpecFlowFeatures.LiveAPIDisplayDocumentFeature, SpecFlow_SupportPoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DisplayAnInvalidDocument" />
+    </UnitTest>
+    <UnitTest name="Login" storage="c:\users\rsong\documents\visual studio 2013\projects\unittestproject2\unittestproject2\bin\debug\specflow_supportpoint.dll" id="68ca10f8-1141-57ca-7d8f-5436a9bd77e9">
+      <Description>login</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="login" />
+      </TestCategory>
+      <Execution id="bd8ca74d-edc7-45e9-a402-ba5da9a708e1" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Login</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/rsong/Documents/Visual Studio 2013/Projects/UnitTestProject2/UnitTestProject2/bin/Debug/SpecFlow_SupportPoint.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SpecFlow_SupportPoint.SpecFlowFeatures.LoginFeature, SpecFlow_SupportPoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Login" />
+    </UnitTest>
+    <UnitTest name="DisplayADocumentToALoggedInUser" storage="c:\users\rsong\documents\visual studio 2013\projects\unittestproject2\unittestproject2\bin\debug\specflow_supportpoint.dll" id="b3a927e1-14e7-b1ec-75e5-85f3a29052b3">
+      <Description>Display a document to a logged in user</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="mytag" />
+      </TestCategory>
+      <Execution id="95e3c767-32ad-47cd-ab8a-e33c4d5955e2" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>LiveAPI Display Document</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/rsong/Documents/Visual Studio 2013/Projects/UnitTestProject2/UnitTestProject2/bin/Debug/SpecFlow_SupportPoint.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SpecFlow_SupportPoint.SpecFlowFeatures.LiveAPIDisplayDocumentFeature, SpecFlow_SupportPoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DisplayADocumentToALoggedInUser" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="30cd69aa-e9c3-0151-ad1b-d118d0597a9f" executionId="7ac863a7-5fef-4a00-ad67-f68862a0b5f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04de6a28-e6f5-d061-eebe-b6ca90639376" executionId="1925d795-81f2-42bf-bd87-a570f4f8e5d5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3a927e1-14e7-b1ec-75e5-85f3a29052b3" executionId="95e3c767-32ad-47cd-ab8a-e33c4d5955e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8117078-536a-55c0-f4a4-475f802f9b5d" executionId="ad064f55-eef3-4785-9936-f1a7f1de30a4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68ca10f8-1141-57ca-7d8f-5436a9bd77e9" executionId="bd8ca74d-edc7-45e9-a402-ba5da9a708e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7ac863a7-5fef-4a00-ad67-f68862a0b5f5" testId="30cd69aa-e9c3-0151-ad1b-d118d0597a9f" testName="LoginAsAdvancedUser" computerName="L-7-KLAU" duration="00:00:21.2424196" startTime="2015-07-30T11:05:55.5683874+10:00" endTime="2015-07-30T11:06:17.0755379+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ac863a7-5fef-4a00-ad67-f68862a0b5f5">
+      <Output>
+        <StdOut>Given I logged in as advanced user
+-&gt; done: FolderNavSteps.GivenLoginAsUser("advanced") (10.5s)
+When I navigate to Folders
+-&gt; done: FolderNavSteps.WhenINavigateToFolders() (0.5s)
+Then I should see folder view
+-&gt; done: FolderNavSteps.ThenIShouldSeeFolderView() (10.2s)</StdOut>
+        <DebugTrace>wait4title
+testTitle:Login : SupportPoint
+done
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1925d795-81f2-42bf-bd87-a570f4f8e5d5" testId="04de6a28-e6f5-d061-eebe-b6ca90639376" testName="LoginAsConfiguratorUser" computerName="L-7-KLAU" duration="00:00:24.0377434" startTime="2015-07-30T11:06:17.0775381+10:00" endTime="2015-07-30T11:06:41.1189420+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1925d795-81f2-42bf-bd87-a570f4f8e5d5">
+      <Output>
+        <StdOut>Given I logged in as configurator user
+-&gt; done: FolderNavSteps.GivenLoginAsUser("configurator") (10.4s)
+When I navigate to Folders
+-&gt; done: FolderNavSteps.WhenINavigateToFolders() (3.5s)
+Then I should see folder view
+-&gt; done: FolderNavSteps.ThenIShouldSeeFolderView() (10.2s)</StdOut>
+        <DebugTrace>wait4title
+testTitle:Login : SupportPoint
+done
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="95e3c767-32ad-47cd-ab8a-e33c4d5955e2" testId="b3a927e1-14e7-b1ec-75e5-85f3a29052b3" testName="DisplayADocumentToALoggedInUser" computerName="L-7-KLAU" duration="00:00:10.3309993" startTime="2015-07-30T11:06:41.1209422+10:00" endTime="2015-07-30T11:06:51.4589759+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="95e3c767-32ad-47cd-ab8a-e33c4d5955e2">
+      <Output>
+        <StdOut>Given Support Portal is opened
+-&gt; done: LoginSteps.GivenSupportPortalIsOpened() (4.5s)
+When issues DisplayDocuementAPI to display DocumentId=2223 to User Name in aa, bb,cc
+-&gt; done: LiveAPI_DisplayDocumentSteps.WhenIssuesDisplayDocuementAPIToDisplayDocumentId(2223, "Name", "aa, bb,cc") (0.0s)
+And SectionID=222
+-&gt; done: LiveAPI_DisplayDocumentSteps.WhenSessionID(222) (0.0s)
+And AnchorName=achorName
+-&gt; done: LiveAPI_DisplayDocumentSteps.WhenSessionID("achorName") (0.0s)
+Then documentId=2223 should be displayed in SupportPoint Viewer
+-&gt; done: LiveAPI_DisplayDocumentSteps.ThenThisDocumentIdShouldBeDisplayedOnSupportPointViewer(2223) (5.8s)</StdOut>
+        <DebugTrace>GivenSupportPortalIsOpened
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ad064f55-eef3-4785-9936-f1a7f1de30a4" testId="b8117078-536a-55c0-f4a4-475f802f9b5d" testName="DisplayAnInvalidDocument" computerName="L-7-KLAU" duration="00:00:42.9579114" startTime="2015-07-30T11:06:51.4609761+10:00" endTime="2015-07-30T11:07:34.4282724+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad064f55-eef3-4785-9936-f1a7f1de30a4">
+      <Output>
+        <StdOut>Given Support Portal is opened
+-&gt; error: A exception with a null response was thrown sending an HTTP request to the remote WebDriver server for URL http://localhost:62627/session. The status of the exception was ReceiveFailure, and the message was: The underlying connection was closed: An unexpected error occurred on a receive.
+When issues DisplayDocuementAPI to display DocumentId=3555 to User Name in aa, bb,cc
+-&gt; skipped because of previous errors
+And SectionID=222
+-&gt; skipped because of previous errors
+And AnchorName=achorName
+-&gt; skipped because of previous errors
+Then should get response with StatusCode=400
+-&gt; skipped because of previous errors</StdOut>
+        <DebugTrace>GivenSupportPortalIsOpened
+</DebugTrace>
+        <ErrorInfo>
+          <Message>Test method SpecFlow_SupportPoint.SpecFlowFeatures.LiveAPIDisplayDocumentFeature.DisplayAnInvalidDocument threw exception: 
+OpenQA.Selenium.WebDriverException: A exception with a null response was thrown sending an HTTP request to the remote WebDriver server for URL http://localhost:62627/session. The status of the exception was ReceiveFailure, and the message was: The underlying connection was closed: An unexpected error occurred on a receive. ---&gt; System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---&gt; System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. ---&gt; System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host</Message>
+          <StackTrace>    at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+ --- End of inner exception stack trace ---
+    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.PooledStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.Connection.SyncRead(HttpWebRequest request, Boolean userRetrievedStream, Boolean probeRead)
+ --- End of inner exception stack trace ---
+    at System.Net.HttpWebRequest.GetResponse()
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.CreateResponse(WebRequest request) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\HttpCommandExecutor.cs:line 142
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Remote.HttpCommandExecutor.CreateResponse(WebRequest request) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\HttpCommandExecutor.cs:line 155
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\HttpCommandExecutor.cs:line 114
+   at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\DriverServiceCommandExecutor.cs:line 78
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\RemoteWebDriver.cs:line 910
+   at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\RemoteWebDriver.cs:line 888
+   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\RemoteWebDriver.cs:line 89
+   at OpenQA.Selenium.Chrome.ChromeDriver..ctor(String chromeDriverDirectory, ChromeOptions options) in c:\Projects\webdriver\dotnet\src\webdriver\Chrome\ChromeDriver.cs:line 110
+   at OpenQA.Selenium.Chrome.ChromeDriver..ctor(String chromeDriverDirectory) in c:\Projects\webdriver\dotnet\src\webdriver\Chrome\ChromeDriver.cs:line 99
+   at SP_Automation.Tests.BaseTest.Initialize() in c:\Users\rsong\Desktop\master\SP_Automation\Tests\BaseTest.cs:line 56
+   at SpecFlow_SupportPoint.LoginSteps.GivenSupportPortalIsOpened() in c:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\UnitTestProject2\SpecFlowSteps\LoginSteps.cs:line 22
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlow_SupportPoint.SpecFlowFeatures.LiveAPIDisplayDocumentFeature.ScenarioCleanup() in c:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\UnitTestProject2\SpecFlowFeatures\LiveAPI_DisplayDocument.feature.cs:line 0
+   at SpecFlow_SupportPoint.SpecFlowFeatures.LiveAPIDisplayDocumentFeature.DisplayAnInvalidDocument() in c:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\UnitTestProject2\SpecFlowFeatures\LiveAPI_DisplayDocument.feature:line 21
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bd8ca74d-edc7-45e9-a402-ba5da9a708e1" testId="68ca10f8-1141-57ca-7d8f-5436a9bd77e9" testName="Login" computerName="L-7-KLAU" duration="00:00:21.5444052" startTime="2015-07-30T11:07:34.4292725+10:00" endTime="2015-07-30T11:07:55.9824276+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bd8ca74d-edc7-45e9-a402-ba5da9a708e1">
+      <Output>
+        <StdOut>Given Support Portal is opened
+-&gt; error: A exception with a null response was thrown sending an HTTP request to the remote WebDriver server for URL http://localhost:62742/session. The status of the exception was ReceiveFailure, and the message was: The underlying connection was closed: An unexpected error occurred on a receive.
+When I login as a valid user with login is panviva and password is Burke6368
+-&gt; skipped because of previous errors
+Then I should be logged in successfully
+-&gt; skipped because of previous errors
+When I logout
+-&gt; skipped because of previous errors
+Then I should be logged out
+-&gt; skipped because of previous errors</StdOut>
+        <DebugTrace>GivenSupportPortalIsOpened
+</DebugTrace>
+        <ErrorInfo>
+          <Message>Test method SpecFlow_SupportPoint.SpecFlowFeatures.LoginFeature.Login threw exception: 
+OpenQA.Selenium.WebDriverException: A exception with a null response was thrown sending an HTTP request to the remote WebDriver server for URL http://localhost:62742/session. The status of the exception was ReceiveFailure, and the message was: The underlying connection was closed: An unexpected error occurred on a receive. ---&gt; System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---&gt; System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. ---&gt; System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host</Message>
+          <StackTrace>    at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+ --- End of inner exception stack trace ---
+    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.PooledStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.Connection.SyncRead(HttpWebRequest request, Boolean userRetrievedStream, Boolean probeRead)
+ --- End of inner exception stack trace ---
+    at System.Net.HttpWebRequest.GetResponse()
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.CreateResponse(WebRequest request) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\HttpCommandExecutor.cs:line 142
+ --- End of inner exception stack trace ---
+    at OpenQA.Selenium.Remote.HttpCommandExecutor.CreateResponse(WebRequest request) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\HttpCommandExecutor.cs:line 155
+   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\HttpCommandExecutor.cs:line 114
+   at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\DriverServiceCommandExecutor.cs:line 78
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\RemoteWebDriver.cs:line 910
+   at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\RemoteWebDriver.cs:line 888
+   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities) in c:\Projects\webdriver\dotnet\src\webdriver\Remote\RemoteWebDriver.cs:line 89
+   at OpenQA.Selenium.Chrome.ChromeDriver..ctor(String chromeDriverDirectory, ChromeOptions options) in c:\Projects\webdriver\dotnet\src\webdriver\Chrome\ChromeDriver.cs:line 110
+   at OpenQA.Selenium.Chrome.ChromeDriver..ctor(String chromeDriverDirectory) in c:\Projects\webdriver\dotnet\src\webdriver\Chrome\ChromeDriver.cs:line 99
+   at SP_Automation.Tests.BaseTest.Initialize() in c:\Users\rsong\Desktop\master\SP_Automation\Tests\BaseTest.cs:line 56
+   at SpecFlow_SupportPoint.LoginSteps.GivenSupportPortalIsOpened() in c:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\UnitTestProject2\SpecFlowSteps\LoginSteps.cs:line 22
+   at lambda_method(Closure , IContextManager )
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlow_SupportPoint.SpecFlowFeatures.LoginFeature.ScenarioCleanup() in c:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\UnitTestProject2\SpecFlowFeatures\SpecFlow_Login.feature.cs:line 0
+   at SpecFlow_SupportPoint.SpecFlowFeatures.LoginFeature.Login() in c:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\UnitTestProject2\SpecFlowFeatures\SpecFlow_Login.feature:line 12
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

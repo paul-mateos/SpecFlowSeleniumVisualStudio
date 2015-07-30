@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9fc6cbbc-8235-4bbc-bbad-4a3cba5abf13" name="rsong@L-7-KLAU 2015-07-30 11:02:50" runUser="PV\rsong" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="9f33729b-ea4c-4b9e-828d-9a1e02bab0a0">
+    <Deployment userDeploymentRoot="C:\Users\rsong\Documents\Visual Studio 2013\Projects\UnitTestProject2\packages\SpecFlow.1.9.0\tools" useDefaultDeploymentRoot="false" runDeploymentRoot="rsong_L-7-KLAU 2015-07-30 11_02_50" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Properties />
+  </TestSettings>
+  <Times creation="2015-07-30T11:02:50.0050055+10:00" queuing="2015-07-30T11:02:50.3150055+10:00" start="2015-07-30T11:02:50.3830055+10:00" finish="2015-07-30T11:03:14.5702892+10:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Login" storage="c:\users\rsong\documents\visual studio 2013\projects\unittestproject2\unittestproject2\bin\debug\specflow_supportpoint.dll" id="68ca10f8-1141-57ca-7d8f-5436a9bd77e9">
+      <Description>login</Description>
+      <TestCategory>
+        <TestCategoryItem TestCategory="login" />
+      </TestCategory>
+      <Execution id="9ac882ff-d8ab-4084-9e8d-8a442bc11b80" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Login</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/rsong/Documents/Visual Studio 2013/Projects/UnitTestProject2/UnitTestProject2/bin/Debug/SpecFlow_SupportPoint.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SpecFlow_SupportPoint.SpecFlowFeatures.LoginFeature, SpecFlow_SupportPoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Login" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="68ca10f8-1141-57ca-7d8f-5436a9bd77e9" executionId="9ac882ff-d8ab-4084-9e8d-8a442bc11b80" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9ac882ff-d8ab-4084-9e8d-8a442bc11b80" testId="68ca10f8-1141-57ca-7d8f-5436a9bd77e9" testName="Login" computerName="L-7-KLAU" duration="00:00:23.8016959" startTime="2015-07-30T11:02:50.4060055+10:00" endTime="2015-07-30T11:03:14.4792801+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ac882ff-d8ab-4084-9e8d-8a442bc11b80">
+      <Output>
+        <StdOut>Given Support Portal is opened
+-&gt; done: LoginSteps.GivenSupportPortalIsOpened() (4.5s)
+When I login as a valid user with login is panviva and password is Burke6368
+-&gt; done: LoginSteps.WhenILoginAsAValidUserWithLoginIsPanvivaAndPasswordIsBurke("panviva", "Burke6368") (8.8s)
+Then I should be logged in successfully
+-&gt; done: LoginSteps.ThenIShouldBeLoggedInSuccessfully() (0.0s)
+When I logout
+-&gt; done: LoginSteps.WhenILogout() (5.0s)
+Then I should be logged out
+-&gt; done: LoginSteps.ThenIShouldBeLoggedout() (5.5s)</StdOut>
+        <DebugTrace>GivenSupportPortalIsOpened
+WhenILoginAsAValidUserWithLoginIsPanvivaAndPasswordIsBurke:panviva pss=Burke6368
+wait4title
+testTitle:Login : SupportPoint
+done
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
