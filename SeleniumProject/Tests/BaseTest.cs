@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using SP_Automation.Environments;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -83,6 +84,7 @@ namespace SP_Automation.Tests
                 case BrowserType.NodeWebkit:
                     KillProcess("viewer.exe");
                     KillProcess("chromedriver.exe");
+                    KillProcess("nw.exe");
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
@@ -97,7 +99,7 @@ namespace SP_Automation.Tests
 
         public static void KillProcess(string processName)
         {
-            foreach (var process in Process.GetProcessesByName(processName))
+            foreach (var process in Process.GetProcessesByName(Path.GetFileNameWithoutExtension(processName)))
             {
                 process.Kill();
             }
