@@ -10,23 +10,22 @@ namespace SpecFlow_SupportPoint
     public class LoginSteps
     {
 
-        LoginTest test;
-
-
+      
         [Given(@"Support Portal is opened")]
         [When(@"Support Portal is opened")]
         public void GivenSupportPortalIsOpened()
         {
-         //   System.Diagnostics.Debug.WriteLine("GivenSupportPortalIsOpened");
-            
-            /*
-            test = new LoginTest();
-            test.Initialize();
-            test.initBrowser();
-            */
 
            SupportPoint.OpenSupportPoint();
 
+        }
+
+        [Given(@"just demo another (.*)")]
+        [When(@"just demo another (.*)")]
+        [Then(@"just demo another (.*)")]
+        public void JustDemoAnother()
+        {
+            //do nothing
         }
 
         [Given(@"I login as a valid user with login is (.*) and password is (.*)")]

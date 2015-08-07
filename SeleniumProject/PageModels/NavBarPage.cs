@@ -22,6 +22,11 @@ namespace SP_Automation.PageModels
         //More menu
         By User = By.LinkText("User");
         By User_LogOff = By.LinkText("Log off");
+
+        //Notification Menu
+        By notification = By.LinkText("Notification list");
+        By notificationCentre = By.LinkText("Notifications");
+
         WebDriverWait wait;
         public NavBarPage(IWebDriver driver)
             : base(driver)
@@ -47,6 +52,37 @@ namespace SP_Automation.PageModels
         {
 
             UICommon.ClickButton(folderMenu, d);
+        }
+
+      
+        public void ClickNotification()
+        {
+            try
+            {
+                if (!d.FindElement(notificationCentre).Displayed)
+                {
+                    UICommon.ClickButton(moreMenu, d);
+                }
+            }
+            catch (NoSuchElementException)
+            {
+                UICommon.ClickButton(moreMenu, d);
+            }
+
+            try
+            {
+                if (!d.FindElement(notification).Displayed)
+                {
+                    UICommon.ClickButton(notificationCentre, d);
+                }
+            }
+            catch (NoSuchElementException)
+            {
+                UICommon.ClickButton(notificationCentre, d);
+            }
+
+            UICommon.ClickButton(notification, d);
+
         }
 
         public void ClickUserLogOff()

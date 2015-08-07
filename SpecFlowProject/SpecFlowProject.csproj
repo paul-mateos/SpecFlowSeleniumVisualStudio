@@ -38,6 +38,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -70,23 +74,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SpecFlowSteps\LiveAPIDisplayDocumentSteps.cs" />
-    <Compile Include="SpecFlowFeatures\LiveAPI_DisplayDocument.feature.cs">
+    <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
+    <Compile Include="LoginFeature_Demo\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LiveAPI_DisplayDocument.feature</DependentUpon>
-    </Compile>
-    <Compile Include="SpecFlowFeatures\SpecFlow_FolderNav.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlow_FolderNav.feature</DependentUpon>
-    </Compile>
-    <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
-    <Compile Include="SpecFlowSteps\LoginSteps.cs" />
-    <Compile Include="SpecFlowFeatures\SpecFlow_Login.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlow_Login.feature</DependentUpon>
+      <DependentUpon>Login.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -101,17 +93,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="runtests.cmd" />
-    <None Include="SpecFlowFeatures\LiveAPI_DisplayDocument.feature">
+    <None Include="LoginFeature_Demo\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>LiveAPI_DisplayDocument.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SpecFlowFeatures\SpecFlow_FolderNav.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlow_FolderNav.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SpecFlowFeatures\SpecFlow_Login.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlow_Login.feature.cs</LastGenOutput>
+      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
