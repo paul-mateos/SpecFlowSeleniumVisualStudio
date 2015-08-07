@@ -23,7 +23,7 @@ namespace SpecFlow_SupportPoint
         [Given(@"just demo another (.*)")]
         [When(@"just demo another (.*)")]
         [Then(@"just demo another (.*)")]
-        public void JustDemoAnother()
+        public void JustDemoAnother(string keyword)
         {
             //do nothing
         }
