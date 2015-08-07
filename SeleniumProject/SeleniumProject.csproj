@@ -92,12 +92,16 @@
     <Compile Include="Environments\EnvironmentType.cs" />
     <Compile Include="Environments\TestEnvironment.cs" />
     <Compile Include="Modules\BaseWebDriverModule.cs" />
+    <Compile Include="Modules\User.cs" />
     <Compile Include="Modules\Notification.cs" />
     <Compile Include="Modules\Folder.cs" />
     <Compile Include="Modules\LogIn.cs" />
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\LogoutPage.cs" />
+    <Compile Include="PageModels\AddUserPage.cs" />
+    <Compile Include="PageModels\UserActionPage.cs" />
+    <Compile Include="PageModels\SPManagerNavBarPage.cs" />
     <Compile Include="PageModels\NavBarPage.cs" />
     <Compile Include="PageModels\InitialPage.cs" />
     <Compile Include="PageModels\HomePage.cs" />
