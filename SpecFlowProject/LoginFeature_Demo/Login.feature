@@ -1,4 +1,4 @@
-﻿Feature: Login
+﻿Feature: Login_Demo
 	any test environment or prerequisite goes here:
 	prerequisite: 
 	 The following two users should be valid
@@ -10,7 +10,7 @@ Background:
 	And just demo another Given
 
 @login
-Scenario: login
+Scenario: Demo login Scenario
 	When I login as a valid user with login is viewer and password is viewer
 	And just demo another When
 	Then I should be logged in successfully
@@ -19,7 +19,7 @@ Scenario: login
 	Then I should be logged out
 
 @login
-Scenario Outline: Login Outline Test
+Scenario Outline: Demo Login Outline Test
 	When I login as a valid user with login is <UserName> and password is <Password> 
 	Then I should be logged in successfully
 	When I logout

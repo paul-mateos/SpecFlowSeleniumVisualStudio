@@ -111,12 +111,8 @@
     </Compile>
     <Compile Include="Facade\LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
-    <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Facade\SupportPoint.cs" />
-    <Compile Include="Tests\PoCTest.cs" />
-    <Compile Include="Tests\LoginTest.cs" />
-    <Compile Include="Tests\FolderNavTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -126,9 +122,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\PaulTests.orderedtest">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

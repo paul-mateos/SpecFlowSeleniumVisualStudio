@@ -19,7 +19,7 @@ namespace SpecFlowProject.LoginFeature_Demo
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class LoginFeature
+    public partial class Login_DemoFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,8 +31,8 @@ namespace SpecFlowProject.LoginFeature_Demo
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "any test environment or prerequisite goes here:\nprerequisite: \nThe following two " +
-                    "users should be valid\n viewer/viewer \n viewer1/viewer1", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login_Demo", "any test environment or prerequisite goes here:\r\nprerequisite: \r\nThe following tw" +
+                    "o users should be valid\r\n viewer/viewer \r\n viewer1/viewer1", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +47,9 @@ namespace SpecFlowProject.LoginFeature_Demo
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Login")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Login_Demo")))
             {
-                SpecFlowProject.LoginFeature_Demo.LoginFeature.FeatureSetup(null);
+                SpecFlowProject.LoginFeature_Demo.Login_DemoFeature.FeatureSetup(null);
             }
         }
         
@@ -80,12 +80,12 @@ namespace SpecFlowProject.LoginFeature_Demo
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("login")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Demo login Scenario")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login_Demo")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
-        public virtual void Login()
+        public virtual void DemoLoginScenario()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("login", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo login Scenario", new string[] {
                         "login"});
 #line 13
 this.ScenarioSetup(scenarioInfo);
@@ -107,7 +107,7 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        public virtual void LoginOutlineTest(string userName, string password, string[] exampleTags)
+        public virtual void DemoLoginOutlineTest(string userName, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "login"};
@@ -115,7 +115,7 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login Outline Test", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo Login Outline Test", @__tags);
 #line 22
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -133,27 +133,27 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Login Outline Test")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Demo Login Outline Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login_Demo")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "viewer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:UserName", "viewer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Password", "viewer")]
-        public virtual void LoginOutlineTest_Viewer()
+        public virtual void DemoLoginOutlineTest_Viewer()
         {
-            this.LoginOutlineTest("viewer", "viewer", ((string[])(null)));
+            this.DemoLoginOutlineTest("viewer", "viewer", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Login Outline Test")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Demo Login Outline Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login_Demo")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "viewer1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:UserName", "viewer1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Password", "viewer1")]
-        public virtual void LoginOutlineTest_Viewer1()
+        public virtual void DemoLoginOutlineTest_Viewer1()
         {
-            this.LoginOutlineTest("viewer1", "viewer1", ((string[])(null)));
+            this.DemoLoginOutlineTest("viewer1", "viewer1", ((string[])(null)));
         }
     }
 }
