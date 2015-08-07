@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing.Imaging;
 
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
+using System.Diagnostics;
 
 namespace SP_Automation.Tests
 {
@@ -62,7 +64,9 @@ namespace SP_Automation.Tests
         {
             NavBarPage nav = new NavBarPage(driver);
             nav.ClickUserLogOff();
+  
         }
 
+      
     }
 }

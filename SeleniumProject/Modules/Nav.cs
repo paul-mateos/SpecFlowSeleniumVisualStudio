@@ -18,15 +18,23 @@ namespace SP_Automation.Modules
 
         public Nav(IWebDriver d) : base(d) { }
 
-        public void NavToFolder()
+        public void ToFolder()
         {
-            HomePage homepage = new HomePage(driver);
-            Assert.IsTrue(homepage.GetWelcomeTitleDisplayProperty());
-            homepage.ClickFolderNavButton();
+
+            NavBarPage p = new NavBarPage(driver);
+            p.ClickFolderButton();
+        
             FoldersPage foldersPage = new FoldersPage(driver);
             Assert.IsTrue(foldersPage.GetFoldersDisplayProperty());
         }
 
+        public void ToHome()
+        {
+            NavBarPage p = new NavBarPage(driver);
+            p.ClickHomeButton();
+            HomePage homepage = new HomePage(driver);
+            Assert.IsTrue(homepage.GetWelcomeTitleDisplayProperty());
+        }
       
 
     }

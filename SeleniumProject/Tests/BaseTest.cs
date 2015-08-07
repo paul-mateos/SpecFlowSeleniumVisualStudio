@@ -4,11 +4,11 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using SP_Automation.Environments;
 using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SP_Automation.Tests
@@ -16,28 +16,28 @@ namespace SP_Automation.Tests
     [TestClass]
     public abstract class BaseTest
     {
-        protected IWebDriver driver;
+        protected IWebDriver driver;   //changed this to static so that it can be shared
         protected TestEnvironment environment;
         
         
-        public IWebDriver getDriver()
+        public virtual IWebDriver getDriver()
         {
             return driver;
         }
 
-        public void setDriver(IWebDriver d)
+        public virtual void setDriver(IWebDriver d)
         {
             driver = d;
         }
 
-        public BaseTest setPrevTest(BaseTest t)
+        public virtual BaseTest setPrevTest(BaseTest t)
         {
-            driver = t.getDriver();
+            setDriver(t.getDriver());
             return this;
         }
 
         [TestInitialize]
-        public void Initialize()
+        public virtual void Initialize()
         {
             TestCleanUp(); //just in case previous test not cleanup properly
             var options = new InternetExplorerOptions()
@@ -49,27 +49,25 @@ namespace SP_Automation.Tests
             {
                 case BrowserType.IE:
                     //driver = new InternetExplorerDriver(options);
-                    driver = new InternetExplorerDriver(options);
+                    setDriver(new InternetExplorerDriver(options));
                     break;
                 case BrowserType.Chrome:
-                    driver = new ChromeDriver();
+                    setDriver(new ChromeDriver());
+
                     break;
-                case BrowserType.NodeWebkit: 
-                    driver = new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\");
+                case BrowserType.NodeWebkit:
+                    setDriver(new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\"));
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
             }
-
-            //driver.Navigate().GoToUrl(TestEnvironment.GetEnvironment().Url);
-            //driver.Manage().Window.Maximize();
-
+      
         }
 
         [TestCleanup]
-        public void TestCleanUp()
+        public virtual void TestCleanUp()
         {
-            if (driver != null) driver.Quit();
+            if (getDriver() != null) getDriver().Quit();
 
             switch (Properties.Settings.Default.Browser)
             {
@@ -82,9 +80,8 @@ namespace SP_Automation.Tests
                     KillProcess("chrome.exe");
                     break;
                 case BrowserType.NodeWebkit:
-                    KillProcess("viewer.exe");
+                    KillProcess("Viewer.exe");
                     KillProcess("chromedriver.exe");
-                    KillProcess("nw.exe");
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
@@ -92,14 +89,9 @@ namespace SP_Automation.Tests
             }
         }
 
-        public static void SetDriver()
-        {
-
-        }
-
         public static void KillProcess(string processName)
         {
-            foreach (var process in Process.GetProcessesByName(Path.GetFileNameWithoutExtension(processName)))
+            foreach (var process in Process.GetProcessesByName(processName))
             {
                 process.Kill();
             }
