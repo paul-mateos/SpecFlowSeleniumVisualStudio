@@ -111,6 +111,11 @@
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupportPointLive\SPLiveFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPLiveFeature.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -149,6 +154,10 @@
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="SupportPointLive\SPLiveFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SPLiveFeature.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
