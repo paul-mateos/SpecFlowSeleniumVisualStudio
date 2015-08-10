@@ -11,7 +11,7 @@ namespace SP_Automation.PageModels
 {
    public class SPManagerNavBarPage : BasePage
     {
-        
+        //Search Criteria
         By Documents = By.LinkText("Documents");
         By Images = By.LinkText("Images");
         By Users = By.LinkText("Users");

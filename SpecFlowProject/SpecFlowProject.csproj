@@ -74,6 +74,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DocumentRating_Feature\AddNewRating.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddNewRating.feature</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentRating_Feature\AddNewRatingSteps.cs" />
     <Compile Include="LiveAPI_Feature\CreateNewUserSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
       <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
@@ -113,6 +119,10 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DocumentRating_Feature\AddNewRating.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddNewRating.feature.cs</LastGenOutput>
+    </None>
     <None Include="LiveAPI_Feature\MessageNotification_Smoke.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MessageNotification_Smoke.feature.cs</LastGenOutput>
@@ -147,6 +157,7 @@
       <Name>SeleniumProject</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
