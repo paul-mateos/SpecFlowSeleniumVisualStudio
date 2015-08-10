@@ -35,15 +35,7 @@ namespace SP_Automation.Modules
             HomePage homepage = new HomePage(driver);
             Assert.IsTrue(homepage.GetWelcomeTitleDisplayProperty());
         }
-
-        public void ToSupportPointManager()
-        {
-            //todo
-            new NavBarPage(driver).ClickSPManagerButton();
-
-           
-            new SPManagerNavBarPage(driver);
-        }
+      
 
     }
 }

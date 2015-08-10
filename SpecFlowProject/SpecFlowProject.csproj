@@ -38,6 +38,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -70,50 +74,29 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
-    <Compile Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature.cs" />
-    <Compile Include="LiveAPI_Feature\MessageNotification_ActiveUser1.feature.cs">
+    <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
+      <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MessageNotification_ActiveUser.feature</DependentUpon>
     </Compile>
-    <Compile Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature.cs" />
-    <Compile Include="LiveAPI_Feature\MessageNotification_InactiveUser1.feature.cs">
+    <Compile Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature.cs">
+      <DependentUpon>MessageNotification_ActiveUser.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MessageNotification_InactiveUser.feature</DependentUpon>
     </Compile>
-    <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs" />
-    <Compile Include="LiveAPI_Feature\MessageNotification_Smoke1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
-    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
-    <Compile Include="LoginFeature_Demo\Login.feature.cs" />
-    <Compile Include="LoginFeature_Demo\Login1.feature.cs">
+    <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
+    <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
+    <Compile Include="LoginFeature_Demo\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
-    </Compile>
-    <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
-    <Compile Include="SpecFlowSteps\LiveAPIDisplayDocumentSteps.cs" />
-    <Compile Include="SpecFlowFeatures\LiveAPI_DisplayDocument.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LiveAPI_DisplayDocument.feature</DependentUpon>
-    </Compile>
-    <Compile Include="SpecFlowFeatures\SpecFlow_FolderNav.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlow_FolderNav.feature</DependentUpon>
-    </Compile>
-    <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
-    <Compile Include="SpecFlowSteps\LoginSteps.cs" />
-    <Compile Include="SpecFlowFeatures\SpecFlow_Login.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlow_Login.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -124,37 +107,25 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="LiveAPI_Feature\MessageNotification_Smoke.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageNotification_Smoke.feature.cs</LastGenOutput>
+    </None>
     <None Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MessageNotification_ActiveUser1.feature.cs</LastGenOutput>
+      <LastGenOutput>MessageNotification_ActiveUser.feature.cs</LastGenOutput>
     </None>
     <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MessageNotification_InactiveUser1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="LiveAPI_Feature\MessageNotification_Smoke.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MessageNotification_Smoke1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="LoginFeature_Demo\Login.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Login1.feature.cs</LastGenOutput>
+      <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="runtests.cmd" />
-    <None Include="SpecFlowFeatures\LiveAPI_DisplayDocument.feature">
+    <None Include="LoginFeature_Demo\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>LiveAPI_DisplayDocument.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SpecFlowFeatures\SpecFlow_FolderNav.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlow_FolderNav.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SpecFlowFeatures\SpecFlow_Login.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlow_Login.feature.cs</LastGenOutput>
+      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>

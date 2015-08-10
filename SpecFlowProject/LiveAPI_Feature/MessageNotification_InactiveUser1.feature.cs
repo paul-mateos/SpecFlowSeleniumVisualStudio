@@ -68,7 +68,7 @@ namespace SpecFlowProject.LiveAPI_Feature
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void ActionOnOpenDocumentNotification(string apiKey, string findUserBy, string user, string documentID, string version, string sectionID, string anchorName, string dateTime, string description, string actions, string pageContentToVerify, string[] exampleTags)
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser(string apiKey, string findUserBy, string user, string documentID, string version, string sectionID, string anchorName, string dateTime, string description, string actions, string pageContentToVerify, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MessageNotification_InactiveUser"};
@@ -76,7 +76,7 @@ namespace SpecFlowProject.LiveAPI_Feature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ActionOnOpenDocumentNotification", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("MessageNotification: OpenDocument Notification to inactive user", @__tags);
 #line 26
 this.ScenarioSetup(scenarioInfo);
 #line 27
@@ -104,7 +104,7 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "valid section_inactiveUser")]
@@ -120,13 +120,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_ValidSection_InactiveUser_Variant0()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_ValidSection_InactiveUser_Variant0()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "valid section_inactiveUser")]
@@ -142,13 +142,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_ValidSection_InactiveUser_Variant1()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_ValidSection_InactiveUser_Variant1()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "valid section_inactiveUser")]
@@ -164,13 +164,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_ValidSection_InactiveUser_Variant2()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_ValidSection_InactiveUser_Variant2()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "1", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "1", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "valid section_inactiveUser")]
@@ -186,13 +186,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_ValidSection_InactiveUser_Variant3()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_ValidSection_InactiveUser_Variant3()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "prompt", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "prompt", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "valid section_inactiveUser")]
@@ -208,13 +208,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "3.0_pg3")]
-        public virtual void ActionOnOpenDocumentNotification_ValidSection_InactiveUser_Variant4()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_ValidSection_InactiveUser_Variant4()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "3.0", "3", "", "", "", "prompt", "3.0_pg3", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "3.0", "3", "", "", "", "prompt", "3.0_pg3", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Invalid section")]
@@ -230,13 +230,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_InvalidSection_Variant0()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_InvalidSection_Variant0()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "2", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "2", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Invalid section")]
@@ -252,13 +252,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_InvalidSection_Variant1()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_InvalidSection_Variant1()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "3", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "3", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Invalid section")]
@@ -274,13 +274,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_InvalidSection_Variant2()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_InvalidSection_Variant2()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "3.0", "4", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "3.0", "4", "", "", "", "prompt", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Actions")]
@@ -296,13 +296,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentActions_Variant0()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentActions_Variant0()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Actions")]
@@ -318,13 +318,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "flash")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentActions_Variant1()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentActions_Variant1()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "1", "", "", "", "flash", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "1", "", "", "", "flash", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Actions")]
@@ -340,13 +340,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "load")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentActions_Variant2()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentActions_Variant2()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Actions")]
@@ -362,13 +362,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "maximise")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentActions_Variant3()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentActions_Variant3()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "maximise", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "maximise", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Actions")]
@@ -384,13 +384,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "load")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentActions_Variant4()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentActions_Variant4()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Actions")]
@@ -406,13 +406,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentActions_Variant5()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentActions_Variant5()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "prompt", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "prompt", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Descriptions")]
@@ -428,13 +428,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentDescriptions_Variant0()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentDescriptions_Variant0()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Descriptions")]
@@ -450,13 +450,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "flash")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentDescriptions_Variant1()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentDescriptions_Variant1()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "1", "", "", "", "flash", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "1", "", "", "", "flash", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Descriptions")]
@@ -472,13 +472,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "load")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentDescriptions_Variant2()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentDescriptions_Variant2()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Descriptions")]
@@ -494,13 +494,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "maximise")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentDescriptions_Variant3()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentDescriptions_Variant3()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "maximise", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "maximise", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Descriptions")]
@@ -516,13 +516,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "load")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentDescriptions_Variant4()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentDescriptions_Variant4()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "load", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Descriptions")]
@@ -538,13 +538,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "2.0_Pg2")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentDescriptions_Variant5()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentDescriptions_Variant5()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "", "", "", "prompt", "2.0_Pg2", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "", "", "", "prompt", "2.0_Pg2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Anchors")]
@@ -560,13 +560,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentAnchors_Variant0()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentAnchors_Variant0()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "", "pg1", "", "", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "", "pg1", "", "", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Anchors")]
@@ -582,13 +582,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "same")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentAnchors_Variant1()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentAnchors_Variant1()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "1", "pg1", "", "same", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "1", "pg1", "", "same", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Anchors")]
@@ -604,13 +604,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "invalidArchor")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentAnchors_Variant2()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentAnchors_Variant2()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "1.0", "", "pg2", "", "invalidArchor", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "1.0", "", "pg2", "", "invalidArchor", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Anchors")]
@@ -626,13 +626,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "notsure")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "Notsure")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentAnchors_Variant3()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentAnchors_Variant3()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "2.0", "2", "pg1", "", "notsure", "", "Notsure", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "2.0", "2", "pg1", "", "notsure", "", "Notsure", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different Anchors")]
@@ -648,13 +648,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "3.0_Pg3")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentAnchors_Variant4()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentAnchors_Variant4()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer", "111", "3.0", "", "pg3", "", "", "", "3.0_Pg3", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer", "111", "3.0", "", "pg3", "", "", "", "3.0_Pg3", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different FindUserBy")]
@@ -670,13 +670,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentFindUserBy_Variant0()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentFindUserBy_Variant0()
         {
-            this.ActionOnOpenDocumentNotification("key", "name", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "name", "viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Different FindUserBy")]
@@ -692,13 +692,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "3.0_Pg3")]
-        public virtual void ActionOnOpenDocumentNotification_DifferentFindUserBy_Variant1()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_DifferentFindUserBy_Variant1()
         {
-            this.ActionOnOpenDocumentNotification("key", "id", "123", "111", "3.0", "", "", "", "", "", "3.0_Pg3", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "id", "123", "111", "3.0", "", "", "", "", "", "3.0_Pg3", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Multiple users")]
@@ -714,13 +714,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "1.0_Pg1")]
-        public virtual void ActionOnOpenDocumentNotification_MultipleUsers_Variant0()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_MultipleUsers_Variant0()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "viewer1, viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "viewer1, viewer", "111", "1.0", "", "", "", "", "", "1.0_Pg1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnOpenDocumentNotification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: OpenDocument Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Multiple users")]
@@ -736,12 +736,12 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "prompt")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageContentToVerify", "3.0_pg3")]
-        public virtual void ActionOnOpenDocumentNotification_MultipleUsers_Variant1()
+        public virtual void MessageNotificationOpenDocumentNotificationToInactiveUser_MultipleUsers_Variant1()
         {
-            this.ActionOnOpenDocumentNotification("key", "", "invalidUser, viewer", "111", "3.0", "3", "", "", "", "prompt", "3.0_pg3", ((string[])(null)));
+            this.MessageNotificationOpenDocumentNotificationToInactiveUser("key", "", "invalidUser, viewer", "111", "3.0", "3", "", "", "", "prompt", "3.0_pg3", ((string[])(null)));
         }
         
-        public virtual void ActionOnDoSearch(string apiKey, string findUserBy, string user, string query, string filters, string dateTime, string description, string showFirstResult, string actions, string numOfDocsShouldShow, string[] exampleTags)
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser(string apiKey, string findUserBy, string user, string query, string filters, string dateTime, string description, string showFirstResult, string actions, string numOfDocsShouldShow, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MessageNotification_InactiveUser"};
@@ -749,7 +749,7 @@ this.ScenarioSetup(scenarioInfo);
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ActionOnDoSearch", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("MessageNotification: DoSearch Notification to inactive user", @__tags);
 #line 96
 this.ScenarioSetup(scenarioInfo);
 #line 97
@@ -776,7 +776,7 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search without filter")]
@@ -791,13 +791,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "2")]
-        public virtual void ActionOnDoSearch_SearchWithoutFilter_Variant0()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_SearchWithoutFilter_Variant0()
         {
-            this.ActionOnDoSearch("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search without filter")]
@@ -812,13 +812,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoSearch_SearchWithoutFilter_Variant1()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_SearchWithoutFilter_Variant1()
         {
-            this.ActionOnDoSearch("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with different FindUserBy")]
@@ -833,13 +833,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "2")]
-        public virtual void ActionOnDoSearch_SearchWithDifferentFindUserBy_Variant0()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_SearchWithDifferentFindUserBy_Variant0()
         {
-            this.ActionOnDoSearch("key", "name", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "name", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with different FindUserBy")]
@@ -854,13 +854,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoSearch_SearchWithDifferentFindUserBy_Variant1()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_SearchWithDifferentFindUserBy_Variant1()
         {
-            this.ActionOnDoSearch("key", "id", "123", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "id", "123", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with showfirstresult")]
@@ -875,13 +875,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoSearch_SearchWithShowfirstresult_Variant0()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_SearchWithShowfirstresult_Variant0()
         {
-            this.ActionOnDoSearch("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with showfirstresult")]
@@ -896,13 +896,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoSearch_SearchWithShowfirstresult_Variant1()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_SearchWithShowfirstresult_Variant1()
         {
-            this.ActionOnDoSearch("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Multiple users")]
@@ -917,13 +917,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoSearch_MultipleUsers_Variant0()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_MultipleUsers_Variant0()
         {
-            this.ActionOnDoSearch("key", "", "viewer1, viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "", "viewer1, viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoSearch Notification to inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Multiple users")]
@@ -938,12 +938,12 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoSearch_MultipleUsers_Variant1()
+        public virtual void MessageNotificationDoSearchNotificationToInactiveUser_MultipleUsers_Variant1()
         {
-            this.ActionOnDoSearch("key", "", "invalidUser,viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoSearchNotificationToInactiveUser("key", "", "invalidUser,viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
         
-        public virtual void ActionOnDoCshSearch(string apiKey, string findUserBy, string user, string query, string filters, string dateTime, string description, string showFirstResult, string actions, string numOfDocsShouldShow, string[] exampleTags)
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser(string apiKey, string findUserBy, string user, string query, string filters, string dateTime, string description, string showFirstResult, string actions, string numOfDocsShouldShow, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MessageNotification_InactiveUser"};
@@ -951,7 +951,7 @@ this.ScenarioSetup(scenarioInfo);
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ActionOnDoCshSearch", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("MessageNotification: DoCshSearch Notification to Inactive user", @__tags);
 #line 135
 this.ScenarioSetup(scenarioInfo);
 #line 136
@@ -979,7 +979,7 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search without filter")]
@@ -994,13 +994,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "2")]
-        public virtual void ActionOnDoCshSearch_SearchWithoutFilter_Variant0()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_SearchWithoutFilter_Variant0()
         {
-            this.ActionOnDoCshSearch("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search without filter")]
@@ -1015,13 +1015,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoCshSearch_SearchWithoutFilter_Variant1()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_SearchWithoutFilter_Variant1()
         {
-            this.ActionOnDoCshSearch("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with showfirstresult")]
@@ -1036,13 +1036,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoCshSearch_SearchWithShowfirstresult_Variant0()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_SearchWithShowfirstresult_Variant0()
         {
-            this.ActionOnDoCshSearch("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with showfirstresult")]
@@ -1057,13 +1057,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoCshSearch_SearchWithShowfirstresult_Variant1()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_SearchWithShowfirstresult_Variant1()
         {
-            this.ActionOnDoCshSearch("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "", "viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with different FindUserBy")]
@@ -1078,13 +1078,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "2")]
-        public virtual void ActionOnDoCshSearch_SearchWithDifferentFindUserBy_Variant0()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_SearchWithDifferentFindUserBy_Variant0()
         {
-            this.ActionOnDoCshSearch("key", "name", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "name", "viewer", "ActionOnDoSearch2Results", "", "", "search", "false", "", "2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "search with different FindUserBy")]
@@ -1099,13 +1099,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "false")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoCshSearch_SearchWithDifferentFindUserBy_Variant1()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_SearchWithDifferentFindUserBy_Variant1()
         {
-            this.ActionOnDoCshSearch("key", "id", "123", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "id", "123", "ActionOnDoSearch1Results", "", "", "search", "false", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Multiple users")]
@@ -1120,13 +1120,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoCshSearch_MultipleUsers_Variant0()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_MultipleUsers_Variant0()
         {
-            this.ActionOnDoCshSearch("key", "", "viewer1, viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "", "viewer1, viewer", "ActionOnDoSearch2Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ActionOnDoCshSearch")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("MessageNotification: DoCshSearch Notification to Inactive user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MessageNotification on user not logged in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MessageNotification_InactiveUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("ExampleSetName", "Multiple users")]
@@ -1141,9 +1141,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ShowFirstResult", "true")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Actions", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumOfDocsShouldShow", "1")]
-        public virtual void ActionOnDoCshSearch_MultipleUsers_Variant1()
+        public virtual void MessageNotificationDoCshSearchNotificationToInactiveUser_MultipleUsers_Variant1()
         {
-            this.ActionOnDoCshSearch("key", "", "invalidUser,viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
+            this.MessageNotificationDoCshSearchNotificationToInactiveUser("key", "", "invalidUser,viewer", "ActionOnDoSearch1Results", "", "", "search", "true", "", "1", ((string[])(null)));
         }
     }
 }

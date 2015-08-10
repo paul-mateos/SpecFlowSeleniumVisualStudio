@@ -10,7 +10,9 @@ namespace SpecFlow_SupportPoint
     public class LoginSteps
     {
 
-      
+        LoginTest test;
+
+
         [Given(@"Support Portal is opened")]
         [When(@"Support Portal is opened")]
         public void GivenSupportPortalIsOpened()
@@ -23,7 +25,7 @@ namespace SpecFlow_SupportPoint
         [Given(@"just demo another (.*)")]
         [When(@"just demo another (.*)")]
         [Then(@"just demo another (.*)")]
-        public void JustDemoAnother(string keyword)
+        public void JustDemoAnother()
         {
             //do nothing
         }

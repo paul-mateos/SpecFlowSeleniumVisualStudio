@@ -27,10 +27,6 @@ namespace SP_Automation.PageModels
         By notification = By.LinkText("Notification list");
         By notificationCentre = By.LinkText("Notifications");
 
-
-        //SP Manager
-        By SPManagerBtn = By.Id("AuthorLauncher");
-
         WebDriverWait wait;
         public NavBarPage(IWebDriver driver)
             : base(driver)
@@ -58,12 +54,7 @@ namespace SP_Automation.PageModels
             UICommon.ClickButton(folderMenu, d);
         }
 
-        public void ClickSPManagerButton()
-        {
-
-            UICommon.ClickButton(SPManagerBtn, d);
-        }
-
+      
         public void ClickNotification()
         {
             try
