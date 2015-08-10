@@ -1,4 +1,4 @@
-﻿Feature: Login_Demo
+﻿Feature: Login
 	any test environment or prerequisite goes here:
 	prerequisite: 
 	 The following two users should be valid
@@ -7,10 +7,10 @@
 
 Background: 
     Given Support Portal is opened
-	And just demo another Given
+	#And just demo another Given
 
 @login
-Scenario: Demo login Scenario
+Scenario: login
 	When I login as a valid user with login is viewer and password is viewer
 	And just demo another When
 	Then I should be logged in successfully
@@ -19,7 +19,7 @@ Scenario: Demo login Scenario
 	Then I should be logged out
 
 @login
-Scenario Outline: Demo Login Outline Test
+Scenario Outline: Login Outline Test
 	When I login as a valid user with login is <UserName> and password is <Password> 
 	Then I should be logged in successfully
 	When I logout

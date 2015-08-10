@@ -41,7 +41,7 @@ namespace SP_Automation.Modules
             //todo
             new NavBarPage(driver).ClickSPManagerButton();
 
-           
+
             new SPManagerNavBarPage(driver);
         }
 

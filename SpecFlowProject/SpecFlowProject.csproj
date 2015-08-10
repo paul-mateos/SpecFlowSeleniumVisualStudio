@@ -42,8 +42,8 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SpecRun.SpecFlowPlugin, Version=1.2.0.15, Culture=neutral, processorArchitecture=MSIL">
@@ -74,19 +74,48 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DocumentRating_Feature\AddNewRating.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddNewRating.feature</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentRating_Feature\AddNewRatingSteps.cs" />
+    <Compile Include="LiveAPI_Feature\CreateNewUserSteps.cs" />
+    <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
+      <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature.cs">
+      <DependentUpon>MessageNotification_ActiveUser.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageNotification_InactiveUser.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
+    <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
+    <Compile Include="LiveAPI_Feature\SpecFlowFeature12.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
     <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
     <Compile Include="LoginFeature_Demo\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="NewFolder1\CreateNewUserSteps.cs" />
-    <Compile Include="NewFolder1\SpecFlowFeature1.feature.cs">
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupportPointLive\SPLiveFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+      <DependentUpon>SPLiveFeature.feature</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -95,9 +124,25 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="NewFolder1\SpecFlowFeature1.feature">
+    <None Include="DocumentRating_Feature\AddNewRating.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+      <LastGenOutput>AddNewRating.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\MessageNotification_Smoke.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageNotification_Smoke.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageNotification_ActiveUser.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\SpecFlowFeature1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature12.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -110,6 +155,10 @@
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="SupportPointLive\SPLiveFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SPLiveFeature.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SeleniumProject\SeleniumProject.csproj">
@@ -117,6 +166,7 @@
       <Name>SeleniumProject</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
