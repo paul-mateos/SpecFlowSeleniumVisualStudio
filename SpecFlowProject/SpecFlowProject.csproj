@@ -70,6 +70,33 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
+    <Compile Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature.cs" />
+    <Compile Include="LiveAPI_Feature\MessageNotification_ActiveUser1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageNotification_ActiveUser.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature.cs" />
+    <Compile Include="LiveAPI_Feature\MessageNotification_InactiveUser1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageNotification_InactiveUser.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs" />
+    <Compile Include="LiveAPI_Feature\MessageNotification_Smoke1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
+    <Compile Include="LoginFeature_Demo\Login.feature.cs" />
+    <Compile Include="LoginFeature_Demo\Login1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
     <Compile Include="SpecFlowSteps\LiveAPIDisplayDocumentSteps.cs" />
     <Compile Include="SpecFlowFeatures\LiveAPI_DisplayDocument.feature.cs">
       <AutoGen>True</AutoGen>
@@ -96,6 +123,22 @@
     </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageNotification_ActiveUser1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageNotification_InactiveUser1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\MessageNotification_Smoke.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MessageNotification_Smoke1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LoginFeature_Demo\Login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Login1.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>

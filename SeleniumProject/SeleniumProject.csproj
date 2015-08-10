@@ -90,6 +90,13 @@
     <Compile Include="Environments\BrowserType.cs" />
     <Compile Include="Environments\EnvironmentType.cs" />
     <Compile Include="Environments\TestEnvironment.cs" />
+    <Compile Include="Facade\LiveAPI.cs" />
+    <Compile Include="Facade\SupportPoint.cs" />
+    <Compile Include="Modules\BaseWebDriverModule.cs" />
+    <Compile Include="Modules\Folder.cs" />
+    <Compile Include="Modules\LogIn.cs" />
+    <Compile Include="Modules\Nav.cs" />
+    <Compile Include="Modules\Notification.cs" />
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\NavBarPage.cs" />
     <Compile Include="PageModels\InitialPage.cs" />
