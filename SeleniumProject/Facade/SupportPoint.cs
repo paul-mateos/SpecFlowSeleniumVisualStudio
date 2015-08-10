@@ -29,8 +29,13 @@ namespace SP_Automation.Tests
         static public Nav Nav { get {return  new Nav(WebDriver);} set {Nav = value;} }
         static public Folder Folder { get { return new Folder(WebDriver); } set {Folder = value;} }
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
-       
-    
+
+        static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
+
+        static public User User { get { return new User(WebDriver); } set { User = value; } }
+        /**
+         * Open Support Point app: if there is existing one, it will kill it
+         */
         /**
          * Open Support Point app: if there is existing one, it will kill it
          */
@@ -109,7 +114,12 @@ namespace SP_Automation.Tests
             return WebDriver != null;
         }
 
-       
+        static public void SwitchToSPManager()
+        {
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home : SupportPoint", "Document Management : SupportPoint");
+
+        }
+
         public static void KillProcess(string processName)
         {
             foreach (var process in Process.GetProcessesByName(Path.GetFileNameWithoutExtension(processName)))
