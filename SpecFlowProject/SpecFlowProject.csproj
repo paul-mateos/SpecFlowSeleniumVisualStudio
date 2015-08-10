@@ -92,6 +92,11 @@
     </Compile>
     <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
+    <Compile Include="LiveAPI_Feature\SpecFlowFeature12.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+    </Compile>
     <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
     <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
     <Compile Include="LoginFeature_Demo\Login.feature.cs">
@@ -119,6 +124,10 @@
     <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\SpecFlowFeature1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature12.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>

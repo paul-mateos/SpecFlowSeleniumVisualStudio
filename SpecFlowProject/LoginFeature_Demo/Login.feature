@@ -7,7 +7,7 @@
 
 Background: 
     Given Support Portal is opened
-	And just demo another Given
+	#And just demo another Given
 
 @login
 Scenario: login

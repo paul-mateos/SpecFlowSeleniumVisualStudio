@@ -1,8 +1,10 @@
-﻿using SP_Automation.Tests;
-using System;
+﻿using System;
 using TechTalk.SpecFlow;
+//using Panviva.LiveAPI;
+using SP_Automation.Tests;
+using SP_Automation;
 
-namespace SpecFlowProject.NewFolder1
+namespace SpecFlowProject.LiveAPI_Feature
 {
     [Binding]
     public class CreateNewUserSteps
@@ -14,8 +16,6 @@ namespace SpecFlowProject.NewFolder1
             SupportPoint.LogIn.Login(username, password);
         }
 
-       
-        
         [Given(@"I am at User Management page")]
         public void GivenIAmAtUserManagementPage()
         {
@@ -26,39 +26,40 @@ namespace SpecFlowProject.NewFolder1
             SupportPoint.SPManagerNav.ClickUsers();
         }
         
+       
         [When(@"I press Action")]
         public void WhenIPressAction()
         {
             SupportPoint.User.ClickAction();
-            
+
         }
-        
+
         [When(@"I press New User")]
         public void WhenIPressNewUser()
         {
             SupportPoint.User.ClickNewUser();
         }
-        
+
+
         [When(@"I have entered (.*), (.*), (.*), (.*), (.*), (.*) into the username, firstname, lastname, email, password, verify password")]
         public void WhenIHaveEnteredAdvAuthorAdvAuthorTestPanviva_ComPasswordPasswordIntoTheUsernameFirstnameLastnameEmailPasswordVerifyPassword(string name, string firstname, string lastname, string email, string password, string verifypassword)
         {
             SupportPoint.User.CreateNewUser(name, firstname, lastname, email, password, verifypassword);
             ScenarioContext.Current.Add("username", name);
         }
-        
+
         [When(@"I press Save")]
         public void WhenIPressSave()
         {
             SupportPoint.User.Save();
         }
         
-       
-        
+
         [Then(@"the result should be new user added")]
         public void ThenTheResultShouldBeNewUserAdded()
         {
             string username = ScenarioContext.Current.Get<string>("username");
-           // SupportPoint.User.VerifyUserExist();
+            // SupportPoint.User.VerifyUserExist();
         }
     }
 }

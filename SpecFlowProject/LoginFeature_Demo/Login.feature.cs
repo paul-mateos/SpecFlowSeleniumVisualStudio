@@ -74,8 +74,6 @@ namespace SpecFlowProject.LoginFeature_Demo
 #line 8
 #line 9
     testRunner.Given("Support Portal is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.And("just demo another Given", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
