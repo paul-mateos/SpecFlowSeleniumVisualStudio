@@ -20,10 +20,6 @@ namespace SP_Automation.PageModels
         By BackgroundTask = By.LinkText("Background tasks");
         By Close = By.LinkText("Close");
 
-     
-
-        //SP Manager
-        By SPManagerBtn = By.Id("AuthorLauncher");
 
         WebDriverWait wait;
         public UserActionPage(IWebDriver driver)

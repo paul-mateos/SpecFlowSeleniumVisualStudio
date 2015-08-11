@@ -22,6 +22,7 @@ namespace SP_Automation.Commons
 
         }
 
+
         public static void ClickButton(By searchType, IWebDriver d)
         {
             IWebElement elem = GetElement(searchType, d);
@@ -34,6 +35,14 @@ namespace SP_Automation.Commons
             elem.Clear();
             elem.SendKeys(value);
 
+        }
+
+        public static void SelectListValue(By searchType, string value, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
+            SelectElement selector = new SelectElement(elem);
+            selector.SelectByText(value);
+            
         }
 
         public static void elementHighlight(IWebElement element, IWebDriver d)
