@@ -81,6 +81,11 @@
     </Compile>
     <Compile Include="DocumentRating_Feature\AddNewRatingSteps.cs" />
     <Compile Include="DocumentRating_Feature\AddNewRatingToADocumentSteps.cs" />
+    <Compile Include="LiveAPI_Feature\NewAPIFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewAPIFeature.feature</DependentUpon>
+    </Compile>
     <Compile Include="LiveAPI_Feature\SwaggerDemoFile.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +158,10 @@
     <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LiveAPI_Feature\NewAPIFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NewAPIFeature.feature.cs</LastGenOutput>
     </None>
     <None Include="LiveAPI_Feature\SwaggerDemoFile.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
