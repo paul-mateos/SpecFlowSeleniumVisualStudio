@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels
+namespace SP_Automation.PageModels.SP_Viewer
 {
     class NavBarPage : BasePage
     {
@@ -31,6 +31,7 @@ namespace SP_Automation.PageModels
         By SPManagerBtn = By.Id("AuthorLauncher");
 
         WebDriverWait wait;
+
         public NavBarPage(IWebDriver driver)
             : base(driver)
         {

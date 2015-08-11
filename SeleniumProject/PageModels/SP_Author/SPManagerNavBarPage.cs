@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels
+namespace SP_Automation.PageModels.SP_Author
 {
    public class SPManagerNavBarPage : BasePage
     {

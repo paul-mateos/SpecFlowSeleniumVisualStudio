@@ -6,7 +6,7 @@
 	  viewer1/viewer1
 
 Background: 
-    Given Support Portal is opened
+    Given SupportPoint is opened
 	#And just demo another Given
 
 @login
