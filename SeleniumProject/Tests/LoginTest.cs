@@ -14,6 +14,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System.Diagnostics;
+using SP_Automation.PageModels.SP_Viewer;
 
 namespace SP_Automation.Tests
 {

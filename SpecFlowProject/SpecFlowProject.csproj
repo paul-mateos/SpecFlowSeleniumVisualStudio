@@ -104,13 +104,20 @@
       <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
     </Compile>
     <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
-    <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
-    <Compile Include="LoginFeature_Demo\Login.feature.cs">
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
+    <Compile Include="SP_Viewer\LoginFeature\LoginSteps.cs" />
+    <Compile Include="SP_Viewer\LoginFeature\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_Search.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Viewer\SP_ViewerSteps.cs" />
     <Compile Include="SupportPointLive\SPLiveFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,12 +155,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="runtests.cmd" />
-    <None Include="LoginFeature_Demo\Login.feature">
+    <None Include="SP_Viewer\LoginFeature\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_Search.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointLive\SPLiveFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -166,7 +177,9 @@
       <Name>SeleniumProject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SP_Editor\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

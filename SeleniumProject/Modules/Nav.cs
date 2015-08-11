@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SP_Automation.PageModels;
+using SP_Automation.PageModels.SP_Author;
+using SP_Automation.PageModels.SP_Viewer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,9 +42,8 @@ namespace SP_Automation.Modules
         {
             //todo
             new NavBarPage(driver).ClickSPManagerButton();
-
-
-            new SPManagerNavBarPage(driver);
+            new DocumentManagementPage(driver);
+            //new SPManagerNavBarPage(driver);
         }
 
     }

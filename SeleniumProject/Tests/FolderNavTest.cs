@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SP_Automation.PageModels;
+using SP_Automation.PageModels.SP_Viewer;
 
 namespace SP_Automation.Tests
 {

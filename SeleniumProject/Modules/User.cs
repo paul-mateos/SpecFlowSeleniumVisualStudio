@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SP_Automation.PageModels;
+using SP_Automation.PageModels.SP_Author;
 using System;
 using System.Collections.Generic;
 using System.Linq;
