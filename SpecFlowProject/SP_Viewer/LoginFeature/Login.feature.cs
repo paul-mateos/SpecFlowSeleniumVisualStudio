@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject.LoginFeature_Demo
+namespace SpecFlowProject.SP_Viewer.LoginFeature
 {
     using TechTalk.SpecFlow;
     
@@ -31,8 +31,8 @@ namespace SpecFlowProject.LoginFeature_Demo
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "any test environment or prerequisite goes here:\nprerequisite: \nThe following two " +
-                    "users should be valid\n viewer/viewer \n viewer1/viewer1", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "any test environment or prerequisite goes here:\r\nprerequisite: \r\nThe following tw" +
+                    "o users should be valid\r\n viewer/viewer \r\n viewer1/viewer1", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -49,7 +49,7 @@ namespace SpecFlowProject.LoginFeature_Demo
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Login")))
             {
-                SpecFlowProject.LoginFeature_Demo.LoginFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Viewer.LoginFeature.LoginFeature.FeatureSetup(null);
             }
         }
         
@@ -73,7 +73,7 @@ namespace SpecFlowProject.LoginFeature_Demo
         {
 #line 8
 #line 9
-    testRunner.Given("Support Portal is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
