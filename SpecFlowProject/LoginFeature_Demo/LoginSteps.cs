@@ -25,7 +25,7 @@ namespace SpecFlow_SupportPoint
         [Given(@"just demo another (.*)")]
         [When(@"just demo another (.*)")]
         [Then(@"just demo another (.*)")]
-        public void JustDemoAnother()
+        public void JustDemoAnother(String p)
         {
             //do nothing
         }
@@ -51,8 +51,8 @@ namespace SpecFlow_SupportPoint
         [When(@"I logout")]
         public void WhenILogout()
         {
-
-           SupportPoint.LogIn.LogOut();
+            
+            SupportPoint.LogIn.LogOutAndCloseApp();
         }
 
         [Then(@"I should be logged out")]

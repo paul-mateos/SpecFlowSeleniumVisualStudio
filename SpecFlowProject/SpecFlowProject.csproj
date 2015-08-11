@@ -74,13 +74,20 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DocumentRating_Feature\AddNewRating.feature.cs">
+    <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AddNewRating.feature</DependentUpon>
+      <DependentUpon>DoumentRating.feature</DependentUpon>
     </Compile>
     <Compile Include="DocumentRating_Feature\AddNewRatingSteps.cs" />
-    <Compile Include="LiveAPI_Feature\CreateNewUserSteps.cs" />
+    <Compile Include="DocumentRating_Feature\AddNewRatingToADocumentSteps.cs" />
+    <Compile Include="LiveAPI_Feature\SwaggerDemoFile.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SwaggerDemoFile.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LiveAPI_Feature\SwaggerPetstore_PetsSteps.cs" />
+    <Compile Include="LoginFeature_Demo\CreateNewUserSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
       <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -98,10 +105,10 @@
     </Compile>
     <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
-    <Compile Include="LiveAPI_Feature\SpecFlowFeature12.feature.cs">
+    <Compile Include="LoginFeature_Demo\CreateNewUser.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+      <DependentUpon>CreateNewUser.feature</DependentUpon>
     </Compile>
     <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
     <Compile Include="LoginFeature_Demo\LoginSteps.cs" />
@@ -119,9 +126,9 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocumentRating_Feature\AddNewRating.feature">
+    <None Include="DocumentRating_Feature\DoumentRating.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AddNewRating.feature.cs</LastGenOutput>
+      <LastGenOutput>DoumentRating.feature.cs</LastGenOutput>
     </None>
     <None Include="LiveAPI_Feature\MessageNotification_Smoke.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -135,9 +142,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
     </None>
-    <None Include="LiveAPI_Feature\SpecFlowFeature1.feature">
+    <None Include="LiveAPI_Feature\SwaggerDemoFile.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature12.feature.cs</LastGenOutput>
+      <LastGenOutput>SwaggerDemoFile.feature.cs</LastGenOutput>
+    </None>
+    <None Include="LoginFeature_Demo\CreateNewUser.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateNewUser.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
