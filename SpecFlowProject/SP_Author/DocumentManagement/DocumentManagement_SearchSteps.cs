@@ -9,6 +9,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
     [Binding]
     public class DocumentManagement_SearchSteps
     {
+        private string FindBy;
         private string SearchText;
 
         [Given(@"I am at Document Management page")]
@@ -23,20 +24,19 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
             //ScenarioContext.Current.Pending();
             ////SupportPoint.SPManagerFind.SearchByFor(findBy, searchText);
+            FindBy = findBy;
             SearchText = searchText;
 
 
         }
+    
 
-       
-        [Then(@"the search should retun the record by name")]
-        public void ThenTheSearchShouldRetunTheRecordByName()
+        [Then(@"the search should retun the record by FindBy")]
+        public void ThenTheSearchShouldRetunTheRecordByFindBy()
         {
-            //Get search result table
-            SupportPoint.DocumentManagementPage.ConfirmFoundRecord(SearchText);
-            //Check that there is 1 record returned
-            //confirm that the name is present on the record
-            //SupportPoint.DocumentManagementPage.
+           
+            SupportPoint.DocumentManagementPage.ConfirmFoundRecord(FindBy, SearchText);
+  
         }
 
     }

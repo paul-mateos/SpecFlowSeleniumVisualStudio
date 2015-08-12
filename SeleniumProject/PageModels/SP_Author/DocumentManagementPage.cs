@@ -29,11 +29,11 @@ namespace SP_Automation.PageModels.SP_Author
 
        
 
-        public void ConfirmFoundRecord(string searchText)
+        public void ConfirmFoundRecord(string lookUpColumn, string searchText)
         {
             IWebElement searchTable = UICommon.GetSearchResultTable("docExplorerGrid", d);
             Table table = new Table(searchTable);
-            StringAssert.Contains(table.GetCellValue("Name", searchText, "Name"), searchText);
+            StringAssert.Contains(table.GetCellValue(lookUpColumn, searchText, lookUpColumn), searchText);
         }
     }
 }
