@@ -87,29 +87,34 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Commons\Tables.cs" />
     <Compile Include="Commons\UICommon.cs" />
     <Compile Include="Environments\BrowserType.cs" />
     <Compile Include="Environments\EnvironmentType.cs" />
     <Compile Include="Environments\TestEnvironment.cs" />
     <Compile Include="Modules\BaseWebDriverModule.cs" />
+    <Compile Include="Modules\User.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Modules\Notification.cs" />
     <Compile Include="Modules\Folder.cs" />
     <Compile Include="Modules\LogIn.cs" />
     <Compile Include="Modules\Nav.cs" />
-    <Compile Include="Modules\User.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
     <Compile Include="PageModels\BasePage.cs" />
+    <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagementPage.cs" />
-    <Compile Include="PageModels\LogoutPage.cs" />
+    <Compile Include="PageModels\SP_Author\IAddUserPage.cs" />
+    <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
+    <Compile Include="PageModels\SP_Author\SPManagerDetailsActionsPage.cs" />
+    <Compile Include="PageModels\SP_Author\SPManagerFindBarPage.cs" />
+    <Compile Include="PageModels\SP_Author\SPManagerNavBarPage.cs" />
+    <Compile Include="PageModels\SP_Author\UserRolemembershipPage.cs" />
+    <Compile Include="PageModels\SP_Viewer\LogoutPage.cs" />
     <Compile Include="PageModels\SP_Viewer\NavBarPage.cs" />
     <Compile Include="PageModels\InitialPage.cs" />
     <Compile Include="PageModels\SP_Viewer\HomePage.cs" />
     <Compile Include="PageModels\CertificateErrorPage.cs" />
     <Compile Include="PageModels\LoginPage.cs" />
-    <Compile Include="PageModels\SP_Author\SPManagerFindBarPage.cs" />
-    <Compile Include="PageModels\SP_Author\SPManagerNavBarPage.cs" />
     <Compile Include="PageModels\SP_Author\UserActionPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
