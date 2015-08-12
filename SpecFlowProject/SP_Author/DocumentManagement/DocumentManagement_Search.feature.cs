@@ -31,8 +31,8 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DocumentManagement_Search", "In order search for document\nAs an author with valid role access\nI want to be abl" +
-                    "e to search for documents by different search types", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DocumentManagement_Search", "In order to search for document\r\nAs an author with valid role access\r\nI want to b" +
+                    "e able to search for documents by different search types", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -84,11 +84,11 @@ testRunner.Then("I Open Author", ((string)(null)), ((TechTalk.SpecFlow.Table)(nu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Search By Name")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1_SearchByID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1_SearchByName")]
         public virtual void SearchByName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search By Name", new string[] {
-                        "2.1_SearchByID"});
+                        "2.1_SearchByName"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -98,6 +98,28 @@ this.FeatureBackground();
 #line 14
  testRunner.When("I search by Name for Automation Document", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
+ testRunner.Then("the search should retun the record by name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Search By ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1_SearchByID")]
+        public virtual void SearchByID()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search By ID", new string[] {
+                        "2.1_SearchByID"});
+#line 18
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 19
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 20
+ testRunner.When("I search by Name for Welcome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
  testRunner.Then("the search should retun the record by name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

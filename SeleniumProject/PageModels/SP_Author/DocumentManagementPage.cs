@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SP_Automation.Commons;
 using System;
@@ -25,7 +26,14 @@ namespace SP_Automation.PageModels.SP_Author
             return elem.Text;
 
         }
+
        
 
+        public void ConfirmFoundRecord(string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable("docExplorerGrid", d);
+            Table table = new Table(searchTable);
+            StringAssert.Contains(table.GetCellValue("Name", searchText, "Name"), searchText);
+        }
     }
 }
