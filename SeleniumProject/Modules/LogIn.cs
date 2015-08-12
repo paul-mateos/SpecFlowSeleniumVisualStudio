@@ -18,6 +18,7 @@ namespace SP_Automation.Modules
         public void Login(String name, String password)
         {
             LoginPage loginPage = new LoginPage(driver);
+
             loginPage.SetUserName(name);
             loginPage.SetPassword(password);
             loginPage.ClickLogOnButton();
