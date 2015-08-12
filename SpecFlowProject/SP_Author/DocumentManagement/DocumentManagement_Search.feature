@@ -2,7 +2,7 @@
 	In order to search for document
 	As an author with valid role access
 	I want to be able to search for documents by different search types
-
+	#test
 Background: SuportPoint is open
 Given SupportPoint is opened
 And I login as a valid user with login is paul and password is p
