@@ -38,7 +38,35 @@ namespace SP_Automation.Modules
 
         public void Save()
         {
-            new AddUserPage(GetDriver()).clickSave();
+            new SPManagerDetailsActionsPage(GetDriver()).clickSave();
         }
+
+        public void DetailsandAction()
+        {
+
+            new SPManagerDetailsActionsPage(GetDriver()).clickDetailsandActions();
+
+        }
+
+        public void Rolemembership()
+
+        { 
+            new SPManagerDetailsActionsPage(GetDriver()).clickRolemembership();
+
+        }
+
+        public void AddUsertoRole()
+
+        {
+            new UserRolemembershipPage(GetDriver()).clickAddUsertoRole();
+
+        }
+
+
+        public void SearchRole(string rolename)
+        {
+            new RoleSelectorPage(GetDriver()).searchRole(rolename);
+        }
+
     }
 }
