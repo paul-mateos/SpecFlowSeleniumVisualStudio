@@ -52,7 +52,7 @@ namespace SpecFlowSteps
         public void WhenILogout()
         {
 
-           SupportPoint.LogIn.LogOut();
+            SupportPoint.LogIn.LogOutAndCloseApp();
         }
 
         [Then(@"I should be logged out")]

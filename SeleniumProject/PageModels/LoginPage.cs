@@ -49,7 +49,7 @@ namespace SP_Automation.PageModels
             if (messages.Count != 0)
             {
                 IWebElement elem = UICommon.GetElement(By.Id("qtip-Warning-content"), d);
-                if(elem.Text == warningMessage)
+                if(elem.Text.Equals(warningMessage))
                 {
                     UICommon.ClickButton(By.Id("okTitle"), d);
                 }
@@ -57,8 +57,7 @@ namespace SP_Automation.PageModels
             }
         }
 
-
-
+        
         internal void GetObjValue()
         {
             throw new NotImplementedException();
