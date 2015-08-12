@@ -1,5 +1,5 @@
 ﻿Feature: DocumentManagement_Search
-	In order search for document
+	In order to search for document
 	As an author with valid role access
 	I want to be able to search for documents by different search types
 
@@ -8,9 +8,14 @@ Given SupportPoint is opened
 And I login as a valid user with login is paul and password is p
 Then I Open Author
 
-@2.1_SearchByID
-Scenario: Search By Name
+@2_DocumentManagement_SearchBy
+Scenario Outline: Search By Name
 	Given I am at Document Management page
-	When I search by Name for Automation Document
-	Then the search should retun the record by name
+	When I search by <FindBy> for <searchText>
+	Then the search should retun the record by FindBy
 
+Examples: 
+| FindBy      | searchText          |
+| ID          | 3494                |
+| Name        | Welcome             |
+| Description | VX TOSCA Automation |

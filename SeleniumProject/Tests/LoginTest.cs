@@ -31,7 +31,7 @@ namespace SP_Automation.Tests
             //Log on to site as user.
             InitialPage initialPage = new InitialPage(driver);
             string BaseWindow = driver.CurrentWindowHandle; 
-            UICommon.SwitchToNewBrowserWithTitle(driver, BaseWindow, "Login");
+            UICommon.SwitchToNewBrowserWithTitle(driver, "Login");
    
         }
 
