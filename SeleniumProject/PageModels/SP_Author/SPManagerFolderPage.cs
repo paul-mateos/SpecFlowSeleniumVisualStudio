@@ -11,6 +11,7 @@ namespace SP_Automation.PageModels.SP_Author
 {
     class SPManagerFolderPage : BasePage
     {
+        private object actualSizeSelect;
         By Folder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[2]");
         By NavFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[1]");
                    
@@ -25,11 +26,21 @@ namespace SP_Automation.PageModels.SP_Author
         public void clickFolder()
         {
            IWebElement elem = UICommon.GetElement(NavFolder, d);
+           
             String cssvalue = elem.GetAttribute("class");
             if (cssvalue.Equals("k-icon k-plus"))
             {
                 UICommon.DoubleClickButton(Folder, d);
             }
+
+
+            //SelectElement folderSize = new SelectElement(UICommon.GetElement(NavFolder, d));
+            //System.Diagnostics.Debug.WriteLine(folderSize);
+            // actualSizeSelect.
+            //IWebElement folderlist = d.FindElement(NavFolder, d);
+            //IList<IWebElement> list = new IList<IWebElement>(elem);
+
+            
         }
     }
 }
