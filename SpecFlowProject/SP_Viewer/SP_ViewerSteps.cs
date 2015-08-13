@@ -11,13 +11,14 @@ namespace SpecFlowProject.SP_Viewer
     public sealed class SP_ViewerSteps
     {
 
-        [Then(@"I Open Author")]
-        public void ThenIOpenAuthor()
+   
+        [Then(@"I Open SP Manager")]
+        public void ThenIOpenSPManager()
         {
             SupportPoint.Nav.ToSupportPointManager();
             SupportPoint.SwitchToSPManager();
             System.Threading.Thread.Sleep(5000);
-            
         }
+
     }
 }

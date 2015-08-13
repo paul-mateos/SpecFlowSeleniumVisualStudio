@@ -79,6 +79,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
     <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +124,11 @@
     <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
     <Compile Include="SupportPointLive\SPLive_ShowDcoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_SelectFolder.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Viewer\LoginFeature\LoginSteps.cs" />
     <Compile Include="SP_Viewer\LoginFeature\Login.feature.cs">
       <AutoGen>True</AutoGen>
@@ -181,6 +187,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="runtests.cmd" />
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_SelectFolder.feature.cs</LastGenOutput>
+    </None>
     <None Include="SP_Viewer\LoginFeature\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>

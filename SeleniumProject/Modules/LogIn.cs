@@ -23,6 +23,7 @@ namespace SP_Automation.Modules
             loginPage.SetUserName(name);
             loginPage.SetPassword(password);
             loginPage.ClickLogOnButton();
+           // loginPage.ConfirmWarningMessage("");
             //loginPage.GetObjValue();
             String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
             loginPage.ConfirmWarningMessage(warningMessage);
