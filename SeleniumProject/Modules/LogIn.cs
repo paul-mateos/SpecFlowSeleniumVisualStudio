@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SP_Automation.Modules
@@ -24,6 +25,8 @@ namespace SP_Automation.Modules
             loginPage.ClickLogOnButton();
            // loginPage.ConfirmWarningMessage("");
             //loginPage.GetObjValue();
+            String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
+            loginPage.ConfirmWarningMessage(warningMessage);
             HomePage homePage = new HomePage(driver);
             Assert.IsTrue(homePage.GetWelcomeTitleDisplayProperty());
         }
@@ -41,7 +44,7 @@ namespace SP_Automation.Modules
         {
             NavBarPage nav = new NavBarPage(driver);
             nav.ClickUserLogOff();
-
+            Thread.Sleep(5000);
             LogoutPage p = new LogoutPage(driver);
             p.LogOutAndCloseApp();
         }

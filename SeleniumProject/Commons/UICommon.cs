@@ -13,16 +13,17 @@ namespace SP_Automation.Commons
 {
     public class UICommon
     {
+        public static int waitsec = Properties.Settings.Default.WaitTime;
+
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
 
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
             elementHighlight(elem, d);
             return elem;
 
         }
-
 
         public static void ClickButton(By searchType, IWebDriver d)
         {
@@ -82,36 +83,40 @@ namespace SP_Automation.Commons
         }
 
 
-        public static IWebDriver SwitchToNewBrowserWithTitle(IWebDriver d, string BaseWindow, string title)
+        public static IWebDriver SwitchToNewBrowserWithTitle(IWebDriver d, string title)
         {
-            string NewWindow; //prepares for the new window handle
-            ReadOnlyCollection<string> handles = null;
+            //wait for another window to open
             for (int i = 1; i < 30; i++)
             {
                 if (d.WindowHandles.Count == 1)
                 {
-                    Thread.Sleep(2000); 
+                    Thread.Sleep(1000); 
                 }
                 else { break; }
             }
 
-            for (int i = 1; i < 10; i++) { 
-            
-                handles = d.WindowHandles;
-            foreach (string handle in handles)
+            for (int i = 1; i < 3; i++)
             {
-                //var Handles = handle;
-              //  if (BaseWindow != handle)
+                foreach (string handle in d.WindowHandles)
                 {
-                    NewWindow = handle;
                     if (d.SwitchTo().Window(handle).Title.Contains(title))
                     {
                         return d;
                     }
+                    else
+                    {
+                        Thread.Sleep(2000);
+                    }
                 }
-            }
-            Thread.Sleep(1000);
-            } throw new Exception("Error switching to new browser");
+     
+            }throw new Exception("Error switching to new browser");
+        }
+
+        public static IWebElement GetSearchResultTable(string tableName, IWebDriver d)
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(tableName)));
+            return webElementBody;
         }
     }
 }

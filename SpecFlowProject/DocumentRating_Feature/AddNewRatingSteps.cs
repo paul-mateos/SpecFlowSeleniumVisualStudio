@@ -3,7 +3,7 @@ using TechTalk.SpecFlow;
 
 namespace SpecFlowProject.DocumentRating_Feature
 {
-    //test
+   
     [Binding]
     public class AddNewRatingSteps
     {
