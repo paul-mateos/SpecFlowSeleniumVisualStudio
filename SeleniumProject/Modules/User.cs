@@ -41,6 +41,11 @@ namespace SP_Automation.Modules
             new SPManagerDetailsActionsPage(GetDriver()).clickSave();
         }
 
+        public void Move()
+        {
+            new SPManagerDetailsActionsPage(GetDriver()).clickMove();
+        }
+
         public void DetailsandAction()
         {
 

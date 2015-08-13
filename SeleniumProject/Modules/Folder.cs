@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using SP_Automation.PageModels.SP_Author;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,10 @@ namespace SP_Automation.Modules
         public void VerifyFolderExist()
         {
             Assert.IsTrue(false, "Not implmented");
+        }
+        public void FolderTree()
+        {
+            new SPManagerFolderPage(GetDriver()).clickFolder();
         }
     }
 }

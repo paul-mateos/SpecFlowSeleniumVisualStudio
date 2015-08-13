@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,25 @@ namespace SP_Automation.Commons
             IWebElement elem = GetElement(searchType, d);
             elem.Click();
         }
+
+        public static void DoubleClickButton(By searchType, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
+            Actions action = new Actions(d);
+            action.DoubleClick(elem);
+            action.Perform();
+        }
+
+        /*annette added
+                public bool Exist(By element)
+        { 
+           try 
+            { 
+               return ( new WebDriverWait(d, TimeSpan.FromSeconds(1)).Until(ExpectedConditions.ElementIsVisible(element)) != null );
+             } catch (NoSuchElementException) { }
+
+            return false;
+        } */
 
         public static void SetValue(By searchType, string value, IWebDriver d)
         {

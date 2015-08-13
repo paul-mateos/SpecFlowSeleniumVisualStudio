@@ -107,6 +107,7 @@
     <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsActionsPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerFindBarPage.cs" />
+    <Compile Include="PageModels\SP_Author\SPManagerFolderPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerNavBarPage.cs" />
     <Compile Include="PageModels\SP_Author\UserRolemembershipPage.cs" />
     <Compile Include="PageModels\SP_Viewer\LogoutPage.cs" />

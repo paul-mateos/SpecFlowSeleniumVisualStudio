@@ -42,7 +42,7 @@ namespace SP_Automation.Modules
         {
             //todo
             new NavBarPage(driver).ClickSPManagerButton();
-            new DocumentManagementPage(driver);
+            //new DocumentManagementPage(driver);
             //new SPManagerNavBarPage(driver);
         }
 

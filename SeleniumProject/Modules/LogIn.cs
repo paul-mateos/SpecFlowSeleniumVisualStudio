@@ -22,6 +22,7 @@ namespace SP_Automation.Modules
             loginPage.SetUserName(name);
             loginPage.SetPassword(password);
             loginPage.ClickLogOnButton();
+           // loginPage.ConfirmWarningMessage("");
             //loginPage.GetObjValue();
             HomePage homePage = new HomePage(driver);
             Assert.IsTrue(homePage.GetWelcomeTitleDisplayProperty());
