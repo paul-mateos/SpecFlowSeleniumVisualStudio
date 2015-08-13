@@ -22,7 +22,7 @@ namespace SP_Automation.Rest
         private List<KeyValuePair<string, Object>> list = new List<KeyValuePair<string, Object>>();
 
         private HttpResponseMessage response; //maintaion response msg
-
+        
         public RestAPI(String addr)
         {
             Address = addr;
@@ -92,8 +92,8 @@ namespace SP_Automation.Rest
                response = await client.GetAsync(fullUrl);
 
            }).GetAwaiter().GetResult();
-           // Check that response was successful or throw exception
-           Assert.AreEqual<System.Net.HttpStatusCode>(code, response.StatusCode);
+            // Check that response was successful or throw exception     
+            Assert.AreEqual<System.Net.HttpStatusCode>(code, response.StatusCode);
            
            return this;
        }
@@ -129,8 +129,8 @@ namespace SP_Automation.Rest
                response = await client.PutAsJsonAsync(fullUrl, data);
 
            }).GetAwaiter().GetResult();
-           
-           Assert.AreEqual<System.Net.HttpStatusCode>(code, response.StatusCode);
+            
+            Assert.AreEqual<System.Net.HttpStatusCode>(code, response.StatusCode);
            return this;
        }
 

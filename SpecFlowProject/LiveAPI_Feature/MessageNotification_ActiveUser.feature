@@ -33,7 +33,7 @@ Scenario Outline: MessageNotification: OpenDocument Notification to active user
 	Then I should see notifications pending on support point
 	When I click on notifications
 	Then I should see the Notification on the top of list of unread messages
-	And I should see Type of Messages, Alert level, Time, and Message description for the notifcation
+	And  I should see Type of Messages, Alert level, Time, and Message description for the notifcation
 	When I click on the Notfication item
 	Then I should see the Notification Item disapear from notification list
 	Then I should be redirected to the '<PageContentToVerify>' of the document in viewer
