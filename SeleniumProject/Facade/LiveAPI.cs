@@ -46,7 +46,7 @@ namespace Panviva.LiveAPI
             address = add;
         }
 
-        protected string buildUrlParam(string key, string value)
+        public string buildUrlParam(string key, string value)
         {
             if (value == null || value.Length == 0) return "";
 
@@ -65,7 +65,7 @@ namespace Panviva.LiveAPI
 
         public void Send()
         {
-            RestAPI.newRequest(address).PostAndVerifyStatus(address + GenUrlString(), HttpStatusCode.OK);
+            RestAPI.newRequest(address).GetAndVerifyStatus(address + GenUrlString(), HttpStatusCode.OK);
         }
     }
 
