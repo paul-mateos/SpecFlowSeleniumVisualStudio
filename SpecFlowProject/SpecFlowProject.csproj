@@ -79,6 +79,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
     <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
@@ -162,6 +163,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SPLiveFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsersSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

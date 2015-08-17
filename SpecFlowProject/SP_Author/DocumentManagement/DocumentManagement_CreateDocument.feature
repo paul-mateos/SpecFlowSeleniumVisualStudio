@@ -11,13 +11,13 @@ Given I have imported the users/roles file
 Then the User/Role data is set up
 
 @mytag
-Scenario: Add two numbers
+Scenario Outline: Add two numbers
 	Given I am at Document Management page
 	When I select the sel_blankFolderName Folder
 	Then SP navigates to the sel_blankFolderName & the folder is expanded
 	When I press Details & Actions
 	And I select new 
-	And I have entered Document, Type, Name, Source, Description into the Folder, Type, Name, Source, Description
+	And I have entered document <Type>, <Name>, <Source>, <Description> into the fields
 	And I press Save
 	Then the result should be new folders added
 

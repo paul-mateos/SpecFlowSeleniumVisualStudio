@@ -11,7 +11,7 @@ Given I have imported the users/roles file
 Then the User/Role data is created
 
 @mytag
-Scenario: Create new Folder
+Scenario Outline: Create new Folder
 	Given I am at Document Management page
 	When I select the Home Folder
 	Then the Home folder is expanded
