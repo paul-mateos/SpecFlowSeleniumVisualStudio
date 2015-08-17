@@ -12,6 +12,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         private string FindBy;
         private string SearchText;
 
+    
         [Given(@"I am at Document Management page")]
         public void GivenIAmAtDocumentManagementPage()
         {
@@ -24,10 +25,10 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
             //ScenarioContext.Current.Pending();
             ////SupportPoint.SPManagerFind.SearchByFor(findBy, searchText);
-            string folderString = "Home,TOSCA Static Documents,For Copy,Target";
-            char[] splitter = {','};
-            string [] folders = folderString.Split(splitter);
-            SupportPoint.SPManagerFolder.ClickOnFolder(folders);
+            //string folderString = "Home,TOSCA Static Documents,For Copy,Target";
+            //char[] splitter = {','};
+            //string [] folders = folderString.Split(splitter);
+            //SupportPoint.SPManagerFolder.ClickOnFolder(folders);
             FindBy = findBy;
             SearchText = searchText;
 

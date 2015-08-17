@@ -11,5 +11,7 @@
 @mytag
 Scenario: Select a Folder
 	Given I am at Document Management page
-	When I select the Home Folder
-	Then the Home folder is expanded
+	When I select the Home,Tosca Static Document, For Copy Folder
+	Then the correct folder is selected
+
+	

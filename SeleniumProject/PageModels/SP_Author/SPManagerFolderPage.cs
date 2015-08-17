@@ -64,7 +64,8 @@ namespace SP_Automation.PageModels.SP_Author
                         {
                             folderTree = folder;
                         }
-                        break;
+                        
+                        //break;
                     }
                 }
 
