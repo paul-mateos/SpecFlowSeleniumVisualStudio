@@ -12,6 +12,7 @@ namespace SP_Automation.PageModels
     class SPManagerDetailsActionsPage : BasePage
     {
         By SaveBtn = By.XPath("//button[@title='Save']");
+        By MoveBtn = By.XPath("//button[@title='Move']");
         By DetailsandActions = By.XPath("//form[@name='usrForm']//div[1]/ul/li/a");
         By Properties = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[1]");
         By Rolemembership = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[2]");
@@ -34,6 +35,11 @@ namespace SP_Automation.PageModels
         public void clickSave()
         {
             UICommon.ClickButton(SaveBtn, d);
+        }
+
+        public void clickMove()
+        {
+            UICommon.ClickButton(MoveBtn, d);
         }
 
         public void clickDetailsandActions()
