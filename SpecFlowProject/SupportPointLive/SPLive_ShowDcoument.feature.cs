@@ -98,11 +98,11 @@ namespace SpecFlowProject.SupportPointLive
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Call Example API with key")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Call Example API with key for Bad Request")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SPLive_ShowDcoument")]
-        public virtual void CallExampleAPIWithKey()
+        public virtual void CallExampleAPIWithKeyForBadRequest()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call Example API with key", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call Example API with key for Bad Request", ((string[])(null)));
 #line 32
 this.ScenarioSetup(scenarioInfo);
 #line 33
@@ -114,6 +114,27 @@ testRunner.And("api with \"api_key\" as \"BAD_API_KEY\", \"name\" as \"radiohead
 testRunner.When("full URL request executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
 testRunner.Then("recieved response with Invalid User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Call Example FourSquare API")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SPLive_ShowDcoument")]
+        public virtual void CallExampleFourSquareAPI()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call Example FourSquare API", ((string[])(null)));
+#line 39
+this.ScenarioSetup(scenarioInfo);
+#line 40
+testRunner.Given("Api call with url \"https://api.foursquare.com/v2/venues/search?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 42
+testRunner.And("valid area iputs \"near\" as \"Melbourne\", \"oauth_token\" as \"5FUM2S1XROBIVNHKGHRHHG1" +
+                    "DO0ZZ2WYACXQMEA5XL2WIF2NN&v=20150813\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+testRunner.When("full URL request executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+testRunner.Then("recieved response with Valid User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

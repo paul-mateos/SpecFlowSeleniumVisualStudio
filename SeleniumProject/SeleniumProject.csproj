@@ -125,6 +125,7 @@
     </Compile>
     <Compile Include="Facade\LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
+    <Compile Include="REST\UserImport.cs" />
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Facade\SupportPoint.cs" />

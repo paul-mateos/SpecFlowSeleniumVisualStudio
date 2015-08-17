@@ -11,7 +11,7 @@ namespace SP_Automation.Environments
 
         public static TestEnvironment GetEnvironment()
         {
-            switch (Properties.Settings.Default.Environment)
+            switch (Properties.Settings.Default.Environment1)
             {
                 case EnvironmentType.QA_A:
                     return new TestEnvironment("https://qa-a-iis03/");
