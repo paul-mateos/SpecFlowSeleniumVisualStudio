@@ -81,6 +81,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\BeforeAndAfterDocumentManagement.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
@@ -101,6 +102,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_SelectMultipleFolders.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature.cs">
       <AutoGen>True</AutoGen>
@@ -205,6 +211,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_SelectMultipleFolders.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

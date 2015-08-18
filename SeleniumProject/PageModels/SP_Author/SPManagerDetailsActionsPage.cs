@@ -21,7 +21,7 @@ namespace SP_Automation.PageModels
         By Writers = By.LinkText("Writers");
         By Notifications = By.LinkText("Notifications");
         By CustomProperties = By.LinkText("Custom properties");
-
+        
 
         WebDriverWait wait;
         public SPManagerDetailsActionsPage(IWebDriver driver)
@@ -52,5 +52,6 @@ namespace SP_Automation.PageModels
         {
             UICommon.ClickLink(Rolemembership, d);
         }
+
     }
 }

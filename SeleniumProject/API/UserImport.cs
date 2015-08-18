@@ -30,6 +30,7 @@ namespace SP_Automation.REST
         private StreamReader reader;
         private string Url;
         private string fullUrl;
+
         public UserImport()
         {
             this.username = Properties.Settings.Default.username;
@@ -92,7 +93,7 @@ namespace SP_Automation.REST
 
         }
 
-        public void getSessionID()
+        public string getSessionID()
         {
             string url = "http://qa-spui-b/WebService.svc/rest_all/Accounts/Login";            
             string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + this.password+ "\",\"UserName\":\"" + this.username + "\"}";
@@ -104,6 +105,7 @@ namespace SP_Automation.REST
             //write if to success = true
             this.SessionID = (string)obj["Response"]["SessionID"];
             closeAll();
+            return this.SessionID;
             
         }
 
