@@ -70,38 +70,36 @@ namespace SpecFlowProject.SupportPointLive
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Import Users list file")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("POST")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CreateUpdateUserAPI")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("createUser")]
-        public virtual void ImportUsersListFile()
+        public virtual void POST()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Import Users list file", new string[] {
-                        "createUser"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("POST", ((string[])(null)));
+#line 6
+ this.ScenarioSetup(scenarioInfo);
 #line 7
-this.ScenarioSetup(scenarioInfo);
+            testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
-  testRunner.Given("an API to create user \"http://qa-spui-b/WebService.svc/rest_all/Users/CreateUpdat" +
-                    "e?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.And("My webservice is \"Webservice.svc/rest_all/Users/CreateUpdate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Key",
+                        "",
+                        "value"});
 #line 9
-  testRunner.And("request body as", @"{	""Instance"":""String content"",
-	""IsDisabled"":true,
-	""IsSsoUser"":true,
-	""RoleID"":2147483647,
-	""SessionID"":""String content"",
-	""User"":{
-		""Email"":""String content"",
-		""FirstName"":""String content"",
-		""LastName"":""String content"",
-		""Password"":""String content"",
-		""UserID"":""String content"",
-		""UserName"":""String content""
-		}
-}", ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
-  testRunner.When("request executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
-  testRunner.Then("newuser created with response status as \"ok\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.And("I have path variables", ((string)(null)), table1, "And ");
+#line hidden
+#line 12
+            testRunner.And("I have a request body of", "\"SessionID\":\"SID\",", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+   testRunner.And("I have a request body of", "\"Instance\":\"localhost\",\r\n\"IsDisabled\":true,\r\n\"IsSsoUser\":true,\r\n\"RoleID\":45,\r\n\"Us" +
+                    "er\":{\r\n\t\"Email\":\"hello@panviva.com\",\r\n\t\"FirstName\":\"Burke\",\r\n\t\"LastName\":\"Camber" +
+                    "well\",\r\n\t\"Password\":\"1\",\r\n\t\"UserID\":\"-1\",\r\n\t\"UserName\":\"aaaaa\"\r\n\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+            testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+            testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

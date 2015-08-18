@@ -95,6 +95,7 @@
     <Compile Include="Environments\BrowserType.cs" />
     <Compile Include="Environments\EnvironmentType.cs" />
     <Compile Include="Environments\TestEnvironment.cs" />
+    <Compile Include="Facade\API.cs" />
     <Compile Include="Modules\BaseWebDriverModule.cs" />
     <Compile Include="Modules\User.cs">
       <SubType>Code</SubType>

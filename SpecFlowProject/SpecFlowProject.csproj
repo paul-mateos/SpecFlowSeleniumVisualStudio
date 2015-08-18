@@ -107,6 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManagement_ImportUsers.feature</DependentUpon>
     </Compile>
+    <Compile Include="SupportPointLive\AccountLoginAPI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountLoginAPI.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointLive\AccountLoginAPISteps.cs" />
     <Compile Include="SupportPointLive\CreateUpdateUserAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +215,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointLive\AccountLoginAPI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccountLoginAPI.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointLive\CreateUpdateUserAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
