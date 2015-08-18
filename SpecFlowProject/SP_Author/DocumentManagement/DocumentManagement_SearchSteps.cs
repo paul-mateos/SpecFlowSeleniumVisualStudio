@@ -23,12 +23,6 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [When(@"I search by (.*) for (.*)")]
         public void WhenISearchByFindByForSeatchText(String findBy, String searchText)
         {
-            //ScenarioContext.Current.Pending();
-            ////SupportPoint.SPManagerFind.SearchByFor(findBy, searchText);
-            //string folderString = "Home,TOSCA Static Documents,For Copy,Target";
-            //char[] splitter = {','};
-            //string [] folders = folderString.Split(splitter);
-            //SupportPoint.SPManagerFolder.ClickOnFolder(folders);
             FindBy = findBy;
             SearchText = searchText;
 

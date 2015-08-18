@@ -84,11 +84,11 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Select a Folder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_SelectFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2_DocumentManagement_SelectFolder")]
         public virtual void SelectAFolder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a Folder", new string[] {
-                        "mytag"});
+                        "2_DocumentManagement_SelectFolder"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
