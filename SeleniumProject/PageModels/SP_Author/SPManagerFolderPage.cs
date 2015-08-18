@@ -17,6 +17,8 @@ namespace SP_Automation.PageModels.SP_Author
         By FolderTree = By.Id(" docexplorertree");
         By Folder = By.XPath("./ul/li");
         By NavFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[1]");
+       //By MultipleSelectionbtn = By.XPath("//a[@id='multiple']");
+        By MultipleSelectionbtn = By.XPath("//button[@title='Move']");
                    
 
         public SPManagerFolderPage(IWebDriver driver)
@@ -94,5 +96,19 @@ namespace SP_Automation.PageModels.SP_Author
 
             
         }
+
+
+        public void clickMultipleSelection()
+        {
+     
+   
+            UICommon.ClickMultipleSelection(MultipleSelectionbtn, d);
+
+            
+
+
+
+        }
+
     }
 }
