@@ -10,9 +10,11 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace SP_Automation.API
+  
 {
-    public abstract class APICommons
+    public class APICommons
     {
             private string username;
             private string password;
@@ -51,8 +53,8 @@ namespace SP_Automation.API
 
             public void createAPIRequest()
             {
-                sendPOSTRequest(fullUrl, "");
-            }
+            sendPOSTRequest(fullUrl, "", "POST", "application/json", 0);
+        }
 
             public string buildUrlParam(string key, string value)
             {
@@ -90,27 +92,28 @@ namespace SP_Automation.API
 
             }
 
-            public void getSessionID()
+            public string getSessionID()
             {
                 string url = "http://qa-spui-b/WebService.svc/rest_all/Accounts/Login";
                 string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + this.password + "\",\"UserName\":\"" + this.username + "\"}";
 
                 // send POST request
-                sendPOSTRequest(url, requestBody);
+                sendPOSTRequest(url, requestBody,"POST", "application/json",0);
                 //getResponse
                 JObject obj = GetResponse();
                 //write if to success = true
                 this.SessionID = (string)obj["Response"]["SessionID"];
                 closeAll();
+            return this.SessionID;
 
             }
 
-            public void sendPOSTRequest(String url, String requestBody)
+            public void sendPOSTRequest(String url, String requestBody,string method,string contentType,int contentLength)
             {
                 request = WebRequest.Create(url);
-                request.Method = "POST";
-                request.ContentType = "application/json";
-                request.ContentLength = 0;
+                request.Method = method;
+                 request.ContentType = contentType; //"application/json";
+                request.ContentLength = contentLength;
                 if (requestBody != "")
                 {
                     byte[] data = Encoding.UTF8.GetBytes(requestBody);
@@ -154,6 +157,22 @@ namespace SP_Automation.API
                     return null;
                 }
             }
+
+        public WebResponse recieveResponse()
+        {
+            try
+            {
+                response = request.GetResponse();
+                return response;
+            }
+            catch (WebException ex)
+            {
+                HttpWebResponse response = ((HttpWebResponse)ex.Response);
+                Console.WriteLine(response.StatusCode + ex.Message);
+
+                return response;
+            }
+        }
 
             public void getUserImportResponse()
             {
