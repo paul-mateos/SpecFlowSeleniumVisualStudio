@@ -7,16 +7,20 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
     [Binding]
     public class DocumentManagement_SelectFolderSteps
     {
-        [When(@"I select the Home Folder")]
-        public void WhenISelectTheHomeFolder()
+        public string childFolder;
+        [When(@"I select the (.*) Folder")]
+        public void WhenISelectAFolder(string folderString)
         {
-            SupportPoint.Folder.FolderTree();
+            char[] splitter = { ',' };
+            string[] folders = folderString.Split(splitter);
+            childFolder = folders[folders.Length - 1];
+            SupportPoint.SPManagerFolder.ClickOnFolder(folders);
         }
 
-        [Then(@"the Home folder is expanded")]
-        public void ThenTheHomeFolderIsExpanded()
+        [Then(@"the correct folder is selected")]
+        public void ThenTheCorrectFolderIsSelected()
         {
-            
+        
         }
     }
 }

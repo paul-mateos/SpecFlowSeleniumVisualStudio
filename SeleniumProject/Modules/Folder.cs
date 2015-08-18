@@ -22,7 +22,7 @@ namespace SP_Automation.Modules
         {
             Assert.IsTrue(false, "Not implmented");
         }
-        public void FolderTree()
+        public void FolderTree(string foldername)
         {
             new SPManagerFolderPage(GetDriver()).clickFolder();
         }

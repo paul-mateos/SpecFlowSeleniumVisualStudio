@@ -81,6 +81,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
     <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
@@ -90,6 +91,21 @@
     <Compile Include="DocumentRating_Feature\AddNewRatingSteps.cs" />
     <Compile Include="DocumentRating_Feature\AddNewRatingToADocumentSteps.cs" />
     <Compile Include="LiveAPI_Feature\CallToGetApplicationStatusSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDocument.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_CreateDocument.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement_ImportUsers.feature</DependentUpon>
+    </Compile>
     <Compile Include="SupportPointLive\NewAPIFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +165,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserImportFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsersSteps.cs" />
     <Compile Include="SupportPointLive\UserImportFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +190,18 @@
     <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateDocument.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_CreateDocument.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointLive\NewAPIFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
