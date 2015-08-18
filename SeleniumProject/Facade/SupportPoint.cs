@@ -38,7 +38,8 @@ namespace SP_Automation.Tests
          *  */
 
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
-        
+        static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
+
         /*
          * Open Support Point app: if there is existing one, it will kill it
          */
@@ -72,7 +73,7 @@ namespace SP_Automation.Tests
             //Log on to site as user.
             InitialPage initialPage = new InitialPage(WebDriver);
             string BaseWindow = WebDriver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver, BaseWindow, "Login");
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login");
 
         }
 
@@ -119,7 +120,8 @@ namespace SP_Automation.Tests
 
         static public void SwitchToSPManager()
         {
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home : SupportPoint", "Document Management : SupportPoint");
+            string BaseWindowHandle = WebDriver.CurrentWindowHandle;
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver,"Document Management : SupportPoint");
 
         }
 

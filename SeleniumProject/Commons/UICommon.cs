@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -12,22 +13,42 @@ namespace SP_Automation.Commons
 {
     public class UICommon
     {
+        public static int waitsec = Properties.Settings.Default.WaitTime;
+
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
 
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
             elementHighlight(elem, d);
             return elem;
 
         }
 
-
         public static void ClickButton(By searchType, IWebDriver d)
         {
             IWebElement elem = GetElement(searchType, d);
             elem.Click();
         }
+
+        public static void DoubleClickButton(By searchType, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
+            Actions action = new Actions(d);
+            action.DoubleClick(elem);
+            action.Perform();
+        }
+
+        /*annette added
+                public bool Exist(By element)
+        { 
+           try 
+            { 
+               return ( new WebDriverWait(d, TimeSpan.FromSeconds(1)).Until(ExpectedConditions.ElementIsVisible(element)) != null );
+             } catch (NoSuchElementException) { }
+
+            return false;
+        } */
 
         public static void SetValue(By searchType, string value, IWebDriver d)
         {
@@ -62,36 +83,40 @@ namespace SP_Automation.Commons
         }
 
 
-        public static IWebDriver SwitchToNewBrowserWithTitle(IWebDriver d, string BaseWindow, string title)
+        public static IWebDriver SwitchToNewBrowserWithTitle(IWebDriver d, string title)
         {
-            string NewWindow; //prepares for the new window handle
-            ReadOnlyCollection<string> handles = null;
+            //wait for another window to open
             for (int i = 1; i < 30; i++)
             {
                 if (d.WindowHandles.Count == 1)
                 {
-                    Thread.Sleep(2000); 
+                    Thread.Sleep(1000); 
                 }
                 else { break; }
             }
 
-            for (int i = 1; i < 10; i++) { 
-            
-                handles = d.WindowHandles;
-            foreach (string handle in handles)
+            for (int i = 1; i < 3; i++)
             {
-                //var Handles = handle;
-              //  if (BaseWindow != handle)
+                foreach (string handle in d.WindowHandles)
                 {
-                    NewWindow = handle;
                     if (d.SwitchTo().Window(handle).Title.Contains(title))
                     {
                         return d;
                     }
+                    else
+                    {
+                        Thread.Sleep(2000);
+                    }
                 }
-            }
-            Thread.Sleep(1000);
-            } throw new Exception("Error switching to new browser");
+     
+            }throw new Exception("Error switching to new browser");
+        }
+
+        public static IWebElement GetSearchResultTable(string tableName, IWebDriver d)
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(tableName)));
+            return webElementBody;
         }
     }
 }
