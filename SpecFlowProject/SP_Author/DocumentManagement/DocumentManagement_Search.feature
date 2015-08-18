@@ -6,7 +6,7 @@
 Background: SuportPoint is open
 Given SupportPoint is opened
 And I login as a valid user with login is paul and password is p
-Then I Open Author
+Then I Open SP Manager
 
 @2_DocumentManagement_SearchBy
 Scenario Outline: Search By Name

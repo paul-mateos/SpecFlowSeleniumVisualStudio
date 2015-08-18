@@ -53,6 +53,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\System.Web.Http.dll</HintPath>
@@ -107,6 +108,7 @@
     <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsActionsPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerFindBarPage.cs" />
+    <Compile Include="PageModels\SP_Author\SPManagerFolderPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerNavBarPage.cs" />
     <Compile Include="PageModels\SP_Author\UserRolemembershipPage.cs" />
     <Compile Include="PageModels\SP_Viewer\LogoutPage.cs" />
@@ -124,6 +126,7 @@
     </Compile>
     <Compile Include="Facade\LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
+    <Compile Include="REST\UserImport.cs" />
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Facade\SupportPoint.cs" />

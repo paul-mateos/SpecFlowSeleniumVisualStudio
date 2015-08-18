@@ -38,6 +38,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6752e45808247c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -52,6 +56,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
@@ -74,6 +81,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
     <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,17 +90,32 @@
     </Compile>
     <Compile Include="DocumentRating_Feature\AddNewRatingSteps.cs" />
     <Compile Include="DocumentRating_Feature\AddNewRatingToADocumentSteps.cs" />
-    <Compile Include="LiveAPI_Feature\NewAPIFeature.feature.cs">
+    <Compile Include="LiveAPI_Feature\CallToGetApplicationStatusSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDocument.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_CreateDocument.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement_ImportUsers.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointLive\NewAPIFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NewAPIFeature.feature</DependentUpon>
     </Compile>
-    <Compile Include="LiveAPI_Feature\SwaggerDemoFile.feature.cs">
+    <Compile Include="SupportPointLive\SPLive_ShowDcoument.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SwaggerDemoFile.feature</DependentUpon>
+      <DependentUpon>SPLive_ShowDcoument.feature</DependentUpon>
     </Compile>
-    <Compile Include="LiveAPI_Feature\SwaggerPetstore_PetsSteps.cs" />
     <Compile Include="LoginFeature_Demo\CreateNewUserSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
       <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
@@ -116,7 +140,13 @@
       <DependentUpon>CreateNewUser.feature</DependentUpon>
     </Compile>
     <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
+    <Compile Include="SupportPointLive\SPLive_ShowDcoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_SelectFolder.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Viewer\LoginFeature\LoginSteps.cs" />
     <Compile Include="SP_Viewer\LoginFeature\Login.feature.cs">
       <AutoGen>True</AutoGen>
@@ -130,11 +160,13 @@
       <DependentUpon>DocumentManagement_Search.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Viewer\SP_ViewerSteps.cs" />
-    <Compile Include="SupportPointLive\SPLiveFeature.feature.cs">
+    <Compile Include="SupportPointLive\UserImportFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SPLiveFeature.feature</DependentUpon>
+      <DependentUpon>UserImportFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsersSteps.cs" />
+    <Compile Include="SupportPointLive\UserImportFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -159,13 +191,25 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
     </None>
-    <None Include="LiveAPI_Feature\NewAPIFeature.feature">
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateDocument.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_CreateDocument.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointLive\NewAPIFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>NewAPIFeature.feature.cs</LastGenOutput>
     </None>
-    <None Include="LiveAPI_Feature\SwaggerDemoFile.feature">
+    <None Include="SupportPointLive\SPLive_ShowDcoument.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SwaggerDemoFile.feature.cs</LastGenOutput>
+      <LastGenOutput>SPLive_ShowDcoument.feature.cs</LastGenOutput>
     </None>
     <None Include="LoginFeature_Demo\CreateNewUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -175,6 +219,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="runtests.cmd" />
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_SelectFolder.feature.cs</LastGenOutput>
+    </None>
     <None Include="SP_Viewer\LoginFeature\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
@@ -186,9 +234,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_Search.feature.cs</LastGenOutput>
     </None>
-    <None Include="SupportPointLive\SPLiveFeature.feature">
+    <None Include="SupportPointLive\UserImportFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SPLiveFeature.feature.cs</LastGenOutput>
+      <LastGenOutput>UserImportFeature.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         private string FindBy;
         private string SearchText;
 
+    
         [Given(@"I am at Document Management page")]
         public void GivenIAmAtDocumentManagementPage()
         {
@@ -22,10 +23,11 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [When(@"I search by (.*) for (.*)")]
         public void WhenISearchByFindByForSeatchText(String findBy, String searchText)
         {
-            //ScenarioContext.Current.Pending();
-            ////SupportPoint.SPManagerFind.SearchByFor(findBy, searchText);
             FindBy = findBy;
             SearchText = searchText;
+
+            Console.WriteLine("find by" + findBy);
+            Console.WriteLine("search texgt" + searchText);
 
 
         }
