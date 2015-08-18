@@ -17,5 +17,5 @@ Scenario Outline: Search By Name
 Examples: 
 | FindBy      | searchText          |
 | ID          | 3494                |
-#| Name        | Welcome             |
-#| Description | VX TOSCA Automation |
+# | Name        | Welcome             |
+# | Description | VX TOSCA Automation |
