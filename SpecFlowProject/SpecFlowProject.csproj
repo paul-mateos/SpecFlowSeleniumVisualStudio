@@ -82,6 +82,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\BeforeAndAfterDocumentManagement.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
     <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
@@ -106,6 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManagement_ImportUsers.feature</DependentUpon>
     </Compile>
+    <Compile Include="SupportPointLive\CreateUpdateUserAPI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateUpdateUserAPI.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointLive\CreateUpdateUserAPISteps.cs" />
     <Compile Include="SupportPointLive\NewAPIFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,6 +209,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointLive\CreateUpdateUserAPI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateUpdateUserAPI.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointLive\NewAPIFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

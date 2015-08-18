@@ -88,6 +88,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="API\APICommons.cs" />
+    <Compile Include="API\UserAPI.cs" />
     <Compile Include="Commons\Tables.cs" />
     <Compile Include="Commons\UICommon.cs" />
     <Compile Include="Environments\BrowserType.cs" />
@@ -126,7 +128,7 @@
     </Compile>
     <Compile Include="Facade\LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
-    <Compile Include="REST\UserImport.cs" />
+    <Compile Include="API\UserImport.cs" />
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Facade\SupportPoint.cs" />
