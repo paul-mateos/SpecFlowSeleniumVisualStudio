@@ -81,6 +81,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\BeforeAndAfterDocumentManagement.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
@@ -107,6 +108,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManagement_ImportUsers.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManagement_Steps.cs" />
     <Compile Include="SupportPointLive\CreateUpdateUserAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,8 +156,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_SelectFolder.feature</DependentUpon>
     </Compile>
-    <Compile Include="SP_Viewer\LoginFeature\LoginSteps.cs" />
-    <Compile Include="SP_Viewer\LoginFeature\Login.feature.cs">
+    <Compile Include="SP_Viewer\Login\LoginSteps.cs" />
+    <Compile Include="SP_Viewer\Login\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
@@ -234,7 +236,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectFolder.feature.cs</LastGenOutput>
     </None>
-    <None Include="SP_Viewer\LoginFeature\Login.feature">
+    <None Include="SP_Viewer\Login\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
@@ -257,6 +259,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="SP_Author\ImageManagement\" />
     <Folder Include="SP_Editor\" />
   </ItemGroup>
   <Choose>

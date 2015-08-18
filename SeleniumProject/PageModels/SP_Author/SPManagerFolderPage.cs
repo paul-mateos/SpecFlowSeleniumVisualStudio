@@ -77,13 +77,14 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void clickFolder()
         {
-           IWebElement elem = UICommon.GetElement(NavFolder, d);
-           
+            IWebElement elem = UICommon.GetElement(NavFolder, d);
+
             String cssvalue = elem.GetAttribute("class");
             if (cssvalue.Equals("k-icon k-plus"))
             {
                 UICommon.DoubleClickButton(Folder, d);
             }
+        }
 
 
             //SelectElement folderSize = new SelectElement(UICommon.GetElement(NavFolder, d));
@@ -93,6 +94,6 @@ namespace SP_Automation.PageModels.SP_Author
             //IList<IWebElement> list = new IList<IWebElement>(elem);
 
             
-        }
+        
     }
 }
