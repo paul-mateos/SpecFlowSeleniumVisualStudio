@@ -103,6 +103,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\ImageManagement\ImageManagement_Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageManagement_Search.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\SP_Author_Steps.cs" />
     <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,7 +174,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_Search.feature</DependentUpon>
     </Compile>
-    <Compile Include="SP_Viewer\SP_ViewerSteps.cs" />
+    <Compile Include="SP_Viewer\SP_Viewer_Steps.cs" />
     <Compile Include="SupportPointLive\UserImportFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,6 +213,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\ImageManagement\ImageManagement_Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImageManagement_Search.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -259,7 +269,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SP_Author\ImageManagement\" />
     <Folder Include="SP_Editor\" />
   </ItemGroup>
   <Choose>

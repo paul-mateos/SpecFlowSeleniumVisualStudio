@@ -8,10 +8,9 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject
 {
     [Binding]
-    public sealed class DocumentManagement
+    public class DocumentManagement
     {
-        // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
-
+        
         [Given(@"I am at Document Management page")]
         public void GivenIAmAtDocumentManagementPage()
         {
