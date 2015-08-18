@@ -11,11 +11,11 @@ namespace SpecFlowProject
     public class DocumentManagement
     {
         
-        [Given(@"I am at Document Management page")]
-        public void GivenIAmAtDocumentManagementPage()
-        {
-            SupportPoint.IsCurrentBrowser("Document Management : SupportPoint");
+        //[Given(@"I am at Document Management page")]
+        //public void GivenIAmAtDocumentManagementPage()
+        //{
+        //    SupportPoint.IsCurrentBrowser("Document Management : SupportPoint");
 
-        }
+        //}
     }
 }

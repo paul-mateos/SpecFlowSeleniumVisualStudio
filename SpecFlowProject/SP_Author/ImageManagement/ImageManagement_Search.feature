@@ -12,4 +12,5 @@ Then I Open SP Manager
 @_ImageManagement_SearchBy
 Scenario: Search By Name
 	Given I am at Document Management page
-	And I Navigate to the Image Page
+	And I Navigate to the Images Page
+	When  I am at Image Management page

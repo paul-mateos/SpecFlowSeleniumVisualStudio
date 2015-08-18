@@ -27,9 +27,18 @@ namespace SpecFlowProject.SP_Author
                 SupportPoint.SPManagerNav.ClickRoles();
                 break;
                 default:
+                    throw new Exception("Invalid Page");
                 break;
             }
                 
+        }
+
+        [Given(@"I am at (.*) page")]
+        [When(@"I am at (.*) page")]
+        public void GivenIAmAtTheManagementPage(string managementPage)
+        {
+            SupportPoint.IsCurrentBrowser(managementPage + " : SupportPoint");
+
         }
 
     }
