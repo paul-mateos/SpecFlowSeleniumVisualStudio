@@ -65,8 +65,7 @@ namespace SpecFlowProject
         // Steps for Call Example API with key Scenario
 
         [When(@"full URL request executed")]
-        [When(@"request executed")]
-        public void WhenFullURLRequestExecuted()
+         public void WhenFullURLRequestExecuted()
         {
             // String fullUrl = ScenarioContext.Current.ge("fullUrl");
         /*    HttpClient client = new HttpClient();

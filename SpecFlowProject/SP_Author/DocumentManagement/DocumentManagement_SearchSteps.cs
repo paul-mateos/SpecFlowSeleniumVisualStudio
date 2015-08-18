@@ -1,5 +1,6 @@
 ﻿using SP_Automation.Tests;
 using System;
+using System.Diagnostics;
 using TechTalk.SpecFlow;
 
 
@@ -39,5 +40,5 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
   
         }
 
-    }
+       }
 }
