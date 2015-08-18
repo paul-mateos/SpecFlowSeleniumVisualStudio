@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject.SP_Viewer.LoginFeature
+namespace SpecFlowProject.SP_Viewer.Login
 {
     using TechTalk.SpecFlow;
     
@@ -49,7 +49,7 @@ namespace SpecFlowProject.SP_Viewer.LoginFeature
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Login")))
             {
-                SpecFlowProject.SP_Viewer.LoginFeature.LoginFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Viewer.Login.LoginFeature.FeatureSetup(null);
             }
         }
         

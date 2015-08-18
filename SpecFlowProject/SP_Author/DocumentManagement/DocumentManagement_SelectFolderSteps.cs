@@ -15,7 +15,6 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             string[] folders = folderString.Split(splitter);
             childFolder = folders[folders.Length - 1];
             SupportPoint.SPManagerFolder.ClickOnFolder(folders);
-            //SupportPoint.Folder.FolderTree(foldername);
         }
 
         [Then(@"the correct folder is selected")]

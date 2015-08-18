@@ -1,4 +1,5 @@
-﻿Feature: DocumentManagement_Search
+﻿@documentManagementSearchFeature
+Feature: DocumentManagement_Search
 	In order to search for document
 	As an author with valid role access
 	I want to be able to search for documents by different search types
@@ -17,5 +18,5 @@ Scenario Outline: Search By Name
 Examples: 
 | FindBy      | searchText          |
 | ID          | 3494                |
-# | Name        | Welcome             |
-# | Description | VX TOSCA Automation |
+| Name        | Welcome             |
+| Description | VX TOSCA Automation |

@@ -88,11 +88,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="API\APICommons.cs" />
+    <Compile Include="API\UserAPI.cs" />
     <Compile Include="Commons\Tables.cs" />
     <Compile Include="Commons\UICommon.cs" />
     <Compile Include="Environments\BrowserType.cs" />
     <Compile Include="Environments\EnvironmentType.cs" />
     <Compile Include="Environments\TestEnvironment.cs" />
+    <Compile Include="Facade\API.cs" />
     <Compile Include="Modules\BaseWebDriverModule.cs" />
     <Compile Include="Modules\Actions.cs">
       <SubType>Code</SubType>
@@ -105,6 +108,7 @@
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagmentNewPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsandActionsPage.cs" />
+    <Compile Include="PageModels\SP_Author\ImageManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\IAddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
@@ -128,6 +132,7 @@
     </Compile>
     <Compile Include="Facade\LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
+    <Compile Include="API\UserImport.cs" />
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Facade\SupportPoint.cs" />

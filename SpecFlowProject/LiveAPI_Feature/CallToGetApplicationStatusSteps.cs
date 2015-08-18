@@ -19,7 +19,7 @@ namespace SpecFlowProject.LiveAPI_Feature
     {
        static public String url;
         private Stream response;
-        private Object parsedObject;
+
         [Given(@"I have called webservice ""(.*)""")]
         public void GivenIHaveCalledWebservice(string p0)
         {
@@ -36,13 +36,6 @@ namespace SpecFlowProject.LiveAPI_Feature
         public void GivenRequestBody(string multilineText)
         {
             
-        }
-
-        [When(@"the request is executed")]
-        public void WhenTheRequestIsExecuted()
-        {
-
-
         }
 
         [When(@"I executed")]

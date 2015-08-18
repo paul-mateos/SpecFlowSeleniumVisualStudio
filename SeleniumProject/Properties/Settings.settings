@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SP_Automation.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Environment" Type="SP_Automation.Environments.EnvironmentType" Scope="User">
+    <Setting Name="Environment1" Type="SP_Automation.Environments.EnvironmentType" Scope="User">
       <Value Profile="(Default)">QA_B</Value>
     </Setting>
     <Setting Name="Browser" Type="SP_Automation.Environments.BrowserType" Scope="User">
@@ -10,6 +10,21 @@
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">panviva</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Burke6368</Value>
+    </Setting>
+    <Setting Name="folderName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TestAutomationData</Value>
+    </Setting>
+    <Setting Name="fileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">usersList</Value>
+    </Setting>
+    <Setting Name="Environment" Type="System.String" Scope="User">
+      <Value Profile="(Default)">qa-spui-b</Value>
     </Setting>
   </Settings>
 </SettingsFile>
