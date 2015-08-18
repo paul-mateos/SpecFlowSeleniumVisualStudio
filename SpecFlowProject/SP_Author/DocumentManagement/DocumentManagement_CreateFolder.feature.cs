@@ -108,8 +108,7 @@ this.FeatureBackground();
 #line 19
  testRunner.And("I select new", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("I have entered Folder, Type, Name, Source, Description into the Folder, Type, Nam" +
-                    "e, Source, Description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have entered Folder, {0}, {1}, {2}", type, name, description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.And("I press Save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22

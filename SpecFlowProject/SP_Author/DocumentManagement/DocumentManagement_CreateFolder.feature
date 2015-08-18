@@ -17,7 +17,7 @@ Scenario Outline: Create new Folder
 	Then the Home folder is expanded
 	When I press Details & Actions
 	And I select new 
-	And I have entered Folder, Type, Name, Source, Description into the Folder, Type, Name, Source, Description
+	And I have entered Folder, <Type>, <Name>, <Description> 
 	And I press Save
 	Then the result should be new folders added
 
