@@ -39,6 +39,7 @@ namespace SP_Automation.Tests
 
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
+        static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
 
         /*
          * Open Support Point app: if there is existing one, it will kill it

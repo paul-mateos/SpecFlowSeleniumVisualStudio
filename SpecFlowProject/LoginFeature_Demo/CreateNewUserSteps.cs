@@ -9,23 +9,23 @@ namespace SpecFlowProject.LiveAPI_Feature
     [Binding]
     public class CreateNewUserSteps
     {
-        [Given(@"I have logged into SP, as username (.*) and password (.*)")]
-        public void GivenIHaveLoggedIntoSPAsUsernamePanvivaAndPasswordBurke(string username, string password)
-        {
-            SupportPoint.OpenSupportPoint();
-            SupportPoint.LogIn.Login(username, password);
-        }
+        //[Given(@"I have logged into SP, as username (.*) and password (.*)")]
+        //public void GivenIHaveLoggedIntoSPAsUsernamePanvivaAndPasswordBurke(string username, string password)
+        //{
+        //    SupportPoint.OpenSupportPoint();
+        //    SupportPoint.LogIn.Login(username, password);
+        //}
 
       
-        [Given(@"I am at User Management page")]
-        public void GivenIAmAtUserManagementPage()
-        {
-            SupportPoint.Nav.ToSupportPointManager();
-            //  
-            SupportPoint.SwitchToSPManager();
-            System.Threading.Thread.Sleep(5000);
-            SupportPoint.SPManagerNav.ClickUsers();
-        }
+        //[Given(@"I am at User Management page")]
+        //public void GivenIAmAtUserManagementPage()
+        //{
+        //    SupportPoint.Nav.ToSupportPointManager();
+        //    //  
+        //    SupportPoint.SwitchToSPManager();
+        //    System.Threading.Thread.Sleep(5000);
+        //    SupportPoint.SPManagerNav.ClickUsers();
+        //}
         
        
         [When(@"I press Action")]

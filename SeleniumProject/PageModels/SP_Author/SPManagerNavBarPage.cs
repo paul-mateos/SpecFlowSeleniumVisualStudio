@@ -31,7 +31,7 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void ClickActions()
         {
-            UICommon.ClickButton(Actions, d);
+            UICommon.ClickLink(Actions, d);
 
         }
 
@@ -39,7 +39,23 @@ namespace SP_Automation.PageModels.SP_Author
         {
             d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
-            UICommon.ClickButton(Users, d);
+            UICommon.ClickLink(Users, d);
+
+        }
+
+        public void ClickImages()
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+            UICommon.ClickLink(Images, d);
+
+        }
+
+        public void ClickRoles()
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+            UICommon.ClickLink(Roles, d);
 
         }
  

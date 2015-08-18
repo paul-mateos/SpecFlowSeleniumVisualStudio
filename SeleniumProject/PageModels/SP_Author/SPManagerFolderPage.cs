@@ -86,6 +86,7 @@ namespace SP_Automation.PageModels.SP_Author
             {
                 UICommon.DoubleClickButton(Folder, d);
             }
+        }
 
 
             //SelectElement folderSize = new SelectElement(UICommon.GetElement(NavFolder, d));
@@ -111,4 +112,3 @@ namespace SP_Automation.PageModels.SP_Author
         }
 
     }
-}

@@ -82,6 +82,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\BeforeAndAfterDocumentManagement.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
@@ -103,6 +104,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\ImageManagement\ImageManagement_Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageManagement_Search.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\SP_Author_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +126,7 @@
       <DependentUpon>AccountLoginAPI.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointLive\AccountLoginAPISteps.cs" />
+    <Compile Include="SP_Author\UserManagement\UserManagement_Steps.cs" />
     <Compile Include="SupportPointLive\CreateUpdateUserAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -166,8 +174,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_SelectFolder.feature</DependentUpon>
     </Compile>
-    <Compile Include="SP_Viewer\LoginFeature\LoginSteps.cs" />
-    <Compile Include="SP_Viewer\LoginFeature\Login.feature.cs">
+    <Compile Include="SP_Viewer\Login\LoginSteps.cs" />
+    <Compile Include="SP_Viewer\Login\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
@@ -178,7 +186,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_Search.feature</DependentUpon>
     </Compile>
-    <Compile Include="SP_Viewer\SP_ViewerSteps.cs" />
+    <Compile Include="SP_Viewer\SP_Viewer_Steps.cs" />
     <Compile Include="SupportPointLive\UserImportFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,6 +226,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Author\ImageManagement\ImageManagement_Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImageManagement_Search.feature.cs</LastGenOutput>
+    </None>
     <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectMultipleFolders.feature.cs</LastGenOutput>
@@ -254,7 +266,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectFolder.feature.cs</LastGenOutput>
     </None>
-    <None Include="SP_Viewer\LoginFeature\Login.feature">
+    <None Include="SP_Viewer\Login\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
