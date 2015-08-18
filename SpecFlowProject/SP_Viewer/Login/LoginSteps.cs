@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 using SP_Automation.Tests;
 using SP_Automation.PageModels;
 
-namespace SpecFlowSteps
+namespace SpecFlowProject
 {
     [Binding]
     public class LoginSteps
@@ -23,17 +23,9 @@ namespace SpecFlowSteps
         }
 
 
-        //[Given(@"just demo another (.*)")]
-        //[When(@"just demo another (.*)")]
-        //[Then(@"just demo another (.*)")]
-        //public void JustDemoAnother()
-        //{
-        //    do nothing
-        //}
-
         [Given(@"I login as a valid user with login is (.*) and password is (.*)")]
         [When(@"I login as a valid user with login is (.*) and password is (.*)")]
-        public void WhenILoginAsAValidUserWithLoginIsPanvivaAndPasswordIsBurke(String username, String password)
+        public void WhenILoginAsAValidUserWithLoginAndPassword(String username, String password)
         {
             
             if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();

@@ -5,8 +5,8 @@
 
 
 Scenario: Create New User
-    Given I have logged into SP, as username panviva and password Burke6368
-	And I am at User Management page
+	Given I login as a valid user with login is panviva and password is Burke6368
+    And I am at User Management page
 	When I press Action
 	And I press New User
 	And I have entered AdvAuthor, Adv, Author, test@panviva.com, password, password into the username, firstname, lastname, email, password, verify password

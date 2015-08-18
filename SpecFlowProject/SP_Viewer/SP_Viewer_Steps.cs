@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject.SP_Viewer
 {
     [Binding]
-    public sealed class SP_ViewerSteps
+    public sealed class SP_Viewer_Steps
     {
 
    
