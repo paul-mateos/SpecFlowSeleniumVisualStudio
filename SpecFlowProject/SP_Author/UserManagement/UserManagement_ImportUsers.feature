@@ -5,8 +5,9 @@
 
 Background: SuportPoint is open
 Given SupportPoint is opened
-And I login as a valid user with login panviva and password Burke6368
+And I login as a valid user with login is panviva and password is Burke6368
 Then I Open SP Manager
+
 
 @mytag
 Scenario Outline: Import User File
