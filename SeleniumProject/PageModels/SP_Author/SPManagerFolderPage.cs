@@ -18,7 +18,7 @@ namespace SP_Automation.PageModels.SP_Author
         By Folder = By.XPath("./ul/li");
         By NavFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[1]");
        //By MultipleSelectionbtn = By.XPath("//a[@id='multiple']");
-        By MultipleSelectionbtn = By.XPath("//button[@title='Move']");
+        By MultipleSelectionbtn = By.LinkText("Multiple selection");
                    
 
         public SPManagerFolderPage(IWebDriver driver)

@@ -13,5 +13,15 @@ namespace SpecFlowProject
         {
             SupportPoint.User.MultipleSelection();
         }
+
+
+        [Then(@"Your selections is displayed")]
+        public void ThenYourSelectionsIsDisplayed()
+        {
+            
+
+        }
+
+
     }
 }

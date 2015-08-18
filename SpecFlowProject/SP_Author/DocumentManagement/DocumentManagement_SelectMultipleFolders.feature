@@ -14,3 +14,5 @@ Scenario: Select multiple Folders
 	When I select the Home,Keith Folder
 	Then the correct folder is selected
 	When I press Multiple Selection
+	Then Your selections is displayed
+	When I select the F1 Folder
