@@ -30,28 +30,28 @@ namespace SpecFlowProject.LiveAPI_Feature
         [When(@"I press Action")]
         public void WhenIPressAction()
         {
-            SupportPoint.User.ClickAction();
+            SupportPoint.Actions.ClickAction();
 
         }
 
         [When(@"I press New User")]
         public void WhenIPressNewUser()
         {
-            SupportPoint.User.ClickNewUser();
+            SupportPoint.Actions.ClickNewUser();
         }
 
 
         [When(@"I have entered (.*), (.*), (.*), (.*), (.*), (.*) into the username, firstname, lastname, email, password, verify password")]
         public void WhenIHaveEnteredAdvAuthorAdvAuthorTestPanviva_ComPasswordPasswordIntoTheUsernameFirstnameLastnameEmailPasswordVerifyPassword(string name, string firstname, string lastname, string email, string password, string verifypassword)
         {
-            SupportPoint.User.CreateNewUser(name, firstname, lastname, email, password, verifypassword);
+            SupportPoint.Actions.CreateNewUser(name, firstname, lastname, email, password, verifypassword);
             ScenarioContext.Current.Add("username", name);
         }
 
         [When(@"I press Save")]
         public void WhenIPressSave()
         {
-            SupportPoint.User.Save();
+            SupportPoint.DetailsActions.Save();
         }
         
 

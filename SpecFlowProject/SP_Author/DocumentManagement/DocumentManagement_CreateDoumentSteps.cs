@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SP_Automation.Tests;
+using System;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowProject
@@ -15,15 +16,15 @@ namespace SpecFlowProject
         [When(@"I press Details & Actions")]
         public void WhenIPressDetailsActions()
         {
-          //   ScenarioContext.Current.Pending();
+            SupportPoint.DetailsActions.DetailsActions();
         }
-        
+
         [When(@"I select new")]
         public void WhenISelectNew()
         {
-         //   ScenarioContext.Current.Pending();
+               SupportPoint.DetailsActions.New();
         }
-        
+
         [When(@"I have entered document (.*), (.*), (.*), (.*) into the fields")]
         public void WhenIHaveEnteredDocumentIntoTheFields(string p0, string p1, string p2, string p3)
         {
