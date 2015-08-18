@@ -12,7 +12,7 @@ Then the User/Role data is created
 
 @mytag
 Scenario Outline: Create new Folder
-	Given I am at Document Management page
+	Given I am at "Document Management" page
 	When I select the Home Folder
 	Then the Home folder is expanded
 	When I press Details & Actions
