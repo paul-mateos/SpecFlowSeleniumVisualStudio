@@ -102,16 +102,6 @@ namespace SP_Automation.PageModels.SP_Author
         }
 
 
-        public void clickMultipleSelection()
-        {
-     
    
-            UICommon.ClickMultipleSelection(MultipleSelectionbtn, d);
-
-            
-
-
 
     }
-
-}

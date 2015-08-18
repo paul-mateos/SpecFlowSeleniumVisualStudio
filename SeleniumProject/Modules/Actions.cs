@@ -44,7 +44,7 @@ namespace SP_Automation.Modules
 
         public void MultipleSelection()
         {
-            new SPManagerFolderPage(GetDriver()).clickMultipleSelection();
+           //ew SPManagerFolderPage(GetDriver()).clickMultipleSelection();
         }
 
 
