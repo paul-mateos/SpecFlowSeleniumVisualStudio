@@ -56,6 +56,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
@@ -142,11 +144,12 @@
       <DependentUpon>DocumentManagement_Search.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Viewer\SP_ViewerSteps.cs" />
-    <Compile Include="SupportPointLive\SPLiveFeature.feature.cs">
+    <Compile Include="SupportPointLive\UserImportFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SPLiveFeature.feature</DependentUpon>
+      <DependentUpon>UserImportFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="SupportPointLive\UserImportFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -202,9 +205,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_Search.feature.cs</LastGenOutput>
     </None>
-    <None Include="SupportPointLive\SPLiveFeature.feature">
+    <None Include="SupportPointLive\UserImportFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SPLiveFeature.feature.cs</LastGenOutput>
+      <LastGenOutput>UserImportFeature.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
