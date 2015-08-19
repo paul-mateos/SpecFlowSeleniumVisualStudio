@@ -20,7 +20,7 @@ namespace SP_Automation.PageModels.SP_Author
         By Reports = By.LinkText("Reports");
         By Actions = By.ClassName("dropdown-toggle");
        
-        WebDriverWait wait;
+       
         public SPManagerNavBarPage(IWebDriver driver)
             : base(driver)
         {

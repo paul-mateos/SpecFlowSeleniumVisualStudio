@@ -3,7 +3,7 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-	Scenario: POST 
+	Scenario: CreateUpdateUser 
             Given I want to "POST" a request
             And My webservice is "Webservice.svc/rest_all/Users/CreateUpdate"
 			And I have path variables 
@@ -24,7 +24,7 @@
 				"FirstName":"Burke",
 				"LastName":"Camberwell",
 				"Password":"1",
-				"UserID":"-1",
+				"UserID":"0",
 				"UserName":"aaaaa"
 				}
 			"""
