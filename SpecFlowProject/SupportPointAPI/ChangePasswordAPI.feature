@@ -9,6 +9,9 @@ Scenario: ChangePassword
 			And I have path variables 
 			|Key | |value|
 
+			And 
+
+
             And I have a request body of 
 			"""
 				"Instance":"localhost",

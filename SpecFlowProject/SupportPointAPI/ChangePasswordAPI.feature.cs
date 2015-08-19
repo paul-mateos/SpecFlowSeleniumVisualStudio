@@ -88,13 +88,15 @@ this.ScenarioSetup(scenarioInfo);
                         "value"});
 #line 9
    testRunner.And("I have path variables", ((string)(null)), table1, "And ");
-#line hidden
 #line 12
+   testRunner.And("", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
             testRunner.And("I have a request body of", "\t\"Instance\":\"localhost\",\r\n\t\"NewPassword\":\"2\",\r\n\t\"OldPassword\":\"1\",\r\n\t\"SessionID\":" +
                     "\"SID\"", ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 22
             testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 23
             testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
