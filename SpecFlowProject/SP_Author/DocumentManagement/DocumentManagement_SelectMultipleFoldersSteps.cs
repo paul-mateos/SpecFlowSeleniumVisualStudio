@@ -11,7 +11,7 @@ namespace SpecFlowProject
         [When(@"I press Multiple Selection")]
         public void WhenIPressMultipleSelection()
         {
-            SupportPoint.User.MultipleSelection();
+            SupportPoint.DocumentManagementPage.clickMultipleSelectionBTN();
         }
     }
 }

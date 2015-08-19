@@ -13,6 +13,9 @@ namespace SP_Automation.PageModels.SP_Author
     public class DocumentManagementPage : BasePage
     {
        
+ //Search Criteria
+        By MultipleSelectionbtn = By.Id("multiple");
+        
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
         {
@@ -34,6 +37,11 @@ namespace SP_Automation.PageModels.SP_Author
             IWebElement searchTable = UICommon.GetSearchResultTable("docExplorerGrid", d);
             Table table = new Table(searchTable);
             StringAssert.Contains(table.GetCellValue(lookUpColumn, searchText, lookUpColumn), searchText);
+        }
+
+        public void clickMultipleSelectionBTN()
+        {
+            UICommon.ClickButton(MultipleSelectionbtn, d);
         }
     }
 }
