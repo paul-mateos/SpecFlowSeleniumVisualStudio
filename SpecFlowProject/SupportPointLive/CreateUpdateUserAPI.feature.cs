@@ -70,11 +70,11 @@ namespace SpecFlowProject.SupportPointLive
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("POST")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("CreateUpdateUser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CreateUpdateUserAPI")]
-        public virtual void POST()
+        public virtual void CreateUpdateUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("POST", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CreateUpdateUser", ((string[])(null)));
 #line 6
  this.ScenarioSetup(scenarioInfo);
 #line 7
@@ -95,7 +95,7 @@ namespace SpecFlowProject.SupportPointLive
 #line 16
    testRunner.And("I have a request body of", "\"Instance\":\"localhost\",\r\n\"IsDisabled\":true,\r\n\"IsSsoUser\":true,\r\n\"RoleID\":45,\r\n\"Us" +
                     "er\":{\r\n\t\"Email\":\"hello@panviva.com\",\r\n\t\"FirstName\":\"Burke\",\r\n\t\"LastName\":\"Camber" +
-                    "well\",\r\n\t\"Password\":\"1\",\r\n\t\"UserID\":\"-1\",\r\n\t\"UserName\":\"aaaaa\"\r\n\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "well\",\r\n\t\"Password\":\"1\",\r\n\t\"UserID\":\"0\",\r\n\t\"UserName\":\"aaaaa\"\r\n\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
             testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33

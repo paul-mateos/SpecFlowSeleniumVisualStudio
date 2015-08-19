@@ -13,7 +13,7 @@ namespace SP_Automation.PageModels
     {
         By Find = By.XPath("//div[@id='kWindow0']//table/tbody/tr/td[2]/input");
 
-        WebDriverWait wait;
+       
         public RoleSelectorPage(IWebDriver driver)
             : base(driver)
         {
