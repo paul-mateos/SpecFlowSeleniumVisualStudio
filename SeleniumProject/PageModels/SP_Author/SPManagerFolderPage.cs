@@ -66,6 +66,7 @@ namespace SP_Automation.PageModels.SP_Author
                         }
                         else
                         {
+                            folder.Click();    
                             folderTree = folder;
                         }
                         
