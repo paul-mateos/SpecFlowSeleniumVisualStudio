@@ -81,20 +81,22 @@ this.ScenarioSetup(scenarioInfo);
             testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
             testRunner.And("My webservice is \"WebService.svc/rest_all/Accounts/Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+   testRunner.And("I have SessioID with username as \"\" and password as \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Key",
                         "",
                         "value"});
-#line 9
+#line 12
    testRunner.And("I have path variables", ((string)(null)), table1, "And ");
 #line hidden
-#line 12
+#line 15
             testRunner.And("I have a request body of", "\t\"ApplicationID\":0,\r\n\t\"ForcedLogin\":true,\r\n\t\"Instance\":\"localhost\",\r\n\t\"Password\":" +
                     "\"Burke6368\",\r\n\t\"UserName\":\"panviva\"", ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 20
+#line 23
             testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 24
             testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

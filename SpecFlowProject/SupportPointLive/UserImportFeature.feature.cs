@@ -95,6 +95,8 @@ this.FeatureBackground();
             testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
             testRunner.And("My webservice is \"WebService.svc/rest_all/Users/Import\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+   testRunner.And("I have SessioID with username as \"\" and password as \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Key",
@@ -108,14 +110,14 @@ this.FeatureBackground();
                         "fn",
                         "",
                         ""});
-#line 14
+#line 17
    testRunner.And("I have path variables", ((string)(null)), table1, "And ");
 #line hidden
-#line 18
-            testRunner.And("I have a request body of", "", ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
+   testRunner.And("I have a request body of", "", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
             testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 27
             testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
