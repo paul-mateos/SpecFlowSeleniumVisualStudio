@@ -65,7 +65,7 @@ namespace SP_Automation.PageModels.SP_Author
                         }
                         else
                         {
-                            folder.Click();    
+                            folder.FindElement(By.CssSelector("div span span")).Click();    
                             folderTree = folder;
                         }
                         
@@ -87,11 +87,11 @@ namespace SP_Automation.PageModels.SP_Author
             String cssvalue = elem.GetAttribute("class");
             if (cssvalue.Equals("k-icon k-plus"))
             {
-                UICommon.DoubleClickButton(HomeFolder, d);
+                //UICommon.DoubleClickButton(HomeFolder, d);
             }
             else
             {
-                UICommon.ClickButton(HomeFolder, d);
+                //UICommon.ClickButton(HomeFolder, d);
         }
         }
 
