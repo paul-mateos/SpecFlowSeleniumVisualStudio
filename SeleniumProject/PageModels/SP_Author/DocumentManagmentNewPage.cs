@@ -37,11 +37,11 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(FolderRadioBtn, d);
         }
 
-        public void fillIn(string foldertype, string foldername, string folderdescription)
+        public void fillIn(string folderName, string folderDescription)
         {
-                 UICommon.SetValue(Type, foldertype, d);
-                 UICommon.SetValue(Name, foldername, d);
-                 UICommon.SetValue(Description, folderdescription, d);
+          //  UICommon.SelectListValue(Type, folderType, d);
+                 UICommon.SetValue(Name, folderName, d);
+                 UICommon.SetValue(Description, folderDescription, d);
                  
         }
     }
