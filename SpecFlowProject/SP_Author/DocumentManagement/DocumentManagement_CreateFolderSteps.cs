@@ -11,6 +11,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public void WhenISelectHomeFolder(String foldername)
         {
             SupportPoint.Folder.FolderTree();
+            System.Threading.Thread.Sleep(5000);
         }
 
         [When(@"I have selected Folder")]
@@ -19,10 +20,10 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagmentNew.clickFolder();
         }
 
-        [When(@"I have entered (.*), (.*), (.*)")]
-        public void WhenIHaveEntered(string folderType, string folderName, string folderDescription, Table table)
+        [When(@"I have entered (.*), (.*)")]
+        public void WhenIHaveEntered(string folderName, string folderDescription, Table table)
         {
-            SupportPoint.DocumentManagmentNew.fillIn(folderType, folderName, folderDescription);
+            SupportPoint.DocumentManagmentNew.fillIn(folderName, folderDescription);
         }
     }
 }

@@ -17,9 +17,9 @@ Scenario: Create new Folder
 	When I press Details & Actions
 	And I select new 
 	And I have selected Folder
-    And I have entered <Type>, <Name>, <Description> 
-| Type	   | Name	              | Description         |
-| Blank    | sel_blankFolderName  | sel_blankFolderName |
+    And I have entered <Name>, <Description> 
+| Name	              | Description         |
+| sel_blankFolderName  | sel_blankFolderName |
 
 #	And I press Save
 #	Then the result should be new folders added
