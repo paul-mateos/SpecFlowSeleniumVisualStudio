@@ -13,5 +13,7 @@ namespace SpecFlowProject
         {
             SupportPoint.DocumentManagementPage.clickMultipleSelectionBTN();
         }
+
+
     }
 }

@@ -23,7 +23,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SearchText = searchText;
 
             Console.WriteLine("find by" + findBy);
-            Console.WriteLine("search texgt" + searchText);
+            Console.WriteLine("search text" + searchText);
 
 
         }

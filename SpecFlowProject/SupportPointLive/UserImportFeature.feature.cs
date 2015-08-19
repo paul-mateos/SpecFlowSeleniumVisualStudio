@@ -80,25 +80,43 @@ testRunner.And("I have session ID", ((string)(null)), ((TechTalk.SpecFlow.Table)
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Import Users list file")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Post: Import Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UserImportFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UserImport")]
-        public virtual void ImportUsersListFile()
+        public virtual void PostImportUsers()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Import Users list file", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post: Import Users", new string[] {
                         "UserImport"});
 #line 11
- this.ScenarioSetup(scenarioInfo);
+this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 12
-  testRunner.Given("an API definition \"http://qa-spui-b/WebService.svc/rest_all/Users/Import?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
-  testRunner.And("request type \"sid\" , \"fn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("My webservice is \"WebService.svc/rest_all/Users/Import\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Key",
+                        "",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "sid",
+                        "",
+                        ""});
+            table1.AddRow(new string[] {
+                        "fn",
+                        "",
+                        ""});
 #line 14
-  testRunner.When("the request is executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
-  testRunner.Then("response status as \"ok\" , \"Success\" as \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.And("I have path variables", ((string)(null)), table1, "And ");
+#line hidden
+#line 18
+            testRunner.And("I have a request body of", "", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+            testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+            testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

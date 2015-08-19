@@ -14,10 +14,10 @@ namespace SP_Automation.Modules
      *  Navigation Module
      * 
      */
-    public class User : BaseWebDriverModule
+    public class Actions : BaseWebDriverModule
     {
 
-        public User(IWebDriver d) : base(d) { }
+        public Actions(IWebDriver d) : base(d) { }
 
         public void ClickAction()
         {
@@ -36,9 +36,15 @@ namespace SP_Automation.Modules
             new AddUserPage(GetDriver()).fillIn(name, firstname, lastname, email, password, verifypassword);
         }
 
+        /*moved to DetailsandActions
         public void Save()
         {
             new SPManagerDetailsActionsPage(GetDriver()).clickSave();
+        }
+
+        public void MultipleSelection()
+        {
+           //ew SPManagerFolderPage(GetDriver()).clickMultipleSelection();
         }
 
 
@@ -59,7 +65,7 @@ namespace SP_Automation.Modules
         { 
             new SPManagerDetailsActionsPage(GetDriver()).clickRolemembership();
 
-        }
+        }*/
 
         public void AddUsertoRole()
 

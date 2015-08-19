@@ -97,7 +97,7 @@
     <Compile Include="Environments\TestEnvironment.cs" />
     <Compile Include="Facade\API.cs" />
     <Compile Include="Modules\BaseWebDriverModule.cs" />
-    <Compile Include="Modules\User.cs">
+    <Compile Include="Modules\Actions.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Modules\Notification.cs" />
@@ -106,11 +106,13 @@
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
+    <Compile Include="PageModels\SP_Author\DocumentManagmentNewPage.cs" />
+    <Compile Include="PageModels\SP_Author\SPManagerDetailsandActionsPage.cs" />
     <Compile Include="PageModels\SP_Author\ImageManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\IAddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
-    <Compile Include="PageModels\SP_Author\SPManagerDetailsActionsPage.cs" />
+    <Compile Include="Modules\DetailsandActions.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerFindBarPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerFolderPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerNavBarPage.cs" />
