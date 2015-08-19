@@ -77,6 +77,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolderSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
@@ -115,6 +116,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManagement_ImportUsers.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointAPI\ChangePasswordAPI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePasswordAPI.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointLive\AccountLoginAPI.feature.cs">
       <AutoGen>True</AutoGen>
@@ -232,6 +238,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointAPI\ChangePasswordAPI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChangePasswordAPI.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointLive\AccountLoginAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -31,8 +31,8 @@ namespace SP_Automation.Tests
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
         static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
         static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
-        static public User User { get { return new User(WebDriver); } set { User = value; } }
-        
+        static public Actions Actions { get { return new Actions(WebDriver); } set { Actions = value; } }
+        static public DetailsandActions DetailsActions { get { return new DetailsandActions(WebDriver); } set { DetailsActions = value; } }
         /*
          *  Page Models
          *  */
@@ -40,6 +40,7 @@ namespace SP_Automation.Tests
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
+        static public DocumentManagmentNewPage DocumentManagmentNew { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNew = value; } }
 
         /*
          * Open Support Point app: if there is existing one, it will kill it
@@ -141,5 +142,7 @@ namespace SP_Automation.Tests
         }
 
 
+
+ 
     }
 }

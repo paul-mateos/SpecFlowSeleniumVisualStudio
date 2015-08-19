@@ -13,7 +13,7 @@ namespace SpecFlowProject.SP_Author
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
 
         [Given(@"I Navigate to the (.*) Page")]
-        public void GivenINavigateToTheImagePage(string managePage)
+        public void GivenINavigateToTheManagementPage(string managePage)
         {
             switch(managePage)
             {

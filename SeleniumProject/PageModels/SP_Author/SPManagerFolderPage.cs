@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using SP_Automation.Commons;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace SP_Automation.PageModels.SP_Author
         By FolderTree = By.Id(" docexplorertree");
         By Folder = By.XPath("./ul/li");
         By NavFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[1]");
-     
+                   
+
                    
 
         public SPManagerFolderPage(IWebDriver driver)
@@ -78,26 +80,28 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void clickFolder()
         {
+            Console.WriteLine(NavFolder);
            IWebElement elem = UICommon.GetElement(NavFolder, d);
            
             String cssvalue = elem.GetAttribute("class");
             if (cssvalue.Equals("k-icon k-plus"))
             {
-                UICommon.DoubleClickButton(Folder, d);
+                UICommon.DoubleClickButton(HomeFolder, d);
             }
+            else
+            {
+                UICommon.ClickButton(HomeFolder, d);
+        }
         }
 
 
-            //SelectElement folderSize = new SelectElement(UICommon.GetElement(NavFolder, d));
-            //System.Diagnostics.Debug.WriteLine(folderSize);
-            // actualSizeSelect.
-            //IWebElement folderlist = d.FindElement(NavFolder, d);
-            //IList<IWebElement> list = new IList<IWebElement>(elem);
+
+           
 
             
         }
 
 
-    
+   
 
     }
