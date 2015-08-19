@@ -8,9 +8,20 @@ Given environment testFolder name and import file
 And I have session ID
 
 @UserImport
-	Scenario: Import Users list file
-		Given an API definition "http://qa-spui-b/WebService.svc/rest_all/Users/Import?"
-		And request type "sid" , "fn" 
-		When the request is executed
-		Then response status as "ok" , "Success" as "true"
+Scenario:  Post: Import Users 
+            Given I want to "POST" a request
+            And My webservice is "WebService.svc/rest_all/Users/Import"
+			# Empty fields for username and password to use Environment Credentials
+			And I have SessioID with username as "" and password as "" 
+			#set Empty values to create values in the background
+			And I have path variables 
+			| Key |  | Value  |
+			| sid |  |  |
+			| fn  |  |  |
+            # Create Empty request body when there is no request body
+			And I have a request body of 
+			"""
+			"""
 
+            When I send request
+            Then My result is response

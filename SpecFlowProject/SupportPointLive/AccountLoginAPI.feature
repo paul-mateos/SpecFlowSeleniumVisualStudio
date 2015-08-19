@@ -6,9 +6,12 @@
 Scenario: AccountLogin 
             Given I want to "POST" a request
             And My webservice is "WebService.svc/rest_all/Accounts/Login"
+			# Empty fields for username and password to use Environment Credentials
+			And I have SessioID with username as "" and password as ""
+			#set Empty values to create values in the background
 			And I have path variables 
 			|Key | |value|
-
+			 # Create Empty request body when there is no request body
             And I have a request body of 
 			"""
 				"ApplicationID":0,

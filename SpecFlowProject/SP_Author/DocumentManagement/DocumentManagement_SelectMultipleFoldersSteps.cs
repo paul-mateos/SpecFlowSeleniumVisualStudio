@@ -11,17 +11,7 @@ namespace SpecFlowProject
         [When(@"I press Multiple Selection")]
         public void WhenIPressMultipleSelection()
         {
-         
             SupportPoint.DocumentManagementPage.clickMultipleSelectionBTN();
-              
-        }
-        
-
-        [Then(@"Your selections is displayed")]
-        public void ThenYourSelectionsIsDisplayed()
-        {
-            
-
         }
 
 

@@ -18,9 +18,8 @@ namespace SP_Automation.PageModels.SP_Author
         By FolderTree = By.Id(" docexplorertree");
         By Folder = By.XPath("./ul/li");
         By NavFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[1]");
-        By HomeFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[2]");
-        //By MultipleSelectionbtn = By.XPath("//a[@id='multiple']");
-        By MultipleSelectionbtn = By.XPath("//button[@title='Move']");
+                   
+
                    
 
         public SPManagerFolderPage(IWebDriver driver)
@@ -66,6 +65,7 @@ namespace SP_Automation.PageModels.SP_Author
                         }
                         else
                         {
+                            folder.FindElement(By.CssSelector("div span span")).Click();    
                             folderTree = folder;
                         }
                         
@@ -87,12 +87,12 @@ namespace SP_Automation.PageModels.SP_Author
             String cssvalue = elem.GetAttribute("class");
             if (cssvalue.Equals("k-icon k-plus"))
             {
-                UICommon.DoubleClickButton(HomeFolder, d);
+                //UICommon.DoubleClickButton(HomeFolder, d);
             }
             else
             {
-                UICommon.ClickButton(HomeFolder, d);
-            }
+                //UICommon.ClickButton(HomeFolder, d);
+        }
         }
 
 

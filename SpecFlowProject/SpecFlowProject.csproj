@@ -46,10 +46,6 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="SpecRun.SpecFlowPlugin, Version=1.2.0.15, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecRun.SpecFlow.1.2.0\lib\net35\SpecRun.SpecFlowPlugin.dll</HintPath>
       <Private>True</Private>
@@ -121,19 +117,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManagement_ImportUsers.feature</DependentUpon>
     </Compile>
+    <Compile Include="SupportPointAPI\ChangePasswordAPI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePasswordAPI.feature</DependentUpon>
+    </Compile>
     <Compile Include="SupportPointLive\AccountLoginAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountLoginAPI.feature</DependentUpon>
     </Compile>
-    <Compile Include="SupportPointLive\AccountLoginAPISteps.cs" />
     <Compile Include="SP_Author\UserManagement\UserManagement_Steps.cs" />
     <Compile Include="SupportPointLive\CreateUpdateUserAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateUpdateUserAPI.feature</DependentUpon>
     </Compile>
-    <Compile Include="SupportPointLive\CreateUpdateUserAPISteps.cs" />
+    <Compile Include="SupportPointLive\CommonFeatureSteps.cs" />
     <Compile Include="SupportPointLive\NewAPIFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,6 +238,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointAPI\ChangePasswordAPI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChangePasswordAPI.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointLive\AccountLoginAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

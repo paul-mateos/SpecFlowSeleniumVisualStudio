@@ -20,7 +20,7 @@ namespace SpecFlowProject
     {
         private String url;
         private Stream streamContent;
-        private HttpResponseMessage responseMessage;
+        private HttpResponseMessage responseMessage = null;
         private DocumentRequest docRequest;
 
 

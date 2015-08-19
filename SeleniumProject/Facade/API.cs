@@ -23,13 +23,13 @@ namespace SP_Automation.Facade
         private string contentType = "application/json";
         public APICommons apiRequest = new APICommons();
         private List<Parameter> parameters = new List<Parameter>();
-        string address;  //EndPoint Address
+       
 
         public string buildUrlParam(string key, string value)
         {
             if (value == null || value.Length == 0) return "";
 
-            return "&" + key + "=" + value;
+            return  key + "=" + value + "&";
 
         }
 
@@ -37,12 +37,45 @@ namespace SP_Automation.Facade
         {
             string host = Properties.Settings.Default.Environment;
             fullUrl = "http://" + host + "/" + webservice;
-
-            /*return buildUrlParam("ApiKey", ApiKey)
-                   + buildUrlParam("User", User)
-                   + buildUrlParam("FindUserBy", FindUserBy)
-                   + buildUrlParam("Action", Action); */
+            string urlParam = "?";
+            if(parameters.Count > 0)
+            {
+                foreach (var p in parameters)
+                {
+                    string keyValue = p.Value;
+                    if (keyValue.Equals(""))
+                    {
+                        keyValue = getKeyValue(p.Key);
+                    }
+                    urlParam = urlParam + buildUrlParam(p.Key, keyValue);
+                    // Need to be generic for different parameters
+                }
+                fullUrl = fullUrl + urlParam;
+            }
+           
             return fullUrl;
+        }
+
+
+        protected string getKeyValue(string key)
+        {
+            string value = "";
+            switch (key)
+            {
+                case "sid":
+                    value= getSessionID("","");
+                    break;
+                case "fn":
+                   value = getFilePath();
+                    break;
+
+            }
+            return value;
+        }
+
+        protected string getFilePath()
+        {
+            return apiRequest.getFilePath();
         }
 
         public void addParameters(string key, string value)
@@ -63,6 +96,11 @@ namespace SP_Automation.Facade
         {
 
             return apiRequest.recieveResponse(); //apiRequest.getUserImportResponse()
+        }
+
+        public string getSessionID(string userName,string pwd)
+        {
+            return apiRequest.getSessionID(userName,pwd);
         }
 
         public class Parameter

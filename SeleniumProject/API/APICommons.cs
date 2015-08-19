@@ -37,6 +37,7 @@ namespace SP_Automation.API
                 this.folderName = Properties.Settings.Default.folderName;
                 this.fileName = Properties.Settings.Default.fileName;
                 this.environment = Properties.Settings.Default.Environment;
+                CreateTestEnvironment();
 
             }
 
@@ -65,16 +66,23 @@ namespace SP_Automation.API
 
             }
 
-            public void CreateTestEnvironment()
+            protected void CreateTestEnvironment()
             {
                 createFilepath();
                 if (Directory.Exists(folderPath))
                 {
                     string[] list = GetFileNames(folderPath, "*.csv");
-                    filePath = folderPath + @"\" + list[0];
+
+                    filePath = folderPath + @"\" + list[1];
                 }
 
             }
+
+        public string getFilePath()
+        {
+            return filePath;
+        }
+
 
 
             private static string[] GetFileNames(string path, string filter)
@@ -92,10 +100,18 @@ namespace SP_Automation.API
 
             }
 
-            public string getSessionID()
+            public string getSessionID(string userName, string pwd)
             {
+            if (userName.Equals(""))
+            {
+                userName = this.username;
+            }
+            if (pwd.Equals(""))
+            {
+                pwd = this.password;
+            }
                 string url = "http://qa-spui-b/WebService.svc/rest_all/Accounts/Login";
-                string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + this.password + "\",\"UserName\":\"" + this.username + "\"}";
+                string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + pwd + "\",\"UserName\":\"" + userName + "\"}";
 
                 // send POST request
                 sendPOSTRequest(url, requestBody,"POST", "application/json",0);
@@ -200,8 +216,8 @@ namespace SP_Automation.API
                 dataStream.Close();
                 response.Close();
             }
-        }
+         }
 
-    }
+}
 
 

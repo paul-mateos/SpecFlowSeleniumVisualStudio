@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject.SupportPointLive
+namespace SpecFlowProject.SupportPointAPI
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace SpecFlowProject.SupportPointLive
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class UserImportFeatureFeature
+    public partial class ChangePasswordAPIFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "UserImportFeature.feature"
+#line 1 "ChangePasswordAPI.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UserImportFeature", "In order to import users csv file\r\nAs an administrator\r\nI want to import file fro" +
-                    "m supportpoint using  User/Import webservice", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ChangePasswordAPI", "In order to change password for a various reasons including security/access\r\nAs a" +
+                    "n administrator\r\nI want to be able to change my password", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +47,9 @@ namespace SpecFlowProject.SupportPointLive
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "UserImportFeature")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "ChangePasswordAPI")))
             {
-                SpecFlowProject.SupportPointLive.UserImportFeatureFeature.FeatureSetup(null);
+                SpecFlowProject.SupportPointAPI.ChangePasswordAPIFeature.FeatureSetup(null);
             }
         }
         
@@ -69,52 +69,33 @@ namespace SpecFlowProject.SupportPointLive
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line 7
-testRunner.Given("environment testFolder name and import file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
-testRunner.And("I have session ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-        }
-        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Post: Import Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UserImportFeature")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UserImport")]
-        public virtual void PostImportUsers()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("ChangePassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ChangePasswordAPI")]
+        public virtual void ChangePassword()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post: Import Users", new string[] {
-                        "UserImport"});
-#line 11
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ChangePassword", ((string[])(null)));
 #line 6
-this.FeatureBackground();
-#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 7
             testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
-            testRunner.And("My webservice is \"WebService.svc/rest_all/Users/Import\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
-   testRunner.And("I have SessioID with username as \"\" and password as \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+            testRunner.And("My webservice is \"WebService.svc/rest_all/Users/ChangePassword\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Key",
                         "",
-                        "Value"});
-            table1.AddRow(new string[] {
-                        "sid",
-                        "",
-                        ""});
-            table1.AddRow(new string[] {
-                        "fn",
-                        "",
-                        ""});
-#line 17
+                        "value"});
+#line 10
    testRunner.And("I have path variables", ((string)(null)), table1, "And ");
+#line 13
+   testRunner.And("I have SessioID with username as \"ac2\" and password as \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 22
-   testRunner.And("I have a request body of", "", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+            testRunner.And("I have a request body of", "\"SessionID\":\"\",", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 20
+   testRunner.And("I have a request body of", "\t\"Instance\":\"localhost\",\r\n\t\"NewPassword\":\"2\",\r\n\t\"OldPassword\":\"1\",", ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
             testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
