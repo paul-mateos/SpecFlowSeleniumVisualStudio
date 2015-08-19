@@ -52,13 +52,13 @@ namespace SpecFlowProject.SupportPointLive
         [Given(@"I have a request body of")]
         public void GivenIHaveARequestBodyOf(string textBody)
         {
-            if (textBody.Contains("SID"))
+            if (textBody.Contains("SessionID"))
             {
-                Given(@"I have an API for Account Login");
-                Thread.Sleep(5000);
+                //Given(@"I have an API for Account Login");
+               // Thread.Sleep(5000);
                 if (FeatureContext.Current.ContainsKey("SID"))
                 {
-                    textBody = textBody.Replace("SID", FeatureContext.Current.Get<string>("SID"));
+                    textBody = textBody.Replace(":\"", ":\""+FeatureContext.Current.Get<string>("SID"));
                 }
 
             }
@@ -130,12 +130,21 @@ namespace SpecFlowProject.SupportPointLive
         [Given(@"I have an API for Account Login")]
         public void GivenIHaveAnAPIForAccountLogin()
         {
-            string SessionID = api.getSessionID();
+            string SessionID = api.getSessionID("","");
             FeatureContext.Current.Add("SID", SessionID);
             Console.WriteLine("Session ID is retrived Sucessfully");
         }
 
+        [Given(@"I have SessioID with username as ""(.*)"" and password as ""(.*)""")]
+        public void GivenIHaveSessioIDWithUsernameAsAndPasswordAs(string userName, string pwd)
+        {
+            string SessionID = api.getSessionID(userName,pwd);
+            FeatureContext.Current.Add("SID", SessionID);
+            Console.WriteLine("Session ID is retrived Sucessfully");
+        }
+
+
     }
 
-   
+
 }

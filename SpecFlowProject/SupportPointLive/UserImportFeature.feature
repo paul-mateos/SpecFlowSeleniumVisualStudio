@@ -11,11 +11,15 @@ And I have session ID
 Scenario:  Post: Import Users 
             Given I want to "POST" a request
             And My webservice is "WebService.svc/rest_all/Users/Import"
+			# Empty fields for username and password to use Environment Credentials
+			And I have SessioID with username as "" and password as "" 
+			#set Empty values to create values in the background
 			And I have path variables 
 			| Key |  | Value  |
 			| sid |  |  |
 			| fn  |  |  |
-            And I have a request body of 
+            # Create Empty request body when there is no request body
+			And I have a request body of 
 			"""
 			"""
 
