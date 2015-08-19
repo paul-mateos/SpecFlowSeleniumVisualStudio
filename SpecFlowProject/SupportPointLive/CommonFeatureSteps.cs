@@ -12,12 +12,12 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject.SupportPointLive
 {
     [Binding]
-    public class CreateUpdateUserAPISteps: Steps
+    public class CommonFeatureSteps: Steps
     {
         public APICommons apiRequest = new APICommons();
         private string requestBody = "";
-        private string url;
-        private string fullUrl;
+       // private string url;
+       // private string fullUrl;
         private API api = new API();
         private Stream dataStream;
         private StreamReader reader;       
@@ -69,7 +69,10 @@ namespace SpecFlowProject.SupportPointLive
         [When(@"I send request")]
         public void WhenISendRequest()
         {
-            api.requestBody = "{" + api.requestBody + "}";
+            if (!api.requestBody.Equals(""))
+            {
+                api.requestBody = "{" + api.requestBody + "}";
+            }
             api.SendRequest();
         }
 
@@ -124,5 +127,15 @@ namespace SpecFlowProject.SupportPointLive
 
         }
 
+        [Given(@"I have an API for Account Login")]
+        public void GivenIHaveAnAPIForAccountLogin()
+        {
+            string SessionID = api.getSessionID();
+            FeatureContext.Current.Add("SID", SessionID);
+            Console.WriteLine("Session ID is retrived Sucessfully");
+        }
+
     }
+
+   
 }

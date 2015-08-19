@@ -23,7 +23,7 @@ namespace SP_Automation.PageModels
         By CustomProperties = By.LinkText("Custom properties");
         
 
-        WebDriverWait wait;
+        //WebDriverWait wait;
         public SPManagerDetailsActionsPage(IWebDriver driver)
             : base(driver)
         {
