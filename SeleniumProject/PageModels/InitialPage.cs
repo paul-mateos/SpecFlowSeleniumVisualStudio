@@ -11,11 +11,11 @@ namespace SP_Automation.PageModels
 {
     class InitialPage : BasePage
     {
-        IWebDriver d;
+        IWebDriver driver;
         public InitialPage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver; 
+            this.driver = driver; 
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
             wait.Until((d) => { return d.Title.Contains("SupportPoint"); }); 

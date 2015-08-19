@@ -37,6 +37,7 @@ namespace SP_Automation.API
                 this.folderName = Properties.Settings.Default.folderName;
                 this.fileName = Properties.Settings.Default.fileName;
                 this.environment = Properties.Settings.Default.Environment;
+                CreateTestEnvironment();
 
             }
 
@@ -65,16 +66,23 @@ namespace SP_Automation.API
 
             }
 
-            public void CreateTestEnvironment()
+            protected void CreateTestEnvironment()
             {
                 createFilepath();
                 if (Directory.Exists(folderPath))
                 {
                     string[] list = GetFileNames(folderPath, "*.csv");
-                    filePath = folderPath + @"\" + list[0];
+
+                    filePath = folderPath + @"\" + list[1];
                 }
 
             }
+
+        public string getFilePath()
+        {
+            return filePath;
+        }
+
 
 
             private static string[] GetFileNames(string path, string filter)
@@ -200,8 +208,8 @@ namespace SP_Automation.API
                 dataStream.Close();
                 response.Close();
             }
-        }
+         }
 
-    }
+}
 
 
