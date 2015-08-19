@@ -63,7 +63,7 @@ namespace SP_Automation.Facade
             switch (key)
             {
                 case "sid":
-                    value= getSessionID();
+                    value= getSessionID("","");
                     break;
                 case "fn":
                    value = getFilePath();
@@ -98,9 +98,9 @@ namespace SP_Automation.Facade
             return apiRequest.recieveResponse(); //apiRequest.getUserImportResponse()
         }
 
-        public string getSessionID()
+        public string getSessionID(string userName,string pwd)
         {
-            return apiRequest.getSessionID();
+            return apiRequest.getSessionID(userName,pwd);
         }
 
         public class Parameter
