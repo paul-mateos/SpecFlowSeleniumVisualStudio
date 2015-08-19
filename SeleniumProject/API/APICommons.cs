@@ -100,10 +100,18 @@ namespace SP_Automation.API
 
             }
 
-            public string getSessionID()
+            public string getSessionID(string userName, string pwd)
             {
+            if (userName.Equals(""))
+            {
+                userName = this.username;
+            }
+            if (pwd.Equals(""))
+            {
+                pwd = this.password;
+            }
                 string url = "http://qa-spui-b/WebService.svc/rest_all/Accounts/Login";
-                string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + this.password + "\",\"UserName\":\"" + this.username + "\"}";
+                string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + pwd + "\",\"UserName\":\"" + userName + "\"}";
 
                 // send POST request
                 sendPOSTRequest(url, requestBody,"POST", "application/json",0);
