@@ -106,6 +106,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageManagement_Search.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\ImageManagement\ImageManagement_Steps.cs" />
     <Compile Include="SP_Author\SP_Author_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature.cs">
       <AutoGen>True</AutoGen>

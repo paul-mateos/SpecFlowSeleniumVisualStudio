@@ -46,6 +46,34 @@ namespace SP_Automation.Commons
             throw new Exception(String.Format("Unable to find table row {0} with value {1}", lookupColumn, lookupValue));
         }
 
+        public void ClickCellValue(string lookupColumn, string lookupValue, string returnColumn)
+        {
+            //if (!this.element.Text.Contains("records are available in this view.")) //No Records are available
+            //{
+            int lookupColumnIndex = this.GetColumnIndex(lookupColumn);
+            int returnColumnIndex = this.GetColumnIndex(returnColumn);
+
+            IReadOnlyCollection<IWebElement> rows = this.element.FindElements(By.CssSelector("tbody tr"));
+            foreach (IWebElement row in rows)
+            {
+                if (row.Text != "")
+                {
+                    IReadOnlyCollection<IWebElement> cells = row.FindElements(By.TagName("td"));
+                    if (cells.ElementAt(lookupColumnIndex).Text == lookupValue)
+                    {
+                        cells.ElementAt(returnColumnIndex).Click();
+                    }
+                }
+            }
+            //}
+            //else
+            //{
+            //    throw new Exception(String.Format("Unable to find record"));
+            //}
+            throw new Exception(String.Format("Unable to find table row {0} with value {1}", lookupColumn, lookupValue));
+        }
+
+
         private int GetColumnIndex(string lookupColumn)
         {
             IReadOnlyCollection<IWebElement> headerCells = this.element.FindElements(By.CssSelector("thead tr th"));

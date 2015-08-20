@@ -20,10 +20,10 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagmentNew.clickFolder();
         }
 
-        [When(@"I have entered (.*), (.*)")]
-        public void WhenIHaveEntered(string folderName, string folderDescription, Table table)
+        [When(@"I have entered (.*) (.*) (.*)")]
+        public void WhenIHaveEnteredSel_BlankFolderNameSel_BlankFolderDescriptionName(string folderType, string folderName, string folderDescription)
         {
-            SupportPoint.DocumentManagmentNew.fillIn(folderName, folderDescription);
+        SupportPoint.DocumentManagmentNew.fillIn(folderType, folderName, folderDescription);
         }
     }
 }

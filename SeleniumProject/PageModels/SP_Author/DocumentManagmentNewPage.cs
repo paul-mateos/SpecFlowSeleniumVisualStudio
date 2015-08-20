@@ -3,8 +3,10 @@ using OpenQA.Selenium.Support.UI;
 using SP_Automation.Commons;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SP_Automation.PageModels.SP_Author
@@ -16,7 +18,7 @@ namespace SP_Automation.PageModels.SP_Author
         By Type = By.Name("Type");
         By Name = By.Name("name");
         By Source = By.Name("Source");
-        By Description = By.Name("description");
+        By Description = By.XPath("//textarea[@name='description']");
 
         WebDriverWait wait;
         public DocumentManagmentNewPage(IWebDriver driver)
@@ -37,10 +39,12 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(FolderRadioBtn, d);
         }
 
-        public void fillIn(string folderName, string folderDescription)
+        public void fillIn(string folderType, string folderName, string folderDescription)
         {
-          //  UICommon.SelectListValue(Type, folderType, d);
+
+            UICommon.SelectListValue(Type, folderType, d);
                  UICommon.SetValue(Name, folderName, d);
+                Thread.Sleep(3000);
                  UICommon.SetValue(Description, folderDescription, d);
                  
         }
