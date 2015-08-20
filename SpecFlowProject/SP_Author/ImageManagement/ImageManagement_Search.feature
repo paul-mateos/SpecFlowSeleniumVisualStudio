@@ -9,8 +9,11 @@ Given SupportPoint is opened
 And I login as a valid user with login is paul and password is p
 Then I Open SP Manager
 
-@_ImageManagement_SearchBy
+@1.2_ImageManagement_SearchBy
 Scenario: Search By Name
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	When  I am at Image Management page
+	And I search for image by Name for Test
+	Then the search should return the image record
+
