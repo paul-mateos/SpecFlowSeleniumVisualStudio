@@ -13,22 +13,22 @@ namespace SpecFlowProject.SP_Author
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
 
         [Given(@"I Navigate to the (.*) Page")]
-        public void GivenINavigateToTheImagePage(string managePage)
+        public void GivenINavigateToTheManagementPage(string managePage)
         {
             switch(managePage)
             {
                 case "Images":
-                SupportPoint.SPManagerNav.ClickImages();
-                break;
+                     SupportPoint.SPManagerNav.ClickImages();
+                    break;
                 case "Users":
-                SupportPoint.SPManagerNav.ClickUsers();
-                break;
+                     SupportPoint.SPManagerNav.ClickUsers();
+                     break;
                 case "Roles":
-                SupportPoint.SPManagerNav.ClickRoles();
-                break;
+                        SupportPoint.SPManagerNav.ClickRoles();
+                        break;
                 default:
-                    throw new Exception("Invalid Page");
-                break;
+                        throw new Exception("Invalid Page");
+                        break;
             }
                 
         }

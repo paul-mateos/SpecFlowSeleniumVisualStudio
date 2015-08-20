@@ -58,6 +58,11 @@ namespace SP_Automation.Commons
 
         }
 
+        public static void ClickMultipleSelection(By searchType, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
+            elem.Click();
+        }
 
         public static void SelectListValue(By searchType, string value, IWebDriver d)
         {

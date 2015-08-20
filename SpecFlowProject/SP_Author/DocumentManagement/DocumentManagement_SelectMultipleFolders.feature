@@ -9,10 +9,18 @@ In order to select multiple Folders
 	Then I Open SP Manager
 	
 @DocumentManagement_SelectMultipleFolders
-Scenario: Select multiple Folders
+Scenario Outline: Select multiple Folders
 	Given I am at Document Management page
 	When I select the Home,Keith Folder
 	Then the correct folder is selected
 	When I press Multiple Selection
-	Then Your selections is displayed
-	When I select the F1 Folder
+	Then Your selections screen is displayed
+	When I select the {folderString} Folder
+	And I select the recornd by <columnName> with <value>
+	#Then the your selections should list the records
+
+	Examples: 
+	| columnName | value   |
+	| Name       | Report3 |
+	| ID         | F1      |
+

@@ -11,21 +11,17 @@ Then I Open SP Manager
 #Then the User/Role data is created
 
 @mytag
-Scenario: Create new Folder
+Scenario Outline: Create new Folder
 	Given I am at Document Management page
 	When I select Home Folder
 	When I press Details & Actions
 	And I select new 
 	And I have selected Folder
-    And I have entered <Type>, <Name>, <Description> 
-| Type	   | Name	              | Description         |
-| Blank    | sel_blankFolderName  | sel_blankFolderName |
+    And I have entered <Type> <Name> <Description> 
+	And I press Save
+	Examples:
+| Type  | Name                | Description                |
+| Blank | sel_blankFolderName | sel_blankFolderDescription |
 
-#	And I press Save
-#	Then the result should be new folders added
-
-# Examples: 
-#| Type	   | Name	              | Description         |
-#| Blank    | sel_blankFolderName  | sel_blankFolderName |
 
 #there are 3 more folder types: Copy, Localisation, Reference, these folder types will be created for specific test 

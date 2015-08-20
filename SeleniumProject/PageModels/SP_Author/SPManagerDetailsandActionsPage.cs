@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace SP_Automation.PageModels
 {
-    class SPManagerDetailsActionsPage : BasePage
+    public class SPManagerDetailsActionsPage : BasePage
     {
         By SaveBtn = By.XPath("//button[@title='Save']");
         By MoveBtn = By.XPath("//button[@title='Move']");
-        //  By DetailsandActions = By.XPath("//form[@name='usrForm']//div[1]/ul/li/a");
-        By DetailsandActions = By.XPath("//a[@data-automation-id='doc-details-actions']");
-        //By DetailsandActions = By.CssSelector("a[data-automation-id = 'doc-details-actions']");
+        By RemoveBtn = By.XPath("//button[@title='Remove']");
+        By CancelBtn = By.XPath("//button[@title='Cancel']");
+        //By DetailsandActions = By.XPath("//a[@data-automation-id='doc-details-actions']");
+        By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']");
+
         By New = By.XPath("//a[@data-automation-id='doc-details-actions-new']");
         By Properties = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[1]");
         By Rolemembership = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[2]");
@@ -26,13 +28,23 @@ namespace SP_Automation.PageModels
         By CustomProperties = By.LinkText("Custom properties");
 
 
-        WebDriverWait wait;
+        
         public SPManagerDetailsActionsPage(IWebDriver driver)
             : base(driver)
         {
-         /*   wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+        }
 
-            wait.Until(ExpectedConditions.ElementExists(SaveBtn)); */
+        public bool DetailsandActionsExists()
+        {
+            IReadOnlyCollection<IWebElement> elemets = d.FindElements(DetailsandActions);
+            if (elemets.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void clickSave()
