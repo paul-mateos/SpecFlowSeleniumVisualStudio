@@ -5,29 +5,29 @@
 
 Background: SuportPoint is open
 Given SupportPoint is opened
-And I login as a valid user with login is author and password is a
+And I login as a valid user with login is sel_author and password is password 
 Then I Open SP Manager
-Given I have imported the users/roles file
-Then the User/Role data is set up
+#Given I have imported the users/roles file
+#Then the User/Role data is created
 
 @mytag
-Scenario Outline: Add two numbers
+Scenario Outline: Create new Documents
 	Given I am at Document Management page
-	When I select the sel_blankFolderName Folder
-	Then SP navigates to the sel_blankFolderName & the folder is expanded
+#	When I select the Home Folder
+#	When I select the sel_blankFolderName Folder
 	When I press Details & Actions
-	And I select new 
-	And I have entered document <Type>, <Name>, <Source>, <Description> into the fields
-	And I press Save
-	Then the result should be new folders added
-
-	Examples: 
-| Type          | Name                | Source                     | Description                |
-| From Template | sel_docTemplateName | Procedure - 3 tab          | sel_docTemplateDescription |
-| Copy          | sel_docCopyName     | sel_docTemplateDescription | sel_docCopyDescription     |
-| Blank         | sel_docBlank_TopTab1/3    | Top tabs_1/3 screen       | sel_docBlankDescription_TopTab1/3    | 
-| Blank         | sel_docBlank_TopTab1/3    | Top tabs_1/3 screen       | sel_docBlankDescription_TopTab1/3    | 
-| Blank         | sel_docBlank_TopTab1/3    | Top tabs_1/3 screen       | sel_docBlankDescription_TopTab1/3    |	 
+	And I select new
+	And I have selected Document
+	And I have entered <Type> <Name> <Description>
+#	And I press Save
+	Examples:
+| Type         | Name                         | Description                   |
+| Blank		   |    selDocument_TopTab1/3     |     selDescription_TopTab1/3  |
+#| From Template |docTemplateName | sel_docTemplateDescription |
+#| Copy          |docCopyName     | sel_docCopyDescription     |
+#| Blank         | docBlank_TopTab1/3    | sel_docBlankDescription_TopTab1/3    | 
+#| Blank         | docBlank_TopTab1/3    | sel_docBlankDescription_TopTab1/3    | 
+#| Blank         | docBlank_TopTab1/3    | sel_docBlankDescription_TopTab1/3    |	 
 
 
  
