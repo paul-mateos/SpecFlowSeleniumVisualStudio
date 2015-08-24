@@ -14,16 +14,26 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         //    System.Threading.Thread.Sleep(5000);
         //}
 
-        [When(@"I have selected Folder")]
-        public void WhenIHaveSelectedFolder()
+        [When(@"I have selected (.*)")]
+        public void WhenIHaveSelectedFolder(string newtype)
         {
-            SupportPoint.DocumentManagmentNew.clickFolder();
+            SupportPoint.DocumentManagmentNew.clickFolder(newtype);
         }
 
         [When(@"I have entered (.*) (.*) (.*)")]
-        public void WhenIHaveEnteredSel_BlankFolderNameSel_BlankFolderDescriptionName(string folderType, string folderName, string folderDescription)
+        public void WhenIHaveEnteredLocalisationSel_BlankFolderNameSel_BlankFolderDescription(string type, string name, string description)
         {
-        SupportPoint.DocumentManagmentNew.fillIn(folderType, folderName, folderDescription);
+            SupportPoint.DocumentManagmentNew.fillIn(type, name, description);
         }
+
+
+
+
+
+        //[When(@"I have entered (.*) (.*) (.*) (.*) (.*)")]
+        //public void WhenIHaveEnteredSel_BlankFolderNameSel_BlankFolderDescriptionName(string type, string name, string source, string display, string description)
+        //{
+        //SupportPoint.DocumentManagmentNew.fillIn(type, name, source, display, description);
+        //}
     }
 }

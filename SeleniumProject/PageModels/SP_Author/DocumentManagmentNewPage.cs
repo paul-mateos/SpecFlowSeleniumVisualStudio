@@ -13,11 +13,10 @@ namespace SP_Automation.PageModels.SP_Author
 {
     public class DocumentManagmentNewPage : BasePage
     {
-        By DocumentRadioBtn = By.Id("Document");
-        By FolderRadioBtn = By.Id("Folder");
         By Type = By.Name("Type");
         By Name = By.Name("name");
         By Source = By.Name("Source");
+        By Display = By.Name("Display");
         By Description = By.XPath("//textarea[@name='description']");
 
         WebDriverWait wait;
@@ -29,23 +28,30 @@ namespace SP_Automation.PageModels.SP_Author
             wait.Until(ExpectedConditions.ElementExists(Name));
         }
 
-        public void clickDocument()
+        public void clickFolder(string newtype)
         {
-            UICommon.ClickButton(DocumentRadioBtn, d);
+            By newRadioBtn = null;
+            if (newtype.Equals("Folder"))
+            {
+                newRadioBtn = By.Id("Folder");
+            }
+            else if (newtype.Equals("Document"))
+            {
+                newRadioBtn = By.Id("Document");
+            }
+
+                UICommon.ClickButton(newRadioBtn, d);
         }
 
-        public void clickFolder()
+        public void fillIn(string type, string name, string description)
         {
-            UICommon.ClickButton(FolderRadioBtn, d);
-        }
+            Debug.WriteLine(type);
 
-        public void fillIn(string folderType, string folderName, string folderDescription)
-        {
-
-            UICommon.SelectListValue(Type, folderType, d);
-                 UICommon.SetValue(Name, folderName, d);
-                Thread.Sleep(3000);
-                 UICommon.SetValue(Description, folderDescription, d);
+            UICommon.SelectListValue(Type, type, d);
+            UICommon.SetValue(Name, name, d);
+          //  UICommon.SelectListValue(Display, display, d);
+            // Thread.Sleep(3000);
+            UICommon.SetValue(Description, description, d);
                  
         }
     }
