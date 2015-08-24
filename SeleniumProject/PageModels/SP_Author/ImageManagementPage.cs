@@ -25,6 +25,10 @@ namespace SP_Automation.PageModels.SP_Author
         By imgGridList = By.ClassName("img-grid-list");
         By imgName = By.Id("imgName");
         By imgId = By.Id("imgId");
+        By CPString = By.Name("175452");  //Need to have this changed by dev
+
+        //Image Folder Popup
+        By imageFolderPopup = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
 
         public ImageManagementPage(IWebDriver driver)
             : base(driver)
@@ -68,6 +72,9 @@ namespace SP_Automation.PageModels.SP_Author
                  case "ID":
                       Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
                          break;
+                 case "Custom property":
+                         Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
+                         break;
                  default:
                      throw new Exception("Invalid FindBy");
              }
@@ -103,6 +110,13 @@ namespace SP_Automation.PageModels.SP_Author
                             return true;
                         }
                         break;
+                    case "Custom property":
+                        IWebElement CustomPropertyString = UICommon.GetElement(CPString, d);
+                        if (SearchText == CustomPropertyString.GetAttribute("value"))
+                        {
+                            return true;
+                        }
+                        break;
                     default:
                         throw new Exception("Invalid findBy");
                         
@@ -111,5 +125,7 @@ namespace SP_Automation.PageModels.SP_Author
             }
             throw new Exception("Find By search query was not found");
         }
+
+
     }
 }

@@ -8,15 +8,17 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject.SP_Author.ImageManagement
 {
     [Binding]
-    public sealed class ImageManagement_Steps
+    public sealed class ImageManagement_Steps: Steps
     {
         public string FindBy;
         public string SearchText;
 
+        [Given(@"I search for image by (.*) for (.*)")]
         [When(@"I search for image by (.*) for (.*)")]
         [Then(@"I search for image by (.*) for (.*)")]
-        public void WhenISearchForImageByFindByForSeatchText(String findBy, String searchText)
+        public void WhenISearchForImageByFindByForSearchText(String findBy, String searchText)
         {
+
             FindBy = findBy;
             SearchText = searchText;
             SupportPoint.ImageManagementPage.SelectFindBy(findBy);
@@ -26,6 +28,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
 
         }
 
+        [Given(@"the search should return the image record")]
         [Then(@"the search should return the image record")]
         public void ThenTheSearchShouldReturnTheImageRecord()
         {
