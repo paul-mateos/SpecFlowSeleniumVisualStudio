@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject.SP_Author.DocumentManagement
+namespace SpecFlowProject.SP_Author.ImageManagement
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class DocumentManagement_SelectFolderFeature
+    public partial class ImageManagement_MoveImageFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "DocumentManagement_SelectFolder.feature"
+#line 1 "ImageManagement_MoveImage.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DocumentManagement_SelectFolder", "In order to select a Folder\r\nAs an author\r\nI want to be able to select a Folder b" +
-                    "y Navigating the Folder tree", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ImageManagement_MoveImage", "In order move an image from one folder to another\r\nAs a valid user\r\nI want to con" +
+                    "firm that this can be done", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +47,9 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "DocumentManagement_SelectFolder")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "ImageManagement_MoveImage")))
             {
-                SpecFlowProject.SP_Author.DocumentManagement.DocumentManagement_SelectFolderFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Author.ImageManagement.ImageManagement_MoveImageFeature.FeatureSetup(null);
             }
         }
         
@@ -72,33 +72,45 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public virtual void FeatureBackground()
         {
 #line 6
- #line 7
- testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("I login as a valid user with login is paul and password is p", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I login as a valid user with login is paul and password is p", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Select a Folder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_SelectFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2_DocumentManagement_SelectFolder")]
-        public virtual void SelectAFolder()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Move Image To Folder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_MoveImage")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1.1.1_ImageMnanagement_MoveFolder")]
+        public virtual void MoveImageToFolder()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a Folder", new string[] {
-                        "2_DocumentManagement_SelectFolder"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Move Image To Folder", new string[] {
+                        "2.1.1.1_ImageMnanagement_MoveFolder"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
- this.FeatureBackground();
+this.FeatureBackground();
 #line 13
  testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
- testRunner.When("I select the Home DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I Navigate to the Images Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.Then("the correct folder is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("I search for image by ID for 2190", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.When("I Click on the Move Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.And("I select the Images Image Popup Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("I Click on the Move Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.Then("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

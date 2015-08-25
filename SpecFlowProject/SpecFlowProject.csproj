@@ -77,6 +77,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ContextInjection\FindByData.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolderSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
@@ -100,6 +101,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\ImageManagement\ImageManagement_MoveImage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageManagement_MoveImage.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\ImageManagement\ImageManagement_Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -227,6 +233,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\ImageManagement\ImageManagement_MoveImage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImageManagement_MoveImage.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
