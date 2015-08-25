@@ -11,7 +11,7 @@
 @2_DocumentManagement_SelectFolder
 Scenario: Select a Folder
 	Given I am at Document Management page
-	When I select the Home,TOSCA Static Documents,For Editor,ED1600_Save Folder
+	When I select the Home DocumentFolder
 	Then the correct folder is selected
 
 	

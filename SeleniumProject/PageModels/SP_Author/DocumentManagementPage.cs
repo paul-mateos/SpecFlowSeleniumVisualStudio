@@ -43,5 +43,14 @@ namespace SP_Automation.PageModels.SP_Author
         {
             UICommon.ClickButton(MultipleSelectionbtn, d);
         }
+
+        public void ClickRecord(string lookUpColumn, string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable("docExplorerGrid", d);
+            Table table = new Table(searchTable);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
+        }
+
+
     }
 }

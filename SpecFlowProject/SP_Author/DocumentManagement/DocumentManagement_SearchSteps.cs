@@ -29,8 +29,8 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         }
     
 
-        [Then(@"the search should retun the record by FindBy")]
-        public void ThenTheSearchShouldRetunTheRecordByFindBy()
+        [Then(@"the search should return the record by FindBy")]
+        public void ThenTheSearchShouldReturnTheRecordByFindBy()
         {
            
             SupportPoint.DocumentManagementPage.ConfirmFoundRecord(FindBy, SearchText);
