@@ -24,7 +24,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ImageManagement_MoveImage.feature"
+#line 1 "ImageManagement_ImageProperties.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
@@ -84,11 +84,11 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Move Image To Folder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_MoveImage")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1.1.1_ImageMnanagement_MoveToFolder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.2.1.1_ImageMnanagement_MoveToFolder")]
         public virtual void MoveImageToFolder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Move Image To Folder", new string[] {
-                        "2.1.1.1_ImageMnanagement_MoveToFolder"});
+                        "2.2.1.1_ImageMnanagement_MoveToFolder"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -118,11 +118,11 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Remove Image From Folder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_MoveImage")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1.1.2_ImageMnanagement_RemoveFromFolder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.2.1.2_ImageMnanagement_RemoveFromFolder")]
         public virtual void RemoveImageFromFolder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove Image From Folder", new string[] {
-                        "2.1.1.2_ImageMnanagement_RemoveFromFolder"});
+                        "2.2.1.2_ImageMnanagement_RemoveFromFolder"});
 #line 24
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -144,6 +144,40 @@ this.FeatureBackground();
 #line 32
  testRunner.And("I select the Orphans Image Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
+ testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Calcel Image Detail Changes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_MoveImage")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.2.1.3_ImageMnanagement_CancelChanges")]
+        public virtual void CalcelImageDetailChanges()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcel Image Detail Changes", new string[] {
+                        "2.2.1.3_ImageMnanagement_CancelChanges"});
+#line 36
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 37
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 38
+ testRunner.And("I Navigate to the Images Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I search for image by ID for 3027", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.When("I Click on the Remove Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+ testRunner.Then("I Confirm the Removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 44
+ testRunner.And("I select the Orphans Image Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
  testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

@@ -60,84 +60,91 @@ namespace SP_Automation.PageModels.SP_Author
         public void ConfirmFoundImage(string FindBy, string SearchText)
         {
             Thread.Sleep(5000);
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-             IWebElement imageGrid = wait.Until(ExpectedConditions.ElementIsVisible(imgGridList));
-             IReadOnlyCollection<IWebElement> images = imageGrid.FindElements(By.XPath("./li"));
-             if (images.Count == 0)
-             {
-                 throw new Exception("No Records Found");
-             }
-             switch (FindBy)
-             {
-                 case "Name":
-                     Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
-                         break;
-                 case "ID":
-                      Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
-                         break;
-                 case "Custom property":
-                         Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
-                         break;
-                 default:
-                     throw new Exception("Invalid FindBy");
-             }
-
+            IWebElement nextPage;
+            bool continueLoop = true;
+            while (continueLoop)
+            {
+                 WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+                 IWebElement imageGrid = wait.Until(ExpectedConditions.ElementIsVisible(imgGridList));
+                 IReadOnlyCollection<IWebElement> images = imageGrid.FindElements(By.XPath("./li"));
+                 if (images.Count == 0)
+                 {
+                     throw new Exception("No Records Found");
+                 }
+                 switch (FindBy)
+                 {
+                     case "Name":
+                        if (SearchImageList(SearchText, images, FindBy) == true)
+                        {
+                            continueLoop = false;
+                        }
+                        break;
+                     case "ID":
+                        if (SearchImageList(SearchText, images, FindBy) == true)
+                        {
+                            continueLoop = false;
+                        }
+                        break;
+                     case "Custom property":
+                        if (SearchImageList(SearchText, images, FindBy) == true)
+                        {
+                            continueLoop = false;
+                        }
+                        break;
+                     default:
+                         throw new Exception("Invalid FindBy");
+                 }
+                 nextPage = d.FindElement(By.XPath("//a[@title='Go to the next page']"));
+                 if (nextPage.GetAttribute("class") == "k-link k-pager-nav")
+                 {
+                     nextPage.Click();
+                 }
+            }
+            
 
         }
 
         private bool SearchImageList(string SearchText, IReadOnlyCollection<IWebElement> images, string FindBy)
         {
 
-            IWebElement nextPage;
-
-            do
+            for (int i = 0; i < images.Count; i++)
             {
-                for (int i = 0; i < images.Count; i++)
-                {
-                    Thread.Sleep(2000);
+                Thread.Sleep(2000);
                 
-                    //if (SupportPoint.SPManagerDetailsActionsPage.DetailsandActionsExists() == false)
-                    if (images.ElementAt(i).GetAttribute("class") != "img-grid-item ng-scope img-grid-item-selected")
-                    {
-                        images.ElementAt(i).Click();
-                    }
-               
-                    switch (FindBy)
-                    {
-                        case "Name":
-                        IWebElement ImageName = UICommon.GetElement(imgName, d);
-                        if (SearchText == ImageName.GetAttribute("value"))
-                            {
-                                return true;
-                            }
-                            break;
-                        case "ID":
-                            IWebElement ImageID = UICommon.GetElement(imgId, d);
-                            if (SearchText == ImageID.GetAttribute("value"))
-                            {
-                                return true;
-                            }
-                            break;
-                        case "Custom property":
-                            IWebElement CustomPropertyString = UICommon.GetElement(CPString, d);
-                            if (SearchText == CustomPropertyString.GetAttribute("value"))
-                            {
-                                return true;
-                            }
-                            break;
-                        default:
-                            throw new Exception("Invalid findBy");
-                        
-                    }
-                }   
-                 nextPage = d.FindElement(By.XPath("//a(@title='Go to the next page']"));
-                if (nextPage.GetAttribute("class") == "k-link k-pager-nav")
+                //if (SupportPoint.SPManagerDetailsActionsPage.DetailsandActionsExists() == false)
+                if (images.ElementAt(i).GetAttribute("class") != "img-grid-item ng-scope img-grid-item-selected")
                 {
-                    nextPage.Click();
+                    images.ElementAt(i).Click();
                 }
-            } 
-            while (nextPage.GetAttribute("class") == "k-link k-pager-nav"); 
-            throw new Exception("Find By search query was not found");
+               
+                switch (FindBy)
+                {
+                    case "Name":
+                    IWebElement ImageName = UICommon.GetElement(imgName, d);
+                    if (SearchText == ImageName.GetAttribute("value"))
+                        {
+                            return true;
+                        }
+                        break;
+                    case "ID":
+                        IWebElement ImageID = UICommon.GetElement(imgId, d);
+                        if (SearchText == ImageID.GetAttribute("value"))
+                        {
+                            return true;
+                        }
+                        break;
+                    case "Custom property":
+                        IWebElement CustomPropertyString = UICommon.GetElement(CPString, d);
+                        if (SearchText == CustomPropertyString.GetAttribute("value"))
+                        {
+                            return true;
+                        }
+                        break;
+                    default:
+                        throw new Exception("Invalid findBy");
+                        
+                }
+            } return false;
         }
 
         public void ClickMoveButton()
@@ -148,12 +155,14 @@ namespace SP_Automation.PageModels.SP_Author
         public void ClickRemoveButton()
         {
             UICommon.ClickButton(RemoveButton, d);
+            Thread.Sleep(3000);
         }
 
         public void ConfirmRemovalMessage()
         {
             IWebElement elem = d.FindElement(By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove the selected image?')]"));
             elem.FindElement(By.XPath("//button[@title='OK']")).Click();
+            Thread.Sleep(3000);
         }
     }
 }
