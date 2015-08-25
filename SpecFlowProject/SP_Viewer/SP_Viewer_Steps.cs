@@ -16,7 +16,7 @@ namespace SpecFlowProject.SP_Viewer
         public void ThenIOpenSPManager()
         {
             SupportPoint.Nav.ToSupportPointManager();
-            SupportPoint.SwitchToSPManager();
+            SupportPoint.SwitchToPage("Document Management : SupportPoint");
             System.Threading.Thread.Sleep(5000);
         }
 

@@ -26,7 +26,8 @@ namespace SP_Automation.PageModels.SP_Author
         By imgName = By.Id("imgName");
         By imgId = By.Id("imgId");
         By CPString = By.Name("175452");  //Need to have this changed by dev
-
+        // moveButton = By.XPath("//*[@id='imgMenu']/ul[2]/li[1]/button");
+        By moveButton = By.XPath("//button[@type='button' and contains(text(), 'Move') and not(contains(@ng-disabled, 'areButtonsDisabled'))]");
         //Image Folder Popup
         By imageFolderPopup = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
 
@@ -57,7 +58,8 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void ConfirmFoundImage(string FindBy, string SearchText)
         {
-             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            Thread.Sleep(5000);
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
              IWebElement imageGrid = wait.Until(ExpectedConditions.ElementIsVisible(imgGridList));
              IReadOnlyCollection<IWebElement> images = imageGrid.FindElements(By.XPath("./li"));
              if (images.Count == 0)
@@ -126,6 +128,9 @@ namespace SP_Automation.PageModels.SP_Author
             throw new Exception("Find By search query was not found");
         }
 
-
+        public void ClickMoveButton()
+        {
+            UICommon.ClickButton(moveButton, d);
+        }
     }
 }
