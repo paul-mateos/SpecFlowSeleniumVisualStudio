@@ -122,10 +122,10 @@ namespace SP_Automation.Tests
             return WebDriver != null;
         }
 
-        static public void SwitchToSPManager()
+        static public void SwitchToPage(string PageTitle)
         {
             string BaseWindowHandle = WebDriver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver,"Document Management : SupportPoint");
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver,PageTitle);
 
         }
 

@@ -82,26 +82,84 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Search By ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1_ImageManagement_SearchBy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1.1_ImageManagement_SearchBy_ID")]
+        public virtual void SearchByID()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search By ID", new string[] {
+                        "1_ImageManagement_SearchBy",
+                        "1.1_ImageManagement_SearchBy_ID"});
+#line 14
+ this.ScenarioSetup(scenarioInfo);
+#line 7
+this.FeatureBackground();
+#line 15
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.And("I Navigate to the Images Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.When("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.And("I search for image by ID for 2925", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.Then("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Search By Name")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1.2_ImageManagement_SearchBy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1_ImageManagement_SearchBy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1.2_ImageManagement_SearchBy_Name")]
         public virtual void SearchByName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search By Name", new string[] {
-                        "1.2_ImageManagement_SearchBy"});
-#line 13
-this.ScenarioSetup(scenarioInfo);
+                        "1_ImageManagement_SearchBy",
+                        "1.2_ImageManagement_SearchBy_Name"});
+#line 23
+ this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
-#line 14
+#line 24
  testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
+#line 25
  testRunner.And("I Navigate to the Images Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 26
  testRunner.When("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
+#line 27
  testRunner.And("I search for image by Name for Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
+#line 28
+ testRunner.Then("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Search By CustomProperty")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1_ImageManagement_SearchBy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1.3_ImageManagement_SearchBy_CustomProperty")]
+        public virtual void SearchByCustomProperty()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search By CustomProperty", new string[] {
+                        "1_ImageManagement_SearchBy",
+                        "1.3_ImageManagement_SearchBy_CustomProperty"});
+#line 32
+ this.ScenarioSetup(scenarioInfo);
+#line 7
+this.FeatureBackground();
+#line 33
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 34
+ testRunner.And("I Navigate to the Images Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.When("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+ testRunner.And("I search for image by Custom property for automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
  testRunner.Then("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
