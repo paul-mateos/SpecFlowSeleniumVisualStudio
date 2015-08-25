@@ -28,6 +28,7 @@ namespace SP_Automation.PageModels.SP_Author
         By CPString = By.Name("175452");  //Need to have this changed by dev
         // moveButton = By.XPath("//*[@id='imgMenu']/ul[2]/li[1]/button");
         By moveButton = By.XPath("//button[@type='button' and contains(text(), 'Move') and not(contains(@ng-disabled, 'areButtonsDisabled'))]");
+        By RemoveButton = By.XPath("//button[@type='button' and contains(text(), 'Remove') and not(contains(@ng-disabled, 'areButtonsDisabled'))]");
         //Image Folder Popup
         By imageFolderPopup = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
 
@@ -59,33 +60,53 @@ namespace SP_Automation.PageModels.SP_Author
         public void ConfirmFoundImage(string FindBy, string SearchText)
         {
             Thread.Sleep(5000);
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-             IWebElement imageGrid = wait.Until(ExpectedConditions.ElementIsVisible(imgGridList));
-             IReadOnlyCollection<IWebElement> images = imageGrid.FindElements(By.XPath("./li"));
-             if (images.Count == 0)
-             {
-                 throw new Exception("No Records Found");
-             }
-             switch (FindBy)
-             {
-                 case "Name":
-                     Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
-                         break;
-                 case "ID":
-                      Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
-                         break;
-                 case "Custom property":
-                         Assert.IsTrue(SearchImageList(SearchText, images, FindBy));
-                         break;
-                 default:
-                     throw new Exception("Invalid FindBy");
-             }
-
+            IWebElement nextPage;
+            bool continueLoop = true;
+            while (continueLoop)
+            {
+                 WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+                 IWebElement imageGrid = wait.Until(ExpectedConditions.ElementIsVisible(imgGridList));
+                 IReadOnlyCollection<IWebElement> images = imageGrid.FindElements(By.XPath("./li"));
+                 if (images.Count == 0)
+                 {
+                     throw new Exception("No Records Found");
+                 }
+                 switch (FindBy)
+                 {
+                     case "Name":
+                        if (SearchImageList(SearchText, images, FindBy) == true)
+                        {
+                            continueLoop = false;
+                        }
+                        break;
+                     case "ID":
+                        if (SearchImageList(SearchText, images, FindBy) == true)
+                        {
+                            continueLoop = false;
+                        }
+                        break;
+                     case "Custom property":
+                        if (SearchImageList(SearchText, images, FindBy) == true)
+                        {
+                            continueLoop = false;
+                        }
+                        break;
+                     default:
+                         throw new Exception("Invalid FindBy");
+                 }
+                 nextPage = d.FindElement(By.XPath("//a[@title='Go to the next page']"));
+                 if (nextPage.GetAttribute("class") == "k-link k-pager-nav")
+                 {
+                     nextPage.Click();
+                 }
+            }
+            
 
         }
 
         private bool SearchImageList(string SearchText, IReadOnlyCollection<IWebElement> images, string FindBy)
         {
+
             for (int i = 0; i < images.Count; i++)
             {
                 Thread.Sleep(2000);
@@ -123,14 +144,25 @@ namespace SP_Automation.PageModels.SP_Author
                         throw new Exception("Invalid findBy");
                         
                 }
-                
-            }
-            throw new Exception("Find By search query was not found");
+            } return false;
         }
 
         public void ClickMoveButton()
         {
             UICommon.ClickButton(moveButton, d);
+        }
+
+        public void ClickRemoveButton()
+        {
+            UICommon.ClickButton(RemoveButton, d);
+            Thread.Sleep(3000);
+        }
+
+        public void ConfirmRemovalMessage()
+        {
+            IWebElement elem = d.FindElement(By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove the selected image?')]"));
+            elem.FindElement(By.XPath("//button[@title='OK']")).Click();
+            Thread.Sleep(3000);
         }
     }
 }
