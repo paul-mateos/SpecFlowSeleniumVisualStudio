@@ -46,6 +46,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
 
         public string childFolder;
         [When(@"I select the (.*) Image Folder")]
+        [Then(@"I select the (.*) Image Folder")]
         public void WhenISelectAImageFolder(string folderString)
         {
             char[] splitter = { ',' };
@@ -71,7 +72,18 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ClickMoveButton();
         }
 
+        [When(@"I Click on the Remove Button")]
+        public void WhenIClickOnTheRemoveButton()
+        {
+            SupportPoint.ImageManagementPage.ClickRemoveButton();
+        }
 
+
+        [Then(@"I Confirm the Removal")]
+        public void ThenIConfirmTheRemoval()
+        {
+            SupportPoint.ImageManagementPage.ConfirmRemovalMessage();
+        }
 
         
     }
