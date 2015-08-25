@@ -28,6 +28,7 @@ namespace SP_Automation.PageModels.SP_Author
         By CPString = By.Name("175452");  //Need to have this changed by dev
         // moveButton = By.XPath("//*[@id='imgMenu']/ul[2]/li[1]/button");
         By moveButton = By.XPath("//button[@type='button' and contains(text(), 'Move') and not(contains(@ng-disabled, 'areButtonsDisabled'))]");
+        By RemoveButton = By.XPath("//button[@type='button' and contains(text(), 'Remove') and not(contains(@ng-disabled, 'areButtonsDisabled'))]");
         //Image Folder Popup
         By imageFolderPopup = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
 
@@ -86,51 +87,73 @@ namespace SP_Automation.PageModels.SP_Author
 
         private bool SearchImageList(string SearchText, IReadOnlyCollection<IWebElement> images, string FindBy)
         {
-            for (int i = 0; i < images.Count; i++)
+
+            IWebElement nextPage;
+
+            do
             {
-                Thread.Sleep(2000);
-                
-                //if (SupportPoint.SPManagerDetailsActionsPage.DetailsandActionsExists() == false)
-                if (images.ElementAt(i).GetAttribute("class") != "img-grid-item ng-scope img-grid-item-selected")
+                for (int i = 0; i < images.Count; i++)
                 {
-                    images.ElementAt(i).Click();
-                }
+                    Thread.Sleep(2000);
+                
+                    //if (SupportPoint.SPManagerDetailsActionsPage.DetailsandActionsExists() == false)
+                    if (images.ElementAt(i).GetAttribute("class") != "img-grid-item ng-scope img-grid-item-selected")
+                    {
+                        images.ElementAt(i).Click();
+                    }
                
-                switch (FindBy)
-                {
-                    case "Name":
-                    IWebElement ImageName = UICommon.GetElement(imgName, d);
-                    if (SearchText == ImageName.GetAttribute("value"))
-                        {
-                            return true;
-                        }
-                        break;
-                    case "ID":
-                        IWebElement ImageID = UICommon.GetElement(imgId, d);
-                        if (SearchText == ImageID.GetAttribute("value"))
-                        {
-                            return true;
-                        }
-                        break;
-                    case "Custom property":
-                        IWebElement CustomPropertyString = UICommon.GetElement(CPString, d);
-                        if (SearchText == CustomPropertyString.GetAttribute("value"))
-                        {
-                            return true;
-                        }
-                        break;
-                    default:
-                        throw new Exception("Invalid findBy");
+                    switch (FindBy)
+                    {
+                        case "Name":
+                        IWebElement ImageName = UICommon.GetElement(imgName, d);
+                        if (SearchText == ImageName.GetAttribute("value"))
+                            {
+                                return true;
+                            }
+                            break;
+                        case "ID":
+                            IWebElement ImageID = UICommon.GetElement(imgId, d);
+                            if (SearchText == ImageID.GetAttribute("value"))
+                            {
+                                return true;
+                            }
+                            break;
+                        case "Custom property":
+                            IWebElement CustomPropertyString = UICommon.GetElement(CPString, d);
+                            if (SearchText == CustomPropertyString.GetAttribute("value"))
+                            {
+                                return true;
+                            }
+                            break;
+                        default:
+                            throw new Exception("Invalid findBy");
                         
+                    }
+                }   
+                 nextPage = d.FindElement(By.XPath("//a(@title='Go to the next page']"));
+                if (nextPage.GetAttribute("class") == "k-link k-pager-nav")
+                {
+                    nextPage.Click();
                 }
-                
-            }
+            } 
+            while (nextPage.GetAttribute("class") == "k-link k-pager-nav"); 
             throw new Exception("Find By search query was not found");
         }
 
         public void ClickMoveButton()
         {
             UICommon.ClickButton(moveButton, d);
+        }
+
+        public void ClickRemoveButton()
+        {
+            UICommon.ClickButton(RemoveButton, d);
+        }
+
+        public void ConfirmRemovalMessage()
+        {
+            IWebElement elem = d.FindElement(By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove the selected image?')]"));
+            elem.FindElement(By.XPath("//button[@title='OK']")).Click();
         }
     }
 }
