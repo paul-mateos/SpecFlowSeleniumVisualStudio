@@ -126,5 +126,15 @@ namespace SP_Automation.Commons
             IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(tableName)));
             return webElementBody;
         }
+
+        public static string GetElementAttribute(By searchType, string attribute, IWebDriver d)
+        {
+
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
+            elementHighlight(elem, d);
+            return elem.GetAttribute(attribute);
+
+        }
     }
 }

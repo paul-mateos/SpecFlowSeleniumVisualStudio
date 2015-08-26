@@ -21,6 +21,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         { 
             this.findByData = findByData;
         }
+
         [Given(@"I search for image by (.*) for (.*)")]
         [When(@"I search for image by (.*) for (.*)")]
         [Then(@"I search for image by (.*) for (.*)")]
@@ -85,6 +86,18 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ConfirmRemovalMessage();
         }
 
-        
+
+        [When(@"I enter the Image Name (.*)")]
+        public void WhenIEnterTheImageNameNewName(string imageName)
+        {
+            SupportPoint.ImageManagementPage.SetImageName(imageName);
+        }
+
+        [Then(@"I click on the Cancel Button")]
+        public void ThenIClickOnTheCancelButton()
+        {
+            SupportPoint.ImageManagementPage.ClickCancelButton();
+        }
+
     }
 }

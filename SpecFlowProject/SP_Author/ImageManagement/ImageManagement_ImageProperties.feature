@@ -3,7 +3,9 @@
 	As a valid user
 	I want to confirm that this can be done
 
-Background: SuportPoint is open
+Background: 
+
+SuportPoint is open
 Given SupportPoint is opened
 And I login as a valid user with login is paul and password is p
 Then I Open SP Manager
@@ -37,9 +39,8 @@ Scenario: Calcel Image Detail Changes
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
-	And I search for image by ID for 3027
+	And I search for image by Name for 336a28215c215237ff39636e06e035cb.gif
 	And the search should return the image record
-	When I Click on the Remove Button
-	Then I Confirm the Removal
-	And I select the Orphans Image Folder
+	When I enter the Image Name New Name
+	Then I click on the Cancel Button
 	And the search should return the image record
