@@ -86,18 +86,38 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ConfirmRemovalMessage();
         }
 
-
+        [Given(@"I enter the Image Name (.*)")]
         [When(@"I enter the Image Name (.*)")]
+        [Then(@"I enter the Image Name (.*)")]
         public void WhenIEnterTheImageNameNewName(string imageName)
         {
             SupportPoint.ImageManagementPage.SetImageName(imageName);
+            FeatureContext.Current.Add("ImageName", imageName);
         }
 
+        [When(@"I click on the Cancel Button")]
         [Then(@"I click on the Cancel Button")]
         public void ThenIClickOnTheCancelButton()
         {
             SupportPoint.ImageManagementPage.ClickCancelButton();
         }
+
+        [When(@"I click on the Save Button")]
+        [Then(@"I click on the Save Button")]
+        public void ThenIClickOnTheSaveButton()
+        {
+            SupportPoint.ImageManagementPage.ClickSaveButton();
+        }
+
+        [When(@"I confirm the Image Name")]
+        [Then(@"I confirm the Image Name")]
+        public void ThenIConfirmTheImageName()
+        {
+            string imageName = FeatureContext.Current.Get<string>("ImageName");
+            SupportPoint.ImageManagementPage.ConfirmImageName(imageName);
+        }
+
+
 
     }
 }

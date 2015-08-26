@@ -14,7 +14,9 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         //    System.Threading.Thread.Sleep(5000);
         //}
 
+        [Given(@"I have selected (.*)")]
         [When(@"I have selected (.*)")]
+        [Then(@"I have selected (.*)")]
         public void WhenIHaveSelectedFolder(string newtype)
         {
             SupportPoint.DocumentManagmentNew.clickFolder(newtype);

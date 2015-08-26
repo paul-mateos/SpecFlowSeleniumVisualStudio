@@ -30,6 +30,7 @@ namespace SP_Automation.PageModels.SP_Author
         By moveButton = By.XPath("//button[@type='button' and contains(text(), 'Move') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
         By RemoveButton = By.XPath("//button[@type='button' and contains(text(), 'Remove') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
         By cancelButton = By.XPath("//button[@type='button' and contains(text(), 'Cancel') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
+        By saveButton = By.XPath("//button[@type='button' and contains(text(), 'Save') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
         By okButton = By.XPath("//button[@title='OK']");
         By nextPageButton = By.XPath("//a[@title='Go to the next page']");
         //Image Popups
@@ -171,13 +172,23 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void SetImageName(string imageName)
         {
-            UICommon.SetValue(imgName, "New Image Name", d);
+            UICommon.SetValue(imgName, imageName, d);
 
         }
 
         public void ClickCancelButton()
         {
             UICommon.ClickButton(cancelButton, d);
+        }
+
+        public void ClickSaveButton()
+        {
+            UICommon.ClickButton(saveButton, d);
+        }
+
+        public void ConfirmImageName(string ImageName)
+        {
+            Assert.IsTrue(UICommon.GetElementAttribute(imgName, "value", d) == ImageName);
         }
     }
 }
