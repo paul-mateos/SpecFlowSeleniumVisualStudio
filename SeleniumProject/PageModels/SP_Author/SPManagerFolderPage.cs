@@ -15,9 +15,11 @@ namespace SP_Automation.PageModels.SP_Author
     public class SPManagerFolderPage : BasePage
     {
         
-        By FolderTree = By.Id(" docexplorertree");
+        By DocumentFolderTree = By.Id(" docexplorertree");
+        By ImagePopupFolderTree = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
+        By ImageFolderTree = By.XPath("//img-tree-drct/div");
         By Folder = By.XPath("./ul/li");
-        By NavFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[1]");
+        //By NavFolder = By.XPath("//div[@id=' docexplorertree']/ul/li[1]/div/span[1]");
                    
 
                    
@@ -28,19 +30,35 @@ namespace SP_Automation.PageModels.SP_Author
 
         }
 
-        public IWebElement GetFolderTree()
+        public IWebElement GetFolderTree(By searchBy)
         {
-            IWebElement elem = UICommon.GetElement(FolderTree, d);
+            IWebElement elem = UICommon.GetElement(searchBy, d);
             return elem;
         }
 
-        public void ClickOnFolder(string[] Folders)
+        public void ClickOnFolder(string Page, string[] Folders)
         {
-           
+            //get folder tree element
+            IWebElement folderTree;
+            switch(Page)
+            {
+                case "Document":
+                     folderTree = this.GetFolderTree(DocumentFolderTree);
+                     break;
+                case "Image":
+                     folderTree = this.GetFolderTree(ImageFolderTree);
+                     break;
+                case "Image Popup":
+                     folderTree = this.GetFolderTree(ImagePopupFolderTree);
+                     break;
+                default:
+                throw new Exception("Invalid page");
+            }
+            
+            
             //count the number of indexes
             int folderTreeDepth = Folders.Count();
-            //get folder tree element
-            IWebElement folderTree = this.GetFolderTree();
+            
 
             for(int i = 0; i< folderTreeDepth; i++)
             {
@@ -53,19 +71,20 @@ namespace SP_Automation.PageModels.SP_Author
                 //check each parent folder in tree
                 foreach(IWebElement folder in folders)
                 {
-                   
-                    if(folder.FindElement(By.CssSelector("div span span")).Text == FolderName)
+                    IWebElement folderText = folder.FindElement(By.CssSelector("div span span"));
+                    if (folderText.Text == FolderName)
                     {
                         //Expand the folder
                         if(folder.GetAttribute("aria-expanded") != "true")
                         {
                             Actions action = new Actions(d);
-                            action.DoubleClick(folder).Build().Perform();
+                            action.DoubleClick(folderText).Build().Perform();
                             folderTree = folder;
                         }
                         else
                         {
-                            folder.FindElement(By.CssSelector("div span span")).Click();    
+                            Actions action = new Actions(d);
+                            action.MoveToElement(folderText).Click().Build().Perform();
                             folderTree = folder;
                         }
                         
@@ -81,8 +100,8 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void clickFolder()
         {
-            Console.WriteLine(NavFolder);
-           IWebElement elem = UICommon.GetElement(NavFolder, d);
+           /* Console.WriteLine(NavFolder);
+            IWebElement elem = UICommon.GetElement(NavFolder, d);
            
             String cssvalue = elem.GetAttribute("class");
             if (cssvalue.Equals("k-icon k-plus"))
@@ -93,6 +112,7 @@ namespace SP_Automation.PageModels.SP_Author
             {
                 //UICommon.ClickButton(HomeFolder, d);
         }
+            * */
         }
 
 

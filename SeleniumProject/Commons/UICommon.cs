@@ -19,7 +19,7 @@ namespace SP_Automation.Commons
         {
 
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-            IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
+             IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
             elementHighlight(elem, d);
             return elem;
 
@@ -33,7 +33,9 @@ namespace SP_Automation.Commons
         public static void ClickButton(By searchType, IWebDriver d)
         {
             IWebElement elem = GetElement(searchType, d);
-            elem.Click();
+            Actions action = new Actions(d);
+            action.MoveToElement(elem).Click().Build().Perform();
+            
         }
 
         public static void DoubleClickButton(By searchType, IWebDriver d)
