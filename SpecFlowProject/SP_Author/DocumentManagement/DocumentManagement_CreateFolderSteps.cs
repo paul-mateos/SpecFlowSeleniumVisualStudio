@@ -25,15 +25,5 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
             SupportPoint.DocumentManagmentNew.fillIn(type, name, description);
         }
-
-
-
-
-
-        //[When(@"I have entered (.*) (.*) (.*) (.*) (.*)")]
-        //public void WhenIHaveEnteredSel_BlankFolderNameSel_BlankFolderDescriptionName(string type, string name, string source, string display, string description)
-        //{
-        //SupportPoint.DocumentManagmentNew.fillIn(type, name, source, display, description);
-        //}
     }
 }
