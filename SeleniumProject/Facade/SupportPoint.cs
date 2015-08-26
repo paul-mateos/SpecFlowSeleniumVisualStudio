@@ -42,7 +42,8 @@ namespace SP_Automation.Tests
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
         static public DocumentManagmentNewPage DocumentManagmentNew { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNew = value; } }
         static public SPManagerDetailsActionsPage SPManagerDetailsActionsPage { get { return new SPManagerDetailsActionsPage(WebDriver); } set { SPManagerDetailsActionsPage = value; } }
-        
+        static public PermissionsPage PermissionsPage { get { return new PermissionsPage(WebDriver); } set { PermissionsPage = value; } }
+        static public RoleSelectorPage RoleSelectorPage { get { return new RoleSelectorPage(WebDriver); } set { RoleSelectorPage = value; } }
 
         /*
          * Open Support Point app: if there is existing one, it will kill it

@@ -106,6 +106,7 @@
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
+    <Compile Include="PageModels\SP_Author\PermissionsPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagmentNewPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsandActionsPage.cs" />
     <Compile Include="PageModels\SP_Author\ImageManagementPage.cs" />

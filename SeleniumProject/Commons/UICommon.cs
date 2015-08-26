@@ -25,6 +25,11 @@ namespace SP_Automation.Commons
 
         }
 
+        public static IReadOnlyCollection<IWebElement> GetElements(By searchType, IWebDriver d)
+        {
+            return d.FindElements(searchType);
+        }
+
         public static void ClickButton(By searchType, IWebDriver d)
         {
             IWebElement elem = GetElement(searchType, d);
@@ -39,16 +44,16 @@ namespace SP_Automation.Commons
             action.Perform();
         }
 
-        /*annette added
-                public bool Exist(By element)
-        { 
-           try 
-            { 
-               return ( new WebDriverWait(d, TimeSpan.FromSeconds(1)).Until(ExpectedConditions.ElementIsVisible(element)) != null );
-             } catch (NoSuchElementException) { }
+        //annette added
+        //        public bool Exist(By element)
+        //{ 
+        //   try 
+        //    { 
+        //       return ( new WebDriverWait(d, TimeSpan.FromSeconds(1)).Until(ExpectedConditions.ElementIsVisible(element)) != null );
+        //     } catch (NoSuchElementException) { }
 
-            return false;
-        } */
+        //    return false;
+        //} 
 
         public static void SetValue(By searchType, string value, IWebDriver d)
         {

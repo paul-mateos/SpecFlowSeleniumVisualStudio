@@ -77,9 +77,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_PermissionsSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolderSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
-    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
+    <Compile Include="DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\BeforeAndAfterDocumentManagement.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
@@ -100,6 +101,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Permissions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_Permissions.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\ImageManagement\ImageManagement_Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -227,6 +233,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_Permissions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_Permissions.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

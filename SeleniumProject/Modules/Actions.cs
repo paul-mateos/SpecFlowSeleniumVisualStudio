@@ -36,36 +36,6 @@ namespace SP_Automation.Modules
             new AddUserPage(GetDriver()).fillIn(name, firstname, lastname, email, password, verifypassword);
         }
 
-        /*moved to DetailsandActions
-        public void Save()
-        {
-            new SPManagerDetailsActionsPage(GetDriver()).clickSave();
-        }
-
-        public void MultipleSelection()
-        {
-           //ew SPManagerFolderPage(GetDriver()).clickMultipleSelection();
-        }
-
-
-        public void Move()
-        {
-            new SPManagerDetailsActionsPage(GetDriver()).clickMove();
-        }
-
-        public void DetailsandAction()
-        {
-
-            new SPManagerDetailsActionsPage(GetDriver()).clickDetailsandActions();
-
-        }
-
-        public void Rolemembership()
-
-        { 
-            new SPManagerDetailsActionsPage(GetDriver()).clickRolemembership();
-
-        }*/
 
         public void AddUsertoRole()
 
