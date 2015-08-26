@@ -6,19 +6,18 @@ namespace SpecFlowProject
     [Binding]
     public class UserManagement_ImportUsersSteps
     {
-        //[Given(@"I login as a valid user with login panviva and password Burke(.*)")]
-        //public void GivenILoginAsAValidUserWithLoginPanvivaAndPasswordBurke(int p0)
-        //{
-        //    ScenarioContext.Current.Pending();
-        //}
         
+        [Given(@"I press Import user, which contains (.*) and (.*)")]
         [When(@"I press Import user, which contains (.*) and (.*)")]
+        [Then(@"I press Import user, which contains (.*) and (.*)")]
         public void WhenIPressImportUserWhichContainsAnd(string p0, string p1)
         {
             ScenarioContext.Current.Pending();
         }
         
+        [Given(@"I press Choose File")]
         [When(@"I press Choose File")]
+        [Then(@"I press Choose File")]
         public void WhenIPressChooseFile()
         {
             ScenarioContext.Current.Pending();

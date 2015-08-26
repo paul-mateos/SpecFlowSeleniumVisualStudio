@@ -53,8 +53,9 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.SPManagerFolder.ClickOnFolder("Image", folders);
         }
 
-
+        [Given(@"I select the (.*) Image Popup Folder")]
         [When(@"I select the (.*) Image Popup Folder")]
+        [Then(@"I select the (.*) Image Popup Folder")]
         public void WhenISelectAImagePopupFolder(string folderString)
         {
             char[] splitter = { ',' };
@@ -63,20 +64,24 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.SPManagerFolder.ClickOnFolder("Image Popup", folders);
         }
 
-
+        [Given(@"I Click on the Move Button")]
         [When(@"I Click on the Move Button")]
+        [Then(@"I Click on the Move Button")]
         public void WhenIClickOnTheMoveButton()
         {
             SupportPoint.ImageManagementPage.ClickMoveButton();
         }
 
+        [Given(@"I Click on the Remove Button")]
         [When(@"I Click on the Remove Button")]
+        [Then(@"I Click on the Remove Button")]
         public void WhenIClickOnTheRemoveButton()
         {
             SupportPoint.ImageManagementPage.ClickRemoveButton();
         }
 
-
+        [Given(@"I Confirm the Removal")]
+        [When(@"I Confirm the Removal")]
         [Then(@"I Confirm the Removal")]
         public void ThenIConfirmTheRemoval()
         {
@@ -92,6 +97,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             FeatureContext.Current.Add("ImageName", imageName);
         }
 
+        [Given(@"I click on the Cancel Button")]
         [When(@"I click on the Cancel Button")]
         [Then(@"I click on the Cancel Button")]
         public void ThenIClickOnTheCancelButton()
@@ -99,6 +105,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ClickCancelButton();
         }
 
+        [Given(@"I click on the Save Button")]
         [When(@"I click on the Save Button")]
         [Then(@"I click on the Save Button")]
         public void ThenIClickOnTheSaveButton()
@@ -106,6 +113,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ClickSaveButton();
         }
 
+        [Given(@"I confirm the Image Name")]
         [When(@"I confirm the Image Name")]
         [Then(@"I confirm the Image Name")]
         public void ThenIConfirmTheImageName()
