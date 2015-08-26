@@ -19,12 +19,10 @@ namespace SP_Automation.Modules
         public void Login(String name, String password)
         {
             LoginPage loginPage = new LoginPage(driver);
-
+            loginPage.ClickLoginAs();
             loginPage.SetUserName(name);
             loginPage.SetPassword(password);
             loginPage.ClickLogOnButton();
-           // loginPage.ConfirmWarningMessage("");
-            //loginPage.GetObjValue();
             String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
             loginPage.ConfirmWarningMessage(warningMessage);
             HomePage homePage = new HomePage(driver);

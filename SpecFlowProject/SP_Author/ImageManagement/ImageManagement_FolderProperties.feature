@@ -1,5 +1,5 @@
-﻿Feature: ImageManagement_ImageProperties
-	In order to change the image properties
+﻿Feature: ImageManagement_FolderProperties
+	In order to change the folder properties
 	As a valid user
 	I want to confirm that this can be done
 
@@ -8,8 +8,8 @@ Given SupportPoint is opened
 And I login as a valid user with login is paul and password is p
 Then I Open SP Manager
 
-@2.2.1.1_ImageManagement_MoveToFolder
-Scenario: Move Image To Folder
+@2.1.1.1_ImageManagement_MoveToFolder
+Scenario: Move Folder To Folder
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -20,8 +20,8 @@ Scenario: Move Image To Folder
 	And I Click on the Move Button
 	Then the search should return the image record
 
-@2.2.1.2_ImageMnanagement_RemoveFromFolder
-Scenario: Remove Image From Folder
+@2.1.1.2_ImageMnanagement_RemoveFromFolder
+Scenario: Remove Folder From Folder
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -32,8 +32,8 @@ Scenario: Remove Image From Folder
 	And I select the Orphans Image Folder
 	And the search should return the image record
 
-@2.2.1.3_ImageManagement_CancelChanges
-Scenario: Calcel Image Detail Changes
+@2.1.1.3_ImageManagement_CancelChanges
+Scenario: Calcel Folder Detail Changes
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -43,8 +43,8 @@ Scenario: Calcel Image Detail Changes
 	Then I click on the Cancel Button
 	And the search should return the image record
 
-@2.2.1.4_ImageManagement_SaveChanges
-Scenario: Save Image Detail Changes
+@2.1.1.4_ImageManagement_SaveChanges
+Scenario: Save Folder Detail Changes
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page

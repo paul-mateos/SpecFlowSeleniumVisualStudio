@@ -25,6 +25,9 @@ namespace SP_Automation.PageModels
             System.Diagnostics.Debug.WriteLine("done");
         }
 
+        //Search Criteria
+        By loginButton = By.XPath(" //button[(@type='submit' and @name='login')]");
+
         public void SetUserName(string username)
         {
             UICommon.SetValue(By.Id("UserName"), username, d);
@@ -37,7 +40,7 @@ namespace SP_Automation.PageModels
 
         public void ClickLogOnButton()
         {
-            UICommon.ClickButton(By.XPath("//button[@type='submit']"), d);
+            UICommon.ClickButton(loginButton, d);
 
         }
 
@@ -61,6 +64,17 @@ namespace SP_Automation.PageModels
         internal void GetObjValue()
         {
             throw new NotImplementedException();
+        }
+
+        internal void ClickLoginAs()
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            IReadOnlyCollection<IWebElement> showLoginAs = d.FindElements(By.Id("showLoginAs"));
+            if (showLoginAs.Count != 0)
+            {
+                showLoginAs.ElementAt(0).Click();
+            }
+
         }
     }
 }
