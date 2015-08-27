@@ -2,7 +2,7 @@
 using System;
 using TechTalk.SpecFlow;
 
-namespace SpecFlowProject.SupportPointLive
+namespace SpecFlowProject.SupportPointAPI
 {
     [Binding]
     public class UserImportFeatureSteps

@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject.SupportPointLive
+namespace SpecFlowProject.SupportPointAPI
 {
     using TechTalk.SpecFlow;
     
@@ -19,20 +19,20 @@ namespace SpecFlowProject.SupportPointLive
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class CreateUpdateUserAPIFeature
+    public partial class GetAPIKeyFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CreateUpdateUserAPI.feature"
+#line 1 "GetAPIKey.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateUpdateUserAPI", "In order to avoid silly mistakes\r\nAs a math idiot\r\nI want to be told the sum of t" +
-                    "wo numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GetAPIKey", "In order to get API Key\nAs an administrator\nI want to call /APIKey with GET Metho" +
+                    "d", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +47,9 @@ namespace SpecFlowProject.SupportPointLive
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "CreateUpdateUserAPI")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "GetAPIKey")))
             {
-                SpecFlowProject.SupportPointLive.CreateUpdateUserAPIFeature.FeatureSetup(null);
+                SpecFlowProject.SupportPointAPI.GetAPIKeyFeature.FeatureSetup(null);
             }
         }
         
@@ -70,36 +70,39 @@ namespace SpecFlowProject.SupportPointLive
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("CreateUpdateUser")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CreateUpdateUserAPI")]
-        public virtual void CreateUpdateUser()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get APIKey")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetAPIKey")]
+        public virtual void GetAPIKey()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CreateUpdateUser", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get APIKey", ((string[])(null)));
 #line 6
- this.ScenarioSetup(scenarioInfo);
+this.ScenarioSetup(scenarioInfo);
 #line 7
-            testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("I want to \"GET\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
-            testRunner.And("My webservice is \"Webservice.svc/rest_all/Users/CreateUpdate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("My webservice is \"WebService.svc/rest_all/ApiKey\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+   testRunner.And("I have SessioID with username as \"\" and password as \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Key",
                         "",
                         "value"});
-#line 9
+            table1.AddRow(new string[] {
+                        "sid",
+                        "",
+                        "\"\""});
+#line 12
    testRunner.And("I have path variables", ((string)(null)), table1, "And ");
 #line hidden
-#line 12
-            testRunner.And("I have a request body of", "\"SessionID\":\"SID\",", ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 16
-   testRunner.And("I have a request body of", "\"Instance\":\"localhost\",\r\n\"IsDisabled\":true,\r\n\"IsSsoUser\":true,\r\n\"RoleID\":45,\r\n\"Us" +
-                    "er\":{\r\n\t\"Email\":\"hello@panviva.com\",\r\n\t\"FirstName\":\"Burke\",\r\n\t\"LastName\":\"Camber" +
-                    "well\",\r\n\t\"Password\":\"1\",\r\n\t\"UserID\":\"0\",\r\n\t\"UserName\":\"aaaaa\"\r\n\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+            testRunner.And("I have a request body of", "", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
             testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
+#line 21
             testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+   testRunner.And("Get API Key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

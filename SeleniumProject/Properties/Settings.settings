@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Environment1" Type="SP_Automation.Environments.EnvironmentType" Scope="User">
-      <Value Profile="(Default)">QA_B</Value>
+      <Value Profile="(Default)">QA_A</Value>
     </Setting>
     <Setting Name="Browser" Type="SP_Automation.Environments.BrowserType" Scope="User">
       <Value Profile="(Default)">NodeWebkit</Value>
@@ -24,7 +24,7 @@
       <Value Profile="(Default)">usersList</Value>
     </Setting>
     <Setting Name="Environment" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qa-spui-b</Value>
+      <Value Profile="(Default)">qa-spui-a</Value>
     </Setting>
   </Settings>
 </SettingsFile>
