@@ -3,6 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -26,7 +27,8 @@ namespace SP_Automation.Commons
                 int lookupColumnIndex = this.GetColumnIndex(lookupColumn);
                 int returnColumnIndex = this.GetColumnIndex(returnColumn);
 
-                IReadOnlyCollection<IWebElement> rows = this.element.FindElements(By.CssSelector("tbody tr"));
+
+            IReadOnlyCollection<IWebElement> rows = this.element.FindElements(By.CssSelector("tbody tr"));
                 foreach (IWebElement row in rows)
                 {
                     if (row.Text != "")
@@ -53,6 +55,9 @@ namespace SP_Automation.Commons
             int lookupColumnIndex = this.GetColumnIndex(lookupColumn);
             int returnColumnIndex = this.GetColumnIndex(returnColumn);
 
+
+
+
             IReadOnlyCollection<IWebElement> rows = this.element.FindElements(By.CssSelector("tbody tr"));
             foreach (IWebElement row in rows)
             {
@@ -76,8 +81,9 @@ namespace SP_Automation.Commons
 
         private int GetColumnIndex(string lookupColumn)
         {
+            
             IReadOnlyCollection<IWebElement> headerCells = this.element.FindElements(By.CssSelector("thead tr th"));
-
+           // Debug.WriteLine(headerCells.Count);
             for (int i = 0; i < headerCells.Count; i++)
             {
                 string text = headerCells.ElementAt(i).Text;

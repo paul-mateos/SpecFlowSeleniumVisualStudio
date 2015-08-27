@@ -75,8 +75,6 @@ namespace SP_Automation.PageModels
             }
         }
 
-
-
         public void clickMove()
         {
             UICommon.ClickButton(MoveBtn, d);
