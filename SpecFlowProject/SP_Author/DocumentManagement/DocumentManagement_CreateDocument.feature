@@ -13,8 +13,7 @@ Then I Open SP Manager
 @mytag
 Scenario Outline: Create new Documents
 	Given I am at Document Management page
-#	When I select the Home Folder
-#	When I select the sel_blankFolderName Folder
+	When I select the Home,sel_blankFolderName Folder
 	When I press Details & Actions
 	And I select new
 	And I have selected Document

@@ -13,6 +13,8 @@ namespace SpecFlowProject.SP_Author
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
 
         [Given(@"I Navigate to the (.*) Page")]
+        [When(@"I Navigate to the (.*) Page")]
+        [Then(@"I Navigate to the (.*) Page")]
         public void GivenINavigateToTheManagementPage(string managePage)
         {
             switch(managePage)
@@ -38,6 +40,7 @@ namespace SpecFlowProject.SP_Author
 
         [Given(@"I am at (.*) page")]
         [When(@"I am at (.*) page")]
+        [Then(@"I am at (.*) page")]
         public void GivenIAmAtTheManagementPage(string managementPage)
         {
             SupportPoint.IsCurrentBrowser(managementPage + " : SupportPoint");

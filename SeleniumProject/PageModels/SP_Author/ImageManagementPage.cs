@@ -19,18 +19,23 @@ namespace SP_Automation.PageModels.SP_Author
 
        //Search Criteria
         By imageSearchBy = By.Id("imgSearchType");
-        By imgSearchQuery = By.Id("imgSearchQuery");
-        By submitSearchButton = By.XPath("//button[@type='submit']");
-        By resetSearchButton = By.XPath("//button[@type='reset']");
+        By imgSearchQuery = By.Id("imgSearchQuery");        
         By imgGridList = By.ClassName("img-grid-list");
         By imgName = By.Id("imgName");
         By imgId = By.Id("imgId");
         By CPString = By.Name("175452");  //Need to have this changed by dev
-        // moveButton = By.XPath("//*[@id='imgMenu']/ul[2]/li[1]/button");
-        By moveButton = By.XPath("//button[@type='button' and contains(text(), 'Move') and not(contains(@ng-disabled, 'areButtonsDisabled'))]");
-        By RemoveButton = By.XPath("//button[@type='button' and contains(text(), 'Remove') and not(contains(@ng-disabled, 'areButtonsDisabled'))]");
-        //Image Folder Popup
+        //Buttons
+        By submitSearchButton = By.XPath("//button[@type='submit']");
+        By resetSearchButton = By.XPath("//button[@type='reset']");
+        By moveButton = By.XPath("//button[@type='button' and contains(text(), 'Move') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
+        By RemoveButton = By.XPath("//button[@type='button' and contains(text(), 'Remove') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
+        By cancelButton = By.XPath("//button[@type='button' and contains(text(), 'Cancel') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
+        By saveButton = By.XPath("//button[@type='button' and contains(text(), 'Save') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
+        By okButton = By.XPath("//button[@title='OK']");
+        By nextPageButton = By.XPath("//a[@title='Go to the next page']");
+        //Image Popups
         By imageFolderPopup = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
+        By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove the selected image?')]");
 
         public ImageManagementPage(IWebDriver driver)
             : base(driver)
@@ -94,10 +99,10 @@ namespace SP_Automation.PageModels.SP_Author
                      default:
                          throw new Exception("Invalid FindBy");
                  }
-                 nextPage = d.FindElement(By.XPath("//a[@title='Go to the next page']"));
-                 if (nextPage.GetAttribute("class") == "k-link k-pager-nav")
+                 
+                 if (UICommon.GetElementAttribute(nextPageButton, "class", d) == "k-link k-pager-nav")
                  {
-                     nextPage.Click();
+                     UICommon.GetElement(nextPageButton, d).Click();
                  }
             }
             
@@ -160,9 +165,30 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void ConfirmRemovalMessage()
         {
-            IWebElement elem = d.FindElement(By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove the selected image?')]"));
-            elem.FindElement(By.XPath("//button[@title='OK']")).Click();
+            IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
+            elem.FindElement(okButton).Click();
             Thread.Sleep(3000);
+        }
+
+        public void SetImageName(string imageName)
+        {
+            UICommon.SetValue(imgName, imageName, d);
+
+        }
+
+        public void ClickCancelButton()
+        {
+            UICommon.ClickButton(cancelButton, d);
+        }
+
+        public void ClickSaveButton()
+        {
+            UICommon.ClickButton(saveButton, d);
+        }
+
+        public void ConfirmImageName(string ImageName)
+        {
+            Assert.IsTrue(UICommon.GetElementAttribute(imgName, "value", d) == ImageName);
         }
     }
 }

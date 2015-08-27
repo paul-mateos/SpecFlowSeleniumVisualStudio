@@ -19,20 +19,20 @@ namespace SpecFlowProject.SP_Author.ImageManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class ImageManagement_ImagePropertiesFeature
+    public partial class ImageManagement_FolderPropertiesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ImageManagement_ImageProperties.feature"
+#line 1 "ImageManagement_FolderProperties.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ImageManagement_ImageProperties", "In order to change the image properties\r\nAs a valid user\r\nI want to confirm that " +
-                    "this can be done", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ImageManagement_FolderProperties", "In order to change the folder properties\r\nAs a valid user\r\nI want to confirm that" +
+                    " this can be done", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +47,9 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "ImageManagement_ImageProperties")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "ImageManagement_FolderProperties")))
             {
-                SpecFlowProject.SP_Author.ImageManagement.ImageManagement_ImagePropertiesFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Author.ImageManagement.ImageManagement_FolderPropertiesFeature.FeatureSetup(null);
             }
         }
         
@@ -82,13 +82,13 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Move Image To Folder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_ImageProperties")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.2.1.1_ImageManagement_MoveToFolder")]
-        public virtual void MoveImageToFolder()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Move Folder To Folder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_FolderProperties")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1.1.1_ImageManagement_MoveToFolder")]
+        public virtual void MoveFolderToFolder()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Move Image To Folder", new string[] {
-                        "2.2.1.1_ImageManagement_MoveToFolder"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Move Folder To Folder", new string[] {
+                        "2.1.1.1_ImageManagement_MoveToFolder"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -116,13 +116,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Remove Image From Folder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_ImageProperties")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.2.1.2_ImageMnanagement_RemoveFromFolder")]
-        public virtual void RemoveImageFromFolder()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Remove Folder From Folder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_FolderProperties")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1.1.2_ImageMnanagement_RemoveFromFolder")]
+        public virtual void RemoveFolderFromFolder()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove Image From Folder", new string[] {
-                        "2.2.1.2_ImageMnanagement_RemoveFromFolder"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove Folder From Folder", new string[] {
+                        "2.1.1.2_ImageMnanagement_RemoveFromFolder"});
 #line 24
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -150,13 +150,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Calcel Image Detail Changes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_ImageProperties")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.2.1.3_ImageManagement_CancelChanges")]
-        public virtual void CalcelImageDetailChanges()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Calcel Folder Detail Changes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_FolderProperties")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1.1.3_ImageManagement_CancelChanges")]
+        public virtual void CalcelFolderDetailChanges()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcel Image Detail Changes", new string[] {
-                        "2.2.1.3_ImageManagement_CancelChanges"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcel Folder Detail Changes", new string[] {
+                        "2.1.1.3_ImageManagement_CancelChanges"});
 #line 36
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -182,13 +182,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Save Image Detail Changes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_ImageProperties")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.2.1.4_ImageManagement_SaveChanges")]
-        public virtual void SaveImageDetailChanges()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Save Folder Detail Changes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ImageManagement_FolderProperties")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1.1.4_ImageManagement_SaveChanges")]
+        public virtual void SaveFolderDetailChanges()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Save Image Detail Changes", new string[] {
-                        "2.2.1.4_ImageManagement_SaveChanges"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Save Folder Detail Changes", new string[] {
+                        "2.1.1.4_ImageManagement_SaveChanges"});
 #line 47
 this.ScenarioSetup(scenarioInfo);
 #line 6
