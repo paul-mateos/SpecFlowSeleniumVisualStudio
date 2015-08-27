@@ -1,11 +1,13 @@
-﻿Feature: DocumentManagement_SelectFolder
+﻿@DocumentManagement_SelectFolder
+Feature: DocumentManagement_SelectFolder
 	In order to select a Folder
 	As an author
 	I want to be able to select a Folder by Navigating the Folder tree
 
 	Background: SupportPoint is open
 	Given SupportPoint is opened
-	And I login as a valid user with login is paul and password is p
+	#And I login as a valid user with login is paul and password is p
+	And I have logged into SupportPoint
 	Then I Open SP Manager
 	
 @2_DocumentManagement_SelectFolder

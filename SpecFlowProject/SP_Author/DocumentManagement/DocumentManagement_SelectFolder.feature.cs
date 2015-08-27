@@ -32,7 +32,8 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DocumentManagement_SelectFolder", "In order to select a Folder\r\nAs an author\r\nI want to be able to select a Folder b" +
-                    "y Navigating the Folder tree", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "y Navigating the Folder tree", ProgrammingLanguage.CSharp, new string[] {
+                        "DocumentManagement_SelectFolder"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,12 +72,12 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         
         public virtual void FeatureBackground()
         {
-#line 6
- #line 7
+#line 7
+ #line 8
  testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.And("I login as a valid user with login is paul and password is p", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
+#line 10
+ testRunner.And("I have logged into SupportPoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
  testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
@@ -84,20 +85,21 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Select a Folder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_SelectFolder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_SelectFolder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2_DocumentManagement_SelectFolder")]
         public virtual void SelectAFolder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a Folder", new string[] {
                         "2_DocumentManagement_SelectFolder"});
-#line 12
-this.ScenarioSetup(scenarioInfo);
-#line 6
- this.FeatureBackground();
-#line 13
- testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
- testRunner.When("I select the Home,TOSCA Static Documents,For Editor,ED1600_Save Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 7
+ this.FeatureBackground();
 #line 15
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.When("I select the Home,TOSCA Static Documents,For Editor,ED1600_Save Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
  testRunner.Then("the correct folder is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

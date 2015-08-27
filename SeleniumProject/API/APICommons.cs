@@ -1,30 +1,28 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Panviva.LiveAPI;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace SP_Automation.API
-  
+
 {
     public class APICommons
     {
-            private string username;
-            private string password;
+        public string username{ get; set; }
+        public string password { get; set; }
+       
             private string folderName;
             private string fileName;
             private string environment;
             public string SessionID;
             private string filePath;
             private string folderPath;
-            private WebRequest request;
+            private HttpWebRequest request;
             private WebResponse response;
             private Stream dataStream;
             private StreamReader reader;
@@ -37,7 +35,7 @@ namespace SP_Automation.API
                 this.folderName = Properties.Settings.Default.folderName;
                 this.fileName = Properties.Settings.Default.fileName;
                 this.environment = Properties.Settings.Default.Environment;
-                CreateTestEnvironment();
+               // CreateTestEnvironment();
 
             }
 
@@ -73,7 +71,7 @@ namespace SP_Automation.API
                 {
                     string[] list = GetFileNames(folderPath, "*.csv");
 
-                    filePath = folderPath + @"\" + list[1];
+                    filePath = folderPath + @"\" + list[0];
                 }
 
             }
@@ -102,43 +100,81 @@ namespace SP_Automation.API
 
             public string getSessionID(string userName, string pwd)
             {
-            if (userName.Equals(""))
+            try
             {
-                userName = this.username;
-            }
-            if (pwd.Equals(""))
-            {
-                pwd = this.password;
-            }
-                string url = "http://qa-spui-b/WebService.svc/rest_all/Accounts/Login";
+                if (userName.Equals(""))
+                {
+                    userName = this.username;
+                }
+                if (pwd.Equals(""))
+                {
+                    pwd = this.password;
+                }
+                string url = "http://" + this.environment+ "/WebService.svc/rest_all/Accounts/Login";
                 string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + pwd + "\",\"UserName\":\"" + userName + "\"}";
 
                 // send POST request
-                sendPOSTRequest(url, requestBody,"POST", "application/json",0);
+                sendPOSTRequest(url, requestBody, "POST", "application/xml; charset=utf-8", 0);
+                WebResponse response = recieveResponse();
                 //getResponse
-                JObject obj = GetResponse();
-                //write if to success = true
-                this.SessionID = (string)obj["Response"]["SessionID"];
-                closeAll();
-            return this.SessionID;
+               
+                response = request.GetResponse();
+                string statusCode = ((HttpWebResponse)response).StatusCode.ToString();
+                string status = (((HttpWebResponse)response).StatusDescription).ToString();
+                if (statusCode.Equals("OK"))
+                {
+                    dataStream = response.GetResponseStream();
+                    reader = new StreamReader(dataStream);
+                    string responseFromServer = reader.ReadToEnd();
+                    if (response.ContentType.Equals("application/json; charset=utf-8"))
+                    {
+                        Object values = JsonConvert.DeserializeObject(responseFromServer);
+                        JObject obj = JObject.Parse(values.ToString());
+                        this.SessionID = (string)obj["Response"]["SessionID"];
+                    }
+                    else if (response.ContentType.Equals("application/xml; charset=utf-8"))
+                    {
+                        XmlDocument xmldoc = new XmlDocument();
+                        xmldoc.LoadXml(responseFromServer);
+                        XmlNodeList nodeList = xmldoc.GetElementsByTagName("SessionID");
+                       foreach (XmlNode node in nodeList)
+                        {
+                            this.SessionID = node.InnerText;
+                        }
 
+                    }
+                }
+                //write if to success = true
+                
+                closeAll();
+                return this.SessionID;
             }
+            catch (WebException ex)
+            {
+                HttpWebResponse response = ((HttpWebResponse)ex.Response);
+                Console.WriteLine(response.StatusCode + ex.Message);
+
+                return null;
+            }
+
+        }
 
             public void sendPOSTRequest(String url, String requestBody,string method,string contentType,int contentLength)
             {
-                request = WebRequest.Create(url);
+                request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = method;
-                 request.ContentType = contentType; //"application/json";
+                request.Accept = "application/xml";
+                request.ContentType = contentType; //"application /json";
                 request.ContentLength = contentLength;
                 if (requestBody != "")
                 {
                     byte[] data = Encoding.UTF8.GetBytes(requestBody);
-                    request.ContentType = "application/json";
+                    request.ContentType = "application/json; charset=utf-8";
                     request.ContentLength = data.Length;
                     dataStream = request.GetRequestStream();
                     dataStream.Write(data, 0, data.Length);
                 }
-
+            
             }
 
             private JObject GetResponse()
@@ -178,16 +214,39 @@ namespace SP_Automation.API
         {
             try
             {
-                response = request.GetResponse();
-                return response;
+                WebResponse recivedResponse=null;
+                 Task.Run(async () =>
+                    {
+
+                        recivedResponse = await request.GetResponseAsync();
+
+                    }).GetAwaiter().GetResult();
+               return recivedResponse;
+                
             }
             catch (WebException ex)
             {
                 HttpWebResponse response = ((HttpWebResponse)ex.Response);
-                Console.WriteLine(response.StatusCode + ex.Message);
-
                 return response;
             }
+           
+        }
+
+
+        public WebResponse AsyncResponse(string fullUrl)
+        {
+            var webReq = (HttpWebRequest)WebRequest.Create(fullUrl);
+            WebResponse responseMsg = null;
+            
+            Task.Run(async () =>
+            {
+
+                responseMsg = await webReq.GetResponseAsync();
+
+            }).GetAwaiter().GetResult();
+
+            return responseMsg;
+          
         }
 
             public void getUserImportResponse()
@@ -212,10 +271,10 @@ namespace SP_Automation.API
 
             protected void closeAll()
             {
+            
                 reader.Close();
                 dataStream.Close();
-                response.Close();
-            }
+             }
          }
 
 }

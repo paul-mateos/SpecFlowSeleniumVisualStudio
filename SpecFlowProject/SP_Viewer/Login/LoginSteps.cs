@@ -27,7 +27,7 @@ namespace SpecFlowProject
         [When(@"I login as a valid user with login is (.*) and password is (.*)")]
         public void WhenILoginAsAValidUserWithLoginAndPassword(String username, String password)
         {
-            
+                        
             if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
             SupportPoint.LogIn.Login(username, password);
 

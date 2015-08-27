@@ -15,15 +15,18 @@ namespace SP_Automation.Facade
         public string url;
         public string host;
         public string webservice;
-        //public string contentType;
-        public string requestBody;
+        public string SessionID = "";
+        public string apiKey = "";
+        public string UserID;
+        public string requestBody = "";
+        public string requestXMLBody = "";
         public string requestMethod;
         private string fullUrl;
         private int contentLength = 0;
-        private string contentType = "application/json";
+        private string contentType = "application/xml";
         public APICommons apiRequest = new APICommons();
         private List<Parameter> parameters = new List<Parameter>();
-       
+        public string roleID = "";
 
         public string buildUrlParam(string key, string value)
         {
@@ -45,13 +48,22 @@ namespace SP_Automation.Facade
                     string keyValue = p.Value;
                     if (keyValue.Equals(""))
                     {
-                        keyValue = getKeyValue(p.Key);
+                       
+                        if (this.SessionID.Equals(""))
+                        {
+                            keyValue = getKeyValue(p.Key);
+                        }
+                        else
+                        {
+                            keyValue = this.SessionID;
+                        }
                     }
                     urlParam = urlParam + buildUrlParam(p.Key, keyValue);
                     // Need to be generic for different parameters
                 }
                 fullUrl = fullUrl + urlParam;
             }
+            parameters.Clear();
            
             return fullUrl;
         }
@@ -63,7 +75,7 @@ namespace SP_Automation.Facade
             switch (key)
             {
                 case "sid":
-                    value= getSessionID("","");
+                     value= getSessionID("","");
                     break;
                 case "fn":
                    value = getFilePath();
@@ -88,19 +100,25 @@ namespace SP_Automation.Facade
         {
             getFullUrl();
             string value =  Regex.Replace(this.requestBody, @"\t|\n|\r", "");
-            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod,contentType,contentLength);
-            //  RestAPI.newRequest(address).GetAndVerifyStatus(address + GenUrlString(), HttpStatusCode.OK);
+            string XMLvalue = Regex.Replace(this.requestXMLBody, @"\t|\n|\r", "");
+            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod, "application/xml; charset=utf-8", contentLength);
         }
 
         public WebResponse recieveResponse()
         {
-
+            
             return apiRequest.recieveResponse(); //apiRequest.getUserImportResponse()
+        }
+
+        public WebResponse recieveGetAsyncResponse()
+        {
+
+           return  apiRequest.AsyncResponse(fullUrl); //apiRequest.getUserImportResponse()
         }
 
         public string getSessionID(string userName,string pwd)
         {
-            return apiRequest.getSessionID(userName,pwd);
+             return apiRequest.getSessionID(userName,pwd);
         }
 
         public class Parameter

@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject.SupportPointLive
+namespace SpecFlowProject.SupportPointAPI
 {
     using TechTalk.SpecFlow;
     
@@ -49,7 +49,7 @@ namespace SpecFlowProject.SupportPointLive
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "UserImportFeature")))
             {
-                SpecFlowProject.SupportPointLive.UserImportFeatureFeature.FeatureSetup(null);
+                SpecFlowProject.SupportPointAPI.UserImportFeatureFeature.FeatureSetup(null);
             }
         }
         
