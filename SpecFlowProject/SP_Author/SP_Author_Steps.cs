@@ -18,17 +18,20 @@ namespace SpecFlowProject.SP_Author
             switch(managePage)
             {
                 case "Images":
-                     SupportPoint.SPManagerNav.ClickImages();
+                    SupportPoint.SPManagerNav.ClickImages();
+                    SupportPoint.SwitchToPage("Image Management : SupportPoint");
                     break;
                 case "Users":
-                     SupportPoint.SPManagerNav.ClickUsers();
-                     break;
+                    SupportPoint.SPManagerNav.ClickUsers();
+                    SupportPoint.SwitchToPage("User Management : SupportPoint");
+                    break;
                 case "Roles":
-                        SupportPoint.SPManagerNav.ClickRoles();
-                        break;
+                    SupportPoint.SPManagerNav.ClickRoles();
+                    SupportPoint.SwitchToPage("Role Management : SupportPoint");
+                    break;
                 default:
-                        throw new Exception("Invalid Page");
-                        break;
+                    throw new Exception("Invalid Page");
+                  
             }
                 
         }

@@ -41,6 +41,8 @@ namespace SP_Automation.Tests
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
         static public DocumentManagmentNewPage DocumentManagmentNew { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNew = value; } }
+        static public SPManagerDetailsActionsPage SPManagerDetailsActionsPage { get { return new SPManagerDetailsActionsPage(WebDriver); } set { SPManagerDetailsActionsPage = value; } }
+        
 
         /*
          * Open Support Point app: if there is existing one, it will kill it
@@ -120,10 +122,10 @@ namespace SP_Automation.Tests
             return WebDriver != null;
         }
 
-        static public void SwitchToSPManager()
+        static public void SwitchToPage(string PageTitle)
         {
             string BaseWindowHandle = WebDriver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver,"Document Management : SupportPoint");
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver,PageTitle);
 
         }
 

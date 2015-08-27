@@ -25,3 +25,4 @@ Scenario: ChangePassword
 			"""
 			When I send request
             Then My result is response
+

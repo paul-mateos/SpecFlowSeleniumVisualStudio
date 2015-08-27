@@ -7,23 +7,33 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
     [Binding]
     public class DocumentManagement_CreateFolderSteps
     {
-      //[When(@"I select (.*) Folder")]
-      //  public void WhenISelectHomeFolder(String foldername)
-      //  {
-      //      SupportPoint.Folder.FolderTree();
-      //      System.Threading.Thread.Sleep(5000);
-      //  }
+        //[When(@"I select (.*) Folder")]
+        //public void WhenISelectHomeFolder(String foldername)
+        //{
+        //    SupportPoint.Folder.FolderTree();
+        //    System.Threading.Thread.Sleep(5000);
+        //}
 
-        [When(@"I have selected Folder")]
-        public void WhenIHaveSelectedFolder()
+        [When(@"I have selected (.*)")]
+        public void WhenIHaveSelectedFolder(string newtype)
         {
-            SupportPoint.DocumentManagmentNew.clickFolder();
+            SupportPoint.DocumentManagmentNew.clickFolder(newtype);
         }
 
-        [When(@"I have entered (.*), (.*)")]
-        public void WhenIHaveEntered(string folderName, string folderDescription, Table table)
+        [When(@"I have entered (.*) (.*) (.*)")]
+        public void WhenIHaveEnteredLocalisationSel_BlankFolderNameSel_BlankFolderDescription(string type, string name, string description)
         {
-            SupportPoint.DocumentManagmentNew.fillIn(folderName, folderDescription);
+            SupportPoint.DocumentManagmentNew.fillIn(type, name, description);
         }
+
+
+
+
+
+        //[When(@"I have entered (.*) (.*) (.*) (.*) (.*)")]
+        //public void WhenIHaveEnteredSel_BlankFolderNameSel_BlankFolderDescriptionName(string type, string name, string source, string display, string description)
+        //{
+        //SupportPoint.DocumentManagmentNew.fillIn(type, name, source, display, description);
+        //}
     }
 }

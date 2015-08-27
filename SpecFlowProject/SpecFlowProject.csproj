@@ -86,6 +86,7 @@
       <DependentUpon>GetAPIKey.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointLive\SPLive_CommonSteps.cs" />
+    <Compile Include="ContextInjection\FindByData.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolderSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
@@ -110,11 +111,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\ImageManagement\ImageManagement_ImageProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageManagement_ImageProperties.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\ImageManagement\ImageManagement_Search.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageManagement_Search.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\ImageManagement\ImageManagement_Steps.cs" />
     <Compile Include="SP_Author\SP_Author_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature.cs">
       <AutoGen>True</AutoGen>
@@ -235,6 +242,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\ImageManagement\ImageManagement_ImageProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImageManagement_ImageProperties.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

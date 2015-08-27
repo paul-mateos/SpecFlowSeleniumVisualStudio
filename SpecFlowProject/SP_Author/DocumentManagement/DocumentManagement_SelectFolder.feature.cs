@@ -72,8 +72,8 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         
         public virtual void FeatureBackground()
         {
-#line 7
- #line 8
+ #line 7
+#line 8
  testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
  testRunner.And("I have logged into SupportPoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -97,9 +97,9 @@ this.ScenarioSetup(scenarioInfo);
  this.FeatureBackground();
 #line 15
  testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 16
- testRunner.When("I select the Home,TOSCA Static Documents,For Editor,ED1600_Save Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
+#line 14
+ testRunner.When("I select the Home DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
  testRunner.Then("the correct folder is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
