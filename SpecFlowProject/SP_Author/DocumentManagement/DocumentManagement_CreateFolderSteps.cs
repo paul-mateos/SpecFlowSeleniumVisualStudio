@@ -14,7 +14,9 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         //    System.Threading.Thread.Sleep(5000);
         //}
 
+        [Given(@"I have selected (.*)")]
         [When(@"I have selected (.*)")]
+        [Then(@"I have selected (.*)")]
         public void WhenIHaveSelectedFolder(string newtype)
         {
             SupportPoint.DocumentManagmentNew.clickFolder(newtype);
@@ -25,15 +27,5 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
             SupportPoint.DocumentManagmentNew.fillIn(type, name, description);
         }
-
-
-
-
-
-        //[When(@"I have entered (.*) (.*) (.*) (.*) (.*)")]
-        //public void WhenIHaveEnteredSel_BlankFolderNameSel_BlankFolderDescriptionName(string type, string name, string source, string display, string description)
-        //{
-        //SupportPoint.DocumentManagmentNew.fillIn(type, name, source, display, description);
-        //}
     }
 }

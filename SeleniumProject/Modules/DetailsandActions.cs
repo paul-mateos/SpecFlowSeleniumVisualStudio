@@ -39,10 +39,22 @@ namespace SP_Automation.Modules
             new SPManagerDetailsActionsPage(GetDriver()).clickNew();
         }
 
+        public void Permissions()
+        {
+            new SPManagerDetailsActionsPage(GetDriver()).clickPermissions();
+        }
+
         public void Rolemembership()
 
         {
             new SPManagerDetailsActionsPage(GetDriver()).clickRolemembership();
+
+        }
+
+        public void Edit()
+
+        {
+            new SPManagerDetailsActionsPage(GetDriver()).clickEdit();
 
         }
     }
