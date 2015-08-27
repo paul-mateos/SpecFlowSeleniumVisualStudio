@@ -51,7 +51,7 @@ namespace SP_Automation.Tests
         static public void OpenSupportPoint()
         {
             
-            Exit(); //just in case previous test not cleanup properly
+            ExitSuportPoint(); //just in case previous test not cleanup properly
 
             var options = new InternetExplorerOptions()
             {
@@ -85,7 +85,7 @@ namespace SP_Automation.Tests
         /**
          *  Exit and Cleanup
          */
-        public static void Exit()
+        public static void ExitSuportPoint()
         {
             if (WebDriver != null)
             {

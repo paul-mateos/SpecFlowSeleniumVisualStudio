@@ -10,9 +10,9 @@ namespace SpecFlowProject
     public class LoginSteps
     {
 
-        //LoginTest test;
-
-
+        
+       
+        [BeforeScenario]
         [Given(@"SupportPoint is opened")]
         [When(@"SupportPoint is opened")]
         [Then(@"SupportPoint is opened")]
@@ -36,27 +36,17 @@ namespace SpecFlowProject
         }
 
 
-        [Given(@"I should be logged in successfully")]
-        [When(@"I should be logged in successfully")]
-        [Then(@"I should be logged in successfully")]
-        public void ThenIShouldBeLoggedInSuccessfully()
-        {
-            //yeah, nothing to do here
-        }
+       
 
-        [Given(@"I logout")]
-        [When(@"I logout")]
-        [Then(@"I logout")]
-        public void WhenILogout()
+        [AfterScenario]
+        [Given(@"I Close SupportPoint")]
+        [When(@"I Close SupportPoint")]
+        [Then(@"I Close SupportPoint")]
+        public void ICloseSupportPoint()
         {
 
-            SupportPoint.LogIn.LogOutAndCloseApp();
+            SupportPoint.ExitSuportPoint();
         }
 
-        //[Then(@"I should be logged out")]
-        //public void ThenIShouldBeLoggedout()
-        //{
-        //    Thread.Sleep(5000);
-        //}
     }
 }
