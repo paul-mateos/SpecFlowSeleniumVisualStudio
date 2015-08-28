@@ -139,6 +139,7 @@
     <Compile Include="API\UserImport.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Facade\SupportPoint.cs" />
+    <Compile Include="Utilities\SPConfigFileCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
