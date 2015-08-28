@@ -12,23 +12,23 @@ namespace SP_Automation.Facade
     public class API
     {
 
-        public string url;
-        public string host;
-        public string webservice;
-        public string SessionID = "";
-        public string apiKey = "";
-        public string UserID;
-        public string requestBody = "";
-        public string requestXMLBody = "";
-        public string requestMethod;
-        private string fullUrl;
-        private int contentLength = 0;
+        public static string url;
+        public static string host;
+        public static string webservice;
+        public static string SessionID = "";
+        public static string apiKey = "";
+        public static string UserID;
+        public static string requestBody = "";
+        public static string requestXMLBody = "";
+        public static string requestMethod;
+        private static string fullUrl;
+        private static int contentLength = 0;
         private string contentType = "application/xml";
-        public APICommons apiRequest = new APICommons();
-        private List<Parameter> parameters = new List<Parameter>();
-        public string roleID = "";
+        public static APICommons apiRequest = new APICommons();
+        private static List<Parameter> parameters = new List<Parameter>();
+        public static string roleID = "";
 
-        public string buildUrlParam(string key, string value)
+        public static string buildUrlParam(string key, string value)
         {
             if (value == null || value.Length == 0) return "";
 
@@ -36,7 +36,7 @@ namespace SP_Automation.Facade
 
         }
 
-        public virtual string getFullUrl()
+        public static string getFullUrl()
         {
             string host = Properties.Settings.Default.Environment;
             fullUrl = "http://" + host + "/" + webservice;
@@ -49,13 +49,13 @@ namespace SP_Automation.Facade
                     if (keyValue.Equals(""))
                     {
                        
-                        if (this.SessionID.Equals(""))
+                        if (SessionID.Equals(""))
                         {
                             keyValue = getKeyValue(p.Key);
                         }
                         else
                         {
-                            keyValue = this.SessionID;
+                            keyValue = SessionID;
                         }
                     }
                     urlParam = urlParam + buildUrlParam(p.Key, keyValue);
@@ -69,7 +69,7 @@ namespace SP_Automation.Facade
         }
 
 
-        protected string getKeyValue(string key)
+        protected static string getKeyValue(string key)
         {
             string value = "";
             switch (key)
@@ -85,38 +85,38 @@ namespace SP_Automation.Facade
             return value;
         }
 
-        protected string getFilePath()
+        protected static string getFilePath()
         {
             return apiRequest.getFilePath();
         }
 
-        public void addParameters(string key, string value)
+        public static void addParameters(string key, string value)
         {
             var parameter = new Parameter { Key = key, Value = value  };
             parameters.Add(parameter);
         }
 
-        public void SendRequest()
+        public static void SendRequest()
         {
             getFullUrl();
-            string value =  Regex.Replace(this.requestBody, @"\t|\n|\r", "");
-            string XMLvalue = Regex.Replace(this.requestXMLBody, @"\t|\n|\r", "");
+            string value =  Regex.Replace(requestBody, @"\t|\n|\r", "");
+            string XMLvalue = Regex.Replace(requestXMLBody, @"\t|\n|\r", "");
             apiRequest.sendPOSTRequest(fullUrl, value, requestMethod, "application/xml; charset=utf-8", contentLength);
         }
 
-        public WebResponse recieveResponse()
+        public static WebResponse recieveResponse()
         {
             
             return apiRequest.recieveResponse(); //apiRequest.getUserImportResponse()
         }
 
-        public WebResponse recieveGetAsyncResponse()
+        public static WebResponse recieveGetAsyncResponse()
         {
 
            return  apiRequest.AsyncResponse(fullUrl); //apiRequest.getUserImportResponse()
         }
 
-        public string getSessionID(string userName,string pwd)
+        public static string getSessionID(string userName,string pwd)
         {
              return apiRequest.getSessionID(userName,pwd);
         }

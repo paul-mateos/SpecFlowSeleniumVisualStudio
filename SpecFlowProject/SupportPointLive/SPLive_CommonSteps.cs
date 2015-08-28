@@ -24,11 +24,11 @@ namespace SpecFlowProject
             common.CreateNewAPIKey();
             common.GetAPIKeyForUser();
         }
-        
+
         [Given(@"I have logged into SupportPoint")]
         public void GivenIHaveLoggedIntoSupportPoint()
         {
-                        
+
             if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
             SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
 
