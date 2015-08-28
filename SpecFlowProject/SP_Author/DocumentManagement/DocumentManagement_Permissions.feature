@@ -19,8 +19,14 @@ Then I verify the Edit button isn't Visible
 
 
 @mytag
-Scenario: Rolecreators can't update document permissions
+Scenario Outline: Rolecreators can't update document permissions
 Given I select the Add role to readers button
 Then the Role Selector is opened
-And I can select a role
-Then the rold is added to the read document table
+And I can search for <searchText>
+Then the search should return the <searchText> 
+And I can select the <searchText>
+Then the role is added to the document role readers table
+
+Examples:
+| searchText |
+| authors    |

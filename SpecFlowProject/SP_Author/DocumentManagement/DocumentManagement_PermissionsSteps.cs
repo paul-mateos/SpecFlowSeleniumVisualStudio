@@ -39,17 +39,32 @@ namespace SpecFlowProject
         {
             SupportPoint.RoleSelectorPage.ConfirmRoleSelector();
         }
-        [Then(@"I can select a role")]
-        public void ThenICanSelectARole()
+        [Then(@"I can search for (.*)")]
+        public void ThenICanSearchFor(string searchName)
+        {
+            SupportPoint.RoleSelectorPage.searchRole(searchName);
+        }
+
+        [Then(@"the search should return the (.*)")]
+        public void ThenTheSearchShouldReturnTheAuthors(string searchName)
+        {
+            SupportPoint.RoleSelectorPage.confirmFoundRole(searchName);
+        }
+
+
+        [Then(@"I can select the (.*)")]
+        public void ThenICanSelectTheAuthors(string searchName)
+        {
+         //   SupportPoint.RoleSelectorPage.selectRole(searchName);
+        }
+
+
+        [Then(@"the role is added to the document (.*) table")]
+        public void ThenTheRoleIsAddedToTheDocumentRoleReadersTable(string newRole)
         {
           //  ScenarioContext.Current.Pending();
         }
 
-        [Then(@"the rold is added to the read document table")]
-        public void ThenTheRoldIsAddedToTheReadDocumentTable()
-        {
-         //   ScenarioContext.Current.Pending();
-        }
 
     }
 }

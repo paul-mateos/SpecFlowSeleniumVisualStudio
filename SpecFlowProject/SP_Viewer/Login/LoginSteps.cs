@@ -9,9 +9,7 @@ namespace SpecFlowProject
     [Binding]
     public class LoginSteps
     {
-
-        
-       
+      
         [BeforeScenario]
         [Given(@"SupportPoint is opened")]
         [When(@"SupportPoint is opened")]
@@ -35,7 +33,14 @@ namespace SpecFlowProject
 
         }
 
+        //[Given(@"I have logged into SupportPoint")]
+        //public void GivenIHaveLoggedIntoSupportPoint()
+        //{
 
+        //    if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
+        //    SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
+
+        //}
        
 
         [AfterScenario]
