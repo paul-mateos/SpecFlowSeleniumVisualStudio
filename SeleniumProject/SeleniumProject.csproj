@@ -109,6 +109,7 @@
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
+    <Compile Include="PageModels\SP_Author\PermissionsPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagmentNewPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsandActionsPage.cs" />
     <Compile Include="PageModels\SP_Author\ImageManagementPage.cs" />
@@ -136,11 +137,8 @@
     <Compile Include="Facade\LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
     <Compile Include="API\UserImport.cs" />
-    <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />
     <Compile Include="Facade\SupportPoint.cs" />
-    <Compile Include="Tests\LoginTest.cs" />
-    <Compile Include="Tests\FolderNavTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

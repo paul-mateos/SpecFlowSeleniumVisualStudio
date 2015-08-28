@@ -11,7 +11,9 @@ namespace SpecFlowProject.SP_Viewer
     public sealed class SP_Viewer_Steps
     {
 
-   
+
+        [Given(@"I Open SP Manager")]
+        [When(@"I Open SP Manager")]
         [Then(@"I Open SP Manager")]
         public void ThenIOpenSPManager()
         {

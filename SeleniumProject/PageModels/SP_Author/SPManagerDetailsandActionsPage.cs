@@ -1,10 +1,13 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SP_Automation.Commons;
+using SP_Automation.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SP_Automation.PageModels
@@ -26,9 +29,9 @@ namespace SP_Automation.PageModels
         By Writers = By.LinkText("Writers");
         By Notifications = By.LinkText("Notifications");
         By CustomProperties = By.LinkText("Custom properties");
+        By Permissions = By.XPath("//a[@data-automation-id='doc-details-actions-permissions']");
+        By EditBtn = By.XPath("//span[@title='Edit']");
 
-
-        
         public SPManagerDetailsActionsPage(IWebDriver driver)
             : base(driver)
         {
@@ -36,6 +39,7 @@ namespace SP_Automation.PageModels
 
         public bool DetailsandActionsExists()
         {
+            
             IReadOnlyCollection<IWebElement> elemets = d.FindElements(DetailsandActions);
             if (elemets.Count > 0)
             {
@@ -57,6 +61,20 @@ namespace SP_Automation.PageModels
             UICommon.ClickLink(New, d);
         }
 
+        public void clickPermissions()
+
+        {
+            By verPermissionsPage = By.XPath("//button[@title='Add role to readers']");
+         
+            IReadOnlyCollection<IWebElement> elem = UICommon.GetElements(verPermissionsPage, d);
+
+            if (elem.Count==0)
+            {
+                SupportPoint.DetailsActions.DetailsActions();
+                UICommon.ClickLink(Permissions, d);
+            }
+        }
+
         public void clickMove()
         {
             UICommon.ClickButton(MoveBtn, d);
@@ -73,11 +91,16 @@ namespace SP_Automation.PageModels
             UICommon.ClickLink(Rolemembership, d);
         }
 
-        
+        public void clickEdit()
+        {
+                UICommon.ClickButton(EditBtn, d);
+        }
 
-        
-
-       
-
+        public void NoEdit()
+        {
+            Thread.Sleep(3000);
+            IReadOnlyCollection<IWebElement> elements = UICommon.GetElements(EditBtn, d);
+            Assert.IsTrue(elements.Count==0);
+        }
     }
 }
