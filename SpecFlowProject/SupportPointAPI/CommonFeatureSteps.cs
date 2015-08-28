@@ -303,18 +303,11 @@ namespace SpecFlowProject.SupportPointAPI
         {
             GivenIWantToARequest("GET");
             GivenMyWebserviceIs("WebService.svc/rest_all/ApiKey");
-            //GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
             GivenSessionIDAsParameters();
             WhenISendRequest();
-            ThenGetAPIKey();
-            //api.SessionID = "";
-           
+            ThenGetAPIKey();         
         }
-        public void clearVariables()
-        {
-
-        }
-
+        
         public void GivenSessionIDAsParameters()
         {
             string[] header = { "Key", "Value" };
@@ -610,15 +603,16 @@ namespace SpecFlowProject.SupportPointAPI
             API.requestXMLBody = API.requestXMLBody + textBody;
         }
 
+        [Then(@"Delete user")]
+        public void ThenDeleteUser()
+        {
+            GivenIWantToARequest("POST");
+            GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
+            GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
+            GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID")+"]");
+            WhenISendRequest();
+            ThenMyResultIsResponse();
+    }
 
-        //[Given(@"I have logged in tp SupportPoint as a new ""(.*)""")]
-        //public void GivenIHaveLoggedInAsANew(string role)
-        //{
-        //    GivenIHaveANew(role);
-        //    splive_commonSteps.GivenIHaveAnApiKey();
-        //    SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
-
-
-        //}
     }
 }

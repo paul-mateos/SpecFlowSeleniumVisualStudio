@@ -34,6 +34,7 @@ namespace SpecFlowProject
 
         }
 
+        [When(@"waitBeforeRequest")]
         [Then(@"waitForResponse")]
         public void ThenWaitForResponse()
         {
