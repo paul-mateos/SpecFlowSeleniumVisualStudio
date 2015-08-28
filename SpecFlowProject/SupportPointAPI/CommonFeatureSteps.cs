@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SP_Automation.API;
 using SP_Automation.Facade;
+using SP_Automation.Tests;
 using System;
 using System.IO;
 using System.Net;
@@ -18,7 +19,7 @@ namespace SpecFlowProject.SupportPointAPI
     {
         public APICommons apiRequest = new APICommons();
         private WebResponse response;
-        private API api;
+        //private API api;
         private Stream dataStream;
         private StreamReader reader;
         private JObject myJsonResponse;
@@ -26,20 +27,23 @@ namespace SpecFlowProject.SupportPointAPI
 
         public CommonFeatureSteps()
         {
-            api = new API();
+            //api = new API();
         }
 
+        //SPLive_CommonSteps splive_commonSteps = new SPLive_CommonSteps();
 
         [Given(@"I want to ""(.*)"" a request")]
         public void GivenIWantToARequest(string method)
         {
-            api.requestMethod = method;
+            //api.requestMethod = method;
+            API.requestMethod = method;
         }
 
         [Given(@"My webservice is ""(.*)""")]
         public void GivenMyWebserviceIs(string apiDefinition)
         {
-            api.webservice = apiDefinition;
+            //api.webservice = apiDefinition;
+            API.webservice = apiDefinition;
         }
 
         [Given(@"I have path variables")]
@@ -49,7 +53,8 @@ namespace SpecFlowProject.SupportPointAPI
             {
                 foreach (var row in table.Rows)
                 {
-                    api.addParameters(row["Key"], row["Value"]);
+                    //api.addParameters(row["Key"], row["Value"]);
+                    API.addParameters(row["Key"], row["Value"]);
                 }
             }
         }
@@ -61,9 +66,11 @@ namespace SpecFlowProject.SupportPointAPI
         {
             if (textBody.Contains("SessionID\":\""))
             {
-                if (api.SessionID != "")
+                //if (api.SessionID != "")
+                if (API.SessionID != "")
                 {
-                    textBody = textBody.Replace(":\"", ":\"" + api.SessionID);
+                    //textBody = textBody.Replace(":\"", ":\"" + api.SessionID);
+                    textBody = textBody.Replace(":\"", ":\"" + API.SessionID);
                 }
                 else if (FeatureContext.Current.Get<string>("SID") != "")
                 {
@@ -85,18 +92,21 @@ namespace SpecFlowProject.SupportPointAPI
                 }
             }
           
-            api.requestBody = api.requestBody + textBody;
+            //api.requestBody = api.requestBody + textBody;
+            API.requestBody = API.requestBody + textBody;
         }
 
 
         [When(@"I send request")]
         public void WhenISendRequest()
         {
-            if (!api.requestBody.Equals(""))
+            //if (!api.requestBody.Equals(""))
+            if (!API.requestBody.Equals(""))
             {
-                api.requestBody = "{" + api.requestBody + "}";
+                //api.requestBody = "{" + api.requestBody + "}";
+                API.requestBody = "{" + API.requestBody + "}";
             }
-            api.SendRequest();
+            API.SendRequest();
         }
 
 
@@ -109,7 +119,8 @@ namespace SpecFlowProject.SupportPointAPI
             try
             {
                 response = null;
-                response = api.recieveResponse();
+                //response = api.recieveResponse();
+                response = API.recieveResponse();
                 string statusCode = ((HttpWebResponse)response).StatusCode.ToString();
                 string status = (((HttpWebResponse)response).StatusDescription).ToString();
                 string type = response.ContentType;
@@ -154,7 +165,8 @@ namespace SpecFlowProject.SupportPointAPI
         [Then(@"Get API Key")]
         public void ThenGetAPIKey()
         {
-           WebResponse apiResponse =  api.recieveGetAsyncResponse();
+           //WebResponse apiResponse =  api.recieveGetAsyncResponse();
+           WebResponse apiResponse = API.recieveGetAsyncResponse();
             string statusCode = ((HttpWebResponse)apiResponse).StatusCode.ToString();
             string status = (((HttpWebResponse)apiResponse).StatusDescription).ToString();
             string type = apiResponse.ContentType;
@@ -169,8 +181,10 @@ namespace SpecFlowProject.SupportPointAPI
                     XmlNodeList nodeList = xmldoc.GetElementsByTagName("ApiKey");
                     foreach (XmlNode node in nodeList)
                     {
-                        api.apiKey = node.InnerText;
-                        FeatureContext.Current.Add("ApiKey", api.apiKey);
+                        //api.apiKey = node.InnerText;
+                        API.apiKey = node.InnerText;
+                        //FeatureContext.Current.Add("ApiKey", api.apiKey);
+                        FeatureContext.Current.Add("ApiKey", API.apiKey);
                     }
                     Console.WriteLine("Response:Status OK");                   
                     clearFeatureContext();
@@ -210,15 +224,18 @@ namespace SpecFlowProject.SupportPointAPI
                     if (value.Equals("true") || value.Equals("True"))
                     {
                        
-                        api.SessionID = (string)obj["Response"]["SessionID"];
+                        //api.SessionID = (string)obj["Response"]["SessionID"];
+                        API.SessionID = (string)obj["Response"]["SessionID"];
                         if (FeatureContext.Current.ContainsKey("SID"))
                         {
                             FeatureContext.Current.Remove("SID");
-                            FeatureContext.Current.Add("SID", api.SessionID);
+                            //FeatureContext.Current.Add("SID", api.SessionID);
+                            FeatureContext.Current.Add("SID", API.SessionID);
                         }
                         else
                         {
-                            FeatureContext.Current.Add("SID", api.SessionID);
+                            //FeatureContext.Current.Add("SID", api.SessionID);
+                            FeatureContext.Current.Add("SID", API.SessionID);
                         }
                         Console.WriteLine("Session ID is retrived Sucessfully");
                     }
@@ -246,15 +263,18 @@ namespace SpecFlowProject.SupportPointAPI
                                     {
                                         if (r.ChildNodes[i].Name.Equals("SessionID"))
                                         {
-                                            api.SessionID = r.ChildNodes[i].InnerText;
+                                            //api.SessionID = r.ChildNodes[i].InnerText;
+                                            API.SessionID = r.ChildNodes[i].InnerText;
                                             if (FeatureContext.Current.ContainsKey("SID"))
                                             {
                                                 FeatureContext.Current.Remove("SID");
-                                                FeatureContext.Current.Add("SID", api.SessionID);
+                                                //FeatureContext.Current.Add("SID", api.SessionID);
+                                                FeatureContext.Current.Add("SID", API.SessionID);
                                             }
                                             else
                                             {
-                                                FeatureContext.Current.Add("SID", api.SessionID);
+                                                //FeatureContext.Current.Add("SID", api.SessionID);
+                                                FeatureContext.Current.Add("SID", API.SessionID);
                                             }
                                             Console.WriteLine("Session ID is retrived Sucessfully");
                                         }
@@ -313,15 +333,18 @@ namespace SpecFlowProject.SupportPointAPI
 
         private void getSessioID(string uName, string pwd)
         {
-            api.SessionID = api.getSessionID(uName, pwd);
+            //api.SessionID = api.getSessionID(uName, pwd);
+            API.SessionID = API.getSessionID(uName, pwd);
             if (FeatureContext.Current.ContainsKey("SID"))
             {
                 FeatureContext.Current.Remove("SID");
-                FeatureContext.Current.Add("SID", api.SessionID);
+                //FeatureContext.Current.Add("SID", api.SessionID);
+                FeatureContext.Current.Add("SID", API.SessionID);
             }
             else
             {
-                FeatureContext.Current.Add("SID", api.SessionID);
+                //FeatureContext.Current.Add("SID", api.SessionID);
+                FeatureContext.Current.Add("SID", API.SessionID);
             }
             Console.WriteLine("Session ID is retrived Sucessfully");
 
@@ -453,7 +476,8 @@ namespace SpecFlowProject.SupportPointAPI
         public void clearFeatureContext()
         {
             FeatureContext.Current.Remove("SID");
-            api.requestBody = "";
+            //api.requestBody = "";
+            API.requestBody = "";
 
         }
 
@@ -465,7 +489,8 @@ namespace SpecFlowProject.SupportPointAPI
             GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
             getRoleID(role);
             string userName =  getRandomUserName(role);
-            CreateNewUser(userName, "1", api.roleID);
+            //CreateNewUser(userName, "1", api.roleID);
+            CreateNewUser(userName, "1", API.roleID);
 
         }
 
@@ -497,7 +522,8 @@ namespace SpecFlowProject.SupportPointAPI
                         {
                             if (r["Name"].ToString().Equals(role))
                             {
-                                api.roleID = r["Id"].ToString();
+                                //api.roleID = r["Id"].ToString();
+                                API.roleID = r["Id"].ToString();
                             }
                         }
                     }
@@ -526,7 +552,8 @@ namespace SpecFlowProject.SupportPointAPI
                                         {
                                             if (innerNode.InnerText.Equals(role))
                                             {
-                                                api.roleID = roleID;
+                                                //api.roleID = roleID;
+                                                API.roleID = roleID;
                                                 return;
                                             }
                                         }
@@ -579,9 +606,19 @@ namespace SpecFlowProject.SupportPointAPI
                 }
             }
 
-            api.requestXMLBody = api.requestXMLBody + textBody;
+            //api.requestXMLBody = api.requestXMLBody + textBody;
+            API.requestXMLBody = API.requestXMLBody + textBody;
         }
 
 
+        //[Given(@"I have logged in tp SupportPoint as a new ""(.*)""")]
+        //public void GivenIHaveLoggedInAsANew(string role)
+        //{
+        //    GivenIHaveANew(role);
+        //    splive_commonSteps.GivenIHaveAnApiKey();
+        //    SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
+
+
+        //}
     }
 }

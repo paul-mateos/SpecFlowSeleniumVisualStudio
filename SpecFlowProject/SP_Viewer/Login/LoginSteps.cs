@@ -9,12 +9,11 @@ namespace SpecFlowProject
     [Binding]
     public class LoginSteps
     {
-
-        //LoginTest test;
-
-
+      
+        [BeforeScenario]
         [Given(@"SupportPoint is opened")]
         [When(@"SupportPoint is opened")]
+        [Then(@"SupportPoint is opened")]
         public void GivenSupportPointIsOpened()
         {
 
@@ -25,6 +24,7 @@ namespace SpecFlowProject
 
         [Given(@"I login as a valid user with login is (.*) and password is (.*)")]
         [When(@"I login as a valid user with login is (.*) and password is (.*)")]
+        [Then(@"I login as a valid user with login is (.*) and password is (.*)")]
         public void WhenILoginAsAValidUserWithLoginAndPassword(String username, String password)
         {
                         
@@ -33,24 +33,25 @@ namespace SpecFlowProject
 
         }
 
+        //[Given(@"I have logged into SupportPoint")]
+        //public void GivenIHaveLoggedIntoSupportPoint()
+        //{
 
-        [Then(@"I should be logged in successfully")]
-        public void ThenIShouldBeLoggedInSuccessfully()
+        //    if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
+        //    SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
+
+        //}
+       
+
+        [AfterScenario]
+        [Given(@"I Close SupportPoint")]
+        [When(@"I Close SupportPoint")]
+        [Then(@"I Close SupportPoint")]
+        public void ICloseSupportPoint()
         {
-            //yeah, nothing to do here
+
+            SupportPoint.ExitSuportPoint();
         }
 
-        [When(@"I logout")]
-        public void WhenILogout()
-        {
-
-            SupportPoint.LogIn.LogOutAndCloseApp();
-        }
-
-        [Then(@"I should be logged out")]
-        public void ThenIShouldBeLoggedout()
-        {
-            Thread.Sleep(5000);
-        }
     }
 }

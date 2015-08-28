@@ -25,6 +25,11 @@ namespace SP_Automation.Commons
 
         }
 
+        public static IReadOnlyCollection<IWebElement> GetElements(By searchType, IWebDriver d)
+        {
+            return d.FindElements(searchType);
+        }
+
         public static void ClickButton(By searchType, IWebDriver d)
         {
             IWebElement elem = GetElement(searchType, d);
@@ -41,16 +46,16 @@ namespace SP_Automation.Commons
             action.Perform();
         }
 
-        /*annette added
-                public bool Exist(By element)
-        { 
-           try 
-            { 
-               return ( new WebDriverWait(d, TimeSpan.FromSeconds(1)).Until(ExpectedConditions.ElementIsVisible(element)) != null );
-             } catch (NoSuchElementException) { }
+        //annette added
+        //        public bool Exist(By element)
+        //{ 
+        //   try 
+        //    { 
+        //       return ( new WebDriverWait(d, TimeSpan.FromSeconds(1)).Until(ExpectedConditions.ElementIsVisible(element)) != null );
+        //     } catch (NoSuchElementException) { }
 
-            return false;
-        } */
+        //    return false;
+        //} 
 
         public static void SetValue(By searchType, string value, IWebDriver d)
         {
@@ -125,6 +130,16 @@ namespace SP_Automation.Commons
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(tableName)));
             return webElementBody;
+        }
+
+        public static string GetElementAttribute(By searchType, string attribute, IWebDriver d)
+        {
+
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
+            elementHighlight(elem, d);
+            return elem.GetAttribute(attribute);
+
         }
     }
 }

@@ -88,10 +88,9 @@
     <Compile Include="SupportPointLive\SPLive_CommonSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolderSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
-    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
+    <Compile Include="DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\BeforeAndAfterDocumentManagement.cs" />
-    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolderSteps.cs" />
     <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,10 +109,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_CreateFolder.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\ImageManagement\ImageManagement_FolderProperties.feature.cs">
+      <DependentUpon>ImageManagement_FolderProperties.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="SP_Author\ImageManagement\ImageManagement_ImageProperties.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageManagement_ImageProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Permissions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_Permissions.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\ImageManagement\ImageManagement_Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -154,7 +163,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SPLive_ShowDcoument.feature</DependentUpon>
     </Compile>
-    <Compile Include="LoginFeature_Demo\CreateNewUserSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
       <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -172,12 +180,6 @@
     </Compile>
     <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
-    <Compile Include="LoginFeature_Demo\CreateNewUser.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CreateNewUser.feature</DependentUpon>
-    </Compile>
-    <Compile Include="SpecFlowSteps\FolderNavigationSteps.cs" />
     <Compile Include="SupportPointLive\SPLive_ShowDcoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature.cs">
@@ -242,9 +244,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Author\ImageManagement\ImageManagement_FolderProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImageManagement_FolderProperties.feature.cs</LastGenOutput>
+    </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_ImageProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ImageManagement_ImageProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_Permissions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_Permissions.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -277,10 +287,6 @@
     <None Include="SupportPointLive\SPLive_ShowDcoument.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SPLive_ShowDcoument.feature.cs</LastGenOutput>
-    </None>
-    <None Include="LoginFeature_Demo\CreateNewUser.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateNewUser.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
