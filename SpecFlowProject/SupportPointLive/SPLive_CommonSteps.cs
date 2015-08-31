@@ -8,23 +8,10 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject
 {
     [Binding]
-    public class SPLive_CommonSteps
+    public class SPLive_CommonSteps:Steps
     {
-        private CommonFeatureSteps common = new CommonFeatureSteps();
-        [Given(@"I have a new User")]
-        public void GivenIHaveANewUser()
-        { 
-            // Role Id id 7 for author
-            common.CreateNewUser("pa_auth2", "1", "7");
-        }
+       // private CommonFeatureSteps common = new CommonFeatureSteps();
         
-        [Given(@"I have an apiKey")]
-        public void GivenIHaveAnApiKey()
-        {
-            common.CreateNewAPIKey();
-            common.GetAPIKeyForUser();
-        }
-
         [Given(@"I have logged into SupportPoint")]
         public void GivenIHaveLoggedIntoSupportPoint()
         {

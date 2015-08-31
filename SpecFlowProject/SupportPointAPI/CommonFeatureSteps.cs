@@ -193,6 +193,13 @@ namespace SpecFlowProject.SupportPointAPI
            
         }
 
+        [Given(@"I have an apiKey")]
+        public void GivenIHaveAnApiKey()
+        {
+            CreateNewAPIKey();
+            GetAPIKeyForUser();
+        }
+
         // To create a new API in the database based on username, password and a SessionID
         public void CreateNewAPIKey()
         {
