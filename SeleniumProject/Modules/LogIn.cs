@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SP_Automation.PageModels;
+using SP_Automation.PageModels.SP_Author;
 using SP_Automation.PageModels.SP_Viewer;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,13 @@ namespace SP_Automation.Modules
             p.LogOut();
         }
 
+        public void CloseSPManager()
+        {
+            SPManagerNavBarPage sp = new SPManagerNavBarPage(driver);
+            sp.ClickActions();
+            UserActionPage action = new UserActionPage(driver);
+            action.clickToClose();
+        }
         public void LogOutAndCloseApp()
         {
             NavBarPage nav = new NavBarPage(driver);

@@ -16,13 +16,13 @@ Scenario: ChangePassword
 			"""
 			"SessionID":"",
 			"""
-
-            And I have a request body of 
+			
+			And I have a request body of
 			"""
 				"Instance":"localhost",
 				"NewPassword":"2",
 				"OldPassword":"1",
 			"""
-            When I send request
+			When I send request
             Then My result is response
 

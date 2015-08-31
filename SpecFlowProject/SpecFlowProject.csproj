@@ -55,6 +55,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
     <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
@@ -77,7 +80,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_PermissionsSteps.cs" />
+    <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateNewDocument.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointAPI\GetAPIKey.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetAPIKey.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointLive\SPLive_CommonSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolderSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
     <Compile Include="DocumentManagement_Steps.cs" />
@@ -138,28 +151,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChangePasswordAPI.feature</DependentUpon>
     </Compile>
-    <Compile Include="SupportPointLive\AccountLoginAPI.feature.cs">
+    <Compile Include="SupportPointAPI\AccountLoginAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountLoginAPI.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\UserManagement\UserManagement_Steps.cs" />
-    <Compile Include="SupportPointLive\CreateUpdateUserAPI.feature.cs">
+    <Compile Include="SupportPointAPI\CreateUpdateUserAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateUpdateUserAPI.feature</DependentUpon>
     </Compile>
-    <Compile Include="SupportPointLive\CommonFeatureSteps.cs" />
-    <Compile Include="SupportPointLive\NewAPIFeature.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NewAPIFeature.feature</DependentUpon>
-    </Compile>
-    <Compile Include="SupportPointLive\SPLive_ShowDcoument.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SPLive_ShowDcoument.feature</DependentUpon>
-    </Compile>
+    <Compile Include="SupportPointAPI\CommonFeatureSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
       <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -177,7 +180,6 @@
     </Compile>
     <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
-    <Compile Include="SupportPointLive\SPLive_ShowDcoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature.cs">
       <AutoGen>True</AutoGen>
@@ -197,13 +199,23 @@
       <DependentUpon>DocumentManagement_Search.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Viewer\SP_Viewer_Steps.cs" />
-    <Compile Include="SupportPointLive\UserImportFeature.feature.cs">
+    <Compile Include="SupportPointLive\SPLive_Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPLive_Search.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointLive\SPLive_ShowDocument.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPLive_ShowDocument.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SupportPointAPI\UserImportFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserImportFeature.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsersSteps.cs" />
-    <Compile Include="SupportPointLive\UserImportFeatureSteps.cs" />
+    <Compile Include="SupportPointAPI\UserImportFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -264,21 +276,21 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ChangePasswordAPI.feature.cs</LastGenOutput>
     </None>
-    <None Include="SupportPointLive\AccountLoginAPI.feature">
+    <None Include="SupportPointAPI\AccountLoginAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AccountLoginAPI.feature.cs</LastGenOutput>
     </None>
-    <None Include="SupportPointLive\CreateUpdateUserAPI.feature">
+    <None Include="SupportPointAPI\CreateNewDocument.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateNewDocument.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointAPI\CreateUpdateUserAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateUpdateUserAPI.feature.cs</LastGenOutput>
     </None>
-    <None Include="SupportPointLive\NewAPIFeature.feature">
+    <None Include="SupportPointAPI\GetAPIKey.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>NewAPIFeature.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SupportPointLive\SPLive_ShowDcoument.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SPLive_ShowDcoument.feature.cs</LastGenOutput>
+      <LastGenOutput>GetAPIKey.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -299,7 +311,15 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_Search.feature.cs</LastGenOutput>
     </None>
-    <None Include="SupportPointLive\UserImportFeature.feature">
+    <None Include="SupportPointLive\SPLive_Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SPLive_Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointLive\SPLive_ShowDocument.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SPLive_ShowDocument.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointAPI\UserImportFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserImportFeature.feature.cs</LastGenOutput>
     </None>
@@ -312,6 +332,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SP_Editor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Selenium.WebDriver.ChromeDriver.2.18.0.0\driver\chromedriver.exe">
+      <Link>chromedriver.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Selenium.WebDriver.IEDriver.2.47.0.0\driver\IEDriverServer.exe">
+      <Link>IEDriverServer.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

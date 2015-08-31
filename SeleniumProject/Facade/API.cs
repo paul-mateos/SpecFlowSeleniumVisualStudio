@@ -12,20 +12,23 @@ namespace SP_Automation.Facade
     public class API
     {
 
-        public string url;
-        public string host;
-        public string webservice;
-        //public string contentType;
-        public string requestBody;
-        public string requestMethod;
-        private string fullUrl;
-        private int contentLength = 0;
-        private string contentType = "application/json";
-        public APICommons apiRequest = new APICommons();
-        private List<Parameter> parameters = new List<Parameter>();
-       
+        public static string url;
+        public static string host;
+        public static string webservice;
+        public static string SessionID = "";
+        public static string apiKey = "";
+        public static string UserID;
+        public static string requestBody = "";
+        public static string requestXMLBody = "";
+        public static string requestMethod;
+        private static string fullUrl;
+        private static int contentLength = 0;
+        private string contentType = "application/xml";
+        public static APICommons apiRequest = new APICommons();
+        private static List<Parameter> parameters = new List<Parameter>();
+        public static string roleID = "";
 
-        public string buildUrlParam(string key, string value)
+        public static string buildUrlParam(string key, string value)
         {
             if (value == null || value.Length == 0) return "";
 
@@ -33,7 +36,7 @@ namespace SP_Automation.Facade
 
         }
 
-        public virtual string getFullUrl()
+        public static string getFullUrl()
         {
             string host = Properties.Settings.Default.Environment;
             fullUrl = "http://" + host + "/" + webservice;
@@ -45,25 +48,34 @@ namespace SP_Automation.Facade
                     string keyValue = p.Value;
                     if (keyValue.Equals(""))
                     {
-                        keyValue = getKeyValue(p.Key);
+                       
+                        if (SessionID.Equals(""))
+                        {
+                            keyValue = getKeyValue(p.Key);
+                        }
+                        else
+                        {
+                            keyValue = SessionID;
+                        }
                     }
                     urlParam = urlParam + buildUrlParam(p.Key, keyValue);
                     // Need to be generic for different parameters
                 }
                 fullUrl = fullUrl + urlParam;
             }
+            parameters.Clear();
            
             return fullUrl;
         }
 
 
-        protected string getKeyValue(string key)
+        protected static string getKeyValue(string key)
         {
             string value = "";
             switch (key)
             {
                 case "sid":
-                    value= getSessionID("","");
+                     value= getSessionID("","");
                     break;
                 case "fn":
                    value = getFilePath();
@@ -73,34 +85,40 @@ namespace SP_Automation.Facade
             return value;
         }
 
-        protected string getFilePath()
+        protected static string getFilePath()
         {
             return apiRequest.getFilePath();
         }
 
-        public void addParameters(string key, string value)
+        public static void addParameters(string key, string value)
         {
             var parameter = new Parameter { Key = key, Value = value  };
             parameters.Add(parameter);
         }
 
-        public void SendRequest()
+        public static void SendRequest()
         {
             getFullUrl();
-            string value =  Regex.Replace(this.requestBody, @"\t|\n|\r", "");
-            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod,contentType,contentLength);
-            //  RestAPI.newRequest(address).GetAndVerifyStatus(address + GenUrlString(), HttpStatusCode.OK);
+            string value =  Regex.Replace(requestBody, @"\t|\n|\r", "");
+            string XMLvalue = Regex.Replace(requestXMLBody, @"\t|\n|\r", "");
+            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod, "application/json; charset=utf-8", contentLength);
         }
 
-        public WebResponse recieveResponse()
+        public static WebResponse recieveResponse()
         {
-
-            return apiRequest.recieveResponse(); //apiRequest.getUserImportResponse()
+            
+            return apiRequest.recieveResponse(); 
         }
 
-        public string getSessionID(string userName,string pwd)
+        public static WebResponse recieveGetAsyncResponse()
         {
-            return apiRequest.getSessionID(userName,pwd);
+
+           return  apiRequest.AsyncResponse(fullUrl); 
+        }
+
+        public static string getSessionID(string userName,string pwd)
+        {
+             return apiRequest.getSessionID(userName,pwd);
         }
 
         public class Parameter

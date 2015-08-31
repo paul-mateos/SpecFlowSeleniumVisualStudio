@@ -25,7 +25,7 @@ namespace SP_Automation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("QA_B")]
+        [global::System.Configuration.DefaultSettingValueAttribute("QA_A")]
         public global::SP_Automation.Environments.EnvironmentType Environment1 {
             get {
                 return ((global::SP_Automation.Environments.EnvironmentType)(this["Environment1"]));
@@ -109,7 +109,7 @@ namespace SP_Automation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-b")]
+        [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-a")]
         public string Environment {
             get {
                 return ((string)(this["Environment"]));

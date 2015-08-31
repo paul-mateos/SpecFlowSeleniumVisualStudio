@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SP_Automation.PageModels
 {
-    class UserActionPage : BasePage
+    public class UserActionPage : BasePage
     {
         
         By newUser = By.LinkText("New user");
@@ -27,13 +27,19 @@ namespace SP_Automation.PageModels
         {
            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
              
-           wait.Until(ExpectedConditions.ElementExists(newUser)); 
+          
         }
 
         public void ClickNewUser()
         {
+            wait.Until(ExpectedConditions.ElementExists(newUser));
             UICommon.ClickButton(newUser, d);
 
+        }
+
+        public void clickToClose()
+        {
+            UICommon.ClickButton(Close,d);
         }
 
        
