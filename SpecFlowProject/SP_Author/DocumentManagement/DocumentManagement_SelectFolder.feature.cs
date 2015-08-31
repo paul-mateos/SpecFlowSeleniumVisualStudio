@@ -72,12 +72,10 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         
         public virtual void FeatureBackground()
         {
- #line 7
-#line 8
- testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.And("I have logged into SupportPoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
+#line 7
+ #line 8
+ testRunner.Given("I have logged in to SP as a new \"authors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
  testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
@@ -91,11 +89,11 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a Folder", new string[] {
                         "2_DocumentManagement_SelectFolder"});
-#line 14
+#line 12
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
-#line 15
+#line 13
  testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
  testRunner.When("I select the Home DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

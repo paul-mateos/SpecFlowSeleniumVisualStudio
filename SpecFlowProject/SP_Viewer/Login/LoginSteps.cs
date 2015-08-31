@@ -3,6 +3,7 @@ using System.Threading;
 using TechTalk.SpecFlow;
 using SP_Automation.Tests;
 using SP_Automation.PageModels;
+using SpecFlowProject.SupportPointAPI;
 
 namespace SpecFlowProject
 {
@@ -32,16 +33,7 @@ namespace SpecFlowProject
             SupportPoint.LogIn.Login(username, password);
 
         }
-
-        //[Given(@"I have logged into SupportPoint")]
-        //public void GivenIHaveLoggedIntoSupportPoint()
-        //{
-
-        //    if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
-        //    SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
-
-        //}
-       
+   
 
         [AfterScenario]
         [Given(@"I Close SupportPoint")]
@@ -49,8 +41,9 @@ namespace SpecFlowProject
         [Then(@"I Close SupportPoint")]
         public void ICloseSupportPoint()
         {
-
+            CommonFeatureSteps common = new CommonFeatureSteps();
             SupportPoint.ExitSuportPoint();
+            common.ThenDeleteUser();
         }
 
     }
