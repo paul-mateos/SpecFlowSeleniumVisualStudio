@@ -610,16 +610,37 @@ namespace SpecFlowProject.SupportPointAPI
             API.requestXMLBody = API.requestXMLBody + textBody;
         }
 
+        [Given(@"Delete user")]
+        [When(@"Delete user")]
         [Then(@"Delete user")]
         public void ThenDeleteUser()
         {
-            GivenIWantToARequest("POST");
-            GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
-            GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
-            GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID")+"]");
-            WhenISendRequest();
-            ThenMyResultIsResponse();
+            if  (FeatureContext.Current.Get<string>("UserID") != null)
+            {
+                GivenIWantToARequest("POST");
+                GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
+                GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
+                GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID") + "]");
+                WhenISendRequest();
+                ThenMyResultIsResponse();
+            }
+            
     }
+
+        [Given(@"I have logged in to SP as a new ""(.*)""")]
+        [Given(@"I have logged in to SP as a new ""(.*)""")]
+        [Given(@"I have logged in to SP as a new ""(.*)""")]
+        public void GivenIHaveLoggedInToSPAsRole(string role)
+        {
+            GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
+            getRoleID(role);
+            string userName = getRandomUserName(role);
+            CreateNewUser(userName, "1", API.roleID);
+
+            if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
+            SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
+
+        }
 
     }
 }
