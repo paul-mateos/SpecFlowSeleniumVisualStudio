@@ -101,19 +101,19 @@ namespace SP_Automation.Facade
             getFullUrl();
             string value =  Regex.Replace(requestBody, @"\t|\n|\r", "");
             string XMLvalue = Regex.Replace(requestXMLBody, @"\t|\n|\r", "");
-            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod, "application/xml; charset=utf-8", contentLength);
+            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod, "application/json; charset=utf-8", contentLength);
         }
 
         public static WebResponse recieveResponse()
         {
             
-            return apiRequest.recieveResponse(); //apiRequest.getUserImportResponse()
+            return apiRequest.recieveResponse(); 
         }
 
         public static WebResponse recieveGetAsyncResponse()
         {
 
-           return  apiRequest.AsyncResponse(fullUrl); //apiRequest.getUserImportResponse()
+           return  apiRequest.AsyncResponse(fullUrl); 
         }
 
         public static string getSessionID(string userName,string pwd)

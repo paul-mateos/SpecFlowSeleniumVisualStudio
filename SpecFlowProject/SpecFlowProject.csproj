@@ -80,6 +80,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateNewDocument.feature</DependentUpon>
+    </Compile>
     <Compile Include="SupportPointAPI\GetAPIKey.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,11 +163,6 @@
       <DependentUpon>CreateUpdateUserAPI.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointAPI\CommonFeatureSteps.cs" />
-    <Compile Include="SupportPointLive\SPLive_ShowDcoument.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SPLive_ShowDcoument.feature</DependentUpon>
-    </Compile>
     <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
       <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -180,7 +180,6 @@
     </Compile>
     <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
-    <Compile Include="SupportPointLive\SPLive_ShowDcoumentSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature.cs">
       <AutoGen>True</AutoGen>
@@ -200,6 +199,11 @@
       <DependentUpon>DocumentManagement_Search.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Viewer\SP_Viewer_Steps.cs" />
+    <Compile Include="SupportPointLive\SPLive_Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPLive_Search.feature</DependentUpon>
+    </Compile>
     <Compile Include="SupportPointLive\SPLive_ShowDocument.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -276,6 +280,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AccountLoginAPI.feature.cs</LastGenOutput>
     </None>
+    <None Include="SupportPointAPI\CreateNewDocument.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateNewDocument.feature.cs</LastGenOutput>
+    </None>
     <None Include="SupportPointAPI\CreateUpdateUserAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateUpdateUserAPI.feature.cs</LastGenOutput>
@@ -283,10 +291,6 @@
     <None Include="SupportPointAPI\GetAPIKey.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GetAPIKey.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SupportPointLive\SPLive_ShowDcoument.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SPLive_ShowDcoument.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -306,6 +310,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SupportPointLive\SPLive_Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SPLive_Search.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointLive\SPLive_ShowDocument.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
