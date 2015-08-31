@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.IO;
 using SP_Automation.Modules;
 using SP_Automation.PageModels.SP_Author;
+using SP_Automation.Utility;
 
 namespace SP_Automation.Tests
 {
@@ -69,6 +70,8 @@ namespace SP_Automation.Tests
 
                     break;
                 case BrowserType.NodeWebkit:
+                    string FileLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Panviva\\SupportPoint\\Viewer\\configSPViewer.json";
+                    SPConfigFileCreator.UpdateSPConfigFile(Properties.Settings.Default.Environment, FileLocation);
                     WebDriver = (new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\"));
                     break;
                 default:
