@@ -5,9 +5,7 @@ Feature: DocumentManagement_SelectFolder
 	I want to be able to select a Folder by Navigating the Folder tree
 
 	Background: SupportPoint is open
-	Given SupportPoint is opened
-	#And I login as a valid user with login is paul and password is p
-	And I have logged into SupportPoint
+	Given I have logged in to SP as a new "authors"
 	Then I Open SP Manager
 	
 @2_DocumentManagement_SelectFolder

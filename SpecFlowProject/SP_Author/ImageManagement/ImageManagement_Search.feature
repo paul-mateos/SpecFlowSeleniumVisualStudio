@@ -5,8 +5,7 @@
 
 
 Background: SuportPoint is open
-#Given SupportPoint is opened
-Given I login as a valid user with login is paul and password is p
+Given I have logged in to SP as a new "authors"
 Then I Open SP Manager
 
 @1_ImageManagement_SearchBy
