@@ -74,6 +74,7 @@ namespace SP_Automation.Commons
         public static void SelectListValue(By searchType, string value, IWebDriver d)
         {
             IWebElement elem = GetElement(searchType, d);
+            elem.Click();
             SelectElement selector = new SelectElement(elem);
             selector.SelectByText(value);
             
@@ -125,10 +126,10 @@ namespace SP_Automation.Commons
             }throw new Exception("Error switching to new browser");
         }
 
-        public static IWebElement GetSearchResultTable(string tableName, IWebDriver d)
+        public static IWebElement GetSearchResultTable(By searchTableBy, IWebDriver d)
         {
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-            IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(By.Id(tableName)));
+            IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(searchTableBy));
             return webElementBody;
         }
 

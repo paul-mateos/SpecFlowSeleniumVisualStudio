@@ -45,6 +45,7 @@ namespace SP_Automation.Tests
         static public SPManagerDetailsActionsPage SPManagerDetailsActionsPage { get { return new SPManagerDetailsActionsPage(WebDriver); } set { SPManagerDetailsActionsPage = value; } }
         static public PermissionsPage PermissionsPage { get { return new PermissionsPage(WebDriver); } set { PermissionsPage = value; } }
         static public RoleSelectorPage RoleSelectorPage { get { return new RoleSelectorPage(WebDriver); } set { RoleSelectorPage = value; } }
+        static public SPAuthorPage SPAuthorPage { get { return new SPAuthorPage(WebDriver); } set { SPAuthorPage = value; } }
 
         /*
          * Open Support Point app: if there is existing one, it will kill it
@@ -53,7 +54,7 @@ namespace SP_Automation.Tests
         {
             
             ExitSuportPoint(); //just in case previous test not cleanup properly
-
+            string environment = Properties.Settings.Default.Environment;
             var options = new InternetExplorerOptions()
             {
                 IntroduceInstabilityByIgnoringProtectedModeSettings = true
@@ -62,11 +63,12 @@ namespace SP_Automation.Tests
             switch (Properties.Settings.Default.Browser)
             {
                 case BrowserType.IE:
-                    //driver = new InternetExplorerDriver(options);
                     WebDriver = (new InternetExplorerDriver(options));
+                    WebDriver.Navigate().GoToUrl("http://" + environment);
                     break;
                 case BrowserType.Chrome:
                     WebDriver = (new ChromeDriver());
+                    WebDriver.Navigate().GoToUrl("http://" + environment);
 
                     break;
                 case BrowserType.NodeWebkit:
@@ -130,7 +132,6 @@ namespace SP_Automation.Tests
         {
             string BaseWindowHandle = WebDriver.CurrentWindowHandle;
             UICommon.SwitchToNewBrowserWithTitle(WebDriver,PageTitle);
-
         }
 
         public static void KillProcess(string processName)
