@@ -76,5 +76,10 @@ namespace SP_Automation.PageModels
             }
 
         }
+
+        internal void SwitchToNewBrowserWithTitle(string p)
+        {
+            UICommon.SwitchToNewBrowserWithTitle(d, "Home");
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace SP_Automation.PageModels
     public abstract class BasePage
     {
        static protected IWebDriver d;
+       static protected int waitsec = Properties.Settings.Default.WaitTime;
         public BasePage(IWebDriver driver)
         {
             d = driver;
