@@ -28,14 +28,14 @@ namespace SP_Automation.PageModels.SP_Author
         By submitSearchButton = By.XPath("//button[@type='submit']");
         By resetSearchButton = By.XPath("//button[@type='reset']");
         By moveButton = By.XPath("//button[@type='button' and contains(text(), 'Move') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
-        By RemoveButton = By.XPath("//button[@type='button' and contains(text(), 'Remove') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
+        //By RemoveButton = By.XPath("//button[@type='button' and contains(text(), 'Remove') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
         By cancelButton = By.XPath("//button[@type='button' and contains(text(), 'Cancel') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
-        By saveButton = By.XPath("//button[@type='button' and contains(text(), 'Save') and not(contains(@ng-disabled, 'areButtonsDisabled'))]"); //Need to have this changed by dev
-        By okButton = By.XPath("//button[@title='OK']");
+        //By saveButton = By.XPath("//button[@type='button' and contains(text(), 'Save'))]"); //Need to have this changed by dev
+        //By okButton = By.XPath("//button[@title='OK']");
         By nextPageButton = By.XPath("//a[@title='Go to the next page']");
         //Image Popups
         By imageFolderPopup = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
-        By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove the selected image?')]");
+        //By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove the selected image?')]");
 
         public ImageManagementPage(IWebDriver driver)
             : base(driver)
@@ -157,18 +157,18 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(moveButton, d);
         }
 
-        public void ClickRemoveButton()
-        {
-            UICommon.ClickButton(RemoveButton, d);
-            Thread.Sleep(3000);
-        }
+        //public void ClickRemoveButton()
+        //{
+        //    UICommon.ClickButton(RemoveButton, d);
+        //    Thread.Sleep(3000);
+        //}
 
-        public void ConfirmRemovalMessage()
-        {
-            IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
-            elem.FindElement(okButton).Click();
-            Thread.Sleep(3000);
-        }
+        //public void ConfirmRemovalMessage()
+        //{
+        //    IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
+        //    elem.FindElement(okButton).Click();
+        //    Thread.Sleep(3000);
+        //}
 
         public void SetImageName(string imageName)
         {
@@ -181,10 +181,10 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(cancelButton, d);
         }
 
-        public void ClickSaveButton()
-        {
-            UICommon.ClickButton(saveButton, d);
-        }
+        //public void ClickSaveButton()
+        //{
+        //    UICommon.ClickButton(saveButton, d);
+        //}
 
         public void ConfirmImageName(string ImageName)
         {

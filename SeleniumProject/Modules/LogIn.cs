@@ -26,6 +26,7 @@ namespace SP_Automation.Modules
             loginPage.ClickLogOnButton();
             String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
             loginPage.ConfirmWarningMessage(warningMessage);
+            loginPage.SwitchToNewBrowserWithTitle("Home");
             HomePage homePage = new HomePage(driver);
             Assert.IsTrue(homePage.GetWelcomeTitleDisplayProperty());
         }

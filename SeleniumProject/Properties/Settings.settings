@@ -6,7 +6,7 @@
       <Value Profile="(Default)">QA_A</Value>
     </Setting>
     <Setting Name="Browser" Type="SP_Automation.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">NodeWebkit</Value>
+      <Value Profile="(Default)">Chrome</Value>
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">30</Value>

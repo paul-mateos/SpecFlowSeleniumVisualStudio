@@ -80,6 +80,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -10,16 +10,11 @@ namespace SpecFlowProject
     [Binding]
     public class DocumentManagement
     {
-        
-        //[Given(@"I am at Document Management page")]
-        //public void GivenIAmAtDocumentManagementPage()
-        //{
-        //    SupportPoint.IsCurrentBrowser("Document Management : SupportPoint");
-
-        //}
-
+       
         public string childFolder;
+        [Given(@"I select the (.*) DocumentFolder")]
         [When(@"I select the (.*) DocumentFolder")]
+        [Then(@"I select the (.*) DocumentFolder")]
         public void WhenISelectADocumentFolder(string folderString)
         {
             char[] splitter = { ',' };
@@ -28,6 +23,8 @@ namespace SpecFlowProject
             SupportPoint.SPManagerFolder.ClickOnFolder("Document", folders);
         }
 
+        [Given(@"the correct folder is selected")]
+        [When(@"the correct folder is selected")]
         [Then(@"the correct folder is selected")]
         public void ThenTheCorrectFolderIsSelected()
         {
