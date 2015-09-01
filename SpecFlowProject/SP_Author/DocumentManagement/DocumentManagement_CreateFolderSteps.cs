@@ -22,7 +22,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagmentNew.clickFolder(newtype);
         }
 
-        [When(@"I have entered (.*) (.*) (.*)")]
+        [When(@"I have entered Type (.*) Name (.*) Description (.*)")]
         public void WhenIHaveEnteredLocalisationSel_BlankFolderNameSel_BlankFolderDescription(string type, string name, string description)
         {
             SupportPoint.DocumentManagmentNew.fillIn(type, name, description);

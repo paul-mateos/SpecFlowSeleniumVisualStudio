@@ -72,21 +72,9 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ClickMoveButton();
         }
 
-        [Given(@"I Click on the Remove Button")]
-        [When(@"I Click on the Remove Button")]
-        [Then(@"I Click on the Remove Button")]
-        public void WhenIClickOnTheRemoveButton()
-        {
-            SupportPoint.ImageManagementPage.ClickRemoveButton();
-        }
+        
 
-        [Given(@"I Confirm the Removal")]
-        [When(@"I Confirm the Removal")]
-        [Then(@"I Confirm the Removal")]
-        public void ThenIConfirmTheRemoval()
-        {
-            SupportPoint.ImageManagementPage.ConfirmRemovalMessage();
-        }
+       
 
         [Given(@"I enter the Image Name (.*)")]
         [When(@"I enter the Image Name (.*)")]
@@ -105,12 +93,13 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ClickCancelButton();
         }
 
-        [Given(@"I click on the Save Button")]
-        [When(@"I click on the Save Button")]
-        [Then(@"I click on the Save Button")]
-        public void ThenIClickOnTheSaveButton()
+        [Given(@"I click on the Image Save Button")]
+        [When(@"I click on the Image Save Button")]
+        [Then(@"I click on the Image Save Button")]
+        public void ThenIClickOnTheImageSaveButton()
         {
-            SupportPoint.ImageManagementPage.ClickSaveButton();
+            //SupportPoint.ImageManagementPage.ClickSaveButton();
+            SupportPoint.SPAuthorPage.ClickSaveButton();
         }
 
         [Given(@"I confirm the Image Name")]

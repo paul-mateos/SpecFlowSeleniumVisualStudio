@@ -23,7 +23,7 @@ namespace SP_Automation.PageModels.SP_Author
         public DocumentManagmentNewPage(IWebDriver driver)
             : base(driver)
         {
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
 
             wait.Until(ExpectedConditions.ElementExists(Name));
         }
@@ -45,15 +45,13 @@ namespace SP_Automation.PageModels.SP_Author
 
         public void fillIn(string type, string name, string description)
         {
-            Debug.WriteLine(type);
-
             UICommon.SelectListValue(Type, type, d);
             UICommon.SetValue(Name, name, d);
-          //  UICommon.SelectListValue(Display, display, d);
-            // Thread.Sleep(3000);
             UICommon.SetValue(Description, description, d);
                  
         }
+
+       
     }
 }
 

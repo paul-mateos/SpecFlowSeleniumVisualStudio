@@ -117,6 +117,7 @@
     <Compile Include="PageModels\SP_Author\IAddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
     <Compile Include="Modules\DetailsandActions.cs" />
+    <Compile Include="PageModels\SP_Author\SPAuthorPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerFindBarPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerFolderPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerNavBarPage.cs" />
