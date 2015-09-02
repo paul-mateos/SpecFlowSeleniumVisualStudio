@@ -21,7 +21,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
 
         [Given(@"I select the record (.*) using column (.*) from the Document Selector table")]
         [When(@"I select the record (.*) using column (.*) from the Document Selector table")]
-        [Then(@"I select the record (.*) using column (.*)  from the Document Selector table")]
+        [Then(@"I select the record (.*) using column (.*) from the Document Selector table")]
         public void IselecttherecordfromtheDocumentSelectortable(string searchValue, string colName)
         {
             SupportPoint.DocumentManagementPage.ClickSelectorRecord(colName, searchValue);

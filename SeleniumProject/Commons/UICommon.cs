@@ -142,5 +142,57 @@ namespace SP_Automation.Commons
             return elem.GetAttribute(attribute);
 
         }
+
+        public static IWebElement GetFolderTree(By searchBy, IWebDriver d)
+        {
+            IWebElement elem = UICommon.GetElement(searchBy, d);
+            return elem;
+        }
+
+        public static void ClickOnFolder(string Page, string[] Folders, By FolderTree,IWebDriver d)
+        {
+            //get folder tree element
+            IWebElement folderTree;
+           
+            folderTree = GetFolderTree(FolderTree, d);
+        
+            //count the number of indexes
+            int folderTreeDepth = Folders.Count();
+
+
+            for (int i = 0; i < folderTreeDepth; i++)
+            {
+                //get the name of the current folder
+                string FolderName = Folders[i];
+                //get the number of available parent folders in docexplorertree
+
+                IReadOnlyCollection<IWebElement> folders = folderTree.FindElements(By.XPath("./ul/li"));
+
+                //check each parent folder in tree
+                foreach (IWebElement folder in folders)
+                {
+                    IWebElement folderText = folder.FindElement(By.CssSelector("div span span"));
+                    if (folderText.Text == FolderName)
+                    {
+                        //Expand the folder
+                        if (folder.GetAttribute("aria-expanded") != "true")
+                        {
+                            Actions action = new Actions(d);
+                            action.DoubleClick(folderText).Build().Perform();
+                            folderTree = folder;
+                        }
+                        else
+                        {
+                            Actions action = new Actions(d);
+                            action.MoveToElement(folderText).Click().Build().Perform();
+                            folderTree = folder;
+                        }
+
+                        break;
+                    }
+                }
+
+            }
+        }
     }
 }

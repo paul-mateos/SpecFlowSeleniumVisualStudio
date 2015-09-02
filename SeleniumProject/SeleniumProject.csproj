@@ -104,7 +104,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Modules\Notification.cs" />
-    <Compile Include="Modules\Folder.cs" />
     <Compile Include="Modules\LogIn.cs" />
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />

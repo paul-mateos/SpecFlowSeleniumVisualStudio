@@ -19,6 +19,7 @@ namespace SP_Automation.PageModels.SP_Author
         By browseButton = By.XPath("//button[@title='Browse']");
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove')]");
         By okButton = By.XPath("//button[@title='OK']");
+        By removeButton = By.XPath("//button[@title='Remove']");
 
 
         public SPAuthorPage(IWebDriver driver)
@@ -46,7 +47,8 @@ namespace SP_Automation.PageModels.SP_Author
         public void ConfirmRemovalMessage()
         {
             IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
-            elem.FindElement(okButton).Click();
+            //elem.FindElement(okButton).Click();
+            elem.FindElement(removeButton).Click();
             Thread.Sleep(3000);
         }
     }

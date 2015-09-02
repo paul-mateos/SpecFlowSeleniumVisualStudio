@@ -92,7 +92,7 @@
       <DependentUpon>GetAPIKey.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointLive\SPLive_CommonSteps.cs" />
-    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolderSteps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateNewSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
     <Compile Include="DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateDoumentSteps.cs" />
