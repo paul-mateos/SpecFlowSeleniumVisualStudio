@@ -105,7 +105,7 @@ this.FeatureBackground();
 #line 18
  testRunner.And("I select the File", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.When("I press Save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
  testRunner.Then("the result should be new users added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

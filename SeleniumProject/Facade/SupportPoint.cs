@@ -28,12 +28,11 @@ namespace SP_Automation.Tests
 
         static public LogIn LogIn { get { return new LogIn(WebDriver); } set { LogIn = value; } }
         static public Nav Nav { get {return  new Nav(WebDriver);} set {Nav = value;} }
-        static public Folder Folder { get { return new Folder(WebDriver); } set {Folder = value;} }
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
         static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
         static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
         static public Actions Actions { get { return new Actions(WebDriver); } set { Actions = value; } }
-        static public DetailsandActions DetailsActions { get { return new DetailsandActions(WebDriver); } set { DetailsActions = value; } }
+        //static public DetailsandActions DetailsActions { get { return new DetailsandActions(WebDriver); } set { DetailsActions = value; } }
         /*
          *  Page Models
          *  */

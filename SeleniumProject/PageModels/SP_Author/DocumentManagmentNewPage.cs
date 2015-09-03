@@ -51,7 +51,12 @@ namespace SP_Automation.PageModels.SP_Author
                  
         }
 
-       
+
+
+        public void SetType(string type)
+        {
+            UICommon.SelectListValue(Type, type, d);
+        }
     }
 }
 

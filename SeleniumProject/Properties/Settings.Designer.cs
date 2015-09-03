@@ -37,7 +37,7 @@ namespace SP_Automation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
+        [global::System.Configuration.DefaultSettingValueAttribute("NodeWebkit")]
         public global::SP_Automation.Environments.BrowserType Browser {
             get {
                 return ((global::SP_Automation.Environments.BrowserType)(this["Browser"]));

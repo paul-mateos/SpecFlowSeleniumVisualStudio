@@ -72,56 +72,198 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
 #line 6
 #line 7
-testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
-testRunner.And("I login as a valid user with login is sel_author and password is password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I have logged in to SP as a new \"advanced_authors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
 testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
-        public virtual void CreateNewFolder(string type, string name, string description, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Blank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.1_DocumentManagement_CreateNewFolder")]
+        public virtual void CreateNewFolderForBlank()
         {
-            string[] @__tags = new string[] {
-                    "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder", @__tags);
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Blank", new string[] {
+                        "4.1.1.1_DocumentManagement_CreateNewFolder"});
+#line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 15
+#line 13
  testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.And("I select the Home DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.When("I select the Home Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I select New from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 18
- testRunner.And("I select new", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
  testRunner.And("I have selected Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+    testRunner.When("I have entered Type Blank Name sel_blankFolderName Description sel_blankFolderDes" +
+                    "cription", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
-    testRunner.And(string.Format("I have entered {0} {1} {2}", type, name, description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I Click on the Remove Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
- testRunner.And("I press Save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Confirm the Removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Copy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Localisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Type", "Localisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Name", "sel_blankFolderName")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Description", "sel_blankFolderDescription")]
-        public virtual void CreateNewFolder_Localisation()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.2_DocumentManagement_CreateNewFolder")]
+        public virtual void CreateNewFolderForCopy()
         {
-            this.CreateNewFolder("Localisation", "sel_blankFolderName", "sel_blankFolderDescription", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Copy", new string[] {
+                        "4.1.1.2_DocumentManagement_CreateNewFolder"});
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 25
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.And("I select the Home,AutomationFolder DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("I select New from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("I have selected Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+    testRunner.When("I have entered Type Copy Name sel_CopyFolderName Description sel_CopyFolderDescri" +
+                    "ption", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+ testRunner.And("I click on the Browse Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("I select the Home,Templates Document Selector Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And("I select the record Processes using column Name from the Document Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.And("I click on the Add folder Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.Then("I Confirm the Refresh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 37
+ testRunner.And("I select the Home,AutomationFolder DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.And("I select the record sel_CopyFolderName using column Name from the Document table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I select Properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("I select General properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("I Click on the Remove Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I Confirm the Removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Localisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.3_DocumentManagement_CreateNewFolder")]
+        public virtual void CreateNewFolderForLocalisation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Localisation", new string[] {
+                        "4.1.1.3_DocumentManagement_CreateNewFolder"});
+#line 46
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 47
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 48
+ testRunner.And("I select the Home,AutomationFolder DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("I select New from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I have selected Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+    testRunner.When("I have entered Type Localisation Name sel_LocalisationFolderName Description sel_" +
+                    "LocalisationFolderDescription", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.And("I click on the Browse Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("I select the Home,Templates Document Selector Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("I select the record Processes using column Name from the Document Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("I click on the Add folder Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.Then("I Confirm the Refresh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 59
+ testRunner.And("I select the Home,AutomationFolder DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.And("I select the record sel_LocalisationFolderName using column Name from the Documen" +
+                    "t table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("I select Properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And("I select General properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("I Click on the Remove Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And("I Confirm the Removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Reference")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.4_DocumentManagement_CreateNewFolder")]
+        public virtual void CreateNewFolderForReference()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Reference", new string[] {
+                        "4.1.1.4_DocumentManagement_CreateNewFolder"});
+#line 68
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 69
+ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 70
+ testRunner.And("I select the Home,AutomationFolder DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.When("I select New from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
+ testRunner.And("I have selected Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("I have entered Reference Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+    testRunner.And("I click on the Browse Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("I select the Home,Templates Document Selector Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("I select the record Processes using column Name from the Document Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("I click on the Add folder Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 80
+ testRunner.And("I Click on the Remove Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("I Confirm the Removal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
         }
     }
 }
