@@ -79,6 +79,29 @@ namespace SpecFlowProject.SP_Author
         {
             SupportPoint.SPAuthorPage.ConfirmRemovalMessage();
         }
-       
+
+        [Given(@"I Confirm the Refresh")]
+        [When(@"I Confirm the Refresh")]
+        [Then(@"I Confirm the Refresh")]
+        public void ThenIConfirmTheRefresh()
+        {
+            SupportPoint.SPAuthorPage.ConfirmRefreshMessage();
+        }
+
+        [Given(@"I press Details & Actions")]
+        [When(@"I press Details & Actions")]
+        [Then(@"I press Details & Actions")]
+        public void WhenIPressDetailsActions()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickDetailsandActions();
+        }
+
+        [Given(@"I select (.*) from Details & Actions")]
+        [When(@"I select (.*) from Details & Actions")]
+        [Then(@"I select (.*) from Details & Actions")]
+        public void WhenISelectFromDetailsAndActions(string detailsAction)
+        {
+            SupportPoint.SPManagerDetailsActionsPage.SelectFromDnAList(detailsAction);
+        }
     }
 }

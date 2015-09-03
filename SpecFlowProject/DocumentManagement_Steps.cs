@@ -30,5 +30,16 @@ namespace SpecFlowProject
         {
 
         }
+
+        [Given(@"I select the (.*) Document Selector Folder")]
+        [When(@"I select the (.*) Document Selector Folder")]
+        [Then(@"I select the (.*) Document Selector Folder")]
+        public void WhenISelectADocumentSelectorFolder(string folderString)
+        {
+            char[] splitter = { ',' };
+            string[] folders = folderString.Split(splitter);
+            childFolder = folders[folders.Length - 1];
+            SupportPoint.SPManagerFolder.ClickOnFolder("Document Selector", folders);
+        }
     }
 }

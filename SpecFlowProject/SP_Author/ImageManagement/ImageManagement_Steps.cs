@@ -61,7 +61,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             char[] splitter = { ',' };
             string[] folders = folderString.Split(splitter);
             FeatureContext.Current.Add("childFolder",folders[folders.Length - 1]);
-            SupportPoint.SPManagerFolder.ClickOnFolder("Image Popup", folders);
+            SupportPoint.SPManagerFolder.ClickOnFolder("Image Selector", folders);
         }
 
         [Given(@"I Click on the Move Button")]
