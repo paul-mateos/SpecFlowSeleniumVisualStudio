@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SP_Automation.PageModels.SP_Author
@@ -47,7 +48,7 @@ namespace SP_Automation.PageModels.SP_Author
                 default:
                 throw new Exception("Invalid page");
             }
-           
+            Thread.Sleep(3000);
 
         }
 

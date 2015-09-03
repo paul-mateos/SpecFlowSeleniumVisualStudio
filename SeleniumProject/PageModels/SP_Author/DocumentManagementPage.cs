@@ -18,6 +18,7 @@ namespace SP_Automation.PageModels.SP_Author
         By MultipleSelectionbtn = By.Id("multiple");
         By saveButton = By.XPath("//button[@type='button' and contains(text(), 'Save'))]");
         By addDocumentButton = By.XPath("//button[@title='Add document']");
+        By addFolderButton = By.XPath("//button[@title='Add']");
         By docTable = By.Id("docExplorerGrid");
         By docSelectorTable = By.XPath("//div[@id='docExplorerGrid']/table[@role='treegrid']/ancestor::div[@id='kWindow0']");
         
@@ -67,6 +68,12 @@ namespace SP_Automation.PageModels.SP_Author
         public void clickAddDocumentButton()
         {
             UICommon.ClickButton(addDocumentButton, d);
+        }
+
+
+        public void clickAddFolderButton()
+        {
+            UICommon.ClickButton(addFolderButton, d);
         }
 
     }

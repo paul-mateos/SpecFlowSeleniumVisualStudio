@@ -18,8 +18,10 @@ namespace SP_Automation.PageModels.SP_Author
         By RemoveButton = By.CssSelector("button[data-automation-id='doc-details-actions-remove']");
         By browseButton = By.XPath("//button[@title='Browse']");
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove')]");
+        By refreshMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'refresh')]");
         By okButton = By.XPath("//button[@title='OK']");
-        By removeButton = By.XPath("//button[@title='Remove']");
+        By confirmRemoveButton = By.XPath("//div[@id='kWindow0']//button[@title='Remove']");
+        By confirmRefreshButton = By.XPath("//div[@id='kWindow0']//button[@title='Refresh now']");
 
 
         public SPAuthorPage(IWebDriver driver)
@@ -44,12 +46,21 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(RemoveButton, d);
         }
 
+
         public void ConfirmRemovalMessage()
         {
             IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
             //elem.FindElement(okButton).Click();
-            elem.FindElement(removeButton).Click();
+            elem.FindElement(confirmRemoveButton).Click();
             Thread.Sleep(3000);
+        }
+
+        public void ConfirmRefreshMessage()
+        {
+            IWebElement elem = UICommon.GetElement(refreshMessagePopup, d);
+            //elem.FindElement(okButton).Click();
+            elem.FindElement(confirmRefreshButton).Click();
+            Thread.Sleep(6000);
         }
     }
 }

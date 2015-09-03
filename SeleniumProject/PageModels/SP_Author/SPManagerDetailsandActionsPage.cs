@@ -22,12 +22,13 @@ namespace SP_Automation.PageModels
         By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']");
 
         By New = By.XPath("//a[@data-automation-id='doc-details-actions-new']");
-        By Properties = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[1]");
+        By Properties = By.XPath("//a[@data-automation-id='doc-details-actions-properties']");
+        By generalProperties = By.XPath("//a[@data-automation-id='doc-details-actions-general-properties']");
         By Rolemembership = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[2]");
         By TrainingObjectives = By.LinkText("Training objectives");
         By Readers = By.LinkText("Readers");
         By Writers = By.LinkText("Writers");
-        By Notifications = By.LinkText("Notifications");
+        By Notifications = By.XPath("//a[@data-automation-id='doc-details-actions-notifications']");
         By CustomProperties = By.LinkText("Custom properties");
         By Permissions = By.XPath("//a[@data-automation-id='doc-details-actions-permissions']");
         By EditBtn = By.XPath("//span[@title='Edit']");
@@ -51,34 +52,34 @@ namespace SP_Automation.PageModels
             }
         }
 
-        public void clickSave()
-        {
-            UICommon.ClickButton(SaveBtn, d);
-        }
+        //public void clickSave()
+        //{
+        //    UICommon.ClickButton(SaveBtn, d);
+        //}
 
-        public void clickNew()
-        {
-            UICommon.ClickLink(New, d);
-        }
+        //public void clickNew()
+        //{
+        //    UICommon.ClickLink(New, d);
+        //}
 
-        public void clickPermissions()
+        //public void clickPermissions()
 
-        {
-            By verPermissionsPage = By.XPath("//button[@title='Add role to readers']");
+        //{
+        //    By verPermissionsPage = By.XPath("//button[@title='Add role to readers']");
          
-            IReadOnlyCollection<IWebElement> elem = UICommon.GetElements(verPermissionsPage, d);
+        //    IReadOnlyCollection<IWebElement> elem = UICommon.GetElements(verPermissionsPage, d);
 
-            if (elem.Count==0)
-            {
-                SupportPoint.DetailsActions.DetailsActions();
-                UICommon.ClickLink(Permissions, d);
-            }
-        }
+        //    if (elem.Count==0)
+        //    {
+        //        SupportPoint.DetailsActions.DetailsActions();
+        //        UICommon.ClickLink(Permissions, d);
+        //    }
+        //}
 
-        public void clickMove()
-        {
-            UICommon.ClickButton(MoveBtn, d);
-        }
+        //public void clickMove()
+        //{
+        //    UICommon.ClickButton(MoveBtn, d);
+        //}
 
         public void clickDetailsandActions()
         {
@@ -86,10 +87,10 @@ namespace SP_Automation.PageModels
 
         }
 
-        public void clickRolemembership()
-        {
-            UICommon.ClickLink(Rolemembership, d);
-        }
+        //public void clickRolemembership()
+        //{
+        //    UICommon.ClickLink(Rolemembership, d);
+        //}
 
         public void clickEdit()
         {
@@ -101,6 +102,25 @@ namespace SP_Automation.PageModels
             Thread.Sleep(3000);
             IReadOnlyCollection<IWebElement> elements = UICommon.GetElements(EditBtn, d);
             Assert.IsTrue(elements.Count==0);
+        }
+
+        public void SelectFromDnAList(string detailsAction)
+        {
+            switch(detailsAction)
+            {
+                case "New":
+                    UICommon.ClickLink(New, d);
+                    break;
+                case "Properties":
+                    UICommon.ClickLink(Properties, d);
+                    break;
+                case "General properties":
+                    UICommon.ClickLink(generalProperties, d);
+                    break;
+                default:
+                    break;
+            }
+            Thread.Sleep(1000);
         }
     }
 }

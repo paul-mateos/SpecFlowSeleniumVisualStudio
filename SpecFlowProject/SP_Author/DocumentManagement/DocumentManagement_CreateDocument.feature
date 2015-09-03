@@ -17,7 +17,7 @@ Scenario: Create new Documents From Template
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
-	And I select new
+	And I select New from Details & Actions
 	And I have selected Document
 	Then I have entered Type From template Name docTemplateName Description sel_docTemplateDescription
 	And I click on the Browse Button
@@ -32,7 +32,7 @@ Scenario: Create new Documents From Copy
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
-	And I select new
+	And I select New from Details & Actions
 	And I have selected Document
 	Then I have entered Type Copy Name docCopyName Description sel_docCopyDescription
 	And I click on the Browse Button
@@ -47,7 +47,7 @@ Scenario: Create new Documents From Blank
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
-	And I select new
+	And I select New from Details & Actions
 	And I have selected Document
 	Then I have entered Type Blank Name docBlankName Description sel_docBlankDescription
 	And I click on the Save Button
@@ -59,7 +59,7 @@ Scenario: Create new Documents From Reusable Content
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
-	And I select new
+	And I select New from Details & Actions
 	And I have selected Document
 	Then I have entered Type Reusable content Name docReusableContentName Description sel_docReusableContentDescription
 	And I click on the Save Button
@@ -71,9 +71,9 @@ Scenario: Create new Documents From Reference
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
-	And I select new
+	And I select New from Details & Actions
 	And I have selected Document
-	Then I have entered Type Reference document
+	Then I have entered Reference document Type
 	And I click on the Browse Button
 	And I select the Home,Templates Document Selector Folder
 	And I select the record Overview using column Name from the Document Selector table
@@ -87,7 +87,7 @@ Scenario: Create new Documents From Localisation
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
-	And I select new
+	And I select New from Details & Actions
 	And I have selected Document
 	Then I have entered Type Localisation Name docLocalisationName Description sel_docLocalisationDescription
 	And I click on the Browse Button

@@ -24,7 +24,7 @@
       <Value Profile="(Default)">usersList</Value>
     </Setting>
     <Setting Name="Environment" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qa-spui-b</Value>
+      <Value Profile="(Default)">qa-spui-a</Value>
     </Setting>
   </Settings>
 </SettingsFile>

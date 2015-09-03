@@ -16,7 +16,7 @@ Scenario Outline: Import User File
 	When I press Import user, which contains <Username> and <Role>
 	And I press Choose File
 	And I select the File
-	When I press Save
+	When I click on the Save Button
 	Then the result should be new users added
 
 	Examples: 
