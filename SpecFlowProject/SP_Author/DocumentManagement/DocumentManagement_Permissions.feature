@@ -4,17 +4,18 @@
 	Select document and update the permissions
 
 Background: SuportPoint is open
-Given SupportPoint is opened
-When I login as a valid user with login is sel_rolecreator and password is password
+Given I have logged in to SP as a new "rolecreators"
 Then I Open SP Manager
-
+#Need to set up test data with folder and documentname
+#Need to delete the test data after scenario is executed
 
 @mytag
 Scenario: Rolecreators can't Edit a document
 Given I am at Document Management page
-# When I select the Home,sel_blankFolderName Folder
-#  And I select the sel_blankDocumentName Document
-And I navigate to the permissions page
+When I select the Home DocumentFolder
+And I select the record Welcome using column Name from the Document table
+And I select New from Details & Actions
+And I select Permissions from Details & Actions
 Then I verify the Edit button isn't Visible
 
 

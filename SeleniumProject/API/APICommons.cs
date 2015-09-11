@@ -22,6 +22,7 @@ namespace SP_Automation.API
             public string SessionID;
             private string filePath;
             private string folderPath;
+            private string protocol;
             private HttpWebRequest request;
             private WebResponse response;
             private Stream dataStream;
@@ -35,6 +36,7 @@ namespace SP_Automation.API
                 this.folderName = Properties.Settings.Default.folderName;
                 this.fileName = Properties.Settings.Default.fileName;
                 this.environment = Properties.Settings.Default.Environment;
+                this.protocol = Properties.Settings.Default.Protocol;
                // CreateTestEnvironment();
 
             }
@@ -110,11 +112,11 @@ namespace SP_Automation.API
                 {
                     pwd = this.password;
                 }
-                string url = "http://" + this.environment+ "/WebService.svc/rest_all/Accounts/Login";
-                string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + pwd + "\",\"UserName\":\"" + userName + "\"}";
+                string url = protocol + this.environment+ "/WebService.svc/rest_all/Accounts/Login";
+                string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"" + environment +"\",\"Password\":\"" + pwd + "\",\"UserName\":\"" + userName + "\"}";
 
                 // send POST request
-                sendPOSTRequest(url, requestBody, "POST", "application/xml; charset=utf-8", 0);
+                sendPOSTRequest(url, requestBody, "POST", "application/json", 0);
                 WebResponse response = recieveResponse();
                 //getResponse
                
@@ -153,23 +155,25 @@ namespace SP_Automation.API
             {
                 HttpWebResponse response = ((HttpWebResponse)ex.Response);
                 Console.WriteLine(response.StatusCode + ex.Message);
-
-                return null;
+                throw new Exception(response.StatusCode + ex.Message);
+           
             }
 
         }
 
             public void sendPOSTRequest(String url, String requestBody,string method,string contentType,int contentLength)
             {
+                ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
                 request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = method;
-                request.Accept = "application/xml";
-                request.ContentType = contentType; //"application /json";
+                request.Accept = contentType;// "application/xml";
+                request.ContentType = contentType +"; charset=utf-8";
                 request.ContentLength = contentLength;
                 if (requestBody != "")
                 {
+                    
                     byte[] data = Encoding.UTF8.GetBytes(requestBody);
-                    request.ContentType = "application/json; charset=utf-8";
+                    request.ContentType = contentType + "; charset=utf-8";
                     request.ContentLength = data.Length;
                     dataStream = request.GetRequestStream();
                     dataStream.Write(data, 0, data.Length);

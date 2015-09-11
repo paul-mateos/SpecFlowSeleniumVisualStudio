@@ -23,7 +23,7 @@ namespace SP_Automation.Facade
         public static string requestMethod;
         private static string fullUrl;
         private static int contentLength = 0;
-        private string contentType = "application/xml";
+        //private string contentType = "application/xml";
         public static APICommons apiRequest = new APICommons();
         private static List<Parameter> parameters = new List<Parameter>();
         public static string roleID = "";
@@ -38,8 +38,9 @@ namespace SP_Automation.Facade
 
         public static string getFullUrl()
         {
-            string host = Properties.Settings.Default.Environment;
-            fullUrl = "http://" + host + "/" + webservice;
+            string environment = Properties.Settings.Default.Environment;
+            string protocol = Properties.Settings.Default.Protocol;
+            fullUrl = protocol + environment + "/" + webservice;
             string urlParam = "?";
             if(parameters.Count > 0)
             {
@@ -101,7 +102,7 @@ namespace SP_Automation.Facade
             getFullUrl();
             string value =  Regex.Replace(requestBody, @"\t|\n|\r", "");
             string XMLvalue = Regex.Replace(requestXMLBody, @"\t|\n|\r", "");
-            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod, "application/json; charset=utf-8", contentLength);
+            apiRequest.sendPOSTRequest(fullUrl, value, requestMethod, "application/json", contentLength);
         }
 
         public static WebResponse recieveResponse()
