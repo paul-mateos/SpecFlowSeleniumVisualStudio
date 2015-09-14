@@ -26,5 +26,8 @@
     <Setting Name="Environment" Type="System.String" Scope="User">
       <Value Profile="(Default)">qa-spui-a</Value>
     </Setting>
+    <Setting Name="Protocol" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

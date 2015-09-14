@@ -117,10 +117,15 @@ namespace SP_Automation.PageModels
                 case "General properties":
                     UICommon.ClickLink(generalProperties, d);
                     break;
+                case "Permissions":
+                    UICommon.ClickLink(Permissions, d);
+                    break;
                 default:
                     break;
             }
             Thread.Sleep(1000);
         }
+
+        
     }
 }

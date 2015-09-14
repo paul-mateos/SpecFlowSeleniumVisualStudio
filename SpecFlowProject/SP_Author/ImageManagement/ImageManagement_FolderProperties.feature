@@ -4,7 +4,10 @@
 	I want to confirm that this can be done
 
 Background: SuportPoint is open
-Given I have logged in to SP as a new "authors"
+Given I have SessioID with username as "" and password as ""
+And I create the Automation Image Folder
+
+When I have logged in to SP as a new "authors"
 Then I Open SP Manager
 
 @2.1.1.1_ImageManagement_MoveToFolder

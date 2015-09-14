@@ -21,6 +21,7 @@ namespace SP_Automation.REST
         private string folderName;
         private string fileName;
         private string environment;
+        private string protocol;
         public string SessionID;
         private string filePath;
         private string folderPath;
@@ -38,6 +39,7 @@ namespace SP_Automation.REST
             this.folderName =  Properties.Settings.Default.folderName;
             this.fileName = Properties.Settings.Default.fileName;
             this.environment = Properties.Settings.Default.Environment;
+            this.protocol = Properties.Settings.Default.Protocol;
 
         }
 
@@ -95,7 +97,7 @@ namespace SP_Automation.REST
 
         public string getSessionID()
         {
-            string url = "http://qa-spui-b/WebService.svc/rest_all/Accounts/Login";            
+            string url = protocol + environment+"/WebService.svc/rest_all/Accounts/Login";            
             string requestBody = "{ \"ApplicationID\":0, \"ForcedLogin\":true, \"Instance\":\"localhost\",\"Password\":\"" + this.password+ "\",\"UserName\":\"" + this.username + "\"}";
 
             // send POST request

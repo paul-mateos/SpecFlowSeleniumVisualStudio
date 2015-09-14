@@ -54,6 +54,7 @@ namespace SP_Automation.Tests
             
             ExitSuportPoint(); //just in case previous test not cleanup properly
             string environment = Properties.Settings.Default.Environment;
+            string protocol = Properties.Settings.Default.Protocol;
             var options = new InternetExplorerOptions()
             {
                 IntroduceInstabilityByIgnoringProtectedModeSettings = true
@@ -63,11 +64,11 @@ namespace SP_Automation.Tests
             {
                 case BrowserType.IE:
                     WebDriver = (new InternetExplorerDriver(options));
-                    WebDriver.Navigate().GoToUrl("http://" + environment);
+                    WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 case BrowserType.Chrome:
                     WebDriver = (new ChromeDriver());
-                    WebDriver.Navigate().GoToUrl("http://" + environment);
+                    WebDriver.Navigate().GoToUrl(protocol + environment);
 
                     break;
                 case BrowserType.NodeWebkit:

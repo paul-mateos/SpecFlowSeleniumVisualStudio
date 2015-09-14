@@ -111,6 +111,8 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ConfirmImageName(imageName);
         }
 
+       
+
 
 
     }
