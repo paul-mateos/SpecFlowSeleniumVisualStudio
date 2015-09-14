@@ -6,7 +6,7 @@
       <Value Profile="(Default)">QA_A</Value>
     </Setting>
     <Setting Name="Browser" Type="SP_Automation.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">Chrome</Value>
+      <Value Profile="(Default)">NodeWebkit</Value>
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">30</Value>
@@ -25,6 +25,9 @@
     </Setting>
     <Setting Name="Environment" Type="System.String" Scope="User">
       <Value Profile="(Default)">qa-spui-a</Value>
+    </Setting>
+    <Setting Name="Protocol" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://</Value>
     </Setting>
   </Settings>
 </SettingsFile>

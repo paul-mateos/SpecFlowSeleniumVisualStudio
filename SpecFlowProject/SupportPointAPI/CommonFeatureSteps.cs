@@ -119,7 +119,6 @@ namespace SpecFlowProject.SupportPointAPI
             try
             {
                 response = null;
-                //response = api.recieveResponse();
                 response = API.recieveResponse();
                 string statusCode = ((HttpWebResponse)response).StatusCode.ToString();
                 string status = (((HttpWebResponse)response).StatusDescription).ToString();
@@ -145,10 +144,15 @@ namespace SpecFlowProject.SupportPointAPI
                         xmldoc.LoadXml(responseFromServer);
                         myJsonResponse = null;
                     }
-                   
 
-                    Console.WriteLine("Response:Status OK");
+
+                    Console.WriteLine("Response:Status " + statusCode.ToString());
                     clearFeatureContext();
+                }
+                else
+                {
+                    throw new Exception(statusCode);
+
                 }
 
             }
@@ -156,7 +160,7 @@ namespace SpecFlowProject.SupportPointAPI
             {
                 HttpWebResponse response = ((HttpWebResponse)ex.Response);
                 Console.WriteLine(response.StatusCode + ex.Message);
-
+                throw new Exception(response.StatusCode + ex.Message);
 
             }
             
@@ -331,24 +335,23 @@ namespace SpecFlowProject.SupportPointAPI
 
         }
 
+        
         private void getSessioID(string uName, string pwd)
         {
-            //api.SessionID = api.getSessionID(uName, pwd);
             API.SessionID = API.getSessionID(uName, pwd);
             if (FeatureContext.Current.ContainsKey("SID"))
             {
                 FeatureContext.Current.Remove("SID");
-                //FeatureContext.Current.Add("SID", api.SessionID);
                 FeatureContext.Current.Add("SID", API.SessionID);
             }
             else
             {
-                //FeatureContext.Current.Add("SID", api.SessionID);
                 FeatureContext.Current.Add("SID", API.SessionID);
             }
             Console.WriteLine("Session ID is retrived Sucessfully");
 
         }
+
 
         [Given(@"I have SessioID with username as ""(.*)"" and password as ""(.*)""")]
         public void GivenIHaveSessioIDWithUsernameAsAndPasswordAs(string userName, string pwd)
@@ -364,6 +367,8 @@ namespace SpecFlowProject.SupportPointAPI
             getSessioID(userName, pwd);
         }
 
+        [Given(@"New User is Created sucessfully")]
+        [When(@"New User is Created sucessfully")]
         [Then(@"New User is Created sucessfully")]
         public void ThenNewUserIsCreatedSucessfully()
         {
@@ -457,7 +462,6 @@ namespace SpecFlowProject.SupportPointAPI
         }
 
         // To create a new User based on the provided Username, password and roleID
-
         public void CreateNewUser(string UserName, string password, string roleID)
         {
             FeatureContext.Current.Add("UserName", UserName);
@@ -472,6 +476,28 @@ namespace SpecFlowProject.SupportPointAPI
 
         }
 
+        //Create a new automation image folder
+        public void CreateNewImageFolder(string folderName)
+        {
+            //Check if folder already exists
+            GivenIWantToARequest("GET");
+            GivenMyWebserviceIs("WebService.svc/rest_all/ImageFolders");
+            GivenSessionIDAsParameters();
+            WhenISendRequest();
+            if(TheAutomationImageFolderExists() ==  false)
+            {
+                FeatureContext.Current.Add("FolderName", folderName);
+                GivenIWantToARequest("POST");
+                GivenMyWebserviceIs("WebService.svc/rest_all/Images/Folders");
+                GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
+                GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"FolderName\":\"" + folderName + "\",\"CreateInFolderID\":0}");
+                WhenISendRequest();
+                ThenNewImageFolderIsCreatedSucessfully();
+            }
+
+            
+
+        }
         //To clear featuure context which are not used 
         public void clearFeatureContext()
         {
@@ -499,6 +525,12 @@ namespace SpecFlowProject.SupportPointAPI
             string currentTime = DateTime.Now.ToString("hmmss");
             string sub = role.Substring(0, 3);
             return role.Substring(0, 3) + currentTime;
+        }
+
+        protected string getRandomImageName()
+        {
+            string currentTime = DateTime.Now.ToString("hmmss");
+            return "TestImage" + currentTime;
         }
 
         protected void getRoleID(string role)
@@ -578,6 +610,8 @@ namespace SpecFlowProject.SupportPointAPI
 
 
         [Given(@"I Have a xml Requestbody")]
+        [When(@"I Have a xml Requestbody")]
+        [Then(@"I Have a xml Requestbody")]
         public void GivenIHaveAXmlRequestbody(string textBody)
         {
             /*if (textBody.Contains(""))
@@ -628,8 +662,8 @@ namespace SpecFlowProject.SupportPointAPI
     }
 
         [Given(@"I have logged in to SP as a new ""(.*)""")]
-        [Given(@"I have logged in to SP as a new ""(.*)""")]
-        [Given(@"I have logged in to SP as a new ""(.*)""")]
+        [When(@"I have logged in to SP as a new ""(.*)""")]
+        [Then(@"I have logged in to SP as a new ""(.*)""")]
         public void GivenIHaveLoggedInToSPAsRole(string role)
         {
             GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
@@ -642,5 +676,105 @@ namespace SpecFlowProject.SupportPointAPI
 
         }
 
+        [Given(@"I create the Automation Image Folder")]
+        [When(@"I create the Automation Image Folder")]
+        [Then(@"I create the Automation Image Folder")]
+        public void GivenICreateTheAutomationImageFolder()
+        {
+            string FolderName = getRandomImageName();
+            CreateNewImageFolder("Automation");
+
+        }
+
+        [Given(@"New Image Folder is Created sucessfully")]
+        [When(@"New Image Folder is Created sucessfully")]
+        [Then(@"New Image Folder is Created sucessfully")]
+        public void ThenNewImageFolderIsCreatedSucessfully()
+        {
+            try
+            {
+                ThenMyResultIsResponse();
+                if (response.ContentType.Equals("application/json; charset=utf-8"))
+                {
+                    JObject obj = myJsonResponse;
+                    myJsonResponse = null;
+                    string value = obj["Success"].ToString();
+                    if (value.Equals("true") || value.Equals("True"))
+                    {
+                        string FolderID = (string)obj["Response"]["NewImageFolderId"];
+                        string SessionID = (string)obj["Response"]["SessionID"];
+                        FeatureContext.Current.Add("FolderID", FolderID);
+                        FeatureContext.Current.Add("SessionID", SessionID);
+                    }
+                    else
+                    {
+                        string errorCode = (string)obj["ErrorCode"];
+                        string errorDesc = (string)obj["ErrorMessage"];
+                        throw new Exception(errorCode + " " + errorDesc);
+                    }
+                }
+                else if (response.ContentType.Equals("application/xml; charset=utf-8"))
+                {
+                    XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmldoc.NameTable);
+                    nsmgr.AddNamespace("rest", "http://schemas.microsoft.com/search/local/ws/rest/v1");
+
+                    XmlNodeList Responses = xmldoc.SelectNodes("//rest:Response", nsmgr);
+                    foreach (XmlNode responseNode in Responses)
+                    {
+                        if (responseNode.SelectSingleNode(".//rest:Success", nsmgr).InnerText == "True")
+                        {
+                            FeatureContext.Current.Add("ImageFolderID", responseNode.SelectSingleNode(".//rest:NewImageFolderId", nsmgr).InnerText);
+                            Console.WriteLine("Response:Create Folder Sucess");
+                        }
+                    }
+                }
+                else
+                {
+                    throw new Exception("Unknown ContentType");
+                }
+            }
+            catch (WebException ex)
+            {
+                HttpWebResponse response = ((HttpWebResponse)ex.Response);
+                Console.WriteLine(response.StatusCode + ex.Message);
+                throw new Exception(response.StatusCode + ex.Message);
+            }
+        }
+
+        [Given(@"Automation Image Folder Exists")]
+        [When(@"Automation Image Folder Exists")]
+        [Then(@"Automation Image Folder Exists")]
+        public bool TheAutomationImageFolderExists()
+        {
+            ThenMyResultIsResponse();
+            if (response.ContentType.Equals("application/json; charset=utf-8"))
+            {
+                JObject obj = myJsonResponse;
+                myJsonResponse = null;
+                JToken t = (JToken)obj.SelectToken("Response").SelectToken("Trees");
+                JArray a = (JArray)t.SelectToken("Childs");
+                foreach (JObject child in a)
+                {
+                    if (child.SelectToken("FolderDescription").ToString() == "Images")
+                    {
+                        t = (JToken)child.SelectToken("Childs");
+                        JArray f = (JArray)t;
+                        foreach (JObject folder in f)
+                        {
+                            if (folder.SelectToken("FolderDescription").ToString() == "Automation")
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                }
+                throw new Exception("Folder Images does not exist");
+            }
+            else
+            {
+                throw new Exception("Response content type unknown");
+            }
+        }
     }
 }
