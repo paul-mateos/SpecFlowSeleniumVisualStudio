@@ -8,15 +8,16 @@ namespace SP_Automation.Environments
 {
     public class TestEnvironment
     {
-
+        
         public static TestEnvironment GetEnvironment()
         {
+            string protocol = Properties.Settings.Default.Protocol;
             switch (Properties.Settings.Default.Environment1)
             {
                 case EnvironmentType.QA_A:
-                    return new TestEnvironment("https://qa-a-iis03/");
+                    return new TestEnvironment(protocol+ "qa-a-iis03/");
                 case EnvironmentType.QA_B:
-                    return new TestEnvironment("https://qa-b-all02/");
+                    return new TestEnvironment(protocol+"qa-b-all02/");
                 default:
                     throw new ArgumentException("Invalid Environment Setting has been used");
 
