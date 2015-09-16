@@ -72,10 +72,6 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.ClickMoveButton();
         }
 
-        
-
-       
-
         [Given(@"I enter the Image Name (.*)")]
         [When(@"I enter the Image Name (.*)")]
         [Then(@"I enter the Image Name (.*)")]

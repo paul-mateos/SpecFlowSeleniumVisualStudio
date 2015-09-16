@@ -62,5 +62,7 @@ namespace SP_Automation.PageModels.SP_Author
             elem.FindElement(confirmRefreshButton).Click();
             Thread.Sleep(6000);
         }
+
+        
     }
 }
