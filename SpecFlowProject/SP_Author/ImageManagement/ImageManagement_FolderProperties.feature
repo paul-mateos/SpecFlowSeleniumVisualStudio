@@ -6,7 +6,7 @@
 Background: SuportPoint is open
 Given I have SessioID with username as "" and password as ""
 And I create the Automation Image Folder
-
+And I created the Test Image in the Automation Folder
 When I have logged in to SP as a new "authors"
 Then I Open SP Manager
 

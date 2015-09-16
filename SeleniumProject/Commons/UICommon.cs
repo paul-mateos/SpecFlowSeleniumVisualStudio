@@ -197,5 +197,28 @@ namespace SP_Automation.Commons
                 }
             }
         }
+
+        public static bool FindGridRecord(string Record, By Grid, IWebDriver d)
+        {
+            //get folder tree element
+            IWebElement grid;
+            grid = GetFolderTree(Grid, d);
+               
+                //get the number of available parent folders in docexplorertree
+
+                IReadOnlyCollection<IWebElement> records = grid.FindElements(By.XPath("./ul/li"));
+
+                //check each parent folder in tree. Go to exception if non are found         
+                foreach (IWebElement record in records)
+                {
+                    if (record.Text.Contains(Record))
+                    {
+                        return true;
+                     }
+                }
+                return false;
+                
+            
+        }
     }
 }
