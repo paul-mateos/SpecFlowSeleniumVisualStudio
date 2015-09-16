@@ -28,6 +28,15 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
                 
         }
 
+        [Given(@"I select the record (.*) using column (.*) from the Multiselect table")]
+        [When(@"I select the record (.*) using column (.*) from the Multiselect table")]
+        [Then(@"I select the record (.*) using column (.*) from the Multiselect table")]
+        public void IselecttherecordfromtheMultiselecttable(string searchValue, string colName)
+        {
+            SupportPoint.DocumentManagementPage.ClickMultiselectRecord(colName, searchValue);
+
+        }
+
         [Given(@"I select the record (.*) using column (.*) from the Document table")]
         [When(@"I select the record (.*) using column (.*) from the Document table")]
         [Then(@"I select the record (.*) using column (.*) from the Document table")]

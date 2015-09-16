@@ -20,6 +20,7 @@ namespace SP_Automation.PageModels.SP_Author
         By addDocumentButton = By.XPath("//button[@title='Add document']");
         By addFolderButton = By.XPath("//button[@title='Add']");
         By docTable = By.Id("docExplorerGrid");
+        By multiSelectTable = By.XPath("//div[@class='container-padding-medium multiselect-selected-items']");
         By docSelectorTable = By.XPath("//div[@id='docExplorerGrid']/table[@role='treegrid']/ancestor::div[@id='kWindow0']");
         
         public DocumentManagementPage(IWebDriver driver)
@@ -57,6 +58,12 @@ namespace SP_Automation.PageModels.SP_Author
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
         }
 
+        public void ClickMultiselectRecord(string lookUpColumn, string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable(multiSelectTable, d);
+            Table table = new Table(searchTable);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
+        }
         public void ClickSelectorRecord(string lookUpColumn, string searchText)
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(docSelectorTable, d);
