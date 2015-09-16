@@ -28,6 +28,8 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
                 
         }
 
+        
+
         [Given(@"I select the record (.*) using column (.*) from the Document table")]
         [When(@"I select the record (.*) using column (.*) from the Document table")]
         [Then(@"I select the record (.*) using column (.*) from the Document table")]
@@ -51,6 +53,23 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public void ThenIClickOnTheAddfolderButton()
         {
             SupportPoint.DocumentManagementPage.clickAddFolderButton();
+        }
+
+        [Given(@"I click on the Apply selection Button")]
+        [When(@"I click on the Apply selection Button")]
+        [Then(@"I click on the Apply selection Button")]
+        public void ThenIClickOnTheApplyselectionButton()
+        {
+            SupportPoint.DocumentManagementPage.clickApplySelectionButton();
+        }
+
+        [Given(@"I enter the Document Name (.*)")]
+        [When(@"I enter the Document Name (.*)")]
+        [Then(@"I enter the Document Name (.*)")]
+        public void WhenIEnterTheDocumentNameNewName(string DocumentName)
+        {
+            SupportPoint.DocumentManagementPage.SetDocumentName(DocumentName);
+            FeatureContext.Current.Add("DocumentName", DocumentName);
         }
     }
 }

@@ -8,6 +8,7 @@
 
 
 Background: SuportPoint is open
+#Given I create the Automation Image Folder
 Given I have logged in to SP as a new "authors"
 #And I create test data for Document Type Template
 Then I Open SP Manager

@@ -4,23 +4,25 @@ In order to select multiple Folders
 	I want to be able to select a multiple Folders
 
 	Background: SupportPoint is open
-	Given SupportPoint is opened
-	And I login as a valid user with login is paul and password is p
-	Then I Open SP Manager
+	Given I have logged in to SP as a new "authors"
+	And I Open SP Manager
 	
-@DocumentManagement_SelectMultipleFolders
-Scenario Outline: Select multiple Folders
+@5_DocumentManagement_SelectMultipleFolders
+Scenario: Select multiple Folders
 	Given I am at Document Management page
 	When I select the Home,Keith DocumentFolder
 	Then the correct folder is selected
 	When I press Multiple Selection
-	Then Your selections screen is displayed
-	When I select the {folderString} DocumentFolder
-	And I select the recornd by <columnName> with <value>
-	#Then the your selections should list the records
+	And I select the record COOL MUFFINS using column Name from the Document table
+	And I select the record Welcome 1 using column Name from the Document table
+	Then I select the COOL MUFFINS Grid Record
+	And I select the Welcome 1 Grid Record
+	And I click on the Apply selection Button
+	And I enter the Document Name New MultiSelect Document
+	And I click on the Save Button
+	And I Confirm the Refresh
+	And I select the record New MultiSelect Document using column Name from the Document table
 
-	Examples: 
-	| columnName | value   |
-	| Name       | Report3 |
-	| ID         | F1      |
+
+
 

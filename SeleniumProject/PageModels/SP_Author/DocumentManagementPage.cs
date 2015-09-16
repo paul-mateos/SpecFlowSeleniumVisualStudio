@@ -19,8 +19,11 @@ namespace SP_Automation.PageModels.SP_Author
         By saveButton = By.XPath("//button[@type='button' and contains(text(), 'Save'))]");
         By addDocumentButton = By.XPath("//button[@title='Add document']");
         By addFolderButton = By.XPath("//button[@title='Add']");
+        By applySelectionButton = By.XPath("//button[@title='Apply selection']");
         By docTable = By.Id("docExplorerGrid");
+        By multiSelectGrid = By.XPath("//div[@class='container-padding-medium multiselect-selected-items']");
         By docSelectorTable = By.XPath("//div[@id='docExplorerGrid']/table[@role='treegrid']/ancestor::div[@id='kWindow0']");
+        By documentName = By.XPath("//input[@name='name']");
         
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
@@ -57,6 +60,7 @@ namespace SP_Automation.PageModels.SP_Author
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
         }
 
+       
         public void ClickSelectorRecord(string lookUpColumn, string searchText)
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(docSelectorTable, d);
@@ -76,5 +80,21 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(addFolderButton, d);
         }
 
+        public void clickApplySelectionButton()
+        {
+            UICommon.ClickButton(applySelectionButton, d);
+        }
+
+        public void SetDocumentName(string DocumentName)
+        {
+            UICommon.SetValue(documentName, DocumentName, d);
+
+        }
+
+
+        public void FindGridRecord(string recordString)
+        {
+            Assert.IsTrue(UICommon.FindGridRecord(recordString, multiSelectGrid, d), "record Cound Not be found");
+        }
     }
 }

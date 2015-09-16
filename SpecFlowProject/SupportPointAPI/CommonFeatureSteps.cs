@@ -498,6 +498,29 @@ namespace SpecFlowProject.SupportPointAPI
             
 
         }
+
+        //Create a new automation Document folder
+        public void CreateNewDocumentFolder(string folderName)
+        {
+            //Check if folder already exists
+            GivenIWantToARequest("GET");
+            GivenMyWebserviceIs("WebService.svc/rest_all/ImageFolders");
+            GivenSessionIDAsParameters();
+            WhenISendRequest();
+            if (TheAutomationImageFolderExists() == false)
+            {
+                FeatureContext.Current.Add("FolderName", folderName);
+                GivenIWantToARequest("POST");
+                GivenMyWebserviceIs("WebService.svc/rest_all/Images/Folders");
+                GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
+                GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"FolderName\":\"" + folderName + "\",\"CreateInFolderID\":0}");
+                WhenISendRequest();
+                ThenNewImageFolderIsCreatedSucessfully();
+            }
+
+
+
+        }
         //To clear featuure context which are not used 
         public void clearFeatureContext()
         {
@@ -554,7 +577,6 @@ namespace SpecFlowProject.SupportPointAPI
                         {
                             if (r["Name"].ToString().Equals(role))
                             {
-                                //api.roleID = r["Id"].ToString();
                                 API.roleID = r["Id"].ToString();
                             }
                         }
@@ -584,7 +606,6 @@ namespace SpecFlowProject.SupportPointAPI
                                         {
                                             if (innerNode.InnerText.Equals(role))
                                             {
-                                                //api.roleID = roleID;
                                                 API.roleID = roleID;
                                                 return;
                                             }
@@ -676,12 +697,22 @@ namespace SpecFlowProject.SupportPointAPI
 
         }
 
+        [Given(@"I create the Automation Document Folder")]
+        [When(@"I create the Automation Document Folder")]
+        [Then(@"I create the Automation Document Folder")]
+        public void GivenICreateTheAutomationDocumentFolder()
+        {
+            //string FolderName = getRandomImageName();
+            CreateNewDocumentFolder("Automation");
+
+        }
+
         [Given(@"I create the Automation Image Folder")]
         [When(@"I create the Automation Image Folder")]
         [Then(@"I create the Automation Image Folder")]
         public void GivenICreateTheAutomationImageFolder()
         {
-            string FolderName = getRandomImageName();
+            //string FolderName = getRandomImageName();
             CreateNewImageFolder("Automation");
 
         }
@@ -703,7 +734,7 @@ namespace SpecFlowProject.SupportPointAPI
                     {
                         string FolderID = (string)obj["Response"]["NewImageFolderId"];
                         string SessionID = (string)obj["Response"]["SessionID"];
-                        FeatureContext.Current.Add("FolderID", FolderID);
+                        FeatureContext.Current.Add("ImageFolderID", FolderID);
                         FeatureContext.Current.Add("SessionID", SessionID);
                     }
                     else
@@ -713,21 +744,21 @@ namespace SpecFlowProject.SupportPointAPI
                         throw new Exception(errorCode + " " + errorDesc);
                     }
                 }
-                else if (response.ContentType.Equals("application/xml; charset=utf-8"))
-                {
-                    XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmldoc.NameTable);
-                    nsmgr.AddNamespace("rest", "http://schemas.microsoft.com/search/local/ws/rest/v1");
+                //else if (response.ContentType.Equals("application/xml; charset=utf-8"))
+                //{
+                //    XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmldoc.NameTable);
+                //    nsmgr.AddNamespace("rest", "http://schemas.microsoft.com/search/local/ws/rest/v1");
 
-                    XmlNodeList Responses = xmldoc.SelectNodes("//rest:Response", nsmgr);
-                    foreach (XmlNode responseNode in Responses)
-                    {
-                        if (responseNode.SelectSingleNode(".//rest:Success", nsmgr).InnerText == "True")
-                        {
-                            FeatureContext.Current.Add("ImageFolderID", responseNode.SelectSingleNode(".//rest:NewImageFolderId", nsmgr).InnerText);
-                            Console.WriteLine("Response:Create Folder Sucess");
-                        }
-                    }
-                }
+                //    XmlNodeList Responses = xmldoc.SelectNodes("//rest:Response", nsmgr);
+                //    foreach (XmlNode responseNode in Responses)
+                //    {
+                //        if (responseNode.SelectSingleNode(".//rest:Success", nsmgr).InnerText == "True")
+                //        {
+                //            FeatureContext.Current.Add("ImageFolderID", responseNode.SelectSingleNode(".//rest:NewImageFolderId", nsmgr).InnerText);
+                //            Console.WriteLine("Response:Create Folder Sucess");
+                //        }
+                //    }
+                //}
                 else
                 {
                     throw new Exception("Unknown ContentType");
@@ -763,6 +794,7 @@ namespace SpecFlowProject.SupportPointAPI
                         {
                             if (folder.SelectToken("FolderDescription").ToString() == "Automation")
                             {
+                                FeatureContext.Current.Add("ImageFolderID", folder.SelectToken("FolderID").ToString());
                                 return true;
                             }
                         }
@@ -776,5 +808,15 @@ namespace SpecFlowProject.SupportPointAPI
                 throw new Exception("Response content type unknown");
             }
         }
+
+       
+        [Given(@"I created the Test Image in the Automation Folder")]
+        [When(@"I created the Test Image in the Automation Folder")]
+        [Then(@"I created the Test Image in the Automation Folder")]
+        public void GivenICreatedTheTestImageInTheAutomationFolder()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }
