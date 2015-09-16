@@ -23,6 +23,15 @@ namespace SpecFlowProject
             SupportPoint.SPManagerFolder.ClickOnFolder("Document", folders);
         }
 
+        [Given(@"I select the (.*) Grid Record")]
+        [When(@"I select the (.*) Grid Record")]
+        [Then(@"I select the (.*) Grid Record")]
+        public void WhenISelectAGridRecord(string recordString)
+        {
+
+            SupportPoint.DocumentManagementPage.FindGridRecord(recordString);
+        }
+
         [Given(@"the correct folder is selected")]
         [When(@"the correct folder is selected")]
         [Then(@"the correct folder is selected")]

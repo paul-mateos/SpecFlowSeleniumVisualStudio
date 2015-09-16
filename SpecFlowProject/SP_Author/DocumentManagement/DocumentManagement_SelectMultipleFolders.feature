@@ -15,10 +15,14 @@ Scenario: Select multiple Folders
 	When I press Multiple Selection
 	And I select the record COOL MUFFINS using column Name from the Document table
 	And I select the record Welcome 1 using column Name from the Document table
-	Then I select the record COOL MUFFINS using column Name from the Multiselect table
-	And I select the record COOL MUFFINS using column Name from the Multiselect table
+	Then I select the COOL MUFFINS Grid Record
+	And I select the Welcome 1 Grid Record
+	And I click on the Apply selection Button
+	And I enter the Document Name New MultiSelect Document
+	And I click on the Save Button
+	And I Confirm the Refresh
+	And I select the record New MultiSelect Document using column Name from the Document table
 
-	#Then the your selections should list the records
 
 
 
