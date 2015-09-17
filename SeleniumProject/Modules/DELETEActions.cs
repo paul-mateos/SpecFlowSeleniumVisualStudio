@@ -14,10 +14,10 @@ namespace SP_Automation.Modules
      *  Navigation Module
      * 
      */
-    public class Actions : BaseWebDriverModule
+    public class DELETEActions : BaseWebDriverModule
     {
 
-        public Actions(IWebDriver d) : base(d) { }
+        public DELETEActions(IWebDriver d) : base(d) { }
 
         public void ClickAction()
         {
@@ -26,10 +26,7 @@ namespace SP_Automation.Modules
            
         }
 
-        public void ClickNewUser()
-        {
-            new UserActionPage(GetDriver()).ClickNewUser();
-        }
+       
 
         public void CreateNewUser(string name, string firstname, string lastname, string email, string password, string verifypassword)
         {

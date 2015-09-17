@@ -26,8 +26,9 @@ namespace SP_Automation.PageModels
         }
 
         //Search Criteria
-        By loginButton = By.XPath(" //button[(@type='submit' and @name='login')]");
-
+        //By loginButton = By.XPath(" //button[(@type='submit' and @name='login')]");
+        By loginButton = By.Id("btnLogin");
+        
         public void SetUserName(string username)
         {
             UICommon.SetValue(By.Id("UserName"), username, d);

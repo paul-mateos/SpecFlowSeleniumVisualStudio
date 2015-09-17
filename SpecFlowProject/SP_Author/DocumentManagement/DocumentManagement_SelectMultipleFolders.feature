@@ -4,6 +4,7 @@ In order to select multiple Folders
 	I want to be able to select a multiple Folders
 
 	Background: SupportPoint is open
+	#Needs to set up test data so that there are foldres and files that can be selected and renamed
 	Given I have logged in to SP as a new "authors"
 	And I Open SP Manager
 	

@@ -109,7 +109,7 @@ namespace SP_Automation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-b")]
+        [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-a")]
         public string Environment {
             get {
                 return ((string)(this["Environment"]));

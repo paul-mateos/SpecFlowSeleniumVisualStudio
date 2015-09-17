@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using SP_Automation.PageModels;
 using SP_Automation.PageModels.SP_Author;
 using SP_Automation.PageModels.SP_Viewer;
+using SP_Automation.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,16 +43,16 @@ namespace SP_Automation.Modules
 
         public void CloseSPManager()
         {
-            SPManagerNavBarPage sp = new SPManagerNavBarPage(driver);
-            sp.ClickActions();
-            UserActionPage action = new UserActionPage(driver);
-            action.clickToClose();
+            SupportPoint.SPManagerNav.ClickActions();
+            SupportPoint.SPManagerActionsPage.SelectFromActionsList("Close");
+            Thread.Sleep(1000);
         }
         public void LogOutAndCloseApp()
         {
+           
             NavBarPage nav = new NavBarPage(driver);
             nav.ClickUserLogOff();
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
             LogoutPage p = new LogoutPage(driver);
             p.LogOutAndCloseApp();
         }
