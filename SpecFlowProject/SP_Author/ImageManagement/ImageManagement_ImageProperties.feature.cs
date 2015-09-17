@@ -102,11 +102,11 @@ this.FeatureBackground();
 #line 16
  testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.When("I Click on the Move Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Click on the Image Move Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
  testRunner.And("I select the Images Image Popup Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("I Click on the Move Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Image Move Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
  testRunner.Then("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

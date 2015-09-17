@@ -71,5 +71,21 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagementPage.SetDocumentName(DocumentName);
             FeatureContext.Current.Add("DocumentName", DocumentName);
         }
+
+        [Given(@"I Click on the Document Move Button")]
+        [When(@"I Click on the Document Move Button")]
+        [Then(@"I Click on the Document Move Button")]
+        public void WhenIClickOnTheDocumentMoveButton()
+        {
+            SupportPoint.DocumentManagementPage.ClickMoveButton();
+        }
+
+        [Given(@"I Click on the Document Move into Button")]
+        [When(@"I Click on the Document Move into Button")]
+        [Then(@"I Click on the Document Move into Button")]
+        public void WhenIClickOnTheDocumentMoveintoButton()
+        {
+            SupportPoint.DocumentManagementPage.ClickMoveintoButton();
+        }
     }
 }

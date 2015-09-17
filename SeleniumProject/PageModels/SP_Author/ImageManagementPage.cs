@@ -157,19 +157,6 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(moveButton, d);
         }
 
-        //public void ClickRemoveButton()
-        //{
-        //    UICommon.ClickButton(RemoveButton, d);
-        //    Thread.Sleep(3000);
-        //}
-
-        //public void ConfirmRemovalMessage()
-        //{
-        //    IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
-        //    elem.FindElement(okButton).Click();
-        //    Thread.Sleep(3000);
-        //}
-
         public void SetImageName(string imageName)
         {
             UICommon.SetValue(imgName, imageName, d);
@@ -180,11 +167,6 @@ namespace SP_Automation.PageModels.SP_Author
         {
             UICommon.ClickButton(cancelButton, d);
         }
-
-        //public void ClickSaveButton()
-        //{
-        //    UICommon.ClickButton(saveButton, d);
-        //}
 
         public void ConfirmImageName(string ImageName)
         {

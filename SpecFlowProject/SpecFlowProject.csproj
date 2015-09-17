@@ -80,7 +80,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_FolderProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_FolderProperties.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
+    <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Steps.cs" />
+    <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowManagement_CreateNew.feature</DependentUpon>
+    </Compile>
     <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -248,6 +259,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_FolderProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_FolderProperties.feature.cs</LastGenOutput>
+    </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_FolderProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ImageManagement_FolderProperties.feature.cs</LastGenOutput>
@@ -271,6 +286,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WorkflowManagement_CreateNew.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointAPI\ChangePasswordAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
