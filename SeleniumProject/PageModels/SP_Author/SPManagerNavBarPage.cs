@@ -18,13 +18,14 @@ namespace SP_Automation.PageModels.SP_Author
         By Roles = By.LinkText("Roles");
         By WorkFlow = By.LinkText("Workflow");
         By Reports = By.LinkText("Reports");
+        By Admin = By.LinkText("Admin");
         By Actions = By.XPath("//div[@id='navbar-main']/ul[@title='Action']/li");
        
        
         public SPManagerNavBarPage(IWebDriver driver)
             : base(driver)
         {
-      
+             
         }
 
         public void ClickActions()
@@ -56,7 +57,7 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickLink(Roles, d);
 
         }
-        
+ 
        public void ClickWorkflow()
         {
             d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
@@ -65,5 +66,13 @@ namespace SP_Automation.PageModels.SP_Author
 
         }
  
+        public void ClickAdmin()
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+            UICommon.ClickLink(Admin, d);
+
+        }
+
     }
 }

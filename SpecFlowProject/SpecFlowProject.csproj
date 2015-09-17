@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DocumentManagement_FolderProperties.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\Administration\Administration_SearchSetup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_SearchSetup.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Steps.cs" />
     <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature.cs">
@@ -250,6 +255,10 @@
     <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\Administration\Administration_SearchSetup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Administration_SearchSetup.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateDocument.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
