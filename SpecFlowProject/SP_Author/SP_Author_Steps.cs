@@ -31,6 +31,10 @@ namespace SpecFlowProject.SP_Author
                     SupportPoint.SPManagerNav.ClickRoles();
                     SupportPoint.SwitchToPage("Role Management : SupportPoint");
                     break;
+                case "Admin":
+                    SupportPoint.SPManagerNav.ClickAdmin();
+                    SupportPoint.SwitchToPage("Administration : SupportPoint");
+                    break;
                 default:
                     throw new Exception("Invalid Page");
                   
