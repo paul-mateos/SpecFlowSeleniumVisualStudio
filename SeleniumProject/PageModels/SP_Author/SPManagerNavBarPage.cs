@@ -18,6 +18,7 @@ namespace SP_Automation.PageModels.SP_Author
         By Roles = By.LinkText("Roles");
         By WorkFlow = By.LinkText("WorkFlow");
         By Reports = By.LinkText("Reports");
+        By Admin = By.LinkText("Admin");
         By Actions = By.ClassName("dropdown-toggle");
        
        
@@ -58,6 +59,14 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickLink(Roles, d);
 
         }
- 
+
+        public void ClickAdmin()
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+            UICommon.ClickLink(Admin, d);
+
+        }
+
     }
 }
