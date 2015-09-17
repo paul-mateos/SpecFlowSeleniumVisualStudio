@@ -35,6 +35,7 @@ namespace SP_Automation.Commons
             IWebElement elem = GetElement(searchType, d);
             Actions action = new Actions(d);
             action.MoveToElement(elem).Click().Build().Perform();
+            Thread.Sleep(1000);
             
         }
 
@@ -46,22 +47,12 @@ namespace SP_Automation.Commons
             action.Perform();
         }
 
-        //annette added
-        //        public bool Exist(By element)
-        //{ 
-        //   try 
-        //    { 
-        //       return ( new WebDriverWait(d, TimeSpan.FromSeconds(1)).Until(ExpectedConditions.ElementIsVisible(element)) != null );
-        //     } catch (NoSuchElementException) { }
-
-        //    return false;
-        //} 
-
         public static void SetValue(By searchType, string value, IWebDriver d)
         {
             IWebElement elem = GetElement(searchType, d);
             elem.Clear();
             elem.SendKeys(value);
+            Thread.Sleep(1000);
 
         }
 
@@ -94,6 +85,7 @@ namespace SP_Automation.Commons
         {
             IWebElement elem = GetElement(by, d);
             elem.Click();
+            Thread.Sleep(1000);
         }
 
 
@@ -217,8 +209,14 @@ namespace SP_Automation.Commons
                      }
                 }
                 return false;
-                
-            
+  
         }
+
+        public static string getRandomName(string name)
+        {
+            string currentTime = DateTime.Now.ToString("hmmss");
+            return name + currentTime;
+        }
+
     }
 }

@@ -31,8 +31,7 @@ namespace SP_Automation.Tests
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
         static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
         static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
-        static public Actions Actions { get { return new Actions(WebDriver); } set { Actions = value; } }
-        //static public DetailsandActions DetailsActions { get { return new DetailsandActions(WebDriver); } set { DetailsActions = value; } }
+        //static public DELETEActions Actions { get { return new DELETEActions(WebDriver); } set { Actions = value; } }
         /*
          *  Page Models
          *  */
@@ -40,8 +39,10 @@ namespace SP_Automation.Tests
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
+        static public WorkflowManagementPage WorkflowManagementPage { get { return new WorkflowManagementPage(WebDriver); } set { WorkflowManagementPage = value; } }
         static public DocumentManagmentNewPage DocumentManagmentNew { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNew = value; } }
         static public SPManagerDetailsActionsPage SPManagerDetailsActionsPage { get { return new SPManagerDetailsActionsPage(WebDriver); } set { SPManagerDetailsActionsPage = value; } }
+        static public SPManagerActionsPage SPManagerActionsPage { get { return new SPManagerActionsPage(WebDriver); } set { SPManagerActionsPage = value; } }
         static public PermissionsPage PermissionsPage { get { return new PermissionsPage(WebDriver); } set { PermissionsPage = value; } }
         static public RoleSelectorPage RoleSelectorPage { get { return new RoleSelectorPage(WebDriver); } set { RoleSelectorPage = value; } }
         static public SPAuthorPage SPAuthorPage { get { return new SPAuthorPage(WebDriver); } set { SPAuthorPage = value; } }
@@ -96,6 +97,8 @@ namespace SP_Automation.Tests
             {
                 try
                 {
+                    LogIn.CloseSPManager();
+                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home");
                     LogIn.LogOutAndCloseApp();
                     WebDriver.Quit();
                 }

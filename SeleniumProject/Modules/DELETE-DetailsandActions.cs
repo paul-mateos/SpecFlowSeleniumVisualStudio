@@ -17,15 +17,7 @@ namespace SP_Automation.Modules
         {
         }
 
-        //public void Save()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickSave();
-        //}
-
-        //public void Move()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickMove();
-        //}
+      
 
         public void DetailsActions()
         {
@@ -34,22 +26,6 @@ namespace SP_Automation.Modules
 
         }
 
-        //public void New()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickNew();
-        //}
-
-        //public void Permissions()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickPermissions();
-        //}
-
-        //public void Rolemembership()
-
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickRolemembership();
-
-        //}
 
         public void Edit()
 

@@ -14,9 +14,9 @@ Scenario: Move Image To Folder
 	And  I am at Image Management page
 	And I search for image by ID for 2190
 	And the search should return the image record
-	When I Click on the Move Button
+	When I Click on the Image Move Button
 	And I select the Images Image Popup Folder
-	And I Click on the Move Button
+	And I Click on the Image Move Button
 	Then the search should return the image record
 
 @2.2.1.2_ImageMnanagement_RemoveFromFolder

@@ -64,10 +64,10 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.SPManagerFolder.ClickOnFolder("Image Selector", folders);
         }
 
-        [Given(@"I Click on the Move Button")]
-        [When(@"I Click on the Move Button")]
-        [Then(@"I Click on the Move Button")]
-        public void WhenIClickOnTheMoveButton()
+        [Given(@"I Click on the Image Move Button")]
+        [When(@"I Click on the Image Move Button")]
+        [Then(@"I Click on the Image Move Button")]
+        public void WhenIClickOnTheImageMoveButton()
         {
             SupportPoint.ImageManagementPage.ClickMoveButton();
         }
