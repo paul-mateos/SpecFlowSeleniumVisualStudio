@@ -26,7 +26,7 @@ namespace SP_Automation.PageModels
         }
 
         //Search Criteria
-        By loginButton = By.XPath(" //button[(@type='submit' and @name='login')]");
+        By loginButton = By.XPath(" //input[(@type='submit' and @name='login')]");
 
         public void SetUserName(string username)
         {

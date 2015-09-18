@@ -13,7 +13,7 @@ Then I Open SP Manager
 Scenario: Rolecreators can't Edit a document
 Given I am at Document Management page
 When I select the Home DocumentFolder
-And I select the record Welcome using column Name from the Document table
+And I select Welcome using the column Name from the table
 And I select New from Details & Actions
 And I select Permissions from Details & Actions
 Then I verify the Edit button isn't Visible

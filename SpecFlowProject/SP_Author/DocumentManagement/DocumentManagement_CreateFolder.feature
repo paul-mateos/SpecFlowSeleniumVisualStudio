@@ -35,7 +35,7 @@ Scenario: Create new Folder for Copy
 	And I click on the Save Button
 	Then I Confirm the Refresh
 	And I select the Home,AutomationFolder DocumentFolder
-	And I select the record sel_CopyFolderName using column Name from the Document table
+	And I select sel_CopyFolderName using the column Name from the table
 	And I press Details & Actions
 	And I select Properties from Details & Actions
 	And I select General properties from Details & Actions
@@ -57,7 +57,7 @@ Scenario: Create new Folder for Localisation
 	And I click on the Save Button
 	Then I Confirm the Refresh
 	And I select the Home,AutomationFolder DocumentFolder
-	And I select the record sel_LocalisationFolderName using column Name from the Document table
+	And I select sel_LocalisationFolderName using the column Name from the table
 	And I press Details & Actions
 	And I select Properties from Details & Actions
 	And I select General properties from Details & Actions

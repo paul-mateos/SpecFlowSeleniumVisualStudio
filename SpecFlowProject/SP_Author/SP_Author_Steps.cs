@@ -107,5 +107,14 @@ namespace SpecFlowProject.SP_Author
         {
             SupportPoint.SPManagerDetailsActionsPage.SelectFromDnAList(detailsAction);
         }
+
+
+        [Given(@"I select (.*) using the column (.*) from the table")]
+        [When(@"I select (.*) using the column (.*) from the table")]
+        [Then(@"I select (.*) using the column (.*) from the table")]
+        public void GivenISelectSearchSetupUsingTheColumnNameFromTheTable(string searchValue, string colName)
+        {
+            SupportPoint.AdminPage.ClickRecord(colName, searchValue);
+        }
     }
 }

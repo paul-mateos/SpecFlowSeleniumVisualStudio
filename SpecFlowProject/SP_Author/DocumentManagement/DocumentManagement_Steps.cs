@@ -29,15 +29,15 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         }
 
         
+        //annette moved to SP_Author_Steps - to be deleted
+        //[Given(@"I select the record (.*) using column (.*) from the Document table")]
+        //[When(@"I select the record (.*) using column (.*) from the Document table")]
+        //[Then(@"I select the record (.*) using column (.*) from the Document table")]
+        //public void IselecttherecordfromtheDocumenttable(string searchValue, string colName)
+        //{
+        //    SupportPoint.DocumentManagementPage.ClickRecord(colName, searchValue);
 
-        [Given(@"I select the record (.*) using column (.*) from the Document table")]
-        [When(@"I select the record (.*) using column (.*) from the Document table")]
-        [Then(@"I select the record (.*) using column (.*) from the Document table")]
-        public void IselecttherecordfromtheDocumenttable(string searchValue, string colName)
-        {
-            SupportPoint.DocumentManagementPage.ClickRecord(colName, searchValue);
-
-        }
+        //}
 
         [Given(@"I click on the Add document Button")]
         [When(@"I click on the Add document Button")]

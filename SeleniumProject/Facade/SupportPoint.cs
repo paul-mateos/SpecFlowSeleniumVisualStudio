@@ -45,6 +45,7 @@ namespace SP_Automation.Tests
         static public PermissionsPage PermissionsPage { get { return new PermissionsPage(WebDriver); } set { PermissionsPage = value; } }
         static public RoleSelectorPage RoleSelectorPage { get { return new RoleSelectorPage(WebDriver); } set { RoleSelectorPage = value; } }
         static public SPAuthorPage SPAuthorPage { get { return new SPAuthorPage(WebDriver); } set { SPAuthorPage = value; } }
+        static public AdminPage AdminPage { get { return new AdminPage(WebDriver); } set { AdminPage = value; } }
 
         /*
          * Open Support Point app: if there is existing one, it will kill it

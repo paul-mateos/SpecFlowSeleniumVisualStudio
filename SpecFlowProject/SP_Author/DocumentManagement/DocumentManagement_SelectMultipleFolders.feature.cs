@@ -100,9 +100,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 15
  testRunner.When("I press Multiple Selection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.And("I select the record COOL MUFFINS using column Name from the Document table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select COOL MUFFINS using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And("I select the record Welcome 1 using column Name from the Document table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select Welcome 1 using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
  testRunner.Then("I select the COOL MUFFINS Grid Record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
@@ -116,8 +116,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.And("I Confirm the Refresh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.And("I select the record New MultiSelect Document using column Name from the Document " +
-                    "table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select New MultiSelect Document using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

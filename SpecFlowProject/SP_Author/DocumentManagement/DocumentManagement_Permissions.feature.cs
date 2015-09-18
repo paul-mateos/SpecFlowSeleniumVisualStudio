@@ -96,7 +96,7 @@ testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTal
 #line 15
 testRunner.When("I select the Home DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
-testRunner.And("I select the record Welcome using column Name from the Document table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I select Welcome using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
 testRunner.And("I select New from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18

@@ -34,7 +34,7 @@ namespace SP_Automation.Commons
                     if (row.Text != "")
                     {
                         IReadOnlyCollection<IWebElement> cells = row.FindElements(By.TagName("td"));
-                        if (cells.ElementAt(lookupColumnIndex).Text == lookupValue)
+                        if ((cells.Count >= lookupColumnIndex + 1) && (cells.ElementAt(lookupColumnIndex).Text == lookupValue))
                         {
                             return cells.ElementAt(returnColumnIndex).Text;
                         }
@@ -63,14 +63,18 @@ namespace SP_Automation.Commons
             {
                 if (row.Text != "")
                 {
-                    IReadOnlyCollection<IWebElement> cells = row.FindElements(By.TagName("td"));
-                    if (cells.ElementAt(lookupColumnIndex).Text == lookupValue)
+                    IReadOnlyCollection<IWebElement> cells = row.FindElements(By.CssSelector("td"));
+
+
+
+                    if ((cells.Count >= lookupColumnIndex + 1) && (cells.ElementAt(lookupColumnIndex).Text == lookupValue))
                     {
                         cells.ElementAt(returnColumnIndex).Click();
                         return true;
                     }
                 }
             }
+            
             throw new Exception(String.Format("Unable to find table row {0} with value {1}", lookupColumn, lookupValue));
         }
 
