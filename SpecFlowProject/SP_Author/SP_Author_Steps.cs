@@ -60,7 +60,6 @@ namespace SpecFlowProject.SP_Author
         [Then(@"I click on the Save Button")]
         public void ThenIClickOnTheSaveButton()
         {
-            //SupportPoint.SPAuthorPage.ClickSaveButton();
             SupportPoint.SPManagerDetailsActionsPage.clickSave();
         }
 

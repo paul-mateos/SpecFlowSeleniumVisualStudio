@@ -73,11 +73,13 @@ namespace SP_Automation.PageModels
         public void clickDelete()
         {
             UICommon.ClickButton(DeleteBtn, d);
+            Thread.Sleep(3000);
         }
 
         public void clickSave()
         {
             UICommon.ClickButton(SaveBtn, d);
+            Thread.Sleep(3000);
         }
 
         public void NoEdit()
