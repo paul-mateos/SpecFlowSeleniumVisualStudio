@@ -9,6 +9,7 @@ And I Open SP Manager
 When I Navigate to the Workflow Page
 Then I am at Workflow Management page
 
+@Regression
 @1.1_WorkflowManagement_CreateNew
 Scenario: Create New Workflow
 	Given I click on Actions

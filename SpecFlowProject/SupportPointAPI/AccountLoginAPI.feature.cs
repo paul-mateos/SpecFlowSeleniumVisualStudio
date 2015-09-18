@@ -72,9 +72,11 @@ namespace SpecFlowProject.SupportPointAPI
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("AccountLogin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccountLoginAPI")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API_Tests")]
         public virtual void AccountLogin()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AccountLogin", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AccountLogin", new string[] {
+                        "API_Tests"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7

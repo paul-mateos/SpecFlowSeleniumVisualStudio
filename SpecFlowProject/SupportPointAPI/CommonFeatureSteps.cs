@@ -658,15 +658,20 @@ namespace SpecFlowProject.SupportPointAPI
         [Then(@"Delete user")]
         public void ThenDeleteUser()
         {
-            if  (FeatureContext.Current.Get<string>("UserID") != null)
+            try
             {
-                GivenIWantToARequest("POST");
-                GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
-                GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
-                GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID") + "]");
-                WhenISendRequest();
-                ThenMyResultIsResponse();
+                if (FeatureContext.Current.Get<string>("UserID") != null)
+                {
+                    GivenIWantToARequest("POST");
+                    GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
+                    GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
+                    GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID") + "]");
+                    WhenISendRequest();
+                    ThenMyResultIsResponse();
+                }
             }
+            catch
+            { }
             
     }
 

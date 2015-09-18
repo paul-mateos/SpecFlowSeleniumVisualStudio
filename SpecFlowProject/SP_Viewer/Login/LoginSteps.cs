@@ -17,8 +17,20 @@ namespace SpecFlowProject
         [Then(@"SupportPoint is opened")]
         public void GivenSupportPointIsOpened()
         {
-
-           SupportPoint.OpenSupportPoint();
+            bool tagFound = false;
+            Array Tags = ScenarioContext.Current.ScenarioInfo.Tags;
+            foreach (string tag in Tags)
+            {
+                if (tag == "API_Tests")
+                {
+                    tagFound = true;
+                    break;
+                }
+            }
+            if (tagFound == false)
+            {
+                SupportPoint.OpenSupportPoint();
+            }
 
         }
 
@@ -41,9 +53,23 @@ namespace SpecFlowProject
         [Then(@"I Close SupportPoint")]
         public void ICloseSupportPoint()
         {
-            CommonFeatureSteps common = new CommonFeatureSteps();
-            SupportPoint.ExitSuportPoint();
-            common.ThenDeleteUser();
+            bool tagFound = false;
+            Array Tags = ScenarioContext.Current.ScenarioInfo.Tags;
+            foreach(string tag in Tags)
+            {
+                if (tag == "API_Tests")
+                {
+                    tagFound = true;
+                }
+            }
+
+            if (tagFound == false)
+            {
+                CommonFeatureSteps common = new CommonFeatureSteps();
+                SupportPoint.ExitSuportPoint();
+                common.ThenDeleteUser();
+            }
+            
         }
 
     }
