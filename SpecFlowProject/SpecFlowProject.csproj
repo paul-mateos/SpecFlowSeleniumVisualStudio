@@ -80,12 +80,23 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_FolderProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_FolderProperties.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\Administration\Administration_SearchSetup.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Administration_SearchSetup.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
+    <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Steps.cs" />
+    <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowManagement_CreateNew.feature</DependentUpon>
+    </Compile>
     <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,7 +111,6 @@
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_CreateNewSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFoldersSteps.cs" />
     <Compile Include="DocumentManagement_Steps.cs" />
-    <Compile Include="SP_Author\DocumentManagement\BeforeAndAfterDocumentManagement.cs" />
     <Compile Include="DocumentRating_Feature\DoumentRating.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,21 +178,6 @@
       <DependentUpon>CreateUpdateUserAPI.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointAPI\CommonFeatureSteps.cs" />
-    <Compile Include="LiveAPI_Feature\MessageNotification_Smoke.feature.cs">
-      <DependentUpon>MessageNotification_Smoke.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature.cs">
-      <DependentUpon>MessageNotification_ActiveUser.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MessageNotification_InactiveUser.feature</DependentUpon>
-    </Compile>
     <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
@@ -233,18 +228,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DoumentRating.feature.cs</LastGenOutput>
     </None>
-    <None Include="LiveAPI_Feature\MessageNotification_Smoke.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MessageNotification_Smoke.feature.cs</LastGenOutput>
-    </None>
-    <None Include="LiveAPI_Feature\MessageNotification_ActiveUser.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MessageNotification_ActiveUser.feature.cs</LastGenOutput>
-    </None>
-    <None Include="LiveAPI_Feature\MessageNotification_InactiveUser.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MessageNotification_InactiveUser.feature.cs</LastGenOutput>
-    </None>
     <None Include="SP_Author\Administration\Administration_SearchSetup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Administration_SearchSetup.feature.cs</LastGenOutput>
@@ -256,6 +239,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_CreateFolder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_CreateFolder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_FolderProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_FolderProperties.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_FolderProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -280,6 +267,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WorkflowManagement_CreateNew.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointAPI\ChangePasswordAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

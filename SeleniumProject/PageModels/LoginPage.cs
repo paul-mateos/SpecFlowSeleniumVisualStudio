@@ -1,33 +1,34 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     class LoginPage : BasePage
     {
-        IWebDriver d;
+        //IWebDriver d;
         public LoginPage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver; 
+            d = driver; 
             //Wait for title to be displayed 
             System.Diagnostics.Debug.WriteLine("wait4title");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => {
+            wait.Until((D) => {
                 System.Diagnostics.Debug.WriteLine("testTitle:" + d.Title);
                 return d.Title.Contains("Login : SupportPoint"); });
             System.Diagnostics.Debug.WriteLine("done");
         }
 
         //Search Criteria
-        By loginButton = By.XPath(" //input[(@type='submit' and @name='login')]");
-
+        //By loginButton = By.XPath(" //button[(@type='submit' and @name='login')]");
+        By loginButton = By.Id("btnLogin");
+        
         public void SetUserName(string username)
         {
             UICommon.SetValue(By.Id("UserName"), username, d);

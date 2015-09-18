@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels.SP_Author
+namespace SeleniumProject.PageModels.SP_Author
 {
     public class RoleSelectorPage : BasePage
     {
-        public static int waitsec = Properties.Settings.Default.WaitTime;
+        //public static int waitsec = Properties.Settings.Default.WaitTime;
 
         By Title = By.Id("kWindow0_wnd_title");
         By Find = By.XPath("//div[@id='kWindow0']//table/tbody/tr/td[2]/input");

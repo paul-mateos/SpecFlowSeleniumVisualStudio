@@ -1,4 +1,4 @@
-﻿using SP_Automation.API;
+﻿using SeleniumProject.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Facade
+namespace SeleniumProject.Facade
 {
     public class API
     {

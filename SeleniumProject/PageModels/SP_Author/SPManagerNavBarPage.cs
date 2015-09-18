@@ -1,13 +1,13 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels.SP_Author
+namespace SeleniumProject.PageModels.SP_Author
 {
    public class SPManagerNavBarPage : BasePage
     {
@@ -16,18 +16,16 @@ namespace SP_Automation.PageModels.SP_Author
         By Images = By.LinkText("Images");
         By Users = By.LinkText("Users");
         By Roles = By.LinkText("Roles");
-        By WorkFlow = By.LinkText("WorkFlow");
+        By WorkFlow = By.LinkText("Workflow");
         By Reports = By.LinkText("Reports");
         By Admin = By.LinkText("Admin");
-        By Actions = By.ClassName("dropdown-toggle");
+        By Actions = By.XPath("//div[@id='navbar-main']/ul[@title='Action']/li");
        
        
         public SPManagerNavBarPage(IWebDriver driver)
             : base(driver)
         {
-        /*   wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
              
-           wait.Until(ExpectedConditions.ElementExists(Users)); */
         }
 
         public void ClickActions()
@@ -59,7 +57,15 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickLink(Roles, d);
 
         }
+ 
+       public void ClickWorkflow()
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
+            UICommon.ClickLink(WorkFlow, d);
+
+        }
+ 
         public void ClickAdmin()
         {
             d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));

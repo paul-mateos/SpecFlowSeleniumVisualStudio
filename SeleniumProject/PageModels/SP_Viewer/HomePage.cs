@@ -1,24 +1,24 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels.SP_Viewer
+namespace SeleniumProject.PageModels.SP_Viewer
 {
     class HomePage : BasePage
     {
-        IWebDriver d;
+        //IWebDriver d;
         public HomePage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver;
+            d = driver;
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return d.Title.Contains("Home : SupportPoint"); }); 
+            wait.Until((D) => { return d.Title.Contains("Home : SupportPoint"); }); 
         }
 
         public void ClickLoginButton()

@@ -1,15 +1,15 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
-using SP_Automation.Modules;
-using SP_Automation.PageModels;
+using SeleniumProject.Commons;
+using SeleniumProject.Modules;
+using SeleniumProject.PageModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Modules
+namespace SeleniumProject.Modules
 {
     public class DELETEDetailsandActions : BaseWebDriverModule
     {
@@ -17,15 +17,7 @@ namespace SP_Automation.Modules
         {
         }
 
-        //public void Save()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickSave();
-        //}
-
-        //public void Move()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickMove();
-        //}
+      
 
         public void DetailsActions()
         {
@@ -34,22 +26,6 @@ namespace SP_Automation.Modules
 
         }
 
-        //public void New()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickNew();
-        //}
-
-        //public void Permissions()
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickPermissions();
-        //}
-
-        //public void Rolemembership()
-
-        //{
-        //    new SPManagerDetailsActionsPage(GetDriver()).clickRolemembership();
-
-        //}
 
         public void Edit()
 

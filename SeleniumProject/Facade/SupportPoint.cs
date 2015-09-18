@@ -2,9 +2,9 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
-using SP_Automation.Commons;
-using SP_Automation.Environments;
-using SP_Automation.PageModels;
+using SeleniumProject.Commons;
+using SeleniumProject.Environments;
+using SeleniumProject.PageModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,11 +12,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using SP_Automation.Modules;
-using SP_Automation.PageModels.SP_Author;
-using SP_Automation.Utility;
+using SeleniumProject.Modules;
+using SeleniumProject.PageModels.SP_Author;
+using SeleniumProject.Utility;
 
-namespace SP_Automation.Tests
+namespace SeleniumProject.Tests
 {
     static public class SupportPoint 
     {
@@ -31,8 +31,7 @@ namespace SP_Automation.Tests
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
         static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
         static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
-        static public Actions Actions { get { return new Actions(WebDriver); } set { Actions = value; } }
-        //static public DetailsandActions DetailsActions { get { return new DetailsandActions(WebDriver); } set { DetailsActions = value; } }
+        //static public DELETEActions Actions { get { return new DELETEActions(WebDriver); } set { Actions = value; } }
         /*
          *  Page Models
          *  */
@@ -40,8 +39,10 @@ namespace SP_Automation.Tests
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
+        static public WorkflowManagementPage WorkflowManagementPage { get { return new WorkflowManagementPage(WebDriver); } set { WorkflowManagementPage = value; } }
         static public DocumentManagmentNewPage DocumentManagmentNew { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNew = value; } }
         static public SPManagerDetailsActionsPage SPManagerDetailsActionsPage { get { return new SPManagerDetailsActionsPage(WebDriver); } set { SPManagerDetailsActionsPage = value; } }
+        static public SPManagerActionsPage SPManagerActionsPage { get { return new SPManagerActionsPage(WebDriver); } set { SPManagerActionsPage = value; } }
         static public PermissionsPage PermissionsPage { get { return new PermissionsPage(WebDriver); } set { PermissionsPage = value; } }
         static public RoleSelectorPage RoleSelectorPage { get { return new RoleSelectorPage(WebDriver); } set { RoleSelectorPage = value; } }
         static public SPAuthorPage SPAuthorPage { get { return new SPAuthorPage(WebDriver); } set { SPAuthorPage = value; } }
@@ -97,6 +98,8 @@ namespace SP_Automation.Tests
             {
                 try
                 {
+                    LogIn.CloseSPManager();
+                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home");
                     LogIn.LogOutAndCloseApp();
                     WebDriver.Quit();
                 }

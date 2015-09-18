@@ -1,23 +1,23 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using SP_Automation.PageModels;
-using SP_Automation.PageModels.SP_Author;
+using SeleniumProject.PageModels;
+using SeleniumProject.PageModels.SP_Author;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Modules
+namespace SeleniumProject.Modules
 {
     /*
      *  Navigation Module
      * 
      */
-    public class Actions : BaseWebDriverModule
+    public class DELETEActions : BaseWebDriverModule
     {
 
-        public Actions(IWebDriver d) : base(d) { }
+        public DELETEActions(IWebDriver d) : base(d) { }
 
         public void ClickAction()
         {
@@ -26,10 +26,7 @@ namespace SP_Automation.Modules
            
         }
 
-        public void ClickNewUser()
-        {
-            new UserActionPage(GetDriver()).ClickNewUser();
-        }
+       
 
         public void CreateNewUser(string name, string firstname, string lastname, string email, string password, string verifypassword)
         {

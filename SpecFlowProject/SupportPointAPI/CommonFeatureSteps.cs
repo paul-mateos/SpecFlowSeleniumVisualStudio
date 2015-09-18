@@ -1,9 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SP_Automation.API;
-using SP_Automation.Facade;
-using SP_Automation.Tests;
+using SeleniumProject.API;
+using SeleniumProject.Commons;
+using SeleniumProject.Facade;
+using SeleniumProject.Tests;
 using System;
 using System.IO;
 using System.Net;
@@ -47,7 +48,7 @@ namespace SpecFlowProject.SupportPointAPI
         }
 
         [Given(@"I have path variables")]
-        public void GivenIHavePathVariables(Table table)
+        public void GivenIHavePathVariables(TechTalk.SpecFlow.Table table)
         {
             if (table.RowCount != 0)
             {
@@ -323,7 +324,7 @@ namespace SpecFlowProject.SupportPointAPI
         {
             string[] header = { "Key", "Value" };
             string[] row1 = { "sid", "" };
-            var t = new Table(header);
+            var t = new TechTalk.SpecFlow.Table(header);
             t.AddRow(row1);
             GivenIHavePathVariables(t);
         }
@@ -393,6 +394,7 @@ namespace SpecFlowProject.SupportPointAPI
                         string errorCode = (string)obj["ErrorCode"];
                         string errorDesc = (string)obj["ErrorMessage"];
                         Console.WriteLine("CREATEUPDATEUSER:" + errorCode + errorDesc);
+                        throw new Exception("Problems creating new user");
                        
                     }
                 }
@@ -537,23 +539,9 @@ namespace SpecFlowProject.SupportPointAPI
         {
             GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
             getRoleID(role);
-            string userName =  getRandomUserName(role);
-            //CreateNewUser(userName, "1", api.roleID);
+            string userName =  UICommon.getRandomName(role);
             CreateNewUser(userName, "1", API.roleID);
 
-        }
-
-        protected string getRandomUserName(string role)
-        {
-            string currentTime = DateTime.Now.ToString("hmmss");
-            string sub = role.Substring(0, 3);
-            return role.Substring(0, 3) + currentTime;
-        }
-
-        protected string getRandomImageName()
-        {
-            string currentTime = DateTime.Now.ToString("hmmss");
-            return "TestImage" + currentTime;
         }
 
         protected void getRoleID(string role)
@@ -670,15 +658,20 @@ namespace SpecFlowProject.SupportPointAPI
         [Then(@"Delete user")]
         public void ThenDeleteUser()
         {
-            if  (FeatureContext.Current.Get<string>("UserID") != null)
+            try
             {
-                GivenIWantToARequest("POST");
-                GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
-                GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
-                GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID") + "]");
-                WhenISendRequest();
-                ThenMyResultIsResponse();
+                if (FeatureContext.Current.Get<string>("UserID") != null)
+                {
+                    GivenIWantToARequest("POST");
+                    GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
+                    GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
+                    GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID") + "]");
+                    WhenISendRequest();
+                    ThenMyResultIsResponse();
+                }
             }
+            catch
+            { }
             
     }
 
@@ -689,7 +682,7 @@ namespace SpecFlowProject.SupportPointAPI
         {
             GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
             getRoleID(role);
-            string userName = getRandomUserName(role);
+            string userName = UICommon.getRandomName(role.Substring(0,3));
             CreateNewUser(userName, "1", API.roleID);
 
             if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();

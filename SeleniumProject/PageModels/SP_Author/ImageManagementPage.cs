@@ -1,21 +1,21 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SP_Automation.PageModels;
-using SP_Automation.Tests;
+using SeleniumProject.PageModels;
+using SeleniumProject.Tests;
 
-namespace SP_Automation.PageModels.SP_Author
+namespace SeleniumProject.PageModels.SP_Author
 {
     public class ImageManagementPage : BasePage
     {
-        public static int waitsec = Properties.Settings.Default.WaitTime;
+        //public static int waitsec = Properties.Settings.Default.WaitTime;
 
        //Search Criteria
         By imageSearchBy = By.Id("imgSearchType");
@@ -65,7 +65,7 @@ namespace SP_Automation.PageModels.SP_Author
         public void ConfirmFoundImage(string FindBy, string SearchText)
         {
             Thread.Sleep(5000);
-            IWebElement nextPage;
+            //IWebElement nextPage;
             bool continueLoop = true;
             while (continueLoop)
             {
@@ -157,19 +157,6 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(moveButton, d);
         }
 
-        //public void ClickRemoveButton()
-        //{
-        //    UICommon.ClickButton(RemoveButton, d);
-        //    Thread.Sleep(3000);
-        //}
-
-        //public void ConfirmRemovalMessage()
-        //{
-        //    IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
-        //    elem.FindElement(okButton).Click();
-        //    Thread.Sleep(3000);
-        //}
-
         public void SetImageName(string imageName)
         {
             UICommon.SetValue(imgName, imageName, d);
@@ -180,11 +167,6 @@ namespace SP_Automation.PageModels.SP_Author
         {
             UICommon.ClickButton(cancelButton, d);
         }
-
-        //public void ClickSaveButton()
-        //{
-        //    UICommon.ClickButton(saveButton, d);
-        //}
 
         public void ConfirmImageName(string ImageName)
         {

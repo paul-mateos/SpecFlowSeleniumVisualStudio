@@ -1,4 +1,4 @@
-﻿namespace SP_Automation.PageModels
+﻿namespace SeleniumProject.PageModels
 {
     interface IAddUserPage
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels.SP_Author
+namespace SeleniumProject.PageModels.SP_Author
 {
     public class DocumentManagementPage : BasePage
     {
@@ -24,7 +24,9 @@ namespace SP_Automation.PageModels.SP_Author
         By multiSelectGrid = By.XPath("//div[@class='container-padding-medium multiselect-selected-items']");
         By docSelectorTable = By.XPath("//div[@id='docExplorerGrid']/table[@role='treegrid']/ancestor::div[@id='kWindow0']");
         By documentName = By.XPath("//input[@name='name']");
-        
+        By moveButton = By.XPath("//button[@data-automation-id='doc-details-actions-move']");
+        By moveintoButton = By.XPath("//button[@title='Move into']");
+
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
         {
@@ -95,6 +97,16 @@ namespace SP_Automation.PageModels.SP_Author
         public void FindGridRecord(string recordString)
         {
             Assert.IsTrue(UICommon.FindGridRecord(recordString, multiSelectGrid, d), "record Cound Not be found");
+        }
+
+        public void ClickMoveButton()
+        {
+            UICommon.ClickButton(moveButton, d);
+        }
+
+        public void ClickMoveintoButton()
+        {
+            UICommon.ClickButton(moveintoButton, d);
         }
     }
 }

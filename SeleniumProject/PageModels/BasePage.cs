@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     public abstract class BasePage
     {

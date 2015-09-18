@@ -1,11 +1,11 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SP_Automation.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SeleniumProject.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Environment1" Type="SP_Automation.Environments.EnvironmentType" Scope="User">
+    <Setting Name="Environment1" Type="SeleniumProject.Environments.EnvironmentType" Scope="User">
       <Value Profile="(Default)">QA_A</Value>
     </Setting>
-    <Setting Name="Browser" Type="SP_Automation.Environments.BrowserType" Scope="User">
+    <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="User">
       <Value Profile="(Default)">NodeWebkit</Value>
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">

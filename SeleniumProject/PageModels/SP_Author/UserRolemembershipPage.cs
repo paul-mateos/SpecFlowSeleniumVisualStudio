@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     class UserRolemembershipPage : BasePage
     {

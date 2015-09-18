@@ -6,7 +6,7 @@
     <ProjectGuid>{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SP_Automation</RootNamespace>
+    <RootNamespace>SeleniumProject</RootNamespace>
     <AssemblyName>SeleniumProject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -100,7 +100,7 @@
     <Compile Include="Environments\TestEnvironment.cs" />
     <Compile Include="Facade\API.cs" />
     <Compile Include="Modules\BaseWebDriverModule.cs" />
-    <Compile Include="Modules\Actions.cs">
+    <Compile Include="Modules\DELETEActions.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Modules\Notification.cs" />
@@ -108,7 +108,7 @@
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
-    <Compile Include="PageModels\SP_Author\AdminPage.cs" />
+    <Compile Include="PageModels\SP_Author\WorkflowManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\PermissionsPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagmentNewPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsandActionsPage.cs" />
@@ -128,7 +128,7 @@
     <Compile Include="PageModels\SP_Viewer\HomePage.cs" />
     <Compile Include="PageModels\CertificateErrorPage.cs" />
     <Compile Include="PageModels\LoginPage.cs" />
-    <Compile Include="PageModels\SP_Author\UserActionPage.cs" />
+    <Compile Include="PageModels\SP_Author\SPManagerActionsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

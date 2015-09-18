@@ -1,4 +1,4 @@
-﻿using SP_Automation.Tests;
+﻿using SeleniumProject.Tests;
 using System;
 using System.Diagnostics;
 using TechTalk.SpecFlow;

@@ -1,4 +1,4 @@
-﻿using SP_Automation.Tests;
+﻿using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +31,10 @@ namespace SpecFlowProject.SP_Author
                     SupportPoint.SPManagerNav.ClickRoles();
                     SupportPoint.SwitchToPage("Role Management : SupportPoint");
                     break;
+                case "Workflow":
+                    SupportPoint.SPManagerNav.ClickWorkflow();
+                    SupportPoint.SwitchToPage("Workflow Management : SupportPoint");
+                    break;
                 case "Admin":
                     SupportPoint.SPManagerNav.ClickAdmin();
                     SupportPoint.SwitchToPage("Administration : SupportPoint");
@@ -56,7 +60,7 @@ namespace SpecFlowProject.SP_Author
         [Then(@"I click on the Save Button")]
         public void ThenIClickOnTheSaveButton()
         {
-            SupportPoint.SPAuthorPage.ClickSaveButton();
+            SupportPoint.SPManagerDetailsActionsPage.clickSave();
         }
 
         [Given(@"I click on the Browse Button")]
@@ -76,12 +80,28 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickRemoveButton();
         }
 
+        [Given(@"I Click on the Delete Button")]
+        [When(@"I Click on the Delete Button")]
+        [Then(@"I Click on the Delete Button")]
+        public void WhenIClickOnTheDeleteButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickDelete();
+        }
+
         [Given(@"I Confirm the Removal")]
         [When(@"I Confirm the Removal")]
         [Then(@"I Confirm the Removal")]
         public void ThenIConfirmTheRemoval()
         {
             SupportPoint.SPAuthorPage.ConfirmRemovalMessage();
+        }
+
+        [Given(@"I Confirm the Delete")]
+        [When(@"I Confirm the Delete")]
+        [Then(@"I Confirm the Delete")]
+        public void ThenIConfirmTheDelete()
+        {
+            SupportPoint.SPAuthorPage.ConfirmDeleteMessage();
         }
 
         [Given(@"I Confirm the Refresh")]
@@ -108,13 +128,20 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPManagerDetailsActionsPage.SelectFromDnAList(detailsAction);
         }
 
-
-        [Given(@"I select (.*) using the column (.*) from the table")]
-        [When(@"I select (.*) using the column (.*) from the table")]
-        [Then(@"I select (.*) using the column (.*) from the table")]
-        public void GivenISelectSearchSetupUsingTheColumnNameFromTheTable(string searchValue, string colName)
+        [Given(@"I click on Actions")]
+        [When(@"I click on Actions")]
+        [Then(@"I click on Actions")]
+        public void WhenIClickOnActions()
         {
-            SupportPoint.AdminPage.ClickRecord(colName, searchValue);
+            SupportPoint.SPManagerNav.ClickActions();
+        }
+
+        [Given(@"I select (.*) from Actions")]
+        [When(@"I select (.*) from Actions")]
+        [Then(@"I select (.*) from Actions")]
+        public void WhenISelectFromActions(string action)
+        {
+            SupportPoint.SPManagerActionsPage.SelectFromActionsList(action);
         }
     }
 }
