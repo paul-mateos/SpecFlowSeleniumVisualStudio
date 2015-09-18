@@ -26,7 +26,6 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             SupportPoint.ImageManagementPage.SetSearchText(searchText);
             SupportPoint.ImageManagementPage.ClickSubmitSearchButton();
 
-
         }
 
         [Given(@"the search should return the image record")]

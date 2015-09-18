@@ -18,7 +18,9 @@ namespace SeleniumProject.PageModels.SP_Author
         
        //Search Criteria
         By workflowName = By.XPath("//input[@name='name']");
-
+        By SearchQuery = By.XPath("//input[@placeholder='Search']");
+        By SearchButton = By.XPath("//button[@title='Submit']");
+        By workflowTable = By.XPath("//table[@role='grid']");
         //Buttons
 
 
@@ -40,6 +42,23 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ConfirmWorkflowName(string WorkflowName)
         {
             Assert.IsTrue(UICommon.GetElementAttribute(workflowName, "value", d) == WorkflowName);
+        }
+
+        public void SetSearchText(string searchText)
+        {
+            UICommon.SetValue(SearchQuery, searchText, d);
+        }
+
+        public void ClickSubmitSearchButton()
+        {
+            UICommon.ClickButton(SearchButton, d);
+        }
+
+        public void ConfirmFoundRecord(string lookUpColumn, string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable(workflowTable, d);
+            Table table = new Table(searchTable);
+            StringAssert.Contains(table.GetCellValue(lookUpColumn, searchText, lookUpColumn), searchText);
         }
     }
 }
