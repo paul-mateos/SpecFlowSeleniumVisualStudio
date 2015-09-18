@@ -11,7 +11,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.REST
+namespace SeleniumProject.REST
 {
 
      public class UserImport

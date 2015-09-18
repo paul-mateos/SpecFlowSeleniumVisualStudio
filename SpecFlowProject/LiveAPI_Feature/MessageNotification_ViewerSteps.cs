@@ -1,8 +1,8 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 using Panviva.LiveAPI;
-using SP_Automation.Tests;
-using SP_Automation;
+using SeleniumProject.Tests;
+using SeleniumProject;
 
 
 namespace SpecFlowProject

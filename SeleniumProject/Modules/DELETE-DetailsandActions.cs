@@ -1,15 +1,15 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
-using SP_Automation.Modules;
-using SP_Automation.PageModels;
+using SeleniumProject.Commons;
+using SeleniumProject.Modules;
+using SeleniumProject.PageModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Modules
+namespace SeleniumProject.Modules
 {
     public class DELETEDetailsandActions : BaseWebDriverModule
     {

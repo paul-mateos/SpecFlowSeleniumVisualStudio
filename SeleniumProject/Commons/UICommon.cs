@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Commons
+namespace SeleniumProject.Commons
 {
     public class UICommon
     {

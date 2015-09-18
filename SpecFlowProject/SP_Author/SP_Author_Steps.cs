@@ -1,4 +1,4 @@
-﻿using SP_Automation.Tests;
+﻿using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;

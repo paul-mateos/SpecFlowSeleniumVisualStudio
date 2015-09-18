@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.API
+namespace SeleniumProject.API
 {
     public class UserAPI
     {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SP_Automation.API;
-using SP_Automation.Commons;
-using SP_Automation.Facade;
-using SP_Automation.Tests;
+using SeleniumProject.API;
+using SeleniumProject.Commons;
+using SeleniumProject.Facade;
+using SeleniumProject.Tests;
 using System;
 using System.IO;
 using System.Net;

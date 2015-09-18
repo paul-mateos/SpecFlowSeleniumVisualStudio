@@ -2,9 +2,9 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
-using SP_Automation.Commons;
-using SP_Automation.Environments;
-using SP_Automation.PageModels;
+using SeleniumProject.Commons;
+using SeleniumProject.Environments;
+using SeleniumProject.PageModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,11 +12,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using SP_Automation.Modules;
-using SP_Automation.PageModels.SP_Author;
-using SP_Automation.Utility;
+using SeleniumProject.Modules;
+using SeleniumProject.PageModels.SP_Author;
+using SeleniumProject.Utility;
 
-namespace SP_Automation.Tests
+namespace SeleniumProject.Tests
 {
     static public class SupportPoint 
     {

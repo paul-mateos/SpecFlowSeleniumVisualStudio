@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     class FoldersPage : BasePage
     {

@@ -6,7 +6,7 @@
     <ProjectGuid>{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SP_Automation</RootNamespace>
+    <RootNamespace>SeleniumProject</RootNamespace>
     <AssemblyName>SeleniumProject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

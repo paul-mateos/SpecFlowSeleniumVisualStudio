@@ -1,4 +1,4 @@
-﻿using SP_Automation.Tests;
+﻿using SeleniumProject.Tests;
 using SpecFlowProject.SupportPointAPI;
 using SpecFlowProject.SupportPointLive;
 using System;

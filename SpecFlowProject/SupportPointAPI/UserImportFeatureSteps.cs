@@ -1,4 +1,4 @@
-﻿using SP_Automation.REST;
+﻿using SeleniumProject.REST;
 using System;
 using TechTalk.SpecFlow;
 

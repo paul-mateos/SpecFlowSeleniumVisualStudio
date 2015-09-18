@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
 using TechTalk.SpecFlow;
-using SP_Automation.Tests;
-using SP_Automation.PageModels;
+using SeleniumProject.Tests;
+using SeleniumProject.PageModels;
 using SpecFlowProject.SupportPointAPI;
 
 namespace SpecFlowProject
