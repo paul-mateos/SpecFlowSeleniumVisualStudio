@@ -14,7 +14,7 @@ namespace SeleniumProject.PageModels.SP_Author
 {
     public class RoleSelectorPage : BasePage
     {
-        public static int waitsec = Properties.Settings.Default.WaitTime;
+        //public static int waitsec = Properties.Settings.Default.WaitTime;
 
         By Title = By.Id("kWindow0_wnd_title");
         By Find = By.XPath("//div[@id='kWindow0']//table/tbody/tr/td[2]/input");

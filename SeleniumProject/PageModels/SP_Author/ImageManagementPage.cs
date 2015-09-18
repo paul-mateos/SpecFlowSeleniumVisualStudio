@@ -15,7 +15,7 @@ namespace SeleniumProject.PageModels.SP_Author
 {
     public class ImageManagementPage : BasePage
     {
-        public static int waitsec = Properties.Settings.Default.WaitTime;
+        //public static int waitsec = Properties.Settings.Default.WaitTime;
 
        //Search Criteria
         By imageSearchBy = By.Id("imgSearchType");
@@ -65,7 +65,7 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ConfirmFoundImage(string FindBy, string SearchText)
         {
             Thread.Sleep(5000);
-            IWebElement nextPage;
+            //IWebElement nextPage;
             bool continueLoop = true;
             while (continueLoop)
             {

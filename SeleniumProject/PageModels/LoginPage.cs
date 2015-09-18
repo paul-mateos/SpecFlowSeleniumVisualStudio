@@ -11,15 +11,15 @@ namespace SeleniumProject.PageModels
 {
     class LoginPage : BasePage
     {
-        IWebDriver d;
+        //IWebDriver d;
         public LoginPage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver; 
+            d = driver; 
             //Wait for title to be displayed 
             System.Diagnostics.Debug.WriteLine("wait4title");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => {
+            wait.Until((D) => {
                 System.Diagnostics.Debug.WriteLine("testTitle:" + d.Title);
                 return d.Title.Contains("Login : SupportPoint"); });
             System.Diagnostics.Debug.WriteLine("done");

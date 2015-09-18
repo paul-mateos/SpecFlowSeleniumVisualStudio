@@ -11,14 +11,14 @@ namespace SeleniumProject.PageModels.SP_Viewer
 {
     class HomePage : BasePage
     {
-        IWebDriver d;
+        //IWebDriver d;
         public HomePage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver;
+            d = driver;
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return d.Title.Contains("Home : SupportPoint"); }); 
+            wait.Until((D) => { return d.Title.Contains("Home : SupportPoint"); }); 
         }
 
         public void ClickLoginButton()

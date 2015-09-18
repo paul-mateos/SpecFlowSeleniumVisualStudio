@@ -11,14 +11,14 @@ namespace SeleniumProject.PageModels
 {
     class CertificateErrorPage : BasePage
     {
-        IWebDriver d;
+        //IWebDriver d;
         public CertificateErrorPage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver; 
+            d = driver; 
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return d.Title.Contains("SupportPoint"); }); 
+            wait.Until((D) => { return d.Title.Contains("SupportPoint"); }); 
 
         }
 
