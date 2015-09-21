@@ -80,6 +80,14 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickRemoveButton();
         }
 
+        [Given(@"I Click on the Add user Button")]
+        [When(@"I Click on the Add user Button")]
+        [Then(@"I Click on the Add user Button")]
+        public void WhenIClickOnTheAddUserButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUserButton();
+        }
+
         [Given(@"I Click on the Delete Button")]
         [When(@"I Click on the Delete Button")]
         [Then(@"I Click on the Delete Button")]
@@ -151,5 +159,22 @@ namespace SpecFlowProject.SP_Author
         {
             SupportPoint.AdminPage.ClickRecord(colName, searchValue);
         }
+
+        [Given(@"the Role Selector is opened")]
+        [When(@"the Role Selector is opened")]
+        [Then(@"the Role Selector is opened")]
+        public void TheRoleSelectorIsOpened()
+        {
+            SupportPoint.RoleSelectorPage.ConfirmRoleSelector();
+        }
+
+        [Given(@"the User Selector is opened")]
+        [When(@"the User Selector is opened")]
+        [Then(@"the User Selector is opened")]
+        public void TheUserSelectorIsOpened()
+        {
+            SupportPoint.UserSelectorPage.ConfirmUserSelector();
+        }
+
     }
 }

@@ -23,7 +23,6 @@ namespace SeleniumProject.PageModels.SP_Author
        
 
 
-
         public RoleSelectorPage(IWebDriver driver)
             : base(driver)
         {
@@ -46,43 +45,6 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.SetValue(Find, rolename, d);
             UICommon.ClickButton(SearchBtn, d);
         }
-
-        //public void confirmFoundRole(string SearchText)
-        //{
-        //    Thread.Sleep(5000);
-
-        //    WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-        //    IWebElement roleTable = wait.Until(ExpectedConditions.ElementIsVisible(roleSelectorList));
-        //    IReadOnlyCollection<IWebElement> roles = roleTable.FindElements(By.XPath("./tbody/tr"));
-        //    //Debug.WriteLine("role count" + roles.Count);
-        //    if (roles.Count == 0)
-        //    {
-        //        throw new Exception("No Records Found");
-        //    }
-        //    //foreach (IWebElement r in roles)
-        //    //{
-
-        //    //    string hh = "";
-        //    //    // elem.Click();
-        //    //}
-
-        //    for (int i = 0; i < roles.Count; i++)
-        //    {
-        //        Thread.Sleep(2000);
-
-        //        IWebElement elem = roles.....(By.XPath("./tbody/span"), d);
-
-        //        Debug.WriteLine("role" + elem);
-
-        //        if (elem.Equals(SearchText))
-        //        {
-        //            elem.Click();
-        //        }
-
-        //    }
-        //}
-
-
 
         public void confirmFoundRole(string SearchText)
         {

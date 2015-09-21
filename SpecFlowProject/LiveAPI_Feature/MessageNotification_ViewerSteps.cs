@@ -24,69 +24,69 @@ namespace SpecFlowProject
         [Given(@"a OpenDocument is issued with '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")]
         public void GivenAOpenDocumentIsIssuedWith( string ApiKey , string FindUserBy , string User, string DocumentID , string Version , string SectionID , string AnchorName , string DateTime , string Description , string Actions)
         {
-            DocumentRequest req = LiveAPI.NewOpenDocument(EP_OpenDocuement);
-            req.ApiKey = ApiKey;
-            req.Action = Actions;
-            req.FindUserBy = FindUserBy;
-            req.User = User;
-            req.Version = Version;
-            req.DocumentID = DocumentID;
-            req.SectionID = SectionID;
-            req.AnchorName = AnchorName;
+           // DocumentRequest req = LiveAPI.NewOpenDocument(EP_OpenDocuement);
+           // req.ApiKey = ApiKey;
+           // req.Action = Actions;
+           // req.FindUserBy = FindUserBy;
+           // req.User = User;
+           // req.Version = Version;
+           // req.DocumentID = DocumentID;
+           // req.SectionID = SectionID;
+           // req.AnchorName = AnchorName;
 
-            req.Send();
-           // RestAPI.newRequest(EP_OpenDocuement + req.GenUrlString()).Post();
+           // req.Send();
+           //// RestAPI.newRequest(EP_OpenDocuement + req.GenUrlString()).Post();
 
-            /*
-             *RestAPI.newRequest(EP_OpenDocuement).addParam("ApiKey", ApiKey).addParam("FindUserBy", FindUserBy, "")
-                   .addParam("User", User).addParam("DocumentID", DocumentID)
-                   .addParam("Version", Version, "").addParam("SectionID", SectionID, "")
-                   .addParam("AnchorName", AnchorName, "").addParam("Description", Description, "")
-                   .addParam("Actions", Actions, "").Post();
-            */
+           // /*
+           //  *RestAPI.newRequest(EP_OpenDocuement).addParam("ApiKey", ApiKey).addParam("FindUserBy", FindUserBy, "")
+           //        .addParam("User", User).addParam("DocumentID", DocumentID)
+           //        .addParam("Version", Version, "").addParam("SectionID", SectionID, "")
+           //        .addParam("AnchorName", AnchorName, "").addParam("Description", Description, "")
+           //        .addParam("Actions", Actions, "").Post();
+           // */
 
-            ScenarioContext.Current.Add(KEY_API, req);
+           // ScenarioContext.Current.Add(KEY_API, req);
 
         }
 
         [Given(@"a DoSearch is issued with '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")]
         public void GivenADoSearchIsIssuedWith(string ApiKey, string FindUserBy, string User, string Query, string Filters, string DateTime, string Description, string ShowFirstResult, string Actions)
         {
-            SearchRequest req = LiveAPI.NewSearchRequest(EP_DoSearch);
-            req.ApiKey = ApiKey;
-            req.Action = Actions;
-            req.FindUserBy = FindUserBy;
-            req.User = User;
-            req.Query = Query;
-            req.Filters = Filters;
-        //    req.ShowFirstResult = ShowFirstResult;
-            req.Send();
+        //    SearchRequest req = LiveAPI.NewSearchRequest(EP_DoSearch);
+        //    req.ApiKey = ApiKey;
+        //    req.Action = Actions;
+        //    req.FindUserBy = FindUserBy;
+        //    req.User = User;
+        //    req.Query = Query;
+        //    req.Filters = Filters;
+        ////    req.ShowFirstResult = ShowFirstResult;
+        //    req.Send();
             
-          /*  RestAPI.newRequest(EP_DoSearch).addParam("ApiKey", ApiKey).addParam("FindUserBy", FindUserBy, "")
-                   .addParam("User", User).addParam("Query", Query)
-                   .addParam("Filter", Filters, "").addParam("ShowFirstResult", ShowFirstResult, "")
-                   .addParam("Description", Description, "")
-                   .addParam("Actions", Actions, "").Post();
-            */
+        //  /*  RestAPI.newRequest(EP_DoSearch).addParam("ApiKey", ApiKey).addParam("FindUserBy", FindUserBy, "")
+        //           .addParam("User", User).addParam("Query", Query)
+        //           .addParam("Filter", Filters, "").addParam("ShowFirstResult", ShowFirstResult, "")
+        //           .addParam("Description", Description, "")
+        //           .addParam("Actions", Actions, "").Post();
+        //    */
           
-            ScenarioContext.Current.Add(KEY_API, req);
+        //    ScenarioContext.Current.Add(KEY_API, req);
         
         }
 
         [Given(@"a DoCshSearch is issued with '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")]
         public void GivenADoCshSearchIsIssuedWith(string ApiKey , string FindUserBy , string User   , string Query , string Filters  , string DateTime , string Description  , string ShowFirstResult  , string Actions)
         {
-            CSHSearchRequest req = LiveAPI.NewCSHSearchRequest(EP_DoCshSearch);
-            req.ApiKey = ApiKey;
-            req.Action = Actions;
-            req.FindUserBy = FindUserBy;
-            req.User = User;
-            req.Query = Query;
-            req.Filters = Filters;
+            //CSHSearchRequest req = LiveAPI.NewCSHSearchRequest(EP_DoCshSearch);
+            //req.ApiKey = ApiKey;
+            //req.Action = Actions;
+            //req.FindUserBy = FindUserBy;
+            //req.User = User;
+            //req.Query = Query;
+            //req.Filters = Filters;
 
-            req.Send();
+            //req.Send();
 
-            ScenarioContext.Current.Add(KEY_API, req);
+            //ScenarioContext.Current.Add(KEY_API, req);
             
 
         }
@@ -113,7 +113,7 @@ namespace SpecFlowProject
         [Then(@"I should see the Notification Item disapear from notification list")]
         public void ThenIShouldSeeTheNotificationItemDisapearFromNotificationList()
         {
-            ScenarioContext.Current.Get<LiveApiRequest>();
+         //   ScenarioContext.Current.Get<LiveApiRequest>();
         }
 
 
