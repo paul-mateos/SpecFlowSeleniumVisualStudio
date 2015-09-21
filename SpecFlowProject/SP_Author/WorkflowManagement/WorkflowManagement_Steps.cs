@@ -29,9 +29,9 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
             string newName = SupportPoint.WorkflowManagementPage.SetWorkflowName(workflowName);
             
             //Add feature content if it exists
-            if (FeatureContext.Current.ContainsKey("WorflowName"))
+            if (FeatureContext.Current.ContainsKey("WorkflowName"))
             {
-                FeatureContext.Current.Set(newName, "WorflowName");
+                FeatureContext.Current.Set(newName, "WorkflowName");
             }
             else
             {
@@ -47,9 +47,9 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
             string newName = SupportPoint.WorkflowManagementPage.SetRandomWorkflowName(workflowName);
 
             //Add feature content if it exists
-            if (FeatureContext.Current.ContainsKey("WorflowName"))
+            if (FeatureContext.Current.ContainsKey("WorkflowName"))
             {
-                FeatureContext.Current.Set(newName, "WorflowName");
+                FeatureContext.Current.Set(newName, "WorkflowName");
             }
             else
             {
