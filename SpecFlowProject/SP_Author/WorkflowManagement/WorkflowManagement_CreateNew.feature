@@ -14,7 +14,7 @@ Then I am at Workflow Management page
 Scenario: Create New Workflow
 	Given I click on Actions
 	And I select New workflow from Actions
-	When I enter the workflow Name AutomationWorkflow
+	When I enter the random workflow Name AutomationWorkflow
 	#Workflow name wil be prefixed with a random number
 	Then I click on the Save Button
 	And I confirm the workflow Name

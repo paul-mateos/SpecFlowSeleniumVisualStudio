@@ -19,20 +19,19 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class WorkflowManagement_CreateNewFeature
+    public partial class WorkflowManagement_PropertiesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "WorkflowManagement_CreateNew.feature"
+#line 1 "WorkflowManagement_Properties.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WorkflowManagement_CreateNew", "In order create a new workflow\r\nAs a workflow manager\r\nI want to create a workflo" +
-                    "w that does not exist", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WorkflowManagement_Properties", "In order modify a workflow\nAs a workflow manager\nI want to modify a workflow", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +46,9 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "WorkflowManagement_CreateNew")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "WorkflowManagement_Properties")))
             {
-                SpecFlowProject.SP_Author.WorkflowManagement.WorkflowManagement_CreateNewFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Author.WorkflowManagement.WorkflowManagement_PropertiesFeature.FeatureSetup(null);
             }
         }
         
@@ -84,33 +83,33 @@ testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create New Workflow")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_CreateNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Set Workflow Name")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_Properties")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1.1_WorkflowManagement_CreateNew")]
-        public virtual void CreateNewWorkflow()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("3.1.1_WorkflowManagement_Properties")]
+        public virtual void SetWorkflowName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create New Workflow", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set Workflow Name", new string[] {
                         "Regression",
-                        "1.1_WorkflowManagement_CreateNew"});
+                        "3.1.1_WorkflowManagement_Properties"});
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 15
- testRunner.Given("I click on Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I search for workflow by name for Automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
- testRunner.And("I select New workflow from Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the search should click on the record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.When("I enter the random workflow Name AutomationWorkflow", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
+ testRunner.When("I enter the workflow Name Automation1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
  testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+ testRunner.And("I enter the workflow Name Automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("I confirm the workflow Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And("I Click on the Delete Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
- testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the search should return the record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

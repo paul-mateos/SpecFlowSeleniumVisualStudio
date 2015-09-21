@@ -27,7 +27,34 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         public void IEnterTheWorkflowName(string workflowName)
         {
             string newName = SupportPoint.WorkflowManagementPage.SetWorkflowName(workflowName);
-            FeatureContext.Current.Add("WorkflowName", newName);
+            
+            //Add feature content if it exists
+            if (FeatureContext.Current.ContainsKey("WorflowName"))
+            {
+                FeatureContext.Current.Set(newName, "WorflowName");
+            }
+            else
+            {
+                FeatureContext.Current.Add("WorkflowName", newName);
+            }
+        }
+
+        [Given(@"I enter the random workflow Name (.*)")]
+        [When(@"I enter the random workflow Name (.*)")]
+        [Then(@"I enter the random workflow Name (.*)")]
+        public void IEnterTheRandomWorkflowName(string workflowName)
+        {
+            string newName = SupportPoint.WorkflowManagementPage.SetRandomWorkflowName(workflowName);
+
+            //Add feature content if it exists
+            if (FeatureContext.Current.ContainsKey("WorflowName"))
+            {
+                FeatureContext.Current.Set(newName, "WorflowName");
+            }
+            else
+            {
+                FeatureContext.Current.Add("WorkflowName", newName);
+            }
         }
 
         [Given(@"I search for workflow by name for (.*)")]
@@ -48,6 +75,16 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         {
             string SearchText = FeatureContext.Current.Get<string>("SearchBy");
             SupportPoint.WorkflowManagementPage.ConfirmFoundRecord("Name", SearchText);
+
+        }
+
+        [Given(@"the search should click on the record")]
+        [When(@"the search should click on the record")]
+        [Then(@"the search should click on the record")]
+        public void ThenTheSearchShouldClickOnTheRecord()
+        {
+            string SearchText = FeatureContext.Current.Get<string>("SearchBy");
+            SupportPoint.WorkflowManagementPage.ClickFoundRecord("Name", SearchText);
 
         }
     }
