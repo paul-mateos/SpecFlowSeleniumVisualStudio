@@ -355,6 +355,8 @@ namespace SpecFlowProject.SupportPointAPI
 
 
         [Given(@"I have SessioID with username as ""(.*)"" and password as ""(.*)""")]
+        [When(@"I have SessioID with username as ""(.*)"" and password as ""(.*)""")]
+        [Then(@"I have SessioID with username as ""(.*)"" and password as ""(.*)""")]
         public void GivenIHaveSessioIDWithUsernameAsAndPasswordAs(string userName, string pwd)
         {
             if (FeatureContext.Current.ContainsKey("UserName") && FeatureContext.Current.ContainsKey("Pwd"))
@@ -386,8 +388,17 @@ namespace SpecFlowProject.SupportPointAPI
                     {
                         string UserID = (string)obj["Response"]["User"]["UserID"];
                         string SessionID = (string)obj["Response"]["SessionID"];
-                        FeatureContext.Current.Add("UserID", UserID);
-                        FeatureContext.Current.Add("SessionID", SessionID);
+                        if (FeatureContext.Current.ContainsKey("UserID"))
+                        {
+                            FeatureContext.Current.Set(UserID, "UserID");
+                            FeatureContext.Current.Set(SessionID, "SessionID");
+                        }
+                        else
+                        {
+                            FeatureContext.Current.Add("UserID", UserID);
+                            FeatureContext.Current.Add("SessionID", SessionID);
+                        }
+                        
                     }
                     else
                     {
@@ -547,13 +558,26 @@ namespace SpecFlowProject.SupportPointAPI
         }
 
         // To create random user based on the role provided
-
-        [Given(@"I have a new ""(.*)""")]
-        public void GivenIHaveANew(string role)
+        [Given(@"I create a new ""(.*)"" user")]
+        [When(@"I create new ""(.*)""user ")]
+        [Then(@"I create a new ""(.*)""user ")]
+        public void ICreateANewUser(string role)
         {
             GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
             getRoleID(role);
             string userName =  UICommon.getRandomName(role);
+            CreateNewUser(userName, "1", API.roleID);
+            
+        }
+
+        // To create random user based on the role provided
+        [Given(@"I create a new ""(.*)"" user with username ""(.*)""")]
+        [When(@"I create a new ""(.*)"" user with username ""(.*)""")]
+        [Then(@"I create a new ""(.*)"" user with username ""(.*)""")]
+        public void ICreateANewUserWithName(string role, string userName)
+        {
+            GivenIHaveSessioIDWithUsernameAsAndPasswordAs("", "");
+            getRoleID(role);
             CreateNewUser(userName, "1", API.roleID);
 
         }
@@ -637,18 +661,6 @@ namespace SpecFlowProject.SupportPointAPI
         [Then(@"I Have a xml Requestbody")]
         public void GivenIHaveAXmlRequestbody(string textBody)
         {
-            /*if (textBody.Contains(""))
-            {
-                if (api.SessionID != "")
-                {
-                    textBody = textBody.Replace("\">", "\">" + api.SessionID);
-                }
-                else if (FeatureContext.Current.Get<string>("SID") != "")
-                {
-                    textBody = textBody.Replace("\">", "\">"+ FeatureContext.Current.Get<string>("SID"));
-                }
-            }*/
-
             if (textBody.Contains("AuthKey"))
             {
 
@@ -663,7 +675,6 @@ namespace SpecFlowProject.SupportPointAPI
                 }
             }
 
-            //api.requestXMLBody = api.requestXMLBody + textBody;
             API.requestXMLBody = API.requestXMLBody + textBody;
         }
 
@@ -686,8 +697,22 @@ namespace SpecFlowProject.SupportPointAPI
             }
             catch
             { }
-            
-    }
+        }
+
+        [Given(@"Delete user with username (.*)")]
+        [When(@"Delete user with username (.*)")]
+        [Then(@"Delete user with username (.*)")]
+        public void ThenDeleteUserWithUsername(string userName)
+        {
+           
+            GivenIWantToARequest("POST");
+            GivenMyWebserviceIs("WebService.svc/rest_all/Users/Delete");
+            GivenIHaveARequestBodyOf(" \"SessionID\":\"\",");
+            GivenIHaveARequestBodyOf("\"Instance\":\"localhost\",\"UserIdsList\":[" + FeatureContext.Current.Get<string>("UserID") + "]");
+            WhenISendRequest();
+            ThenMyResultIsResponse();
+           
+        }
 
         [Given(@"I have logged in to SP as a new ""(.*)""")]
         [When(@"I have logged in to SP as a new ""(.*)""")]
@@ -724,9 +749,9 @@ namespace SpecFlowProject.SupportPointAPI
 
         }
 
-        [Given(@"New Image Folder is Created sucessfully")]
-        [When(@"New Image Folder is Created sucessfully")]
-        [Then(@"New Image Folder is Created sucessfully")]
+        //[Given(@"New Image Folder is Created sucessfully")]
+        //[When(@"New Image Folder is Created sucessfully")]
+        //[Then(@"New Image Folder is Created sucessfully")]
         public void ThenNewImageFolderIsCreatedSucessfully()
         {
             try

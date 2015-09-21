@@ -197,11 +197,6 @@
       <DependentUpon>DocumentManagement_SelectFolder.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Viewer\Login\LoginSteps.cs" />
-    <Compile Include="SP_Viewer\Login\Login.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Login.feature</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -317,10 +312,6 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectFolder.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SP_Viewer\Login\Login.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>

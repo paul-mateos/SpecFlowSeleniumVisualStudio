@@ -5,16 +5,14 @@ Feature: DocumentManagement_Search
 	I want to be able to search for documents by different search types
 
 Background: SuportPoint is open
-Given SupportPoint is opened
-And I login as a valid user with login is paul and password is p
+Given I have logged in to SP as a new "authors"
 Then I Open SP Manager
 
-@2_DocumentManagement_SearchBy
-Scenario Outline: Search By Name
+@DocumentManagement_SearchBy
+Scenario Outline: 2_Search By
 	Given I am at Document Management page
 	When I search by <FindBy> for <searchText>
-	Then the search should retun the record by FindBy
-
+	Then the search should return the record by FindBy
 Examples: 
 | FindBy      | searchText          |
 | ID          | 3494                |
