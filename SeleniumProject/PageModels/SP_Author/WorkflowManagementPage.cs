@@ -46,6 +46,8 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             string newName = UICommon.getRandomName(WorkflowName);
             UICommon.SetValue(workflowName, newName, d);
+            var wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(Namevalidation));
             return newName;
 
         }

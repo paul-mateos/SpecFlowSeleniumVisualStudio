@@ -80,13 +80,13 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Documents From Template")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.2.1_Create new Documents From Template")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateDoument")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.2.1_DocumentManagement_CreateNewDocument")]
-        public virtual void CreateNewDocumentsFromTemplate()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewDocument")]
+        public virtual void _4_1_2_1_CreateNewDocumentsFromTemplate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Documents From Template", new string[] {
-                        "4.1.2.1_DocumentManagement_CreateNewDocument"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.2.1_Create new Documents From Template", new string[] {
+                        "DocumentManagement_CreateNewDocument"});
 #line 17
 this.ScenarioSetup(scenarioInfo);
 #line 10
@@ -121,13 +121,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Documents From Copy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.2.2_Create new Documents From Copy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateDoument")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.2.2_DocumentManagement_CreateNewDocument")]
-        public virtual void CreateNewDocumentsFromCopy()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewDocument")]
+        public virtual void _4_1_2_2_CreateNewDocumentsFromCopy()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Documents From Copy", new string[] {
-                        "4.1.2.2_DocumentManagement_CreateNewDocument"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.2.2_Create new Documents From Copy", new string[] {
+                        "DocumentManagement_CreateNewDocument"});
 #line 32
 this.ScenarioSetup(scenarioInfo);
 #line 10
@@ -161,13 +161,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Documents From Blank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.2.3_Create new Documents From Blank")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateDoument")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.2.3_DocumentManagement_CreateNewDocument")]
-        public virtual void CreateNewDocumentsFromBlank()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewDocument")]
+        public virtual void _4_1_2_3_CreateNewDocumentsFromBlank()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Documents From Blank", new string[] {
-                        "4.1.2.3_DocumentManagement_CreateNewDocument"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.2.3_Create new Documents From Blank", new string[] {
+                        "DocumentManagement_CreateNewDocument"});
 #line 47
 this.ScenarioSetup(scenarioInfo);
 #line 10
@@ -230,13 +230,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Documents From Reference")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.2.5_Create new Documents From Reference")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateDoument")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.2.5_DocumentManagement_CreateNewDocument")]
-        public virtual void CreateNewDocumentsFromReference()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewDocument")]
+        public virtual void _4_1_2_5_CreateNewDocumentsFromReference()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Documents From Reference", new string[] {
-                        "4.1.2.5_DocumentManagement_CreateNewDocument"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.2.5_Create new Documents From Reference", new string[] {
+                        "DocumentManagement_CreateNewDocument"});
 #line 71
 this.ScenarioSetup(scenarioInfo);
 #line 10
@@ -272,13 +272,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Documents From Localisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.2.6_Create new Documents From Localisation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateDoument")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.2.6_DocumentManagement_CreateNewDocument")]
-        public virtual void CreateNewDocumentsFromLocalisation()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewDocument")]
+        public virtual void _4_1_2_6_CreateNewDocumentsFromLocalisation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Documents From Localisation", new string[] {
-                        "4.1.2.6_DocumentManagement_CreateNewDocument"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.2.6_Create new Documents From Localisation", new string[] {
+                        "DocumentManagement_CreateNewDocument"});
 #line 87
 this.ScenarioSetup(scenarioInfo);
 #line 10

@@ -14,13 +14,12 @@ namespace SeleniumProject.PageModels.SP_Author
 {
     public class UserSelectorPage : BasePage
     {
-        //public static int waitsec = Properties.Settings.Default.WaitTime;
-
         By Title = By.XPath("//div/span[(@id='kWindow0_wnd_title' and text() = 'User selector')]");
         By FindList = By.XPath("//div[@id='kWindow0']//table[@class='search-table list-search']//span[@class='k-select']");
         By SearchText = By.XPath("//div/input[@type='text']");
         By SearchBtn = By.XPath("//div[@id='kWindow0']//button[@title='Submit']");
-        By userSelectorTable = By.XPath("//div[@id='kWindow0']/table[@role='grid']");
+        By userSelectorTable = By.XPath("//div[@id='kWindow0']//table[@role='grid']");
+        By AddUserBtn = By.XPath("//div[@id='kWindow0']//button[@title='Add user(s)']");
 
 
 
@@ -28,8 +27,7 @@ namespace SeleniumProject.PageModels.SP_Author
         public UserSelectorPage(IWebDriver driver)
             : base(driver)
         {
-            WebDriverWait wait;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
             wait.Until(ExpectedConditions.ElementExists(Title));
         }
 
@@ -63,6 +61,19 @@ namespace SeleniumProject.PageModels.SP_Author
         }
 
 
+
+        public void ClickSelectorRecord(string lookUpColumn, string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable(userSelectorTable, d);
+            Table table = new Table(searchTable);
+            Thread.Sleep(5000);
+            Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn), "Problem selecting value from table");
+        }
+
+        public void ClickAddUserButton()
+        {
+            UICommon.ClickButton(AddUserBtn, d);
+        }
     }
 }
 

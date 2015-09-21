@@ -31,8 +31,8 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WorkflowManagement_Search", "In order create a new workflow\nAs a workflow manager\nI want to create a workflow " +
-                    "that does not exist", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WorkflowManagement_Search", "In order create a new workflow\r\nAs a workflow manager\r\nI want to create a workflo" +
+                    "w that does not exist", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -84,15 +84,15 @@ testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Search for workflow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.1_Search for workflow")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2.1_WorkflowManagement_Search")]
-        public virtual void SearchForWorkflow()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WorkflowManagement_Search")]
+        public virtual void _2_1_SearchForWorkflow()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for workflow", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.1_Search for workflow", new string[] {
                         "Regression",
-                        "2.1_WorkflowManagement_Search"});
+                        "WorkflowManagement_Search"});
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 6

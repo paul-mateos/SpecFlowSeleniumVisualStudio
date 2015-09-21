@@ -10,7 +10,7 @@ When I Navigate to the Workflow Page
 Then I am at Workflow Management page
 
 @Regression
-@2.1_WorkflowManagement_Search
-Scenario: Search for workflow
+@WorkflowManagement_Search
+Scenario: 2.1_Search for workflow
 	Given I search for workflow by name for Automation
 	Then the search should return the record

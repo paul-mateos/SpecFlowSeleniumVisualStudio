@@ -13,8 +13,8 @@ Given I have logged in to SP as a new "authors"
 #And I create test data for Document Type Template
 Then I Open SP Manager
 
-@4.1.2.1_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Template
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.1_Create new Documents From Template
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
@@ -28,8 +28,8 @@ Scenario: Create new Documents From Template
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.2_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Copy
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.2_Create new Documents From Copy
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
@@ -43,8 +43,8 @@ Scenario: Create new Documents From Copy
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.3_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Blank
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.3_Create new Documents From Blank
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
@@ -67,8 +67,8 @@ Scenario: Create new Documents From Reusable Content
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.5_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Reference
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.5_Create new Documents From Reference
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
@@ -83,8 +83,8 @@ Scenario: Create new Documents From Reference
 	And I Click on the Remove Button
 	And I Confirm the Removal	 
 
-@4.1.2.6_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Localisation
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.6_Create new Documents From Localisation
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions

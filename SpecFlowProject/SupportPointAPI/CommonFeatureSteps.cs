@@ -466,8 +466,22 @@ namespace SpecFlowProject.SupportPointAPI
         // To create a new User based on the provided Username, password and roleID
         public void CreateNewUser(string UserName, string password, string roleID)
         {
-            FeatureContext.Current.Add("UserName", UserName);
-            FeatureContext.Current.Add("Pwd", password);
+            if (FeatureContext.Current.ContainsKey("UserName"))
+            {
+                FeatureContext.Current.Set(UserName, "UserName");
+            }else
+            {
+                FeatureContext.Current.Add("UserName", UserName);
+            }
+
+            if (FeatureContext.Current.ContainsKey("Pwd"))
+            {
+                FeatureContext.Current.Set(password, "Pwd");
+            }
+            else
+            {
+                FeatureContext.Current.Add("Pwd", password);
+            }
             GivenIWantToARequest("POST");
             GivenMyWebserviceIs("Webservice.svc/rest_all/Users/CreateUpdate");
             GivenIHaveAnAPIForAccountLogin();

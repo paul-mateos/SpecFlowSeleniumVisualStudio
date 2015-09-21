@@ -83,15 +83,15 @@ testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Set Workflow Name")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3.1.1_Set Workflow Name")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_Properties")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("3.1.1_WorkflowManagement_Properties")]
-        public virtual void SetWorkflowName()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WorkflowManagement_Properties")]
+        public virtual void _3_1_1_SetWorkflowName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set Workflow Name", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.1.1_Set Workflow Name", new string[] {
                         "Regression",
-                        "3.1.1_WorkflowManagement_Properties"});
+                        "WorkflowManagement_Properties"});
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -115,15 +115,15 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete Workflow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3.1.(2,3,4)_Delete Workflow")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_Properties")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("3.1(2,3,4)_WorkflowManagement_Properties")]
-        public virtual void DeleteWorkflow()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WorkflowManagement_Properties")]
+        public virtual void _3_1_234_DeleteWorkflow()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Workflow", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.1.(2,3,4)_Delete Workflow", new string[] {
                         "Regression",
-                        "3.1(2,3,4)_WorkflowManagement_Properties"});
+                        "WorkflowManagement_Properties"});
 #line 25
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -147,13 +147,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Required Approvers Add User")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3.2.1_Required Approvers Add User")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_Properties")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("3.2.1_WorkflowManagement_Properties")]
-        public virtual void RequiredApproversAddUser()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WorkflowManagement_Properties")]
+        public virtual void _3_2_1_RequiredApproversAddUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Required Approvers Add User", new string[] {
-                        "3.2.1_WorkflowManagement_Properties"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.2.1_Required Approvers Add User", new string[] {
+                        "WorkflowManagement_Properties"});
 #line 36
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -177,7 +177,21 @@ this.FeatureBackground();
 #line 46
  testRunner.Then("the User Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47
- testRunner.And("I search for user by User for aut10526", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search for user by User for aa1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("I select the record aa1 using column Username from the User Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And("I Click on the Add user selector Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I select Properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I Click on the Delete Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

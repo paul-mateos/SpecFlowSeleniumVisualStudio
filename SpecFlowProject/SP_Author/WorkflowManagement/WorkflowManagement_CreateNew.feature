@@ -10,8 +10,8 @@ When I Navigate to the Workflow Page
 Then I am at Workflow Management page
 
 @Regression
-@1.1_WorkflowManagement_CreateNew
-Scenario: Create New Workflow
+@WorkflowManagement_CreateNew
+Scenario: 1.1_Create New Workflow
 	Given I click on Actions
 	And I select New workflow from Actions
 	When I enter the random workflow Name AutomationWorkflow

@@ -84,15 +84,15 @@ testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create New Workflow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1.1_Create New Workflow")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_CreateNew")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("1.1_WorkflowManagement_CreateNew")]
-        public virtual void CreateNewWorkflow()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WorkflowManagement_CreateNew")]
+        public virtual void _1_1_CreateNewWorkflow()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create New Workflow", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1.1_Create New Workflow", new string[] {
                         "Regression",
-                        "1.1_WorkflowManagement_CreateNew"});
+                        "WorkflowManagement_CreateNew"});
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 6

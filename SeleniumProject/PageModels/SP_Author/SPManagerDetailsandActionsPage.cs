@@ -23,7 +23,7 @@ namespace SeleniumProject.PageModels
         By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']");
 
         By New = By.XPath("//a[@data-automation-id='doc-details-actions-new']");
-        By Properties = By.XPath("//a[@data-automation-id='doc-details-actions-properties']");
+        By Properties = By.XPath("//a[text()='Properties']");
         By generalProperties = By.XPath("//a[@data-automation-id='doc-details-actions-general-properties']");
         By Rolemembership = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[2]");
         By TrainingObjectives = By.LinkText("Training objectives");
@@ -81,6 +81,8 @@ namespace SeleniumProject.PageModels
 
         public void clickSave()
         {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(ExpectedConditions.ElementToBeClickable(SaveBtn));
             UICommon.ClickButton(SaveBtn, d);
             Thread.Sleep(3000);
         }
