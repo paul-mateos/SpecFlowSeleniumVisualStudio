@@ -27,7 +27,7 @@
       <Value Profile="(Default)">qa-spui-a</Value>
     </Setting>
     <Setting Name="Protocol" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://</Value>
+      <Value Profile="(Default)">http://</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -141,6 +141,29 @@ namespace SeleniumProject.Commons
             return elem;
         }
 
+        public static void SelectCheckbox(By searchType, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
+
+            // Annette - I need to get the value of this attribute & then insert that into the condition below
+            // so it only enters the condition if the checkbox isn't selected
+            string test = elem.GetAttribute("ng-model");
+            string test1 = elem.GetAttribute("@ng-model");
+            bool test2 = elem.GetAttribute("value").Contains("Checked");
+
+            string test3 = elem.FindElement(By.XPath("//input[@id='sd_icon'][@ng-model=configObj.value]")).GetAttribute("value");
+            string test4 = elem.FindElement(By.XPath("//input[@id='sd_icon']@ng-model")).GetAttribute("value");
+            string test5 = elem.FindElement(By.XPath("//input[contains(@id, 'sd_icon')]@ng-model")).GetAttribute("value");
+
+            // this needs to be updated once I have identified the condition which checks if the checkbox is enabled
+            if (elem.GetAttribute("ng-model") == "configObj.value")
+            {
+                Actions action = new Actions(d);
+                action.MoveToElement(elem).Click().Build().Perform();
+                Thread.Sleep(1000);
+            }
+        }
+
         public static void ClickOnFolder(string Page, string[] Folders, By FolderTree,IWebDriver d)
         {
             //get folder tree element
