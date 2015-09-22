@@ -15,7 +15,6 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"I click on the Document Save Button")]
         public void ThenIClickOnTheDocumentSaveButton()
         {
-            //SupportPoint.DocumentManagementPage.ClickSaveButton();
             SupportPoint.SPAuthorPage.ClickSaveButton();
         }
 
@@ -28,16 +27,14 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
                 
         }
 
-        
-        //annette moved to SP_Author_Steps - to be deleted
-        //[Given(@"I select the record (.*) using column (.*) from the Document table")]
-        //[When(@"I select the record (.*) using column (.*) from the Document table")]
-        //[Then(@"I select the record (.*) using column (.*) from the Document table")]
-        //public void IselecttherecordfromtheDocumenttable(string searchValue, string colName)
-        //{
-        //    SupportPoint.DocumentManagementPage.ClickRecord(colName, searchValue);
+        [Given(@"I select the record (.*) using column (.*) from the Document table")]
+        [When(@"I select the record (.*) using column (.*) from the Document table")]
+        [Then(@"I select the record (.*) using column (.*) from the Document table")]
+        public void IselecttherecordfromtheDocumenttable(string searchValue, string colName)
+        {
+            SupportPoint.DocumentManagementPage.ClickRecord(colName, searchValue);
 
-        //}
+        }
 
         [Given(@"I click on the Add document Button")]
         [When(@"I click on the Add document Button")]
@@ -86,6 +83,32 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public void WhenIClickOnTheDocumentMoveintoButton()
         {
             SupportPoint.DocumentManagementPage.ClickMoveintoButton();
+        }
+
+        private string FindBy;
+        private string SearchText;
+
+
+        [Given(@"I search by (.*) for (.*)")]
+        [When(@"I search by (.*) for (.*)")]
+        [Then(@"I search by (.*) for (.*)")]
+        public void WhenISearchByFindByForSeatchText(String findBy, String searchText)
+        {
+            FindBy = findBy;
+            SearchText = searchText;
+
+            Console.WriteLine("find by" + findBy);
+            Console.WriteLine("search text" + searchText);
+        }
+
+        [Given(@"the search should return the record by FindBy")]
+        [When(@"the search should return the record by FindBy")]
+        [Then(@"the search should return the record by FindBy")]
+        public void ThenTheSearchShouldReturnTheRecordByFindBy()
+        {
+
+            SupportPoint.DocumentManagementPage.ConfirmFoundRecord(FindBy, SearchText);
+
         }
     }
 }

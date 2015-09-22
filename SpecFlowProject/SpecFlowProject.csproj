@@ -92,6 +92,16 @@
       <DependentUpon>Administration_SearchSetup.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
+    <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Properties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowManagement_Properties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowManagement_Search.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Steps.cs" />
     <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature.cs">
       <AutoGen>True</AutoGen>
@@ -272,6 +282,14 @@
     <None Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WorkflowManagement_CreateNew.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\WorkflowManagement\WorkflowManagement_Properties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WorkflowManagement_Properties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\WorkflowManagement\WorkflowManagement_Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WorkflowManagement_Search.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointAPI\ChangePasswordAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

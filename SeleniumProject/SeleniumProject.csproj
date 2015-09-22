@@ -109,13 +109,14 @@
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\AdminPage.cs" />
+    <Compile Include="PageModels\SP_Author\UserSelectorPage.cs" />
     <Compile Include="PageModels\SP_Author\WorkflowManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\PermissionsPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagmentNewPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsandActionsPage.cs" />
     <Compile Include="PageModels\SP_Author\ImageManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagementPage.cs" />
-    <Compile Include="PageModels\SP_Author\IAddUserPage.cs" />
+    <Compile Include="PageModels\SP_Author\DELETE-IAddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
     <Compile Include="Modules\DELETE-DetailsandActions.cs" />
     <Compile Include="PageModels\SP_Author\SPAuthorPage.cs" />
@@ -136,7 +137,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Facade\LiveAPI.cs" />
+    <Compile Include="Facade\DELETE-LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
     <Compile Include="API\UserImport.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />

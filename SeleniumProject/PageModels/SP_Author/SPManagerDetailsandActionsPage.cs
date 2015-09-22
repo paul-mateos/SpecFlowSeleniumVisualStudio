@@ -23,7 +23,7 @@ namespace SeleniumProject.PageModels
         By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']");
 
         By New = By.XPath("//a[@data-automation-id='doc-details-actions-new']");
-        By Properties = By.XPath("//a[@data-automation-id='doc-details-actions-properties']");
+        By Properties = By.XPath("//a[text()='Properties']");
         By generalProperties = By.XPath("//a[@data-automation-id='doc-details-actions-general-properties']");
         By Rolemembership = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[2]");
         By TrainingObjectives = By.LinkText("Training objectives");
@@ -32,6 +32,8 @@ namespace SeleniumProject.PageModels
         By Notifications = By.XPath("//a[@data-automation-id='doc-details-actions-notifications']");
         By CustomProperties = By.LinkText("Custom properties");
         By Permissions = By.XPath("//a[@data-automation-id='doc-details-actions-permissions']");
+        By RequiredApprovers = By.XPath("//div[@role='menu']/a[text()='Required approvers']");
+
         By EditBtn = By.XPath("//span[@title='Edit']");
 
         public SPManagerDetailsActionsPage(IWebDriver driver)
@@ -57,6 +59,7 @@ namespace SeleniumProject.PageModels
         public void clickDetailsandActions()
         {
             UICommon.ClickLink(DetailsandActions, d);
+            Thread.Sleep(1000);
 
         }
 
@@ -78,6 +81,8 @@ namespace SeleniumProject.PageModels
 
         public void clickSave()
         {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(ExpectedConditions.ElementToBeClickable(SaveBtn));
             UICommon.ClickButton(SaveBtn, d);
             Thread.Sleep(3000);
         }
@@ -104,6 +109,9 @@ namespace SeleniumProject.PageModels
                     break;
                 case "Permissions":
                     UICommon.ClickLink(Permissions, d);
+                    break;
+                case "Required approvers":
+                    UICommon.ClickLink(RequiredApprovers, d);
                     break;
                 default:
                     break;
