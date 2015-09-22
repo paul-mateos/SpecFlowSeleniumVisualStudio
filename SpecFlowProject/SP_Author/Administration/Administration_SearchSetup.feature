@@ -13,8 +13,8 @@ Scenario: Move Image To Folder
 	And I Navigate to the Admin Page
 	And I am at Administration page
 	Given I select Search Setup using the column Name from the table
-	#And I search for image by ID for 2190
-	#And the search should return the image record
+	And I enter the following search weighing: 1, 2, 3, 4, 5 
+	And I select the Display checkboxes
 	#When I Click on the Move Button
 	#And I select the Images Image Popup Folder
 	#And I Click on the Move Button

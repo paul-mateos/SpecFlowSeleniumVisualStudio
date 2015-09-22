@@ -80,6 +80,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SP_Author\Administration\Administration_SearchSetupSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_FolderProperties.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
