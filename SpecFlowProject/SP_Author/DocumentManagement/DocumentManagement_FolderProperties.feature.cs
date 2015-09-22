@@ -80,13 +80,13 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Move Folder to new location")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.1.1.1_Move Folder to new location")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_FolderProperties")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.1.1_DocumentManagement_FolderProperties_Move")]
-        public virtual void MoveFolderToNewLocation()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_FolderProperties")]
+        public virtual void _4_1_1_1_1_MoveFolderToNewLocation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Move Folder to new location", new string[] {
-                        "4.1.1.1.1_DocumentManagement_FolderProperties_Move"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.1.1.1_Move Folder to new location", new string[] {
+                        "DocumentManagement_FolderProperties"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6

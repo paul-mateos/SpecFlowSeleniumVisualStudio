@@ -192,11 +192,6 @@
     <Compile Include="LiveAPI_Feature\MessageNotificationSteps.cs" />
     <Compile Include="LiveAPI_Feature\MessageNotification_ViewerSteps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SearchSteps.cs" />
-    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DocumentManagement_SelectFolder.feature</DependentUpon>
-    </Compile>
     <Compile Include="SP_Viewer\Login\LoginSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Search.feature.cs">
@@ -310,10 +305,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="runtests.cmd" />
-    <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectFolder.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DocumentManagement_SelectFolder.feature.cs</LastGenOutput>
-    </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>

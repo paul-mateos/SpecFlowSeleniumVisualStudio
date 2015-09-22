@@ -79,13 +79,13 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Blank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.1.1_Create new Folder for Blank")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.1_DocumentManagement_CreateNewFolder")]
-        public virtual void CreateNewFolderForBlank()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewFolder")]
+        public virtual void _4_1_1_1_CreateNewFolderForBlank()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Blank", new string[] {
-                        "4.1.1.1_DocumentManagement_CreateNewFolder"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.1.1_Create new Folder for Blank", new string[] {
+                        "DocumentManagement_CreateNewFolder"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -114,13 +114,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Copy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.1.2_Create new Folder for Copy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.2_DocumentManagement_CreateNewFolder")]
-        public virtual void CreateNewFolderForCopy()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewFolder")]
+        public virtual void _4_1_1_2_CreateNewFolderForCopy()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Copy", new string[] {
-                        "4.1.1.2_DocumentManagement_CreateNewFolder"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.1.2_Create new Folder for Copy", new string[] {
+                        "DocumentManagement_CreateNewFolder"});
 #line 24
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -169,13 +169,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Localisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.1.3_Create new Folder for Localisation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.3_DocumentManagement_CreateNewFolder")]
-        public virtual void CreateNewFolderForLocalisation()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewFolder")]
+        public virtual void _4_1_1_3_CreateNewFolderForLocalisation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Localisation", new string[] {
-                        "4.1.1.3_DocumentManagement_CreateNewFolder"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.1.3_Create new Folder for Localisation", new string[] {
+                        "DocumentManagement_CreateNewFolder"});
 #line 46
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -224,13 +224,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Folder for Reference")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.1.4_Create new Folder for Reference")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.1.4_DocumentManagement_CreateNewFolder")]
-        public virtual void CreateNewFolderForReference()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewFolder")]
+        public virtual void _4_1_1_4_CreateNewFolderForReference()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Folder for Reference", new string[] {
-                        "4.1.1.4_DocumentManagement_CreateNewFolder"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.1.4_Create new Folder for Reference", new string[] {
+                        "DocumentManagement_CreateNewFolder"});
 #line 68
 this.ScenarioSetup(scenarioInfo);
 #line 6

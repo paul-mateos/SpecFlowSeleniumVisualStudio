@@ -76,7 +76,6 @@ namespace SpecFlowProject.SP_Author
         [Then(@"I Click on the Remove Button")]
         public void WhenIClickOnTheRemoveButton()
         {
-            //SupportPoint.ImageManagementPage.ClickRemoveButton();
             SupportPoint.SPAuthorPage.ClickRemoveButton();
         }
 
@@ -190,7 +189,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenISearchForUserByFindByForSearchText(String findBy,
             String searchText)
         {
-            FeatureContext.Current.Add("SearchBy", searchText);
+            ScenarioContext.Current.Add("SearchBy", searchText);           
             SupportPoint.UserSelectorPage.SetSearchText(searchText);
             SupportPoint.UserSelectorPage.ClickSearchButton();
 
@@ -218,12 +217,12 @@ namespace SpecFlowProject.SP_Author
         [Then(@"I search for role for (.*)")]
         public void WhenISearchForRoleByFindByForSearchText(String searchText)
         {
-            if (FeatureContext.Current.ContainsKey("SearchBy"))
+            if (ScenarioContext.Current.ContainsKey("SearchBy"))
             {
-                FeatureContext.Current.Set(searchText, "SearchBy");
+                ScenarioContext.Current.Set(searchText, "SearchBy");
             }else
             {
-                FeatureContext.Current.Add("SearchBy", searchText);
+                ScenarioContext.Current.Add("SearchBy", searchText);
             }
             SupportPoint.RoleSelectorPage.searchRole(searchText);
         }

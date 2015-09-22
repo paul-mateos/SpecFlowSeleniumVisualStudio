@@ -195,13 +195,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create new Documents From Reusable Content")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4.1.2.4_Create new Documents From Reusable Content")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_CreateDoument")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("4.1.2.4_DocumentManagement_CreateNewDocument")]
-        public virtual void CreateNewDocumentsFromReusableContent()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_CreateNewDocument")]
+        public virtual void _4_1_2_4_CreateNewDocumentsFromReusableContent()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Documents From Reusable Content", new string[] {
-                        "4.1.2.4_DocumentManagement_CreateNewDocument"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.1.2.4_Create new Documents From Reusable Content", new string[] {
+                        "DocumentManagement_CreateNewDocument"});
 #line 59
 this.ScenarioSetup(scenarioInfo);
 #line 10

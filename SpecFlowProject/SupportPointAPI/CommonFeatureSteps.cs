@@ -186,9 +186,7 @@ namespace SpecFlowProject.SupportPointAPI
                     XmlNodeList nodeList = xmldoc.GetElementsByTagName("ApiKey");
                     foreach (XmlNode node in nodeList)
                     {
-                        //api.apiKey = node.InnerText;
                         API.apiKey = node.InnerText;
-                        //FeatureContext.Current.Add("ApiKey", api.apiKey);
                         FeatureContext.Current.Add("ApiKey", API.apiKey);
                     }
                     Console.WriteLine("Response:Status OK");                   

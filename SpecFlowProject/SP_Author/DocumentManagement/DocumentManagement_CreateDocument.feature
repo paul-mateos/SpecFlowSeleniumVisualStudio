@@ -55,8 +55,8 @@ Scenario: 4.1.2.3_Create new Documents From Blank
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.4_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Reusable Content
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.4_Create new Documents From Reusable Content
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions

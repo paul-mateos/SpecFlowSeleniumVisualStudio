@@ -17,7 +17,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         [Then(@"I confirm the workflow Name")]
         public void ThenIConfirmTheWorkflowName()
         {
-            string workflowName = FeatureContext.Current.Get<string>("WorkflowName");
+            string workflowName = ScenarioContext.Current.Get<string>("WorkflowName");
             SupportPoint.WorkflowManagementPage.ConfirmWorkflowName(workflowName);
         }
 
@@ -29,13 +29,13 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
             string newName = SupportPoint.WorkflowManagementPage.SetWorkflowName(workflowName);
             
             //Add feature content if it exists
-            if (FeatureContext.Current.ContainsKey("WorkflowName"))
+            if (ScenarioContext.Current.ContainsKey("WorkflowName"))
             {
-                FeatureContext.Current.Set(newName, "WorkflowName");
+                ScenarioContext.Current.Set(newName, "WorkflowName");
             }
             else
             {
-                FeatureContext.Current.Add("WorkflowName", newName);
+                ScenarioContext.Current.Add("WorkflowName", newName);
             }
         }
 
@@ -47,13 +47,13 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
             string newName = SupportPoint.WorkflowManagementPage.SetRandomWorkflowName(workflowName);
 
             //Add feature content if it exists
-            if (FeatureContext.Current.ContainsKey("WorkflowName"))
+            if (ScenarioContext.Current.ContainsKey("WorkflowName"))
             {
-                FeatureContext.Current.Set(newName, "WorkflowName");
+                ScenarioContext.Current.Set(newName, "WorkflowName");
             }
             else
             {
-                FeatureContext.Current.Add("WorkflowName", newName);
+                ScenarioContext.Current.Add("WorkflowName", newName);
             }
         }
 
@@ -62,7 +62,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         [Then(@"I search for workflow by name for (.*)")]
         public void ISearchForWorkflowByNameByForSearchText(String searchText)
         {
-            FeatureContext.Current.Add("SearchBy", searchText);
+            ScenarioContext.Current.Add("SearchBy", searchText);
             SupportPoint.WorkflowManagementPage.SetSearchText(searchText);
             SupportPoint.WorkflowManagementPage.ClickSubmitSearchButton();
 
@@ -73,7 +73,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         [Then(@"the search should return the record")]
         public void ThenTheSearchShouldReturnTheRecord()
         {
-            string SearchText = FeatureContext.Current.Get<string>("SearchBy");
+            string SearchText = ScenarioContext.Current.Get<string>("SearchBy");
             SupportPoint.WorkflowManagementPage.ConfirmFoundRecord("Name", SearchText);
 
         }
@@ -83,7 +83,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         [Then(@"the search should click on the record")]
         public void ThenTheSearchShouldClickOnTheRecord()
         {
-            string SearchText = FeatureContext.Current.Get<string>("SearchBy");
+            string SearchText = ScenarioContext.Current.Get<string>("SearchBy");
             SupportPoint.WorkflowManagementPage.ClickFoundRecord("Name", SearchText);
 
         }
