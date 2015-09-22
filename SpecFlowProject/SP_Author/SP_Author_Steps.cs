@@ -88,6 +88,14 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddUserButton();
         }
 
+        [Given(@"I Click on the Add role Button")]
+        [When(@"I Click on the Add role Button")]
+        [Then(@"I Click on the Add role Button")]
+        public void WhenIClickOnTheAddRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddRoleButton();
+        }
+
         [Given(@"I Click on the Delete Button")]
         [When(@"I Click on the Delete Button")]
         [Then(@"I Click on the Delete Button")]
@@ -176,5 +184,65 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.UserSelectorPage.ConfirmUserSelector();
         }
 
+        [Given(@"I search for user by (.*) for (.*)")]
+        [When(@"I search for user by (.*) for (.*)")]
+        [Then(@"I search for user by (.*) for (.*)")]
+        public void WhenISearchForUserByFindByForSearchText(String findBy,
+            String searchText)
+        {
+            FeatureContext.Current.Add("SearchBy", searchText);
+            SupportPoint.UserSelectorPage.SetSearchText(searchText);
+            SupportPoint.UserSelectorPage.ClickSearchButton();
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the User Selector table")]
+        [When(@"I select the record (.*) using column (.*) from the User Selector table")]
+        [Then(@"I select the record (.*) using column (.*) from the User Selector table")]
+        public void IselecttherecordfromtheUserSelectortable(string searchValue, string colName)
+        {
+            SupportPoint.UserSelectorPage.ClickSelectorRecord(colName, searchValue);
+
+        }
+
+        [Given(@"I Click on the Add user selector Button")]
+        [When(@"I Click on the Add user selector Button")]
+        [Then(@"I Click on the Add user selector Button")]
+        public void WhenIClickOnTheAddUserSelectorButton()
+        {
+            SupportPoint.UserSelectorPage.ClickAddUserButton();
+        }
+
+        [Given(@"I search for role for (.*)")]
+        [When(@"I search for role for (.*)")]
+        [Then(@"I search for role for (.*)")]
+        public void WhenISearchForRoleByFindByForSearchText(String searchText)
+        {
+            if (FeatureContext.Current.ContainsKey("SearchBy"))
+            {
+                FeatureContext.Current.Set(searchText, "SearchBy");
+            }else
+            {
+                FeatureContext.Current.Add("SearchBy", searchText);
+            }
+            SupportPoint.RoleSelectorPage.searchRole(searchText);
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Role Selector table")]
+        [When(@"I select the record (.*) using column (.*) from the Role Selector table")]
+        [Then(@"I select the record (.*) using column (.*) from the Role Selector table")]
+        public void IselecttherecordfromtheRoleSelectortable(string searchValue, string colName)
+        {
+            SupportPoint.RoleSelectorPage.ClickSelectorRecord(colName, searchValue);
+
+        }
+
+        [Given(@"I Click on the Add role selector Button")]
+        [When(@"I Click on the Add role selector Button")]
+        [Then(@"I Click on the Add role selector Button")]
+        public void WhenIClickOnTheAddRoleSelectorButton()
+        {
+            SupportPoint.RoleSelectorPage.ClickAddRoleButton();
+        }
     }
 }

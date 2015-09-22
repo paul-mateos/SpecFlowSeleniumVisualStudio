@@ -19,7 +19,9 @@ namespace SeleniumProject.PageModels.SP_Author
         By Title = By.Id("kWindow0_wnd_title");
         By Find = By.XPath("//div[@id='kWindow0']//table/tbody/tr/td[2]/input");
         By SearchBtn = By.XPath("//span[@title='Search']");
+        By addRoleButton = By.XPath("//div[@id='kWindow0']//button[@title='Add role(s)']");
         By roleSelectorList = By.TagName("table");
+        By roleSelectorTable = By.XPath("//div[@id='kWindow0']//table[@role='grid']");
        
 
 
@@ -40,6 +42,8 @@ namespace SeleniumProject.PageModels.SP_Author
             }
             Assert.IsTrue(rolePage.Displayed);
         }
+
+
         public void searchRole(string rolename)
         {
             UICommon.SetValue(Find, rolename, d);
@@ -68,5 +72,18 @@ namespace SeleniumProject.PageModels.SP_Author
 
 
 
+        public void ClickSelectorRecord(string lookUpColumn, string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable(roleSelectorTable, d);
+            Table table = new Table(searchTable);
+            Thread.Sleep(5000);
+            Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn), "Problem selecting value from table");
+        }
+
+        
+        public void ClickAddRoleButton()
+        {
+            UICommon.ClickButton(addRoleButton, d);
+        }
     }
 }

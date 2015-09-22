@@ -55,4 +55,26 @@ Scenario: 3.2.1_Required Approvers Add User
 	And I select Properties from Details & Actions
 	And I Click on the Delete Button
 	And I Confirm the Delete
+
+@Regression	
+@WorkflowManagement_Properties
+Scenario: 3.2.2_Required Approvers Add Role
+	Given I click on Actions
+	And I select New workflow from Actions
+	And I enter the random workflow Name AutomationWorkflow
+	#Workflow name wil be prefixed with a random number
+	And I click on the Save Button
+	And I confirm the workflow Name
+	When I press Details & Actions
+	And I select Required approvers from Details & Actions
+	And I Click on the Add role Button
+	Then the Role Selector is opened
+	And I search for role for authors
+	And I select the record authors using column Role from the Role Selector table
+	And I Click on the Add role selector Button
+	And I click on the Save Button
+	And I press Details & Actions
+	And I select Properties from Details & Actions
+	And I Click on the Delete Button
+	And I Confirm the Delete
 	

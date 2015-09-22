@@ -18,6 +18,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By RemoveButton = By.CssSelector("button[data-automation-id='doc-details-actions-remove']");
         By browseButton = By.XPath("//button[@title='Browse']");
         By addUserButton = By.XPath("//button[@title='Add user(s)']");
+        By addRoleButton = By.XPath("//button[@title='Add role(s)']");
 
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
@@ -53,6 +54,11 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickAddUserButton()
         {
             UICommon.ClickButton(addUserButton, d);
+        }
+
+        public void ClickAddRoleButton()
+        {
+            UICommon.ClickButton(addRoleButton, d);
         }
 
 
