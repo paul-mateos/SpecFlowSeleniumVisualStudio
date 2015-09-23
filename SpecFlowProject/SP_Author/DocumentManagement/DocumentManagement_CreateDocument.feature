@@ -13,10 +13,10 @@ Given I have logged in to SP as a new "authors"
 #And I create test data for Document Type Template
 Then I Open SP Manager
 
-@DocumentManagement_CreateNewDocument
+@4.1.2.1_DocumentManagement_CreateNewTemplateDocument
 Scenario: 4.1.2.1_Create new Documents From Template
 	Given I am at Document Management page
-	And I select the Home DocumentFolder
+	And I select the Home,AutomationFolder DocumentFolder
 	When I press Details & Actions
 	And I select New from Details & Actions
 	And I have selected Document
@@ -28,7 +28,7 @@ Scenario: 4.1.2.1_Create new Documents From Template
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@DocumentManagement_CreateNewDocument
+@4.1.2.2_DocumentManagement_CreateNewCopyDocument
 Scenario: 4.1.2.2_Create new Documents From Copy
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
@@ -43,7 +43,7 @@ Scenario: 4.1.2.2_Create new Documents From Copy
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@DocumentManagement_CreateNewDocument
+@4.1.2.3_DocumentManagement_CreateNewBlankDocument
 Scenario: 4.1.2.3_Create new Documents From Blank
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
@@ -55,7 +55,7 @@ Scenario: 4.1.2.3_Create new Documents From Blank
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.4_DocumentManagement_CreateNewDocument
+@4.1.2.4_DocumentManagement_CreateNewReuseContentDocument
 Scenario: Create new Documents From Reusable Content
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
@@ -67,7 +67,7 @@ Scenario: Create new Documents From Reusable Content
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@DocumentManagement_CreateNewDocument
+@4.1.2.5_DocumentManagement_CreateNewReferenceDocument
 Scenario: 4.1.2.5_Create new Documents From Reference
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
@@ -83,7 +83,7 @@ Scenario: 4.1.2.5_Create new Documents From Reference
 	And I Click on the Remove Button
 	And I Confirm the Removal	 
 
-@DocumentManagement_CreateNewDocument
+@4.1.2.6_DocumentManagement_CreateNewLocalisedDocument
 Scenario: 4.1.2.6_Create new Documents From Localisation
 	Given I am at Document Management page
 	And I select the Home DocumentFolder

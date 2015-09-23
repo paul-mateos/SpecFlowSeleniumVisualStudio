@@ -9,17 +9,17 @@ Then I Open SP Manager
 #Need to set up test data with folder and documentname
 #Need to delete the test data after scenario is executed
 
-@mytag
+@DocumentManangement
 Scenario: Rolecreators can't Edit a document
 Given I am at Document Management page
-When I select the Home DocumentFolder
-And I select Welcome using the column Name from the table
-And I select New from Details & Actions
+And I select the Home,AutomationFolder DocumentFolder
+And I select the record sel_blankDocumentName using column Name from the Document table
+And I press Details & Actions
 And I select Permissions from Details & Actions
 Then I verify the Edit button isn't Visible
 
 
-@mytag
+@DocumentManangement
 Scenario Outline: Rolecreators can't update document permissions
 Given I select the Add role to readers button
 Then the Role Selector is opened

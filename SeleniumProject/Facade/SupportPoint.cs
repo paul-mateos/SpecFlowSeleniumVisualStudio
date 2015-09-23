@@ -49,6 +49,7 @@ namespace SeleniumProject.Tests
         static public SPAuthorPage SPAuthorPage { get { return new SPAuthorPage(WebDriver); } set { SPAuthorPage = value; } }
         static public AdminPage AdminPage { get { return new AdminPage(WebDriver); } set { AdminPage = value; } }
 
+
         /*
          * Open Support Point app: if there is existing one, it will kill it
          */

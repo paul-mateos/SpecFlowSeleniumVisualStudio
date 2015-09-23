@@ -7,6 +7,15 @@ namespace SpecFlowProject
     [Binding]
     public class Administration_SearchSetupSteps
     {
+
+        [Given(@"I select (.*) using the column (.*) from the Admin table")]
+        [When(@"I select (.*) using the column (.*) from the Admin table")]
+        [Then(@"I select (.*) using the column (.*) from the Admin table")]
+        public void GivenISelectSearchSetupUsingTheColumnNameFromTheAdminTable(string searchValue, string colName)
+        {
+            SupportPoint.AdminPage.ClickRecord(colName, searchValue);
+        }
+
         [Given(@"I enter the following search weighing: (.*), (.*), (.*), (.*), (.*)")]
         [Then(@"I enter the following search weighing: (.*), (.*), (.*), (.*), (.*)")]
         [When(@"I enter the following search weighing: (.*), (.*), (.*), (.*), (.*)")]

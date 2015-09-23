@@ -15,7 +15,7 @@ namespace SeleniumProject.PageModels.SP_Author
 {
     public class SPManagerFolderPage : BasePage
     {
-        
+
         By DocumentFolderTree = By.Id(" docexplorertree");
         By DocumentSelectorFolderTree = By.XPath("//div[@id='kWindow0']//div[@id=' docexplorertree']");
         By ImageFolderTree = By.XPath("//img-tree-drct/div");
