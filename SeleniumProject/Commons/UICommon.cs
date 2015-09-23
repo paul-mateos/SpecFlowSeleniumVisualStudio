@@ -245,22 +245,9 @@ namespace SeleniumProject.Commons
                      }
                 }
                 return false;
-  
         }
 
-        public static bool VerifyNotVisible(string Value, IWebDriver d)
-        {
-            if (Value.assertNotVisible)
-                ass
-            {
-                return true;
-            }
-            else
-            {
-                throw new Exception("User should not be able to Edit Document");
-            }
-        }
-
+        
         public static string getRandomName(string name)
         {
             string currentTime = DateTime.Now.ToString("hmmss");

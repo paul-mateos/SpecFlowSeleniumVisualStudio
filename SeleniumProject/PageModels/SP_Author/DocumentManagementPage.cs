@@ -112,7 +112,15 @@ namespace SeleniumProject.PageModels.SP_Author
 
         public void VerifyButtonNotAvailable()
         {
-            UICommon.VerifyNotVisible(editButton, d);
+            //IWebElement elem = d.FindElement(editButton);
+            //Assert.IsFalse(elem.Displayed);
+           
+                if (!d.FindElement(editButton).Displayed)
+            {
+                Assert.IsTrue(!d.FindElement(editButton).Displayed);
+            }
+            throw new Exception("User Should not be able to Edit Documents");
+
         }
     }
 }

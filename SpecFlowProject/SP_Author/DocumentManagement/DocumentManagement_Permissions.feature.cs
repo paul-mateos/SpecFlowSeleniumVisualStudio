@@ -103,7 +103,7 @@ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlo
 #line 18
 testRunner.And("I select Permissions from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
-testRunner.Then("I verify the Edit button isn\'t Visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I verify the Edit button isn\'t Displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

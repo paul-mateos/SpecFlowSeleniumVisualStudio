@@ -16,7 +16,7 @@ And I select the Home,AutomationFolder DocumentFolder
 And I select the record sel_blankDocumentName using column Name from the Document table
 And I press Details & Actions
 And I select Permissions from Details & Actions
-Then I verify the Edit button isn't Visible
+Then I verify the Edit button isn't Displayed
 
 
 @DocumentManangement
