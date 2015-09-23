@@ -32,9 +32,11 @@ Scenario: 3.1.(2,3,4)_Delete Workflow
 	And I Click on the Delete Button
 	And I Confirm the Delete
 
+@Regression
 @WorkflowManagement_Properties
 Scenario: 3.2.1_Required Approvers Add User
 	Given I click on Actions
+	
 	And I select New workflow from Actions
 	And I enter the random workflow Name AutomationWorkflow
 	#Workflow name wil be prefixed with a random number
@@ -44,9 +46,32 @@ Scenario: 3.2.1_Required Approvers Add User
 	And I select Required approvers from Details & Actions
 	And I Click on the Add user Button
 	Then the User Selector is opened
-	And I search for user by User for aa1
-	And I select the record aa1 using column Username from the User Selector table
+	And I create a new "authors" user with username "WorkflowApprover"
+	And I search for user by User for WorkflowApprover
+	And I select the record WorkflowApprover using column Username from the User Selector table
 	And I Click on the Add user selector Button
+	And I click on the Save Button
+	And I press Details & Actions
+	And I select Properties from Details & Actions
+	And I Click on the Delete Button
+	And I Confirm the Delete
+
+@Regression	
+@WorkflowManagement_Properties
+Scenario: 3.2.2_Required Approvers Add Role
+	Given I click on Actions
+	And I select New workflow from Actions
+	And I enter the random workflow Name AutomationWorkflow
+	#Workflow name wil be prefixed with a random number
+	And I click on the Save Button
+	And I confirm the workflow Name
+	When I press Details & Actions
+	And I select Required approvers from Details & Actions
+	And I Click on the Add role Button
+	Then the Role Selector is opened
+	And I search for role for authors
+	And I select the record authors using column Role from the Role Selector table
+	And I Click on the Add role selector Button
 	And I click on the Save Button
 	And I press Details & Actions
 	And I select Properties from Details & Actions

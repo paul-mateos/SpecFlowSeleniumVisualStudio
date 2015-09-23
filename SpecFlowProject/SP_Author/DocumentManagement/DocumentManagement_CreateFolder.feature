@@ -8,8 +8,8 @@ Given I have logged in to SP as a new "advanced_authors"
 #And I create test data for Document Folders (API)
 Then I Open SP Manager
 
-@4.1.1.1_DocumentManagement_CreateNewFolder
-Scenario: Create new Folder for Blank
+@DocumentManagement_CreateNewFolder
+Scenario: 4.1.1.1_Create new Folder for Blank
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	And I press Details & Actions
@@ -20,8 +20,8 @@ Scenario: Create new Folder for Blank
 	Then I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.1.2_DocumentManagement_CreateNewFolder
-Scenario: Create new Folder for Copy
+@DocumentManagement_CreateNewFolder
+Scenario: 4.1.1.2_Create new Folder for Copy
 	Given I am at Document Management page
 	And I select the Home,AutomationFolder DocumentFolder
 	And I press Details & Actions
@@ -42,8 +42,8 @@ Scenario: Create new Folder for Copy
 	And I Click on the Remove Button
 	And I Confirm the Removal
 	
-@4.1.1.3_DocumentManagement_CreateNewFolder
-Scenario: Create new Folder for Localisation
+@DocumentManagement_CreateNewFolder
+Scenario: 4.1.1.3_Create new Folder for Localisation
 	Given I am at Document Management page
 	And I select the Home,AutomationFolder DocumentFolder
 	And I press Details & Actions
@@ -64,8 +64,8 @@ Scenario: Create new Folder for Localisation
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.1.4_DocumentManagement_CreateNewFolder
-Scenario: Create new Folder for Reference
+@DocumentManagement_CreateNewFolder
+Scenario: 4.1.1.4_Create new Folder for Reference
 	Given I am at Document Management page
 	And I select the Home,AutomationFolder DocumentFolder
 	And I press Details & Actions

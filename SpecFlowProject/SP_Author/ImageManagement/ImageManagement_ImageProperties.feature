@@ -4,11 +4,12 @@
 	I want to confirm that this can be done
 
 Background: SuportPoint is open
+#Need to create test image
 Given I have logged in to SP as a new "authors"
 Then I Open SP Manager
 
-@2.2.1.1_ImageManagement_MoveToFolder
-Scenario: Move Image To Folder
+@ImageManagement_ImageProperties
+Scenario: 2.2.1.1_Move Image To Folder
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -19,8 +20,8 @@ Scenario: Move Image To Folder
 	And I Click on the Image Move Button
 	Then the search should return the image record
 
-@2.2.1.2_ImageMnanagement_RemoveFromFolder
-Scenario: Remove Image From Folder
+@ImageManagement_ImageProperties
+Scenario: 2.2.1.2_Remove Image From Folder
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -31,8 +32,8 @@ Scenario: Remove Image From Folder
 	And I select the Orphans Image Folder
 	And the search should return the image record
 
-@2.2.1.3_ImageManagement_CancelChanges
-Scenario: Calcel Image Detail Changes
+@ImageManagement_ImageProperties
+Scenario: 2.2.1.3_Calcel Image Detail Changes
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -42,8 +43,8 @@ Scenario: Calcel Image Detail Changes
 	Then I click on the Cancel Button
 	And the search should return the image record
 
-@2.2.1.4_ImageManagement_SaveChanges
-Scenario: Save Image Detail Changes
+@ImageManagement_ImageProperties
+Scenario: 2.2.1.4_Save Image Detail Changes
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page

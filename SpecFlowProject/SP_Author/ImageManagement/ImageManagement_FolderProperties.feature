@@ -4,14 +4,14 @@
 	I want to confirm that this can be done
 
 Background: SuportPoint is open
-Given I have SessioID with username as "" and password as ""
-And I create the Automation Image Folder
-And I created the Test Image in the Automation Folder
-When I have logged in to SP as a new "authors"
+#Given I have SessioID with username as "" and password as ""
+#And I create the Automation Image Folder
+#And I created the Test Image in the Automation Folder
+Given I have logged in to SP as a new "authors"
 Then I Open SP Manager
 
-@2.1.1.1_ImageManagement_MoveToFolder
-Scenario: Move Folder To Folder
+@ImageManagement_Folder
+Scenario: 2.1.1.1_Move Folder To Folder
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -22,8 +22,8 @@ Scenario: Move Folder To Folder
 	And I Click on the Image Move Button
 	Then the search should return the image record
 
-@2.1.1.2_ImageMnanagement_RemoveFromFolder
-Scenario: Remove Folder From Folder
+@ImageManagement_Folder
+Scenario: 2.1.1.2_Remove Folder From Folder
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -34,8 +34,8 @@ Scenario: Remove Folder From Folder
 	And I select the Orphans Image Folder
 	And the search should return the image record
 
-@2.1.1.3_ImageManagement_CancelChanges
-Scenario: Calcel Folder Detail Changes
+@ImageManagement_Folder
+Scenario: 2.1.1.3_Calcel Folder Detail Changes
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page
@@ -45,8 +45,8 @@ Scenario: Calcel Folder Detail Changes
 	Then I click on the Cancel Button
 	And the search should return the image record
 
-@2.1.1.4_ImageManagement_SaveChanges
-Scenario: Save Folder Detail Changes
+@ImageManagement_Folder
+Scenario: 2.1.1.4_Save Folder Detail Changes
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	And  I am at Image Management page

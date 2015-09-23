@@ -6,7 +6,7 @@
 #Configure API Key Enable in Admin Portal
 #Setup Support with right Environment
 Background: 
-Given I have a new "authors"
+Given I create a new "authors" user
 And I have an apiKey
 And I have logged into SupportPoint
 

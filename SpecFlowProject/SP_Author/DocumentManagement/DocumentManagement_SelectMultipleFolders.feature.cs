@@ -80,13 +80,13 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Select multiple Folders")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("5_Select multiple Folders")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_SelectMultipleFolders")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("5_DocumentManagement_SelectMultipleFolders")]
-        public virtual void SelectMultipleFolders()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_SelectMultipleFolders")]
+        public virtual void _5_SelectMultipleFolders()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select multiple Folders", new string[] {
-                        "5_DocumentManagement_SelectMultipleFolders"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5_Select multiple Folders", new string[] {
+                        "DocumentManagement_SelectMultipleFolders"});
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -100,9 +100,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 16
  testRunner.When("I press Multiple Selection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.And("I select the record COOL MUFFINS using column Name from the Document table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select COOL MUFFINS using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("I select the record Welcome 1 using column Name from the Document table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select Welcome 1 using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
  testRunner.Then("I select the COOL MUFFINS Grid Record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
@@ -116,8 +116,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 24
  testRunner.And("I Confirm the Refresh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.And("I select the record New MultiSelect Document using column Name from the Document " +
-                    "table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select New MultiSelect Document using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

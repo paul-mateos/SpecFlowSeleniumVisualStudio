@@ -66,7 +66,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public void WhenIEnterTheDocumentNameNewName(string DocumentName)
         {
             SupportPoint.DocumentManagementPage.SetDocumentName(DocumentName);
-            FeatureContext.Current.Add("DocumentName", DocumentName);
+            ScenarioContext.Current.Add("DocumentName", DocumentName);
         }
 
         [Given(@"I Click on the Document Move Button")]

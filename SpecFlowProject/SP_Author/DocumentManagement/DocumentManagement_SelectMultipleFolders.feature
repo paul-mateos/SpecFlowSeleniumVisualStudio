@@ -8,8 +8,8 @@ In order to select multiple Folders
 	Given I have logged in to SP as a new "authors"
 	And I Open SP Manager
 	
-@5_DocumentManagement_SelectMultipleFolders
-Scenario: Select multiple Folders
+@DocumentManagement_SelectMultipleFolders
+Scenario: 5_Select multiple Folders
 	Given I am at Document Management page
 	When I select the Home,Keith DocumentFolder
 	Then the correct folder is selected

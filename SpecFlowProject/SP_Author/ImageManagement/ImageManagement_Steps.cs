@@ -20,8 +20,8 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         public void WhenISearchForImageByFindByForSearchText(String findBy, 
             String searchText)
         {
-            FeatureContext.Current.Add("FindBy", findBy);
-            FeatureContext.Current.Add("SearchBy", searchText);
+            ScenarioContext.Current.Add("FindBy", findBy);
+            ScenarioContext.Current.Add("SearchBy", searchText);
             SupportPoint.ImageManagementPage.SelectFindBy(findBy);
             SupportPoint.ImageManagementPage.SetSearchText(searchText);
             SupportPoint.ImageManagementPage.ClickSubmitSearchButton();
@@ -34,12 +34,11 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         public void ThenTheSearchShouldReturnTheImageRecord()
         {
 
-            SupportPoint.ImageManagementPage.ConfirmFoundImage(FeatureContext.Current.Get<string>("FindBy"), 
-                FeatureContext.Current.Get<string>("SearchBy"));
+            SupportPoint.ImageManagementPage.ConfirmFoundImage(ScenarioContext.Current.Get<string>("FindBy"),
+                ScenarioContext.Current.Get<string>("SearchBy"));
             
         }
 
-        //public string childFolder;
         [Given(@"I select the (.*) Image Folder")]
         [When(@"I select the (.*) Image Folder")]
         [Then(@"I select the (.*) Image Folder")]
@@ -48,7 +47,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             char[] splitter = { ',' };
             string[] folders = folderString.Split(splitter);
             //childFolder = folders[folders.Length - 1];
-            FeatureContext.Current.Add("childFolder", folders[folders.Length - 1]);
+            ScenarioContext.Current.Add("childFolder", folders[folders.Length - 1]);
             SupportPoint.SPManagerFolder.ClickOnFolder("Image", folders);
         }
 
@@ -59,7 +58,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         {
             char[] splitter = { ',' };
             string[] folders = folderString.Split(splitter);
-            FeatureContext.Current.Add("childFolder",folders[folders.Length - 1]);
+            ScenarioContext.Current.Add("childFolder", folders[folders.Length - 1]);
             SupportPoint.SPManagerFolder.ClickOnFolder("Image Selector", folders);
         }
 
@@ -77,7 +76,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         public void WhenIEnterTheImageNameNewName(string imageName)
         {
             SupportPoint.ImageManagementPage.SetImageName(imageName);
-            FeatureContext.Current.Add("ImageName", imageName);
+            ScenarioContext.Current.Add("ImageName", imageName);
         }
 
         [Given(@"I click on the Cancel Button")]
@@ -93,7 +92,6 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         [Then(@"I click on the Image Save Button")]
         public void ThenIClickOnTheImageSaveButton()
         {
-            //SupportPoint.ImageManagementPage.ClickSaveButton();
             SupportPoint.SPAuthorPage.ClickSaveButton();
         }
 
@@ -102,13 +100,8 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         [Then(@"I confirm the Image Name")]
         public void ThenIConfirmTheImageName()
         {
-            string imageName = FeatureContext.Current.Get<string>("ImageName");
+            string imageName = ScenarioContext.Current.Get<string>("ImageName");
             SupportPoint.ImageManagementPage.ConfirmImageName(imageName);
         }
-
-       
-
-
-
     }
 }
