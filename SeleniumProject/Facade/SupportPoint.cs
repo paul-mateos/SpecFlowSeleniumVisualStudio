@@ -40,6 +40,7 @@ namespace SeleniumProject.Tests
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
         static public WorkflowManagementPage WorkflowManagementPage { get { return new WorkflowManagementPage(WebDriver); } set { WorkflowManagementPage = value; } }
+        static public RoleManagementPage RoleManagementPage { get { return new RoleManagementPage(WebDriver); } set { RoleManagementPage = value; } }
         static public DocumentManagmentNewPage DocumentManagmentNew { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNew = value; } }
         static public SPManagerDetailsActionsPage SPManagerDetailsActionsPage { get { return new SPManagerDetailsActionsPage(WebDriver); } set { SPManagerDetailsActionsPage = value; } }
         static public SPManagerActionsPage SPManagerActionsPage { get { return new SPManagerActionsPage(WebDriver); } set { SPManagerActionsPage = value; } }

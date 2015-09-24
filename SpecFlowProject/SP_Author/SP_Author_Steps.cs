@@ -103,6 +103,14 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPManagerDetailsActionsPage.clickDelete();
         }
 
+        [Given(@"I Click on the Delete role Button")]
+        [When(@"I Click on the Delete role Button")]
+        [Then(@"I Click on the Delete role Button")]
+        public void WhenIClickOnTheDeleteRoleButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickDeleteRole();
+        }
+
         [Given(@"I Confirm the Removal")]
         [When(@"I Confirm the Removal")]
         [Then(@"I Confirm the Removal")]
@@ -242,6 +250,15 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheAddRoleSelectorButton()
         {
             SupportPoint.RoleSelectorPage.ClickAddRoleButton();
+        }
+
+
+        [Given(@"I click on the Cancel Button")]
+        [When(@"I click on the Cancel Button")]
+        [Then(@"I click on the Cancel Button")]
+        public void ThenIClickOnTheCancelButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickCancel();
         }
     }
 }

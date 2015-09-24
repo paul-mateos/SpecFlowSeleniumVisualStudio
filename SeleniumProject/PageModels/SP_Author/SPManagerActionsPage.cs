@@ -20,6 +20,7 @@ namespace SeleniumProject.PageModels
         By BackgroundTask = By.LinkText("Background tasks");
         By Close = By.LinkText("Close");
         By NewWorkflow = By.LinkText("New workflow");
+        By NewRole = By.LinkText("New Role");
         By ChangeInterfaceLanguage = By.LinkText("Change interface language");
 
         public SPManagerActionsPage(IWebDriver driver)
@@ -43,6 +44,9 @@ namespace SeleniumProject.PageModels
                     break;
                 case "Background tasks":
                     UICommon.ClickLink(BackgroundTask, d);
+                    break;
+                case "New Role":
+                    UICommon.ClickLink(NewRole, d);
                     break;
                 case "Close":
                     UICommon.ClickLink(Close, d);

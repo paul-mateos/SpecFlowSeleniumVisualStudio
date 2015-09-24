@@ -76,15 +76,14 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         public void WhenIEnterTheImageNameNewName(string imageName)
         {
             SupportPoint.ImageManagementPage.SetImageName(imageName);
-            ScenarioContext.Current.Add("ImageName", imageName);
-        }
-
-        [Given(@"I click on the Cancel Button")]
-        [When(@"I click on the Cancel Button")]
-        [Then(@"I click on the Cancel Button")]
-        public void ThenIClickOnTheCancelButton()
-        {
-            SupportPoint.ImageManagementPage.ClickCancelButton();
+            if (ScenarioContext.Current.ContainsKey("ImageName"))
+            {
+                ScenarioContext.Current.Set(imageName, "ImageName");
+            }else
+            {
+                ScenarioContext.Current.Add("ImageName", imageName);
+            }
+            
         }
 
         [Given(@"I click on the Image Save Button")]

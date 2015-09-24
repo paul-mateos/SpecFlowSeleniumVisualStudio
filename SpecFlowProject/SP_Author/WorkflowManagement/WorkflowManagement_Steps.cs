@@ -18,7 +18,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         public void ThenIConfirmTheWorkflowName()
         {
             string workflowName = ScenarioContext.Current.Get<string>("WorkflowName");
-            SupportPoint.WorkflowManagementPage.ConfirmWorkflowName(workflowName);
+            SupportPoint.SPManagerDetailsActionsPage.ConfirmName(workflowName);
         }
 
         [Given(@"I enter the workflow Name (.*)")]
@@ -26,7 +26,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         [Then(@"I enter the workflow Name (.*)")]
         public void IEnterTheWorkflowName(string workflowName)
         {
-            string newName = SupportPoint.WorkflowManagementPage.SetWorkflowName(workflowName);
+            string newName = SupportPoint.SPManagerDetailsActionsPage.SetName(workflowName);
             
             //Add feature content if it exists
             if (ScenarioContext.Current.ContainsKey("WorkflowName"))
@@ -44,7 +44,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         [Then(@"I enter the random workflow Name (.*)")]
         public void IEnterTheRandomWorkflowName(string workflowName)
         {
-            string newName = SupportPoint.WorkflowManagementPage.SetRandomWorkflowName(workflowName);
+            string newName = SupportPoint.SPManagerDetailsActionsPage.SetRandomName(workflowName);
 
             //Add feature content if it exists
             if (ScenarioContext.Current.ContainsKey("WorkflowName"))

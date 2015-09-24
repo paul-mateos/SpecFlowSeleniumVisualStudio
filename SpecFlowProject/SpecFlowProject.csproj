@@ -92,6 +92,12 @@
       <DependentUpon>Administration_SearchSetup.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
+    <Compile Include="SP_Author\RoleManagement\RoleManagement_CreateNew.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleManagement_CreateNew.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\RoleManagement\RoleManagement_Steps.cs" />
     <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Properties.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -264,6 +270,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectMultipleFolders.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\RoleManagement\RoleManagement_CreateNew.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleManagement_CreateNew.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
