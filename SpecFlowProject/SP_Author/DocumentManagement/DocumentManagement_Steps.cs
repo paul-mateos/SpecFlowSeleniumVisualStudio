@@ -118,5 +118,14 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagementPage.ConfirmFoundRecord(FindBy, SearchText);
 
         }
+
+        [Given(@"I verify the Edit button isn't Displayed")]
+        [When(@"I verify the Edit button isn't Displayed")]
+        [Then(@"I verify the Edit button isn't Displayed")]
+        public void ThenIVerifyTheEditButtonIsnTDisplayed()
+        {
+            SupportPoint.DocumentManagementPage.VerifyButtonNotAvailable();
+        }
+
     }
 }

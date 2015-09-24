@@ -145,18 +145,27 @@ namespace SeleniumProject.Commons
         {
             IWebElement elem = GetElement(searchType, d);
 
-            // Annette - I need to get the value of this attribute & then insert that into the condition below
-            // so it only enters the condition if the checkbox isn't selected
-            string test = elem.GetAttribute("ng-model");
-            string test1 = elem.GetAttribute("@ng-model");
-            bool test2 = elem.GetAttribute("value").Contains("Checked");
+            // gets the current checked state of the checkbox
+             bool ischecked = elem.FindElement(searchType).Selected;
+            
+            // enables the checkbox if it is currently not selected
+            if (!ischecked)
+            {
+                Actions action = new Actions(d);
+                action.MoveToElement(elem).Click().Build().Perform();
+                Thread.Sleep(1000);
+            }
+        }
 
-            string test3 = elem.FindElement(By.XPath("//input[@id='sd_icon'][@ng-model=configObj.value]")).GetAttribute("value");
-            string test4 = elem.FindElement(By.XPath("//input[@id='sd_icon']@ng-model")).GetAttribute("value");
-            string test5 = elem.FindElement(By.XPath("//input[contains(@id, 'sd_icon')]@ng-model")).GetAttribute("value");
+        public static void DeselectCheckbox(By searchType, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
 
-            // this needs to be updated once I have identified the condition which checks if the checkbox is enabled
-            if (elem.GetAttribute("ng-model") == "configObj.value")
+            // gets the current checked state of the checkbox
+            bool ischecked = elem.FindElement(searchType).Selected;
+
+            // disables the checkbox if it is currently selected
+            if (ischecked)
             {
                 Actions action = new Actions(d);
                 action.MoveToElement(elem).Click().Build().Perform();
@@ -180,11 +189,14 @@ namespace SeleniumProject.Commons
                 //get the number of available parent folders in docexplorertree
 
                 IReadOnlyCollection<IWebElement> folders = folderTree.FindElements(By.XPath("./ul/li"));
+              
 
                 //check each parent folder in tree. Go to exception if non are found         
                 foreach (IWebElement folder in folders)
                 {
-                    IWebElement folderText = folder.FindElement(By.CssSelector("div span span"));
+                    IWebElement folderText = folder.FindElement(By.XPath(".//div/span/span"));
+                   // IWebElement folderText = folder.FindElement(By.CssSelector("div span span"));
+
                     if (folderText.Text == FolderName)
                     {
                         //Expand the folder
@@ -200,6 +212,7 @@ namespace SeleniumProject.Commons
                         {
                             Actions action = new Actions(d);
                             action.MoveToElement(folderText).Click().Build().Perform();
+                            Thread.Sleep(1000);
                             folderTree = folder;
                             folderFound = true;
                             break;
@@ -232,9 +245,9 @@ namespace SeleniumProject.Commons
                      }
                 }
                 return false;
-  
         }
 
+        
         public static string getRandomName(string name)
         {
             string currentTime = DateTime.Now.ToString("hmmss");

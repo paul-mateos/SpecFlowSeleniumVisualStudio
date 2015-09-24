@@ -24,10 +24,10 @@ namespace SeleniumProject.PageModels.SP_Author
         By showFoundLocation = By.Id("sd_found_location");
         By showKeywords = By.Id("sd_keywords");
         By showDescription = By.Id("sd_description");
-        By showUserRating = By.Id("sd_user_rating");
+        By showUserRating = By.Id("sd_show_user_rating");
         By setPartialWordSearch = By.Id("viewer_partial_word_search");
         By indexExtDocuments = By.Id("index_external_docs");
-
+        // By showCustomProperties = By.Id needs to be added
 
         public AdminPage(IWebDriver driver)
             : base(driver)
@@ -55,10 +55,14 @@ namespace SeleniumProject.PageModels.SP_Author
              public void setDisplay()
         {
             UICommon.SelectCheckbox(showIcon, d);
-            //UICommon.ClickButton(showSnippet, d);
-            //UICommon.ClickButton(showBreadcrumbs, d);
-            //UICommon.ClickButton(showFoundLocation, d);
-            //UICommon.ClickButton(showKeywords, d);
+            UICommon.SelectCheckbox(showSnippet, d);
+            UICommon.SelectCheckbox(showBreadcrumbs, d);
+            UICommon.SelectCheckbox(showLastUpdated, d);
+            UICommon.SelectCheckbox(showFoundLocation, d);
+            UICommon.SelectCheckbox(showKeywords, d);
+            UICommon.SelectCheckbox(showDescription, d);
+            UICommon.SelectCheckbox(showUserRating, d);
+            UICommon.DeselectCheckbox(setPartialWordSearch, d);
 
         }
     }

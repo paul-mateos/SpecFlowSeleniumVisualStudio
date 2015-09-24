@@ -167,13 +167,14 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPManagerActionsPage.SelectFromActionsList(action);
         }
 
-        [Given(@"I select (.*) using the column (.*) from the table")]
-        [When(@"I select (.*) using the column (.*) from the table")]
-        [Then(@"I select (.*) using the column (.*) from the table")]
-        public void GivenISelectSearchSetupUsingTheColumnNameFromTheTable(string searchValue, string colName)
-        {
-            SupportPoint.AdminPage.ClickRecord(colName, searchValue);
-        }
+        //[Given(@"I select (.*) using the column (.*) from the table")]
+        //[When(@"I select (.*) using the column (.*) from the table")]
+        //[Then(@"I select (.*) using the column (.*) from the table")]
+        //public void GivenISelectSearchSetupUsingTheColumnNameFromTheTable(string searchValue, string colName)
+        //{
+        //    // SupportPoint.AdminPage.ClickRecord(colName, searchValue);
+        //    SupportPoint.SPManagerSearchTablePage.ClickRecord(colName, searchValue);
+        //}
 
         [Given(@"the Role Selector is opened")]
         [When(@"the Role Selector is opened")]

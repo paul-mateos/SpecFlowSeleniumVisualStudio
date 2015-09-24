@@ -26,6 +26,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By documentName = By.XPath("//input[@name='name']");
         By moveButton = By.XPath("//button[@data-automation-id='doc-details-actions-move']");
         By moveintoButton = By.XPath("//button[@title='Move into']");
+        By editButton = By.XPath("//button[@title='Edit']");
 
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
@@ -107,6 +108,19 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickMoveintoButton()
         {
             UICommon.ClickButton(moveintoButton, d);
+        }
+
+        public void VerifyButtonNotAvailable()
+        {
+            //IWebElement elem = d.FindElement(editButton);
+            //Assert.IsFalse(elem.Displayed);
+           
+                if (!d.FindElement(editButton).Displayed)
+            {
+                Assert.IsTrue(!d.FindElement(editButton).Displayed);
+            }
+            throw new Exception("User Should not be able to Edit Documents");
+
         }
     }
 }
