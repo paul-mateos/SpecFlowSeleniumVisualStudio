@@ -19,7 +19,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class RoleManagement_CreateNewFeature
+    public partial class RoleManagement_RoleMembershipFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,8 +31,8 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RoleManagement_CreateNew", "In order to create a new role\r\nAs a role creator\r\nI want to create a role that do" +
-                    "es not exist", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RoleManagement_RoleMembership", "In order to manage role memberships\r\nAs a role creator\r\nI want to manage role mem" +
+                    "berships", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +47,9 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "RoleManagement_CreateNew")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "RoleManagement_RoleMembership")))
             {
-                SpecFlowProject.SP_Author.RoleManagement.RoleManagement_CreateNewFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Author.RoleManagement.RoleManagement_RoleMembershipFeature.FeatureSetup(null);
             }
         }
         
@@ -84,15 +84,13 @@ testRunner.Then("I am at Role Management page", ((string)(null)), ((TechTalk.Spe
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1.1,2.1.(1,4)_Create New Role")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RoleManagement_CreateNew")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RoleManagement_Properties")]
-        public virtual void _1_12_1_14_CreateNewRole()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.2.1_Manage Role Membership")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RoleManagement_RoleMembership")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RoleManagement_RoleMembership")]
+        public virtual void _2_2_1_ManageRoleMembership()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1.1,2.1.(1,4)_Create New Role", new string[] {
-                        "Regression",
-                        "RoleManagement_Properties"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.2.1_Manage Role Membership", new string[] {
+                        "RoleManagement_RoleMembership"});
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -102,52 +100,34 @@ this.FeatureBackground();
 #line 16
  testRunner.And("I select New Role from Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.When("I enter the random role Name AutomationRole", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I enter the random role Name AutomationRole", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
  testRunner.And("I confirm the role Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And("I Click on the Delete role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.1.3_Edit Existing Role")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RoleManagement_CreateNew")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RoleManagement_Properties")]
-        public virtual void _2_1_3_EditExistingRole()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.1.3_Edit Existing Role", new string[] {
-                        "Regression",
-                        "RoleManagement_Properties"});
+ testRunner.And("I select Role membership from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("I Click on the Add role to Roles Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.Then("the Role Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.And("I search for role for authors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
-this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
+ testRunner.And("I select the record authors using column Role from the Role Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.Given("I click on Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("I Click on the Add role selector Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("I select New Role from Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.And("I enter the random role Name AutomationRole", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
- testRunner.And("I confirm the role Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.And("I enter the role Description Test Description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
- testRunner.And("I confirm the role Description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
- testRunner.And("I click on the Cancel Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 29
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("I select Properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
  testRunner.And("I Click on the Delete role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 32
  testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

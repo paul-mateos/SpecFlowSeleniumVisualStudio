@@ -19,6 +19,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By browseButton = By.XPath("//button[@title='Browse']");
         By addUserButton = By.XPath("//button[@title='Add user(s)']");
         By addRoleButton = By.XPath("//button[@title='Add role(s)']");
+        By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
 
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
@@ -59,6 +60,11 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickAddRoleButton()
         {
             UICommon.ClickButton(addRoleButton, d);
+        }
+
+        public void ClickAddRoleToRolesButton()
+        {
+            UICommon.ClickButton(addRoleToRolesButton, d);
         }
 
 

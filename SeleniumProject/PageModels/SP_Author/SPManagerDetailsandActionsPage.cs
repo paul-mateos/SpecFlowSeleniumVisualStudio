@@ -27,9 +27,9 @@ namespace SeleniumProject.PageModels
         //menu options
         By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']"); 
         By New = By.XPath("//a[@data-automation-id='doc-details-actions-new']");
-        By Properties = By.XPath("//a[text()='Properties']");
+        By Properties = By.XPath("//a[contains(text(),'Properties')]");
         By generalProperties = By.XPath("//a[@data-automation-id='doc-details-actions-general-properties']");
-        By Rolemembership = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[2]");
+        By Rolemembership = By.XPath("//a[contains(text(),'Role membership')]");
         By TrainingObjectives = By.LinkText("Training objectives");
         By Readers = By.LinkText("Readers");
         By Writers = By.LinkText("Writers");
@@ -125,6 +125,9 @@ namespace SeleniumProject.PageModels
                     break;
                 case "Required approvers":
                     UICommon.ClickLink(RequiredApprovers, d);
+                    break;
+                case "Role membership":
+                    UICommon.ClickLink(Rolemembership, d);
                     break;
                 default:
                     break;
