@@ -20,6 +20,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By addUserButton = By.XPath("//button[@title='Add user(s)']");
         By addRoleButton = By.XPath("//button[@title='Add role(s)']");
         By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
+        By removeRoleFromRolesButton = By.XPath("//button[@title='Remove role from role(s)']");
 
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
@@ -67,6 +68,10 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(addRoleToRolesButton, d);
         }
 
+        public void ClickRemoveRoleFromRolesButton()
+        {
+            UICommon.ClickButton(removeRoleFromRolesButton, d);
+        }
 
         public void ConfirmRemovalMessage()
         {

@@ -63,5 +63,14 @@ namespace SpecFlowProject.SP_Author.RoleManagement
             string roleDescription = ScenarioContext.Current.Get<string>("RoleDescription");
             SupportPoint.SPManagerDetailsActionsPage.ConfirmDescription(roleDescription);
         }
+
+        [Given(@"I select the record (.*) using column (.*) from the Role table")]
+        [When(@"I select the record (.*) using column (.*) from the Role table")]
+        [Then(@"I select the record (.*) using column (.*) from the Role table")]
+        public void IselecttherecordfromtheRoletable(string searchValue, string colName)
+        {
+            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue);
+
+        }
     }
 }

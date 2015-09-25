@@ -9,7 +9,7 @@ And I Open SP Manager
 When I Navigate to the Roles Page
 Then I am at Role Management page
 
-
+@Regression
 @RoleManagement_RoleMembership
 Scenario: 2.2.1_Manage Role Membership
 	Given I click on Actions
@@ -25,6 +25,9 @@ Scenario: 2.2.1_Manage Role Membership
 	And I search for role for authors
 	And I select the record authors using column Role from the Role Selector table
 	And I Click on the Add role selector Button
+	And I click on the Save Button
+	And I select the record authors using column Role from the Role table
+	And I Click on the Remove role from Roles Button
 	And I click on the Save Button
 	And I press Details & Actions
 	And I select Properties from Details & Actions

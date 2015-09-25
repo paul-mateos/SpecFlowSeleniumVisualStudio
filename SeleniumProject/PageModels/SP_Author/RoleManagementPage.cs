@@ -81,5 +81,12 @@ namespace SeleniumProject.PageModels.SP_Author
             Table table = new Table(searchTable);
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
         }
+
+        public void ClickRecord(string lookUpColumn, string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable(roleTable, d);
+            Table table = new Table(searchTable);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
+        }
     }
 }
