@@ -34,8 +34,10 @@ namespace SeleniumProject.Commons
         {
             IWebElement elem = GetElement(searchType, d);
             Actions action = new Actions(d);
-            action.MoveToElement(elem).Click().Build().Perform();
-            Thread.Sleep(1000);
+            action.MoveToElement(elem).ClickAndHold().Build().Perform();
+            Thread.Sleep(500);
+            action.MoveToElement(elem).Release().Build().Perform();
+            Thread.Sleep(100);
             
         }
 
@@ -169,7 +171,7 @@ namespace SeleniumProject.Commons
             {
                 Actions action = new Actions(d);
                 action.MoveToElement(elem).Click().Build().Perform();
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
         }
 
