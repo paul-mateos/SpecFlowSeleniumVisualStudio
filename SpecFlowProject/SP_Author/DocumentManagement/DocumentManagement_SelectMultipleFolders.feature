@@ -22,6 +22,7 @@ Scenario: 5_Select multiple Folders
 	And I enter the Document Name New MultiSelect Document
 	And I click on the Save Button
 	And I Confirm the Refresh
+	And I am at Document Management page
 	And I select New MultiSelect Document using the column Name from the table
 
 

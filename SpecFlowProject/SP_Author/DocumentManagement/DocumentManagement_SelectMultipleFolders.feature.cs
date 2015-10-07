@@ -116,6 +116,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 24
  testRunner.And("I Confirm the Refresh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
+ testRunner.And("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
  testRunner.And("I select New MultiSelect Document using the column Name from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

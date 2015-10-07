@@ -34,6 +34,7 @@ Scenario: 4.1.1.2_Create new Folder for Copy
 	And I click on the Add folder Button
 	And I click on the Save Button
 	Then I Confirm the Refresh
+	And I am at Document Management page
 	And I select the Home,AutomationFolder DocumentFolder
 	And I select sel_CopyFolderName using the column Name from the table
 	And I press Details & Actions
@@ -56,6 +57,7 @@ Scenario: 4.1.1.3_Create new Folder for Localisation
 	And I click on the Add folder Button
 	And I click on the Save Button
 	Then I Confirm the Refresh
+	And I am at Document Management page
 	And I select the Home,AutomationFolder DocumentFolder
 	And I select sel_LocalisationFolderName using the column Name from the table
 	And I press Details & Actions

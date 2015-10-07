@@ -19,7 +19,7 @@ namespace SpecFlowProject.SP_Viewer
         {
             SupportPoint.Nav.ToSupportPointManager();
             SupportPoint.SwitchToPage("Document Management : SupportPoint");
-            System.Threading.Thread.Sleep(5000);
+            SupportPoint.IsCurrentBrowser("Document Management : SupportPoint");
         }
 
     }

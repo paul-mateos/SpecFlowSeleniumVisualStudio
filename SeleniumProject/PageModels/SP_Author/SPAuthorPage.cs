@@ -40,7 +40,8 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickSaveButton()
         {
             UICommon.ClickButton(saveButton, d);
-            Thread.Sleep(5000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
+            
         }
 
         public void ClickBrowseButton()
@@ -77,21 +78,21 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
             elem.FindElement(confirmRemoveButton).Click();
-            Thread.Sleep(3000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
         }
 
         public void ConfirmDeleteMessage()
         {
             IWebElement elem = UICommon.GetElement(deleteMessagePopup, d);
             elem.FindElement(confirmDeleteButton).Click();
-            Thread.Sleep(3000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
         }
         public void ConfirmRefreshMessage()
         {
             IWebElement elem = UICommon.GetElement(refreshMessagePopup, d);
             //elem.FindElement(okButton).Click();
             elem.FindElement(confirmRefreshButton).Click();
-            Thread.Sleep(6000);
+            //Thread.Sleep(6000);
         }
 
         

@@ -78,18 +78,18 @@ namespace SeleniumProject.PageModels
         public void clickCancel()
         {
             UICommon.ClickButton(CancelBtn, d);
+            UICommon.confirmToastInfoMessage("Changes cancelled", d);
         }
 
         public void clickDelete()
         {
             UICommon.ClickButton(DeleteBtn, d);
-            Thread.Sleep(3000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
         }
 
         public void clickDeleteRole()
         {
             UICommon.ClickButton(DeleteRoleBtn, d);
-            Thread.Sleep(3000);
         }
 
         public void clickSave()
@@ -97,7 +97,8 @@ namespace SeleniumProject.PageModels
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until(ExpectedConditions.ElementToBeClickable(SaveBtn));
             UICommon.ClickButton(SaveBtn, d);
-            Thread.Sleep(3000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
+            
         }
 
         public void NoEdit()

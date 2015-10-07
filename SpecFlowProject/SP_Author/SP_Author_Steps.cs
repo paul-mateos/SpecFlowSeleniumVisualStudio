@@ -52,7 +52,7 @@ namespace SpecFlowProject.SP_Author
         public void GivenIAmAtTheManagementPage(string managementPage)
         {
             SupportPoint.IsCurrentBrowser(managementPage + " : SupportPoint");
-
+            
         }
 
         [Given(@"I click on the Save Button")]

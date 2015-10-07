@@ -15,6 +15,7 @@ using System.IO;
 using SeleniumProject.Modules;
 using SeleniumProject.PageModels.SP_Author;
 using SeleniumProject.Utility;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumProject.Tests
 {
@@ -151,6 +152,9 @@ namespace SeleniumProject.Tests
 
         public static void IsCurrentBrowser(string BrowserTitle)
         {
+           
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
             string browserTitle = WebDriver.Title.ToString();
             Assert.AreEqual(BrowserTitle, browserTitle, "Current Browser is not: " + BrowserTitle + ". It is: " + browserTitle);
         }

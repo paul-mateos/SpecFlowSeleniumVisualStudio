@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -14,16 +15,19 @@ namespace SeleniumProject.Commons
     public class UICommon
     {
         public static int waitsec = Properties.Settings.Default.WaitTime;
+        
 
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
 
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-             IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
+            IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
             elementHighlight(elem, d);
             return elem;
 
         }
+
+        
 
         public static IReadOnlyCollection<IWebElement> GetElements(By searchType, IWebDriver d)
         {
@@ -54,7 +58,7 @@ namespace SeleniumProject.Commons
             IWebElement elem = GetElement(searchType, d);
             elem.Clear();
             elem.SendKeys(value);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
 
         }
 
@@ -87,7 +91,7 @@ namespace SeleniumProject.Commons
         {
             IWebElement elem = GetElement(by, d);
             elem.Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
 
 
@@ -124,7 +128,16 @@ namespace SeleniumProject.Commons
         {
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(searchTableBy));
+            //Check that the grid loading image has gone
+            Assert.IsTrue(ObjectNotExists(By.XPath("//div[@class='k-loading-mask']/span[contains(text(),'Loading')]"), d), "Table did not complete loading");
             return webElementBody;
+        }
+
+        public static bool ObjectNotExists(By searchType, IWebDriver d)
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait.Until((driver) => { return d.FindElements(searchType).Count == 0; });
+            return true;
         }
 
         public static string GetElementAttribute(By searchType, string attribute, IWebDriver d)
@@ -155,7 +168,7 @@ namespace SeleniumProject.Commons
             {
                 Actions action = new Actions(d);
                 action.MoveToElement(elem).Click().Build().Perform();
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
         }
 
@@ -254,6 +267,42 @@ namespace SeleniumProject.Commons
         {
             string currentTime = DateTime.Now.ToString("hmmss");
             return name + currentTime;
+        }
+
+        public static bool confirmToastInfoMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-info')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast,d), "Object still exists");
+            return true;
+        }
+
+        public static bool confirmToastSuccessMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-success')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
+            return true;
+        }
+
+        public static bool confirmToastErrorMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-error')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
+            return true;
         }
 
     }
