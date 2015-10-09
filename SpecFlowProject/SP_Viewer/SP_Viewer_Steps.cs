@@ -17,9 +17,7 @@ namespace SpecFlowProject.SP_Viewer
         [Then(@"I Open SP Manager")]
         public void ThenIOpenSPManager()
         {
-            SupportPoint.Nav.ToSupportPointManager();
-            SupportPoint.SwitchToPage("Document Management : SupportPoint");
-            SupportPoint.IsCurrentBrowser("Document Management : SupportPoint");
+            SupportPoint.Nav.ToSupportPointManager();            
         }
 
     }

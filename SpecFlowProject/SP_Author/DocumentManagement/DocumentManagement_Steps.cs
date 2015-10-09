@@ -93,20 +93,17 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagementPage.ClickMoveintoButton();
         }
 
-        private string FindBy;
-        private string SearchText;
-
 
         [Given(@"I search by (.*) for (.*)")]
         [When(@"I search by (.*) for (.*)")]
         [Then(@"I search by (.*) for (.*)")]
         public void WhenISearchByFindByForSeatchText(String findBy, String searchText)
         {
-            FindBy = findBy;
-            SearchText = searchText;
-
-            Console.WriteLine("find by" + findBy);
-            Console.WriteLine("search text" + searchText);
+            ScenarioContext.Current.Add("FindBy", findBy);
+            ScenarioContext.Current.Add("SearchBy", searchText);
+            SupportPoint.DocumentManagementPage.SelectFindBy(findBy);
+            SupportPoint.DocumentManagementPage.SetSearchText(searchText);
+            SupportPoint.DocumentManagementPage.ClickSubmitSearchButton();
         }
 
         [Given(@"the search should return the record by FindBy")]
@@ -114,8 +111,9 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"the search should return the record by FindBy")]
         public void ThenTheSearchShouldReturnTheRecordByFindBy()
         {
-
-            SupportPoint.DocumentManagementPage.ConfirmFoundRecord(FindBy, SearchText);
+            SupportPoint.DocumentManagementPage.ConfirmFoundRecord(ScenarioContext.Current.Get<string>("FindBy"),
+               ScenarioContext.Current.Get<string>("SearchBy"));
+            
 
         }
 

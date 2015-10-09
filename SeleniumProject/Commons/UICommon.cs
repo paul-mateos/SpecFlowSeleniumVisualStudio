@@ -95,35 +95,53 @@ namespace SeleniumProject.Commons
         }
 
 
-        public static IWebDriver SwitchToNewBrowserWithTitle(IWebDriver d, string title)
+        public static void SwitchToNewBrowserWithTitle(IWebDriver d, string title, string currentWindow)
         {
-            //wait for another window to open
-            for (int i = 1; i < 30; i++)
-            {
-                if (d.WindowHandles.Count == 1)
+            
+           try
+           {
+                //wait for another window to open
+                for (int i = 1; i < 30; i++)
                 {
-                    Thread.Sleep(1000); 
+                    if (d.WindowHandles.Count == 1)
+                    {
+                        Thread.Sleep(1000); 
+                    }
+                    else { break; }
                 }
-                else { break; }
-            }
 
-            for (int i = 1; i < 3; i++)
-            {
-                foreach (string handle in d.WindowHandles)
+                for (int i = 1; i < 3; i++)
                 {
-                    if (d.SwitchTo().Window(handle).Title.Contains(title))
+                    foreach (string handle in d.WindowHandles)
                     {
-                        return d;
+                        if (d.SwitchTo().Window(handle).Title.Contains(title))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            d.SwitchTo().Window(currentWindow); 
+                            Thread.Sleep(2000);
+                        }
                     }
-                    else
-                    {
-                        Thread.Sleep(2000);
-                    }
-                }
      
-            }throw new Exception("Error switching to new browser");
+                }
+           }
+           catch (Exception e)
+            {
+                Console.WriteLine("Error switching to new browser", e);
+            }
+               
+             
+            
         }
 
+         public static void SwitchToNewPageWithTitle(IWebDriver d, string Title)
+         {
+             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+             wait.Until((driver) => { return d.Title.Contains(Title); });   
+             
+        }
         public static IWebElement GetSearchResultTable(By searchTableBy, IWebDriver d)
         {
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));

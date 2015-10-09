@@ -1,8 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using SeleniumProject.Commons;
 using SeleniumProject.PageModels;
 using SeleniumProject.PageModels.SP_Author;
 using SeleniumProject.PageModels.SP_Viewer;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,10 +42,10 @@ namespace SeleniumProject.Modules
 
         public void ToSupportPointManager()
         {
-            //todo
+            string BaseWindow = driver.CurrentWindowHandle;
             new NavBarPage(driver).ClickSPManagerButton();
-            //new DocumentManagementPage(driver);
-            //new SPManagerNavBarPage(driver);
+            SupportPoint.SwitchToBrowser("Document Management : SupportPoint", BaseWindow);
+            SupportPoint.IsCurrentBrowser("Document Management : SupportPoint");
         }
 
     }

@@ -27,6 +27,8 @@ namespace SeleniumProject.PageModels.SP_Author
         By moveButton = By.XPath("//button[@data-automation-id='doc-details-actions-move']");
         By moveintoButton = By.XPath("//button[@title='Move into']");
         By editButton = By.XPath("//button[@title='Edit']");
+        By docSearchQuery = By.XPath("//input[@data-automation-id='doc-explorer-search-query']");
+        By searchButton = By.XPath("//button[@data-automation-id='doc-explorer-search-submit']");
 
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
@@ -68,8 +70,8 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(docSelectorTable, d);
             Table table = new Table(searchTable);
-            //Thread.Sleep(5000);
             Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn), "Problem selecting value from table");
+            Thread.Sleep(1000);
         }
 
         public void clickAddDocumentButton()
@@ -121,6 +123,27 @@ namespace SeleniumProject.PageModels.SP_Author
             }
             throw new Exception("User Should not be able to Edit Documents");
 
+        }
+
+        public void SelectFindBy(string findBy)
+        {
+      
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//select[@data-automation-id='doc-explorer-search-type']/.."))).Click();
+            Thread.Sleep(2000);
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//li[contains(text(),'Name')]/../li[text()='" + findBy + "']"))).Click();
+            //wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//ul[@id='imgSearchType_listbox']/li[text()='"+findBy+"']"))).Click();
+       
+        }
+
+        public void SetSearchText(string searchText)
+        {
+            UICommon.SetValue(docSearchQuery, searchText, d);
+        }
+
+        public void ClickSubmitSearchButton()
+        {
+            UICommon.ClickButton(searchButton, d);
         }
     }
 }

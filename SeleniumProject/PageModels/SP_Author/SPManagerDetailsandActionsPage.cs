@@ -84,7 +84,7 @@ namespace SeleniumProject.PageModels
         public void clickDelete()
         {
             UICommon.ClickButton(DeleteBtn, d);
-            UICommon.confirmToastSuccessMessage("Changes saved", d);
+            Thread.Sleep(1000);
         }
 
         public void clickDeleteRole()

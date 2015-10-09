@@ -89,7 +89,7 @@ namespace SeleniumProject.Tests
             //Log on to site as user.
             InitialPage initialPage = new InitialPage(WebDriver);
             string BaseWindow = WebDriver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login");
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login", BaseWindow);
 
         }
 
@@ -102,8 +102,9 @@ namespace SeleniumProject.Tests
             {
                 try
                 {
+                    string BaseWindow = WebDriver.CurrentWindowHandle;
                     LogIn.CloseSPManager();
-                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home");
+                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home", BaseWindow);
                     LogIn.LogOutAndCloseApp();
                     WebDriver.Quit();
                 }
@@ -137,16 +138,26 @@ namespace SeleniumProject.Tests
         }
 
         static public void SwitchToPage(string PageTitle)
+        { 
+            UICommon.SwitchToNewPageWithTitle(WebDriver,PageTitle);
+        }
+
+        static public void SwitchToBrowser(string PageTitle, string currentWindow)
         {
-            string BaseWindowHandle = WebDriver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver,PageTitle);
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver, PageTitle, currentWindow);
         }
 
         public static void KillProcess(string processName)
         {
             foreach (var process in Process.GetProcessesByName(Path.GetFileNameWithoutExtension(processName)))
             {
-                process.Kill();
+                try
+                {
+                    process.Kill();
+                }
+                catch
+                { }
+
             }
         }
 

@@ -22,7 +22,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
         By removeRoleFromRolesButton = By.XPath("//button[@title='Remove role from role(s)']");
 
-        By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove')]");
+        By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
         By refreshMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'refresh')]");
         By okButton = By.XPath("//button[@title='OK']");

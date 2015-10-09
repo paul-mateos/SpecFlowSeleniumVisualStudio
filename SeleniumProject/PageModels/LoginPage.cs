@@ -69,7 +69,7 @@ namespace SeleniumProject.PageModels
 
         internal void ClickLoginAs()
         {
-            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             IReadOnlyCollection<IWebElement> showLoginAs = d.FindElements(By.Id("showLoginAs"));
             if (showLoginAs.Count != 0)
             {
@@ -78,9 +78,13 @@ namespace SeleniumProject.PageModels
 
         }
 
-        internal void SwitchToNewBrowserWithTitle(string p)
+        internal void SwitchToNewBrowserWithTitle(string title, string currentWindow)
         {
-            UICommon.SwitchToNewBrowserWithTitle(d, "Home");
+            UICommon.SwitchToNewBrowserWithTitle(d, title, currentWindow);
+        }
+        internal void SwitchToNewPageWithTitle(string title)
+        {
+            UICommon.SwitchToNewPageWithTitle(d, title);
         }
     }
 }
