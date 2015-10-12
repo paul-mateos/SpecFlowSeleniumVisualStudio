@@ -40,15 +40,11 @@ namespace SeleniumProject.Commons
                         }
                     }
                 }
-            //}
-            //else
-            //{
-            //    throw new Exception(String.Format("Unable to find record"));
-            //}
+
             throw new Exception(String.Format("Unable to find table row {0} with value {1}", lookupColumn, lookupValue));
         }
 
-        public bool ClickCellValue(string lookupColumn, string lookupValue, string returnColumn)
+        public bool ClickCellValue(string lookupColumn, string lookupValue, string returnColumn, IWebDriver d)
         {
             //if (!this.element.Text.Contains("records are available in this view.")) //No Records are available
             //{
@@ -69,7 +65,10 @@ namespace SeleniumProject.Commons
 
                     if ((cells.Count >= lookupColumnIndex + 1) && (cells.ElementAt(lookupColumnIndex).Text == lookupValue))
                     {
-                        cells.ElementAt(returnColumnIndex).Click();
+                        IWebElement cell = cells.ElementAt(returnColumnIndex);
+                        Actions action = new Actions(d);
+                        action.MoveToElement(cell, cell.Size.Width / 2, cell.Size.Height / 2).Click().Build().Perform();
+                        //cells.ElementAt(returnColumnIndex).Click();
                         return true;
                     }
                 }

@@ -77,7 +77,7 @@ namespace SeleniumProject.PageModels.SP_Author
             IWebElement searchTable = UICommon.GetSearchResultTable(roleSelectorTable, d);
             Table table = new Table(searchTable);
            //Thread.Sleep(5000);
-            Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn), "Problem selecting value from table");
+            Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d), "Problem selecting value from table");
         }
 
         

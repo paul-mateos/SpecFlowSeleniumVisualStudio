@@ -79,14 +79,14 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(roleTable, d);
             Table table = new Table(searchTable);
-            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
 
         public void ClickRecord(string lookUpColumn, string searchText)
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(roleTable, d);
             Table table = new Table(searchTable);
-            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
     }
 }

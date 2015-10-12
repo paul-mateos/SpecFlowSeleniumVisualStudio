@@ -41,7 +41,7 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(adminTable, d);
             Table table = new Table(searchTable);
-            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
 
         public void fillIn(string name, string description, string keywords, string text, string custproperties)

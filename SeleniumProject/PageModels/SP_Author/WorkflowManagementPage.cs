@@ -77,7 +77,7 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(workflowTable, d);
             Table table = new Table(searchTable);
-            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
     }
 }
