@@ -6,7 +6,7 @@
       <Value Profile="(Default)">QA_A</Value>
     </Setting>
     <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">NodeWebkit</Value>
+      <Value Profile="(Default)">Grid</Value>
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">30</Value>

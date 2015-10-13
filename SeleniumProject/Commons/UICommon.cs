@@ -64,8 +64,8 @@ namespace SeleniumProject.Commons
         private static string CreateScreenShot(IWebDriver d)
         {
             var randomName = "ScreenShot" + Guid.NewGuid().ToString().Substring(0, 8);
-            Screenshot ss = ((ITakesScreenshot)d).GetScreenshot();
-            ss.SaveAsFile(randomName, System.Drawing.Imaging.ImageFormat.Jpeg);
+            //Screenshot ss = ((ITakesScreenshot)d).GetScreenshot();
+            //ss.SaveAsFile(randomName, System.Drawing.Imaging.ImageFormat.Jpeg);
             return randomName;
         }
 

@@ -16,6 +16,7 @@ using SeleniumProject.Modules;
 using SeleniumProject.PageModels.SP_Author;
 using SeleniumProject.Utility;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Remote;
 
 namespace SeleniumProject.Tests
 {
@@ -75,12 +76,16 @@ namespace SeleniumProject.Tests
                 case BrowserType.Chrome:
                     WebDriver = (new ChromeDriver());
                     WebDriver.Navigate().GoToUrl(protocol + environment);
-
                     break;
                 case BrowserType.NodeWebkit:
                     string FileLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Panviva\\SupportPoint\\Viewer\\configSPViewer.json";
                     SPConfigFileCreator.UpdateSPConfigFile(Properties.Settings.Default.Environment, FileLocation);
                     WebDriver = (new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\"));
+                    break;
+                case BrowserType.Grid:
+                    DesiredCapabilities capability = DesiredCapabilities.Chrome();
+                    WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
@@ -122,6 +127,11 @@ namespace SeleniumProject.Tests
                     KillProcess("chrome.exe");
                     break;
                 case BrowserType.NodeWebkit:
+                    KillProcess("Viewer.exe");
+                    KillProcess("chromedriver.exe");
+                    KillProcess("nw.exe");
+                    break;
+                case BrowserType.Grid:
                     KillProcess("Viewer.exe");
                     KillProcess("chromedriver.exe");
                     KillProcess("nw.exe");
