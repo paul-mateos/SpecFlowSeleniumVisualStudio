@@ -74,8 +74,8 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(removeRoleFromRolesButton, d);
 
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-            //wait.Until(ExpectedConditions.ElementToBeClickable(removeRoleFromRolesButton));
             wait.Until(driver => !d.FindElement(removeRoleFromRolesButton).Enabled);
+            Thread.Sleep(1000);
             
         }
 
