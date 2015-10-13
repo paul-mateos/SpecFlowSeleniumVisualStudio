@@ -94,10 +94,17 @@ namespace SeleniumProject.PageModels
 
         public void clickSave()
         {
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-            wait.Until(ExpectedConditions.ElementToBeClickable(SaveBtn));
-            UICommon.ClickButton(SaveBtn, d);
-            UICommon.confirmToastSuccessMessage("Changes saved", d);
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+                wait.Until(ExpectedConditions.ElementToBeClickable(SaveBtn));
+                UICommon.ClickButton(SaveBtn, d);
+                UICommon.confirmToastSuccessMessage("Changes saved", d);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Can not click the save button", ex);
+            }
             
         }
 
