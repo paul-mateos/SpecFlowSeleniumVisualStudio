@@ -92,6 +92,7 @@
       <DependentUpon>Administration_SearchSetup.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
+    <Compile Include="SP_Author\DocumentManagement\DocumentPreview_Steps.cs" />
     <Compile Include="SP_Author\RoleManagement\RoleManagement_RoleMembership.feature.cs">
       <DependentUpon>RoleManagement_RoleMembership.feature</DependentUpon>
       <AutoGen>True</AutoGen>

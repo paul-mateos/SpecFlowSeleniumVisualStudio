@@ -19,19 +19,12 @@ namespace SeleniumProject.Commons
 
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
-            try
-            {
+            
                 WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
                 IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
                 elementHighlight(elem, d);
                 return elem;
-            }
-            catch (Exception ex)
-            {
-                var randomName = CreateScreenShot(d);
-                throw new Exception("Exception: " + ex.Message + " - Check Screenshot: " + randomName + ".jpeg");
-                
-            }
+           
         }
 
         
@@ -43,21 +36,14 @@ namespace SeleniumProject.Commons
 
         public static void ClickButton(By searchType, IWebDriver d)
         {
-            try
-            {
+          
                 IWebElement elem = GetElement(searchType, d);
                 Actions action = new Actions(d);
                 action.MoveToElement(elem).ClickAndHold().Build().Perform();
                 Thread.Sleep(500);
                 action.MoveToElement(elem).Release().Build().Perform();
                 Thread.Sleep(100);
-            }
-            catch(Exception ex)
-            {
-                var randomName = CreateScreenShot(d);
-                throw new Exception("Exception: " + ex.Message + " - Check Screenshot: " + randomName + ".jpeg");
-                
-            }
+            
             
         }
 
@@ -122,8 +108,7 @@ namespace SeleniumProject.Commons
         public static void SwitchToNewBrowserWithTitle(IWebDriver d, string title, string currentWindow)
         {
             
-           try
-           {
+           
                 //wait for another window to open
                 for (int i = 1; i < 30; i++)
                 {
@@ -138,26 +123,21 @@ namespace SeleniumProject.Commons
                 {
                     foreach (string handle in d.WindowHandles)
                     {
+                        
                         if (d.SwitchTo().Window(handle).Title.Contains(title))
                         {
                             break;
                         }
                         else
                         {
-                            d.SwitchTo().Window(currentWindow); 
+                            //d.SwitchTo().Window(currentWindow); 
                             Thread.Sleep(2000);
                         }
                     }
      
                 }
-           }
-           catch (Exception e)
-            {
-                var randomName = CreateScreenShot(d);
-                throw new Exception("Error switching to new browser. Check screenshot: " + randomName, e);
-            }
-               
-             
+           
+            
             
         }
 

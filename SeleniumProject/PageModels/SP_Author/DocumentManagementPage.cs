@@ -13,7 +13,7 @@ namespace SeleniumProject.PageModels.SP_Author
 {
     public class DocumentManagementPage : BasePage
     {
-       
+
         //Search Criteria
         By MultipleSelectionbtn = By.Id("multiple");
         By saveButton = By.XPath("//button[@type='button' and contains(text(), 'Save'))]");
@@ -29,12 +29,14 @@ namespace SeleniumProject.PageModels.SP_Author
         By editButton = By.XPath("//button[@title='Edit']");
         By docSearchQuery = By.XPath("//input[@data-automation-id='doc-explorer-search-query']");
         By searchButton = By.XPath("//button[@data-automation-id='doc-explorer-search-submit']");
+        By previewDocumentButton = By.XPath("//span[@title='Preview']");
+
 
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return d.Title.Contains("Document Management : SupportPoint"); }); 
+            wait.Until((d) => { return d.Title.Contains("Document Management : SupportPoint"); });
         }
 
         public static string GetElementText(By findBy, string findString)
@@ -44,7 +46,7 @@ namespace SeleniumProject.PageModels.SP_Author
 
         }
 
-       
+
 
         public void ConfirmFoundRecord(string lookUpColumn, string searchText)
         {
@@ -65,7 +67,7 @@ namespace SeleniumProject.PageModels.SP_Author
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
 
-       
+
         public void ClickSelectorRecord(string lookUpColumn, string searchText)
         {
             IWebElement searchTable = UICommon.GetSearchResultTable(docSelectorTable, d);
@@ -116,8 +118,8 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             //IWebElement elem = d.FindElement(editButton);
             //Assert.IsFalse(elem.Displayed);
-           
-                if (!d.FindElement(editButton).Displayed)
+
+            if (!d.FindElement(editButton).Displayed)
             {
                 Assert.IsTrue(!d.FindElement(editButton).Displayed);
             }
@@ -127,13 +129,13 @@ namespace SeleniumProject.PageModels.SP_Author
 
         public void SelectFindBy(string findBy)
         {
-      
+
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//select[@data-automation-id='doc-explorer-search-type']/.."))).Click();
             Thread.Sleep(2000);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//li[contains(text(),'Name')]/../li[text()='" + findBy + "']"))).Click();
             //wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//ul[@id='imgSearchType_listbox']/li[text()='"+findBy+"']"))).Click();
-       
+
         }
 
         public void SetSearchText(string searchText)
@@ -145,5 +147,15 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             UICommon.ClickButton(searchButton, d);
         }
+
+        public void clickPreviewDocumentButton(string documentTitle)
+        {
+            var currentBrowser = d.CurrentWindowHandle;
+            UICommon.ClickButton(previewDocumentButton, d);
+            UICommon.SwitchToNewBrowserWithTitle(d, documentTitle, currentBrowser);
+        }
+
+       
     }
+    
 }

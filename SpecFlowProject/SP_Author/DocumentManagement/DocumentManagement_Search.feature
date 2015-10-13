@@ -10,11 +10,16 @@ Then I Open SP Manager
 
 @DocumentManagement_SearchBy
 @Regression
-Scenario Outline: 2_Search By
+Scenario Outline: 2_SearchDocument By
 	Given I am at Document Management page
-	When I search by <FindBy> for <searchText>
-	Then the search should return the record by FindBy
+	And I search by <FindBy> for <searchText>
+	When the search should return the record by FindBy
+	And I select the record <searchText> using column <FindBy> from the Document table
+	Then I click on the Preview document Button for document <searchText>
+	And I confirm the document <searchText> is Open
+	And I close the Preview document
 Examples: 
 | FindBy      | searchText          |
-| ID          | 3                |
+| ID          | 3448                |
+| ID          | 21                |
 

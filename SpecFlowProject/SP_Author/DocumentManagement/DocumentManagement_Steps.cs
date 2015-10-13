@@ -125,5 +125,21 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagementPage.VerifyButtonNotAvailable();
         }
 
+        [Given(@"I click on the Preview document Button for document (.*)")]
+        [When(@"I click on the Preview document Button for document (.*)")]
+        [Then(@"I click on the Preview document Button for document (.*)")]
+        public void ThenIClickOnThePreviewDocumentButton(string documentTitle)
+        {
+            SupportPoint.DocumentManagementPage.clickPreviewDocumentButton(documentTitle);
+        }
+
+        [Given(@"I confirm the document (.*) is Open")]
+        [When(@"I confirm the document (.*) is Open")]
+        [Then(@"I confirm the document (.*) is Open")]
+        public void ThenIConfirmTheDocumentIsOpen(string documentTitle)
+        {
+            SupportPoint.DocumentPreviewPage.confirmPreviewBrowserOpen(documentTitle);
+        }
+
     }
 }

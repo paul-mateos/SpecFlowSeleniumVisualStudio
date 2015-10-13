@@ -51,6 +51,7 @@ namespace SeleniumProject.Tests
         static public UserSelectorPage UserSelectorPage { get { return new UserSelectorPage(WebDriver); } set { UserSelectorPage = value; } }
         static public SPAuthorPage SPAuthorPage { get { return new SPAuthorPage(WebDriver); } set { SPAuthorPage = value; } }
         static public AdminPage AdminPage { get { return new AdminPage(WebDriver); } set { AdminPage = value; } }
+        static public DocumentPreviewPage DocumentPreviewPage { get { return new DocumentPreviewPage(WebDriver); } set { DocumentPreviewPage = value; } }
 
 
         /*
@@ -84,6 +85,7 @@ namespace SeleniumProject.Tests
                     break;
                 case BrowserType.Grid:
                     DesiredCapabilities capability = DesiredCapabilities.Chrome();
+                    capability.SetCapability("jenkins.label", "WIN8");
                     WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;

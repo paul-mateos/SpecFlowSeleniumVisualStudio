@@ -80,7 +80,7 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
 #line hidden
         }
         
-        public virtual void _2_SearchBy(string findBy, string searchText, string[] exampleTags)
+        public virtual void _2_SearchDocumentBy(string findBy, string searchText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DocumentManagement_SearchBy",
@@ -89,7 +89,7 @@ testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2_Search By", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2_SearchDocument By", @__tags);
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 7
@@ -97,25 +97,47 @@ this.FeatureBackground();
 #line 14
  testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.When(string.Format("I search by {0} for {1}", findBy, searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I search by {0} for {1}", findBy, searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.Then("the search should return the record by FindBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the search should return the record by FindBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.And(string.Format("I select the record {0} using column {1} from the Document table", searchText, findBy), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.Then(string.Format("I click on the Preview document Button for document {0}", searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+ testRunner.And(string.Format("I confirm the document {0} is Open", searchText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("I close the Preview document", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2_Search By")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2_SearchDocument By")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("documentManagementSearchFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_SearchBy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FindBy", "ID")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:searchText", "3")]
-        public virtual void _2_SearchBy_ID()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:searchText", "3448")]
+        public virtual void _2_SearchDocumentBy_Variant0()
         {
-            this._2_SearchBy("ID", "3", ((string[])(null)));
+            this._2_SearchDocumentBy("ID", "3448", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2_SearchDocument By")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("documentManagementSearchFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_SearchBy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FindBy", "ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:searchText", "21")]
+        public virtual void _2_SearchDocumentBy_Variant1()
+        {
+            this._2_SearchDocumentBy("ID", "21", ((string[])(null)));
         }
     }
 }
