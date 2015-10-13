@@ -72,6 +72,11 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickRemoveRoleFromRolesButton()
         {
             UICommon.ClickButton(removeRoleFromRolesButton, d);
+
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            //wait.Until(ExpectedConditions.ElementToBeClickable(removeRoleFromRolesButton));
+            wait.Until(driver => !d.FindElement(removeRoleFromRolesButton).Enabled);
+            
         }
 
         public void ConfirmRemovalMessage()
@@ -90,9 +95,8 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ConfirmRefreshMessage()
         {
             IWebElement elem = UICommon.GetElement(refreshMessagePopup, d);
-            //elem.FindElement(okButton).Click();
             elem.FindElement(confirmRefreshButton).Click();
-            //Thread.Sleep(6000);
+
         }
 
         
