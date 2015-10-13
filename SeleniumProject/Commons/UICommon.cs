@@ -19,12 +19,19 @@ namespace SeleniumProject.Commons
 
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
-
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-            IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
-            elementHighlight(elem, d);
-            return elem;
-
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+                IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
+                elementHighlight(elem, d);
+                return elem;
+            }
+            catch (Exception ex)
+            {
+                var randomName = CreateScreenShot(d);
+                throw new Exception("Exception: " + ex.Message + " - Check Screenshot: " + randomName + ".jpeg");
+                
+            }
         }
 
         
@@ -36,13 +43,30 @@ namespace SeleniumProject.Commons
 
         public static void ClickButton(By searchType, IWebDriver d)
         {
-            IWebElement elem = GetElement(searchType, d);
-            Actions action = new Actions(d);
-            action.MoveToElement(elem).ClickAndHold().Build().Perform();
-            Thread.Sleep(500);
-            action.MoveToElement(elem).Release().Build().Perform();
-            Thread.Sleep(100);
+            try
+            {
+                IWebElement elem = GetElement(searchType, d);
+                Actions action = new Actions(d);
+                action.MoveToElement(elem).ClickAndHold().Build().Perform();
+                Thread.Sleep(500);
+                action.MoveToElement(elem).Release().Build().Perform();
+                Thread.Sleep(100);
+            }
+            catch(Exception ex)
+            {
+                var randomName = CreateScreenShot(d);
+                throw new Exception("Exception: " + ex.Message + " - Check Screenshot: " + randomName + ".jpeg");
+                
+            }
             
+        }
+
+        private static string CreateScreenShot(IWebDriver d)
+        {
+            var randomName = "ScreenShot" + Guid.NewGuid().ToString().Substring(0, 8);
+            Screenshot ss = ((ITakesScreenshot)d).GetScreenshot();
+            ss.SaveAsFile(randomName, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return randomName;
         }
 
         public static void DoubleClickButton(By searchType, IWebDriver d)
@@ -129,7 +153,8 @@ namespace SeleniumProject.Commons
            }
            catch (Exception e)
             {
-                Console.WriteLine("Error switching to new browser", e);
+                var randomName = CreateScreenShot(d);
+                throw new Exception("Error switching to new browser. Check screenshot: " + randomName, e);
             }
                
              
