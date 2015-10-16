@@ -97,35 +97,20 @@ namespace SeleniumProject.Commons
         public int GetRowCount()
         {
             IReadOnlyCollection<IWebElement> rows = this.element.FindElements(By.CssSelector("tbody tr"));
-
-            foreach (IWebElement row in rows)
-            {
-                if (row.Text != "")
-                {
-                    IWebElement data = row.FindElement(By.CssSelector("td"));
-                    if (data.GetAttribute("innerHTML").Contains("No") && data.GetAttribute("innerHTML").Contains("records are available"))
-                    {
-                        return 0;
-                    }
-                }
-
-            }
             return rows.Count;
         }
 
         public bool GetNoRecordsInTable()
         {
-
-            IWebElement noRecords = this.element.FindElement(By.CssSelector("tbody tr td"));
-
-            if (noRecords.GetAttribute("innerHTML").Contains("No"))
+            //get rows
+            IReadOnlyCollection<IWebElement> tableRows = this.element.FindElements(By.CssSelector("tbody tr td"));
+            if (tableRows.Count > 0)
             {
-                return true;
-
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
 
         }
@@ -145,6 +130,14 @@ namespace SeleniumProject.Commons
                 }
             }
             return 0; // If specified column not found return 0
+        }
+
+        
+
+        public void selectFirstTableRow()
+        {
+            IReadOnlyCollection<IWebElement> tableRows = this.element.FindElements(By.CssSelector("tbody tr td"));
+            tableRows.First().Click();
         }
     }
 }

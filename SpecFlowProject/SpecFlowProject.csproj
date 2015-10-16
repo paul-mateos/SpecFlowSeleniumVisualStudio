@@ -91,6 +91,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Administration_SearchSetup.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Author\DocumentManagement\DocumentManagement_RoleCreator_Permissions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentManagement_RoleCreator_Permissions.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentPreview_Steps.cs" />
     <Compile Include="SP_Author\RoleManagement\RoleManagement_RoleMembership.feature.cs">
@@ -256,6 +261,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_FolderProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_FolderProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\DocumentManagement\DocumentManagement_RoleCreator_Permissions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentManagement_RoleCreator_Permissions.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\ImageManagement\ImageManagement_FolderProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

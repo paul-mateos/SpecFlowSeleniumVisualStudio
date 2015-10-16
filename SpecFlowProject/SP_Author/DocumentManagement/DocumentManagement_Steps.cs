@@ -141,5 +141,18 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentPreviewPage.confirmPreviewBrowserOpen(documentTitle);
         }
 
+        [Given(@"I view Wrtiers permission settings")]
+        public void GivenIViewWrtiersPermissionSettings()
+        {
+            SupportPoint.DocumentManagementPage.ConfirmWritersPermissionsViewable();
+        }
+
+        [Given(@"I make (.*) permission table empty")]
+        public void GivenIMakePermissionTableEmpty()
+        {
+            SupportPoint.DocumentManagementPage.ConfirmWritersPermissionsViewable();
+            
+        }
+
     }
 }

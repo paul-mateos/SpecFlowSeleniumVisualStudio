@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumProject.Commons;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,9 @@ namespace SeleniumProject.PageModels.SP_Author
         By docSearchQuery = By.XPath("//input[@data-automation-id='doc-explorer-search-query']");
         By searchButton = By.XPath("//button[@data-automation-id='doc-explorer-search-submit']");
         By previewDocumentButton = By.XPath("//span[@title='Preview']");
+
+        By writersPermissionsPane = By.XPath("//ul/li[descendent::span[contains(text(),'Writers')]]");
+        By removeWriterRolesBtn = By.XPath("//button[!title='Remove role(s) from writers']");
 
 
         public DocumentManagementPage(IWebDriver driver)
@@ -155,6 +159,43 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.SwitchToNewBrowserWithTitle(d, documentTitle, currentBrowser);
         }
 
+        public void ConfirmWritersPermissionsViewable()
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement elem = UICommon.GetElement(writersPermissionsPane, d);
+            //check if expanded
+            if (elem.GetAttribute("aria-expanded") == "false")
+            {
+                elem.Click();
+            }
+        }
+
+        public void makePermissionsTableEmpty(string tableName)
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            //get the table
+            IWebElement tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+            Table table = new Table(tableElem);
+            if (table.GetNoRecordsInTable() == false)
+            {
+                
+                for (int i = 1; i < table.GetRowCount(); i++)
+                {
+                    table.selectFirstTableRow();
+                    IWebElement elem = UICommon.GetElement(removeWriterRolesBtn, d);
+                    if (elem.Enabled == true)
+                    {
+                        UICommon.ClickButton(removeWriterRolesBtn, d);
+                    }else{
+                        throw new Exception("Button noe enabled");
+                    }
+                    SupportPoint.SPAuthorPage.ClickSaveButton();
+                }        
+            }
+        
+        }
+
+        
        
     }
     
