@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject.SP_Author.DocumentManagement
+namespace SpecFlowProject.SP_Author.WorkflowManagement
 {
     using TechTalk.SpecFlow;
     
@@ -19,21 +19,20 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class DocumentManagement_SelectFolderFeature
+    public partial class WorkflowManagement_SearchFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "DocumentManagement_SelectFolder.feature"
+#line 1 "WorkflowManagement_Search.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DocumentManagement_SelectFolder", "In order to select a Folder\r\nAs an author\r\nI want to be able to select a Folder b" +
-                    "y Navigating the Folder tree", ProgrammingLanguage.CSharp, new string[] {
-                        "DocumentManagement_SelectFolder"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WorkflowManagement_Search", "In order create a new workflow\r\nAs a workflow manager\r\nI want to create a workflo" +
+                    "w that does not exist", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -48,9 +47,9 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "DocumentManagement_SelectFolder")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "WorkflowManagement_Search")))
             {
-                SpecFlowProject.SP_Author.DocumentManagement.DocumentManagement_SelectFolderFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Author.WorkflowManagement.WorkflowManagement_SearchFeature.FeatureSetup(null);
             }
         }
         
@@ -72,33 +71,36 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         
         public virtual void FeatureBackground()
         {
+#line 6
 #line 7
- #line 8
- testRunner.Given("I have logged in to SP as a new \"authors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in to SP as a new \"workflow_managers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+testRunner.And("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I Navigate to the Workflow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Select a Folder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DocumentManagement_SelectFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DocumentManagement_SelectFolder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("2_DocumentManagement_SelectFolder")]
-        public virtual void SelectAFolder()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.1_Search for workflow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WorkflowManagement_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WorkflowManagement_Search")]
+        public virtual void _2_1_SearchForWorkflow()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Select a Folder", new string[] {
-                        "2_DocumentManagement_SelectFolder"});
-#line 12
-this.ScenarioSetup(scenarioInfo);
-#line 7
- this.FeatureBackground();
-#line 13
- testRunner.Given("I am at Document Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.1_Search for workflow", new string[] {
+                        "Regression",
+                        "WorkflowManagement_Search"});
 #line 14
- testRunner.When("I select the Home DocumentFolder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 15
- testRunner.Then("the correct folder is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I search for workflow by name for Automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.Then("the search should return the record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

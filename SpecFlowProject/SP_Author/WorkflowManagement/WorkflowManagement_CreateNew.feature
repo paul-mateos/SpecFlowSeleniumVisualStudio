@@ -9,11 +9,12 @@ And I Open SP Manager
 When I Navigate to the Workflow Page
 Then I am at Workflow Management page
 
-@1.1_WorkflowManagement_CreateNew
-Scenario: Create New Workflow
+@Regression
+@WorkflowManagement_CreateNew
+Scenario: 1.1_Create New Workflow
 	Given I click on Actions
 	And I select New workflow from Actions
-	When I enter the workflow Name AutomationWorkflow
+	When I enter the random workflow Name AutomationWorkflow
 	#Workflow name wil be prefixed with a random number
 	Then I click on the Save Button
 	And I confirm the workflow Name

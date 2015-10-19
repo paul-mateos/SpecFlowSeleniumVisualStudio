@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels.SP_Author
+namespace SeleniumProject.PageModels.SP_Author
 {
    public class SPAuthorPage : BasePage
     {
@@ -17,7 +17,12 @@ namespace SP_Automation.PageModels.SP_Author
         By saveButton = By.CssSelector("button[data-automation-id='doc-details-actions-save']");
         By RemoveButton = By.CssSelector("button[data-automation-id='doc-details-actions-remove']");
         By browseButton = By.XPath("//button[@title='Browse']");
-        By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remove')]");
+        By addUserButton = By.XPath("//button[@title='Add user(s)']");
+        By addRoleButton = By.XPath("//button[@title='Add role(s)']");
+        By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
+        By removeRoleFromRolesButton = By.XPath("//button[@title='Remove role from role(s)']");
+
+        By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
         By refreshMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'refresh')]");
         By okButton = By.XPath("//button[@title='OK']");
@@ -35,7 +40,8 @@ namespace SP_Automation.PageModels.SP_Author
         public void ClickSaveButton()
         {
             UICommon.ClickButton(saveButton, d);
-            Thread.Sleep(5000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
+            
         }
 
         public void ClickBrowseButton()
@@ -48,26 +54,49 @@ namespace SP_Automation.PageModels.SP_Author
             UICommon.ClickButton(RemoveButton, d);
         }
 
+        public void ClickAddUserButton()
+        {
+            UICommon.ClickButton(addUserButton, d);
+        }
+
+        public void ClickAddRoleButton()
+        {
+            UICommon.ClickButton(addRoleButton, d);
+        }
+
+        public void ClickAddRoleToRolesButton()
+        {
+            UICommon.ClickButton(addRoleToRolesButton, d);
+        }
+
+        public void ClickRemoveRoleFromRolesButton()
+        {
+            UICommon.ClickButton(removeRoleFromRolesButton, d);
+
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(driver => !d.FindElement(removeRoleFromRolesButton).Enabled);
+            Thread.Sleep(1000);
+ 
+        }
 
         public void ConfirmRemovalMessage()
         {
             IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
             elem.FindElement(confirmRemoveButton).Click();
-            Thread.Sleep(3000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
         }
 
         public void ConfirmDeleteMessage()
         {
             IWebElement elem = UICommon.GetElement(deleteMessagePopup, d);
             elem.FindElement(confirmDeleteButton).Click();
-            Thread.Sleep(3000);
+            UICommon.confirmToastSuccessMessage("Changes saved", d);
         }
         public void ConfirmRefreshMessage()
         {
             IWebElement elem = UICommon.GetElement(refreshMessagePopup, d);
-            //elem.FindElement(okButton).Click();
             elem.FindElement(confirmRefreshButton).Click();
-            Thread.Sleep(6000);
+
         }
 
         

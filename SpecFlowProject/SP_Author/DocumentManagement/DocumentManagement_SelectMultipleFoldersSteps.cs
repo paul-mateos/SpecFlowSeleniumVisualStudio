@@ -1,7 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
-using SP_Automation;
-using SP_Automation.Tests;
+using SeleniumProject;
+using SeleniumProject.Tests;
 
 namespace SpecFlowProject
 {

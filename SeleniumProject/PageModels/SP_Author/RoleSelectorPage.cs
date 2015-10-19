@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,18 +10,19 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels.SP_Author
+namespace SeleniumProject.PageModels.SP_Author
 {
     public class RoleSelectorPage : BasePage
     {
-        public static int waitsec = Properties.Settings.Default.WaitTime;
+        //public static int waitsec = Properties.Settings.Default.WaitTime;
 
         By Title = By.Id("kWindow0_wnd_title");
         By Find = By.XPath("//div[@id='kWindow0']//table/tbody/tr/td[2]/input");
         By SearchBtn = By.XPath("//span[@title='Search']");
+        By addRoleButton = By.XPath("//div[@id='kWindow0']//button[@title='Add role(s)']");
         By roleSelectorList = By.TagName("table");
+        By roleSelectorTable = By.XPath("//div[@id='kWindow0']//table[@role='grid']");
        
-
 
 
         public RoleSelectorPage(IWebDriver driver)
@@ -41,48 +42,13 @@ namespace SP_Automation.PageModels.SP_Author
             }
             Assert.IsTrue(rolePage.Displayed);
         }
+
+
         public void searchRole(string rolename)
         {
             UICommon.SetValue(Find, rolename, d);
             UICommon.ClickButton(SearchBtn, d);
         }
-
-        //public void confirmFoundRole(string SearchText)
-        //{
-        //    Thread.Sleep(5000);
-
-        //    WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-        //    IWebElement roleTable = wait.Until(ExpectedConditions.ElementIsVisible(roleSelectorList));
-        //    IReadOnlyCollection<IWebElement> roles = roleTable.FindElements(By.XPath("./tbody/tr"));
-        //    //Debug.WriteLine("role count" + roles.Count);
-        //    if (roles.Count == 0)
-        //    {
-        //        throw new Exception("No Records Found");
-        //    }
-        //    //foreach (IWebElement r in roles)
-        //    //{
-
-        //    //    string hh = "";
-        //    //    // elem.Click();
-        //    //}
-
-        //    for (int i = 0; i < roles.Count; i++)
-        //    {
-        //        Thread.Sleep(2000);
-
-        //        IWebElement elem = roles.....(By.XPath("./tbody/span"), d);
-
-        //        Debug.WriteLine("role" + elem);
-
-        //        if (elem.Equals(SearchText))
-        //        {
-        //            elem.Click();
-        //        }
-
-        //    }
-        //}
-
-
 
         public void confirmFoundRole(string SearchText)
         {
@@ -106,5 +72,18 @@ namespace SP_Automation.PageModels.SP_Author
 
 
 
+        public void ClickSelectorRecord(string lookUpColumn, string searchText)
+        {
+            IWebElement searchTable = UICommon.GetSearchResultTable(roleSelectorTable, d);
+            Table table = new Table(searchTable);
+           //Thread.Sleep(5000);
+            Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d), "Problem selecting value from table");
+        }
+
+        
+        public void ClickAddRoleButton()
+        {
+            UICommon.ClickButton(addRoleButton, d);
+        }
     }
 }

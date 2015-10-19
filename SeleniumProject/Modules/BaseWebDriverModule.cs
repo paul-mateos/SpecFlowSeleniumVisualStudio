@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Modules
+namespace SeleniumProject.Modules
 {
     public abstract class BaseWebDriverModule
     {

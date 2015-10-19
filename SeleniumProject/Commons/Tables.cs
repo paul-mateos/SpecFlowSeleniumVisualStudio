@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Commons
+namespace SeleniumProject.Commons
 {
     public class Table
     {
@@ -34,21 +34,17 @@ namespace SP_Automation.Commons
                     if (row.Text != "")
                     {
                         IReadOnlyCollection<IWebElement> cells = row.FindElements(By.TagName("td"));
-                        if (cells.ElementAt(lookupColumnIndex).Text == lookupValue)
+                        if ((cells.Count >= lookupColumnIndex + 1) && (cells.ElementAt(lookupColumnIndex).Text == lookupValue))
                         {
                             return cells.ElementAt(returnColumnIndex).Text;
                         }
                     }
                 }
-            //}
-            //else
-            //{
-            //    throw new Exception(String.Format("Unable to find record"));
-            //}
+
             throw new Exception(String.Format("Unable to find table row {0} with value {1}", lookupColumn, lookupValue));
         }
 
-        public bool ClickCellValue(string lookupColumn, string lookupValue, string returnColumn)
+        public bool ClickCellValue(string lookupColumn, string lookupValue, string returnColumn, IWebDriver d)
         {
             //if (!this.element.Text.Contains("records are available in this view.")) //No Records are available
             //{
@@ -63,14 +59,21 @@ namespace SP_Automation.Commons
             {
                 if (row.Text != "")
                 {
-                    IReadOnlyCollection<IWebElement> cells = row.FindElements(By.TagName("td"));
-                    if (cells.ElementAt(lookupColumnIndex).Text == lookupValue)
+                    IReadOnlyCollection<IWebElement> cells = row.FindElements(By.CssSelector("td"));
+
+
+
+                    if ((cells.Count >= lookupColumnIndex + 1) && (cells.ElementAt(lookupColumnIndex).Text == lookupValue))
                     {
-                        cells.ElementAt(returnColumnIndex).Click();
+                        IWebElement cell = cells.ElementAt(returnColumnIndex);
+                        Actions action = new Actions(d);
+                        action.MoveToElement(cell, cell.Size.Width / 2, cell.Size.Height / 2).Click().Build().Perform();
+                        //cells.ElementAt(returnColumnIndex).Click();
                         return true;
                     }
                 }
             }
+            
             throw new Exception(String.Format("Unable to find table row {0} with value {1}", lookupColumn, lookupValue));
         }
 
@@ -94,35 +97,20 @@ namespace SP_Automation.Commons
         public int GetRowCount()
         {
             IReadOnlyCollection<IWebElement> rows = this.element.FindElements(By.CssSelector("tbody tr"));
-
-            foreach (IWebElement row in rows)
-            {
-                if (row.Text != "")
-                {
-                    IWebElement data = row.FindElement(By.CssSelector("td"));
-                    if (data.GetAttribute("innerHTML").Contains("No") && data.GetAttribute("innerHTML").Contains("records are available"))
-                    {
-                        return 0;
-                    }
-                }
-
-            }
             return rows.Count;
         }
 
         public bool GetNoRecordsInTable()
         {
-
-            IWebElement noRecords = this.element.FindElement(By.CssSelector("tbody tr td"));
-
-            if (noRecords.GetAttribute("innerHTML").Contains("No"))
+            //get rows
+            IReadOnlyCollection<IWebElement> tableRows = this.element.FindElements(By.CssSelector("tbody tr td"));
+            if (tableRows.Count > 0)
             {
-                return true;
-
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
 
         }
@@ -142,6 +130,14 @@ namespace SP_Automation.Commons
                 }
             }
             return 0; // If specified column not found return 0
+        }
+
+        
+
+        public void selectFirstTableRow()
+        {
+            IReadOnlyCollection<IWebElement> tableRows = this.element.FindElements(By.CssSelector("tbody tr td"));
+            tableRows.First().Click();
         }
     }
 }

@@ -6,29 +6,27 @@
 
 Background: SuportPoint is open
 Given I have logged in to SP as a new "authors"
+#need to create test image
 Then I Open SP Manager
 
-@1_ImageManagement_SearchBy
-@1.1_ImageManagement_SearchBy_ID
-	Scenario: Search By ID
+@ImageManagement_SearchBy
+	Scenario: 1.1_Search By ID
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	When  I am at Image Management page
 	And I search for image by ID for 2925
 	Then the search should return the image record
 
-@1_ImageManagement_SearchBy
-@1.2_ImageManagement_SearchBy_Name
-	Scenario: Search By Name
+@ImageManagement_SearchBy
+	Scenario: 1.2_Search By Name
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	When  I am at Image Management page
 	And I search for image by Name for Test
 	Then the search should return the image record
 
-@1_ImageManagement_SearchBy
-@1.3_ImageManagement_SearchBy_CustomProperty
-	Scenario: Search By CustomProperty
+@ImageManagement_SearchBy
+	Scenario: 1.3_Search By CustomProperty
 	Given I am at Document Management page
 	And I Navigate to the Images Page
 	When  I am at Image Management page

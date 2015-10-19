@@ -8,8 +8,8 @@ Background: SuportPoint is open
 Given I have logged in to SP as a new "authors"
 Then I Open SP Manager
 
-@4.1.1.1.1_DocumentManagement_FolderProperties_Move
-Scenario: Move Folder to new location
+@DocumentManagement_FolderProperties
+Scenario: 4.1.1.1.1_Move Folder to new location
 	Given I am at Document Management page
 	And I select the Home,Keith DocumentFolder
 	And I select the record Eh using column Name from the Document table

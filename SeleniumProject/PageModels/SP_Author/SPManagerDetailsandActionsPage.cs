@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
-using SP_Automation.Tests;
+using SeleniumProject.Commons;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,30 +10,39 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     public class SPManagerDetailsActionsPage : BasePage
     {
+        //buttons
         By SaveBtn = By.XPath("//button[@title='Save']");
         By MoveBtn = By.XPath("//button[@title='Move']");
         By RemoveBtn = By.XPath("//button[@title='Remove']");
         By CancelBtn = By.XPath("//button[@title='Cancel']");
         By DeleteBtn = By.XPath("//button[@title='Delete']");
+        By DeleteRoleBtn = By.XPath("//button[@title='Delete Role']");
+        By EditBtn = By.XPath("//span[@title='Edit']");
 
-        By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']");
-
+        
+        //menu options
+        By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']"); 
         By New = By.XPath("//a[@data-automation-id='doc-details-actions-new']");
-        By Properties = By.XPath("//a[@data-automation-id='doc-details-actions-properties']");
+        By Properties = By.XPath("//a[contains(text(),'Properties')]");
         By generalProperties = By.XPath("//a[@data-automation-id='doc-details-actions-general-properties']");
-        By Rolemembership = By.XPath("//form[@name='usrForm']//div[1]/ul/li/div/a[2]");
+        By Rolemembership = By.XPath("//a[contains(text(),'Role membership')]");
         By TrainingObjectives = By.LinkText("Training objectives");
         By Readers = By.LinkText("Readers");
         By Writers = By.LinkText("Writers");
         By Notifications = By.XPath("//a[@data-automation-id='doc-details-actions-notifications']");
         By CustomProperties = By.LinkText("Custom properties");
         By Permissions = By.XPath("//a[@data-automation-id='doc-details-actions-permissions']");
-        By EditBtn = By.XPath("//span[@title='Edit']");
+        By RequiredApprovers = By.XPath("//div[@role='menu']/a[text()='Required approvers']");
 
+        //Common fields
+        By Name = By.XPath("//input[@name='name']");
+        By Description = By.XPath("//input[@name='description']");
+
+        By Namevalidation = By.XPath("//div/p[contains(text@,'Checking if the name requested is available.')]");
         public SPManagerDetailsActionsPage(IWebDriver driver)
             : base(driver)
         {
@@ -57,6 +66,7 @@ namespace SP_Automation.PageModels
         public void clickDetailsandActions()
         {
             UICommon.ClickLink(DetailsandActions, d);
+            Thread.Sleep(1000);
 
         }
 
@@ -68,16 +78,34 @@ namespace SP_Automation.PageModels
         public void clickCancel()
         {
             UICommon.ClickButton(CancelBtn, d);
+            UICommon.confirmToastInfoMessage("Changes cancelled", d);
         }
 
         public void clickDelete()
         {
             UICommon.ClickButton(DeleteBtn, d);
+            Thread.Sleep(1000);
+        }
+
+        public void clickDeleteRole()
+        {
+            UICommon.ClickButton(DeleteRoleBtn, d);
         }
 
         public void clickSave()
         {
-            UICommon.ClickButton(SaveBtn, d);
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+                wait.Until(ExpectedConditions.ElementToBeClickable(SaveBtn));
+                UICommon.ClickButton(SaveBtn, d);
+                UICommon.confirmToastSuccessMessage("Changes saved", d);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Can not click the save button", ex);
+            }
+            
         }
 
         public void NoEdit()
@@ -103,12 +131,52 @@ namespace SP_Automation.PageModels
                 case "Permissions":
                     UICommon.ClickLink(Permissions, d);
                     break;
+                case "Required approvers":
+                    UICommon.ClickLink(RequiredApprovers, d);
+                    break;
+                case "Role membership":
+                    UICommon.ClickLink(Rolemembership, d);
+                    break;
                 default:
                     break;
             }
             Thread.Sleep(1000);
         }
 
-        
+        public string SetDescription(string description)
+        {
+            UICommon.SetValue(Description, description, d);
+            return description;
+        }
+
+        public string SetRandomName(string randomName)
+        {
+            string newName = UICommon.getRandomName(randomName);
+            UICommon.SetValue(Name, newName, d);
+            var wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(Namevalidation));
+            return newName;
+
+        }
+
+        public void ConfirmName(string name)
+        {
+            Assert.IsTrue(UICommon.GetElementAttribute(Name, "value", d) == name);
+        }
+
+        public void ConfirmDescription(string description)
+        {
+            Assert.IsTrue(UICommon.GetElementAttribute(Description, "value", d) == description);
+        }
+
+        public string SetName(string name)
+        {
+
+            UICommon.SetValue(Name, name, d);
+            var wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(Namevalidation));
+            return name;
+
+        }
     }
 }

@@ -8,15 +8,16 @@
 
 
 Background: SuportPoint is open
-#Given I create the Automation Image Folder
+#Given I create the Automation template Folder
 Given I have logged in to SP as a new "authors"
 #And I create test data for Document Type Template
 Then I Open SP Manager
 
-@4.1.2.1_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Template
+@Regression
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.1_Create new Documents From Template
 	Given I am at Document Management page
-	And I select the Home DocumentFolder
+	And I select the Home,AutomationFolder DocumentFolder
 	When I press Details & Actions
 	And I select New from Details & Actions
 	And I have selected Document
@@ -28,8 +29,9 @@ Scenario: Create new Documents From Template
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.2_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Copy
+@Regression
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.2_Create new Documents From Copy
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
@@ -43,8 +45,9 @@ Scenario: Create new Documents From Copy
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.3_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Blank
+@Regression
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.3_Create new Documents From Blank
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
@@ -55,8 +58,8 @@ Scenario: Create new Documents From Blank
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.4_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Reusable Content
+@DocumentManagement_CreateNewReuseContentDocument
+Scenario: 4.1.2.4_Create new Documents From Reusable Content
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
@@ -67,14 +70,15 @@ Scenario: Create new Documents From Reusable Content
 	And I Click on the Remove Button
 	And I Confirm the Removal
 
-@4.1.2.5_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Reference
+@Regression
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.5_Create new Documents From Reference
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
 	And I select New from Details & Actions
 	And I have selected Document
-	Then I have entered Reference document Type
+	Then I have entered Reference Type
 	And I click on the Browse Button
 	And I select the Home,Templates Document Selector Folder
 	And I select the record Overview using column Name from the Document Selector table
@@ -83,8 +87,9 @@ Scenario: Create new Documents From Reference
 	And I Click on the Remove Button
 	And I Confirm the Removal	 
 
-@4.1.2.6_DocumentManagement_CreateNewDocument
-Scenario: Create new Documents From Localisation
+@Regression
+@DocumentManagement_CreateNewDocument
+Scenario: 4.1.2.6_Create new Documents From Localisation
 	Given I am at Document Management page
 	And I select the Home DocumentFolder
 	When I press Details & Actions
