@@ -85,7 +85,6 @@ namespace SeleniumProject.Tests
                     break;
                 case BrowserType.Grid:
                     DesiredCapabilities capability = DesiredCapabilities.Chrome();
-                    capability.SetCapability("jenkins.label", "Win8");
                     WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
