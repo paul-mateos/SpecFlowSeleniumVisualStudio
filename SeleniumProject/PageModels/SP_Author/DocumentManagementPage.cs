@@ -33,8 +33,11 @@ namespace SeleniumProject.PageModels.SP_Author
         By previewDocumentButton = By.XPath("//span[@title='Preview']");
 
         By writersPermissionsPane = By.XPath("//ul/li[descendent::span[contains(text(),'Writers')]]");
+        By permissionsAdminPermissionsPane = By.XPath("//ul/li[descendent::span[contains(text(),'Permissions administrators')]]");
         By removeWriterRolesBtn = By.XPath("//button[!title='Remove role(s) from writers']");
+        By removeAdministratorsRolesBtn = By.XPath("//button[!title='Remove roles(s) from administrators']");
 
+        By folderIconTitle = By.XPath("//li[@aria-selected='true']/div/span/div");
 
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
@@ -170,33 +173,67 @@ namespace SeleniumProject.PageModels.SP_Author
             }
         }
 
+        public void ConfirmPermissionsAdminPermissionsViewable()
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement elem = UICommon.GetElement(permissionsAdminPermissionsPane, d);
+            //check if expanded
+            if (elem.GetAttribute("aria-expanded") == "false")
+            {
+                elem.Click();
+            }
+        }
+
         public void makePermissionsTableEmpty(string tableName)
         {
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement tableElem;
+            By removeButton;
             //get the table
-            IWebElement tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+            switch (tableName)
+            {
+                case "Roles in writers permission:":
+                     tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+                     removeButton = removeWriterRolesBtn;
+                     break;
+
+                case "Roles in permissions administrators:":
+                     tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+                     removeButton = removeAdministratorsRolesBtn;
+                    break;
+                default:
+                    throw new Exception("Unknown table");
+            }
+
             Table table = new Table(tableElem);
             if (table.GetNoRecordsInTable() == false)
             {
-                
+
                 for (int i = 1; i < table.GetRowCount(); i++)
                 {
                     table.selectFirstTableRow();
-                    IWebElement elem = UICommon.GetElement(removeWriterRolesBtn, d);
+                    IWebElement elem = UICommon.GetElement(removeButton, d);
                     if (elem.Enabled == true)
                     {
-                        UICommon.ClickButton(removeWriterRolesBtn, d);
-                    }else{
+                        UICommon.ClickButton(removeButton, d);
+                    }
+                    else
+                    {
                         throw new Exception("Button noe enabled");
                     }
                     SupportPoint.SPAuthorPage.ClickSaveButton();
-                }        
+                }
             }
+           
         
         }
 
-        
-       
+
+        public string GetFolderIconTitle()
+        {
+            IWebElement elem = UICommon.GetElement(folderIconTitle, d);
+            return elem.GetAttribute("title");
+        }
     }
     
 }

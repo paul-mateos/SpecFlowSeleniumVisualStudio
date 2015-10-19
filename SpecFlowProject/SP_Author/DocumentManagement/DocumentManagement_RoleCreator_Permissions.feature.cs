@@ -112,7 +112,17 @@ this.FeatureBackground();
 #line 21
  testRunner.And("I view Wrtiers permission settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.And("I make {Role in writer permission} table empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I make Roles in writers permission: permission table empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("I confirm folder icon for Home,WithoutPermissions,TestFolderWOP is set to No read" +
+                    "/write access", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("I view Permissions admin permission settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("I make Roles in permissions administrators: permission table empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("I confirm folder icon for Home,WithoutPermissions,TestFolderWOP is set to No writ" +
+                    "e access", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

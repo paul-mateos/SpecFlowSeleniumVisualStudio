@@ -1,4 +1,5 @@
-﻿using SeleniumProject.Tests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,48 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
     [Binding]
     public sealed class DocumentManagement_Steps
     {
+
+        public string childFolder;
+
+        [Given(@"I select the (.*) DocumentFolder")]
+        [When(@"I select the (.*) DocumentFolder")]
+        [Then(@"I select the (.*) DocumentFolder")]
+        public void WhenISelectADocumentFolder(string folderString)
+        {
+            char[] splitter = { ',' };
+            string[] folders = folderString.Split(splitter);
+            childFolder = folders[folders.Length - 1];
+            SupportPoint.SPManagerFolder.ClickOnFolder("Document", folders);
+        }
+
+        [Given(@"I select the (.*) Grid Record")]
+        [When(@"I select the (.*) Grid Record")]
+        [Then(@"I select the (.*) Grid Record")]
+        public void WhenISelectAGridRecord(string recordString)
+        {
+
+            SupportPoint.DocumentManagementPage.FindGridRecord(recordString);
+        }
+
+        [Given(@"the correct folder is selected")]
+        [When(@"the correct folder is selected")]
+        [Then(@"the correct folder is selected")]
+        public void ThenTheCorrectFolderIsSelected()
+        {
+
+        }
+
+        [Given(@"I select the (.*) Document Selector Folder")]
+        [When(@"I select the (.*) Document Selector Folder")]
+        [Then(@"I select the (.*) Document Selector Folder")]
+        public void WhenISelectADocumentSelectorFolder(string folderString)
+        {
+            char[] splitter = { ',' };
+            string[] folders = folderString.Split(splitter);
+            childFolder = folders[folders.Length - 1];
+            SupportPoint.SPManagerFolder.ClickOnFolder("Document Selector", folders);
+        }
+        
         [Given(@"I click on the Document Save Button")]
         [When(@"I click on the Document Save Button")]
         [Then(@"I click on the Document Save Button")]
@@ -142,17 +185,40 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         }
 
         [Given(@"I view Wrtiers permission settings")]
+        [When(@"I view Wrtiers permission settings")]
+        [Then(@"I view Wrtiers permission settings")]
         public void GivenIViewWrtiersPermissionSettings()
         {
             SupportPoint.DocumentManagementPage.ConfirmWritersPermissionsViewable();
         }
 
-        [Given(@"I make (.*) permission table empty")]
-        public void GivenIMakePermissionTableEmpty()
+        [Given(@"I view Permissions admin permission settings")]
+        [When(@"I view Permissions admin permission settings")]
+        [Then(@"I view Permissions admin permission settings")]
+        public void GivenIViewPermissionsAdminPermissionSettings()
         {
-            SupportPoint.DocumentManagementPage.ConfirmWritersPermissionsViewable();
+            SupportPoint.DocumentManagementPage.ConfirmPermissionsAdminPermissionsViewable();
+        }
+
+        [Given(@"I make (.*) permission table empty")]
+        [When(@"I make (.*) permission table empty")]
+        [Then(@"I make (.*) permission table empty")]
+        public void GivenIMakePermissionTableEmpty(string tableName)
+        {
+            SupportPoint.DocumentManagementPage.makePermissionsTableEmpty(tableName);
             
         }
+
+        [Given(@"I confirm folder icon for (.*) is set to (.*)")]
+        [When(@"I confirm folder icon for (.*) is set to (.*)")]
+        [Then(@"I confirm folder icon for (.*) is set to (.*)")]
+        public void GivenIConfirmFolderIconIsSetTo(string folderString, string folderIcon)
+        {
+            this.WhenISelectADocumentFolder(folderString);
+            string folderIconString = SupportPoint.DocumentManagementPage.GetFolderIconTitle();
+            StringAssert.Contains(folderIconString, folderIcon, "Folder Icon is not as expected:" + folderIconString);
+        }
+
 
     }
 }

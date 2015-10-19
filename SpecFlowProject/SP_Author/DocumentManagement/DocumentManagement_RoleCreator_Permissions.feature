@@ -19,5 +19,9 @@ Scenario: RoleCreator_WithoutPermissions
 	And I press Details & Actions
 	And I select Permisions from Details & Actions
 	And I view Wrtiers permission settings
-	And I make {Role in writer permission} table empty
+	And I make Roles in writers permission: permission table empty
+	And I confirm folder icon for Home,WithoutPermissions,TestFolderWOP is set to No read/write access
+	And I view Permissions admin permission settings
+	And I make Roles in permissions administrators: permission table empty
+	And I confirm folder icon for Home,WithoutPermissions,TestFolderWOP is set to No write access
 	
