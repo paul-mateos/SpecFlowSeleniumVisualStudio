@@ -37,7 +37,7 @@ namespace SeleniumProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Grid")]
+        [global::System.Configuration.DefaultSettingValueAttribute("NodeWebKit")]
         public global::SeleniumProject.Environments.BrowserType Browser {
             get {
                 return ((global::SeleniumProject.Environments.BrowserType)(this["Browser"]));
