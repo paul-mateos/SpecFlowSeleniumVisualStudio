@@ -132,11 +132,11 @@ namespace SeleniumProject.Tests
                     KillProcess("chromedriver.exe");
                     KillProcess("nw.exe");
                     break;
-                case BrowserType.Grid:
-                    KillProcess("Viewer.exe");
-                    KillProcess("chromedriver.exe");
-                    KillProcess("nw.exe");
-                    break;
+                //case BrowserType.Grid:
+                //    KillProcess("Viewer.exe");
+                //    KillProcess("chromedriver.exe");
+                //    KillProcess("nw.exe");
+                //    break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
 
