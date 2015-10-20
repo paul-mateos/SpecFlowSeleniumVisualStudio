@@ -27,7 +27,7 @@
       <Value Profile="(Default)">http://</Value>
     </Setting>
     <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">NodeWebkit</Value>
+      <Value Profile="(Default)">Chrome</Value>
     </Setting>
   </Settings>
 </SettingsFile>
