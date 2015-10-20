@@ -121,7 +121,7 @@ namespace SeleniumProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Grid")]
         public global::SeleniumProject.Environments.BrowserType Browser {
             get {
                 return ((global::SeleniumProject.Environments.BrowserType)(this["Browser"]));
