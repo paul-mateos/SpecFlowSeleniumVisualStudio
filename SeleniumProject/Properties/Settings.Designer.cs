@@ -37,18 +37,6 @@ namespace SeleniumProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Grid")]
-        public global::SeleniumProject.Environments.BrowserType Browser {
-            get {
-                return ((global::SeleniumProject.Environments.BrowserType)(this["Browser"]));
-            }
-            set {
-                this["Browser"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("30")]
         public int WaitTime {
             get {
@@ -128,6 +116,18 @@ namespace SeleniumProject.Properties {
             }
             set {
                 this["Protocol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NodeWebkit")]
+        public global::SeleniumProject.Environments.BrowserType Browser {
+            get {
+                return ((global::SeleniumProject.Environments.BrowserType)(this["Browser"]));
+            }
+            set {
+                this["Browser"] = value;
             }
         }
     }
