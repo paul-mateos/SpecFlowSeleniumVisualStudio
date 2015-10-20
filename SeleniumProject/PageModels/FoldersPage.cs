@@ -4,20 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     class FoldersPage : BasePage
     {
-        IWebDriver d;
+        //IWebDriver d;
         public FoldersPage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver;
+            d = driver;
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return d.Title.Contains("Folders : SupportPoint"); }); 
+            wait.Until((D) => { return d.Title.Contains("Folders : SupportPoint"); }); 
         }
 
 

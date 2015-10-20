@@ -72,31 +72,33 @@ namespace SpecFlowProject.SupportPointAPI
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("AccountLogin")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccountLoginAPI")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API_Tests")]
         public virtual void AccountLogin()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AccountLogin", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AccountLogin", new string[] {
+                        "API_Tests"});
 #line 7
-            testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
+            testRunner.Given("I want to \"POST\" a request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
             testRunner.And("My webservice is \"WebService.svc/rest_all/Accounts/Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
+#line 11
    testRunner.And("I have SessioID with username as \"\" and password as \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Key",
                         "",
                         "value"});
-#line 12
+#line 13
    testRunner.And("I have path variables", ((string)(null)), table1, "And ");
 #line hidden
-#line 15
+#line 16
             testRunner.And("I have a request body of", "\t\"ApplicationID\":0,\r\n\t\"ForcedLogin\":true,\r\n\t\"Instance\":\"localhost\",\r\n\t\"Password\":" +
                     "\"Burke6368\",\r\n\t\"UserName\":\"panviva\"", ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
-            testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
+            testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
             testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

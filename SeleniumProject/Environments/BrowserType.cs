@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Environments
+namespace SeleniumProject.Environments
 {
     public enum BrowserType
     {
@@ -15,6 +15,8 @@ namespace SP_Automation.Environments
         Chrome = 1,
         [Description("NodeWebkit")]
         NodeWebkit = 2,
+        [Description("Grid")]
+        Grid = 3,
         
 
     }

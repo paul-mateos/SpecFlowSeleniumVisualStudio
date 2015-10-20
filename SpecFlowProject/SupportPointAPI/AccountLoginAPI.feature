@@ -3,6 +3,7 @@
 	As an administrator
 	I want to be login and get Session ID
 
+@API_Tests
 Scenario: AccountLogin 
             Given I want to "POST" a request
             And My webservice is "WebService.svc/rest_all/Accounts/Login"

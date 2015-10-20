@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,11 +11,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels.SP_Author
+namespace SeleniumProject.PageModels.SP_Author
 {
     public class SPManagerFolderPage : BasePage
     {
-        
+
         By DocumentFolderTree = By.Id(" docexplorertree");
         By DocumentSelectorFolderTree = By.XPath("//div[@id='kWindow0']//div[@id=' docexplorertree']");
         By ImageFolderTree = By.XPath("//img-tree-drct/div");

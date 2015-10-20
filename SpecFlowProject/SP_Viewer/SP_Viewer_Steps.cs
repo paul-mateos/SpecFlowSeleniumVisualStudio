@@ -1,4 +1,4 @@
-﻿using SP_Automation.Tests;
+﻿using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +17,7 @@ namespace SpecFlowProject.SP_Viewer
         [Then(@"I Open SP Manager")]
         public void ThenIOpenSPManager()
         {
-            SupportPoint.Nav.ToSupportPointManager();
-            SupportPoint.SwitchToPage("Document Management : SupportPoint");
-            System.Threading.Thread.Sleep(5000);
+            SupportPoint.Nav.ToSupportPointManager();            
         }
 
     }

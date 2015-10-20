@@ -6,7 +6,7 @@
     <ProjectGuid>{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SP_Automation</RootNamespace>
+    <RootNamespace>SeleniumProject</RootNamespace>
     <AssemblyName>SeleniumProject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -108,13 +108,17 @@
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
+    <Compile Include="PageModels\SP_Author\AdminPage.cs" />
+    <Compile Include="PageModels\SP_Author\DocumentPreviewPage.cs" />
+    <Compile Include="PageModels\SP_Author\UserSelectorPage.cs" />
+    <Compile Include="PageModels\SP_Author\RoleManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\WorkflowManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\PermissionsPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagmentNewPage.cs" />
     <Compile Include="PageModels\SP_Author\SPManagerDetailsandActionsPage.cs" />
     <Compile Include="PageModels\SP_Author\ImageManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentManagementPage.cs" />
-    <Compile Include="PageModels\SP_Author\IAddUserPage.cs" />
+    <Compile Include="PageModels\SP_Author\DELETE-IAddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\RoleSelectorPage.cs" />
     <Compile Include="Modules\DELETE-DetailsandActions.cs" />
     <Compile Include="PageModels\SP_Author\SPAuthorPage.cs" />
@@ -135,7 +139,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Facade\LiveAPI.cs" />
+    <Compile Include="Facade\DELETE-LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
     <Compile Include="API\UserImport.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />

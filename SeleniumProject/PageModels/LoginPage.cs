@@ -1,25 +1,25 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     class LoginPage : BasePage
     {
-        IWebDriver d;
+        //IWebDriver d;
         public LoginPage(IWebDriver driver)
             : base(driver)
         {
-            this.d = driver; 
+            d = driver; 
             //Wait for title to be displayed 
             System.Diagnostics.Debug.WriteLine("wait4title");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => {
+            wait.Until((D) => {
                 System.Diagnostics.Debug.WriteLine("testTitle:" + d.Title);
                 return d.Title.Contains("Login : SupportPoint"); });
             System.Diagnostics.Debug.WriteLine("done");
@@ -69,7 +69,7 @@ namespace SP_Automation.PageModels
 
         internal void ClickLoginAs()
         {
-            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             IReadOnlyCollection<IWebElement> showLoginAs = d.FindElements(By.Id("showLoginAs"));
             if (showLoginAs.Count != 0)
             {
@@ -78,9 +78,13 @@ namespace SP_Automation.PageModels
 
         }
 
-        internal void SwitchToNewBrowserWithTitle(string p)
+        internal void SwitchToNewBrowserWithTitle(string title, string currentWindow)
         {
-            UICommon.SwitchToNewBrowserWithTitle(d, "Home");
+            UICommon.SwitchToNewBrowserWithTitle(d, title, currentWindow);
+        }
+        internal void SwitchToNewPageWithTitle(string title)
+        {
+            UICommon.SwitchToNewPageWithTitle(d, title);
         }
     }
 }

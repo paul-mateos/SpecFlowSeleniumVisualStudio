@@ -1,4 +1,5 @@
-﻿using SP_Automation.Tests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,53 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
     [Binding]
     public sealed class DocumentManagement_Steps
     {
+
+        public string childFolder;
+
+        [Given(@"I select the (.*) DocumentFolder")]
+        [When(@"I select the (.*) DocumentFolder")]
+        [Then(@"I select the (.*) DocumentFolder")]
+        public void WhenISelectADocumentFolder(string folderString)
+        {
+            char[] splitter = { ',' };
+            string[] folders = folderString.Split(splitter);
+            childFolder = folders[folders.Length - 1];
+            SupportPoint.SPManagerFolder.ClickOnFolder("Document", folders);
+        }
+
+        [Given(@"I select the (.*) Grid Record")]
+        [When(@"I select the (.*) Grid Record")]
+        [Then(@"I select the (.*) Grid Record")]
+        public void WhenISelectAGridRecord(string recordString)
+        {
+
+            SupportPoint.DocumentManagementPage.FindGridRecord(recordString);
+        }
+
+        [Given(@"the correct folder is selected")]
+        [When(@"the correct folder is selected")]
+        [Then(@"the correct folder is selected")]
+        public void ThenTheCorrectFolderIsSelected()
+        {
+
+        }
+
+        [Given(@"I select the (.*) Document Selector Folder")]
+        [When(@"I select the (.*) Document Selector Folder")]
+        [Then(@"I select the (.*) Document Selector Folder")]
+        public void WhenISelectADocumentSelectorFolder(string folderString)
+        {
+            char[] splitter = { ',' };
+            string[] folders = folderString.Split(splitter);
+            childFolder = folders[folders.Length - 1];
+            SupportPoint.SPManagerFolder.ClickOnFolder("Document Selector", folders);
+        }
+        
         [Given(@"I click on the Document Save Button")]
         [When(@"I click on the Document Save Button")]
         [Then(@"I click on the Document Save Button")]
         public void ThenIClickOnTheDocumentSaveButton()
         {
-            //SupportPoint.DocumentManagementPage.ClickSaveButton();
             SupportPoint.SPAuthorPage.ClickSaveButton();
         }
 
@@ -27,8 +69,6 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagementPage.ClickSelectorRecord(colName, searchValue);
                 
         }
-
-        
 
         [Given(@"I select the record (.*) using column (.*) from the Document table")]
         [When(@"I select the record (.*) using column (.*) from the Document table")]
@@ -68,8 +108,16 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"I enter the Document Name (.*)")]
         public void WhenIEnterTheDocumentNameNewName(string DocumentName)
         {
-            SupportPoint.DocumentManagementPage.SetDocumentName(DocumentName);
-            FeatureContext.Current.Add("DocumentName", DocumentName);
+            //SupportPoint.DocumentManagementPage.SetDocumentName(DocumentName);
+            SupportPoint.SPManagerDetailsActionsPage.SetName(DocumentName);
+            if (ScenarioContext.Current.ContainsKey("DocumentName"))
+            {
+                ScenarioContext.Current.Set(DocumentName, "DocumentName");
+            }
+            else
+            {
+                ScenarioContext.Current.Add("DocumentName", DocumentName);
+            }
         }
 
         [Given(@"I Click on the Document Move Button")]
@@ -87,5 +135,90 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         {
             SupportPoint.DocumentManagementPage.ClickMoveintoButton();
         }
+
+
+        [Given(@"I search by (.*) for (.*)")]
+        [When(@"I search by (.*) for (.*)")]
+        [Then(@"I search by (.*) for (.*)")]
+        public void WhenISearchByFindByForSeatchText(String findBy, String searchText)
+        {
+            ScenarioContext.Current.Add("FindBy", findBy);
+            ScenarioContext.Current.Add("SearchBy", searchText);
+            SupportPoint.DocumentManagementPage.SelectFindBy(findBy);
+            SupportPoint.DocumentManagementPage.SetSearchText(searchText);
+            SupportPoint.DocumentManagementPage.ClickSubmitSearchButton();
+        }
+
+        [Given(@"the search should return the record by FindBy")]
+        [When(@"the search should return the record by FindBy")]
+        [Then(@"the search should return the record by FindBy")]
+        public void ThenTheSearchShouldReturnTheRecordByFindBy()
+        {
+            SupportPoint.DocumentManagementPage.ConfirmFoundRecord(ScenarioContext.Current.Get<string>("FindBy"),
+               ScenarioContext.Current.Get<string>("SearchBy"));
+            
+
+        }
+
+        [Given(@"I verify the Edit button isn't Displayed")]
+        [When(@"I verify the Edit button isn't Displayed")]
+        [Then(@"I verify the Edit button isn't Displayed")]
+        public void ThenIVerifyTheEditButtonIsnTDisplayed()
+        {
+            SupportPoint.DocumentManagementPage.VerifyButtonNotAvailable();
+        }
+
+        [Given(@"I click on the Preview document Button for document (.*)")]
+        [When(@"I click on the Preview document Button for document (.*)")]
+        [Then(@"I click on the Preview document Button for document (.*)")]
+        public void ThenIClickOnThePreviewDocumentButton(string documentTitle)
+        {
+            SupportPoint.DocumentManagementPage.clickPreviewDocumentButton(documentTitle);
+        }
+
+        [Given(@"I confirm the document (.*) is Open")]
+        [When(@"I confirm the document (.*) is Open")]
+        [Then(@"I confirm the document (.*) is Open")]
+        public void ThenIConfirmTheDocumentIsOpen(string documentTitle)
+        {
+            SupportPoint.DocumentPreviewPage.confirmPreviewBrowserOpen(documentTitle);
+        }
+
+        [Given(@"I view Wrtiers permission settings")]
+        [When(@"I view Wrtiers permission settings")]
+        [Then(@"I view Wrtiers permission settings")]
+        public void GivenIViewWrtiersPermissionSettings()
+        {
+            SupportPoint.DocumentManagementPage.ConfirmWritersPermissionsViewable();
+        }
+
+        [Given(@"I view Permissions admin permission settings")]
+        [When(@"I view Permissions admin permission settings")]
+        [Then(@"I view Permissions admin permission settings")]
+        public void GivenIViewPermissionsAdminPermissionSettings()
+        {
+            SupportPoint.DocumentManagementPage.ConfirmPermissionsAdminPermissionsViewable();
+        }
+
+        [Given(@"I make (.*) permission table empty")]
+        [When(@"I make (.*) permission table empty")]
+        [Then(@"I make (.*) permission table empty")]
+        public void GivenIMakePermissionTableEmpty(string tableName)
+        {
+            SupportPoint.DocumentManagementPage.makePermissionsTableEmpty(tableName);
+            
+        }
+
+        [Given(@"I confirm folder icon for (.*) is set to (.*)")]
+        [When(@"I confirm folder icon for (.*) is set to (.*)")]
+        [Then(@"I confirm folder icon for (.*) is set to (.*)")]
+        public void GivenIConfirmFolderIconIsSetTo(string folderString, string folderIcon)
+        {
+            this.WhenISelectADocumentFolder(folderString);
+            string folderIconString = SupportPoint.DocumentManagementPage.GetFolderIconTitle();
+            StringAssert.Contains(folderIconString, folderIcon, "Folder Icon is not as expected:" + folderIconString);
+        }
+
+
     }
 }

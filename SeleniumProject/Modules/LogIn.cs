@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using SP_Automation.PageModels;
-using SP_Automation.PageModels.SP_Author;
-using SP_Automation.PageModels.SP_Viewer;
-using SP_Automation.Tests;
+using SeleniumProject.PageModels;
+using SeleniumProject.PageModels.SP_Author;
+using SeleniumProject.PageModels.SP_Viewer;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Modules
+namespace SeleniumProject.Modules
 {
     public class LogIn : BaseWebDriverModule
     {
@@ -20,16 +20,26 @@ namespace SP_Automation.Modules
 
         public void Login(String name, String password)
         {
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.ClickLoginAs();
-            loginPage.SetUserName(name);
-            loginPage.SetPassword(password);
-            loginPage.ClickLogOnButton();
-            String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
-            loginPage.ConfirmWarningMessage(warningMessage);
-            loginPage.SwitchToNewBrowserWithTitle("Home");
-            HomePage homePage = new HomePage(driver);
-            //Assert.IsTrue(homePage.GetWelcomeTitleDisplayProperty());
+            //if (Properties.Settings.Default.Browser.ToString() == "NodeWebkit")
+            //{
+                LoginPage loginPage = new LoginPage(driver);
+                loginPage.ClickLoginAs();
+                loginPage.SetUserName(name);
+                loginPage.SetPassword(password);
+                string currentWindow = driver.CurrentWindowHandle;
+                loginPage.ClickLogOnButton();
+                String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
+                loginPage.ConfirmWarningMessage(warningMessage);
+                if (Properties.Settings.Default.Browser.ToString() == "NodeWebkit")
+                {
+                    loginPage.SwitchToNewPageWithTitle("Home");
+                    HomePage homePage = new HomePage(driver);
+                }
+                else
+                {
+                    loginPage.SwitchToNewBrowserWithTitle("Home", currentWindow);
+                    HomePage homePage = new HomePage(driver);
+                }
         }
 
         public void LogOut()

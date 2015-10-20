@@ -1,12 +1,9 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SP_Automation.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SeleniumProject.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Environment1" Type="SP_Automation.Environments.EnvironmentType" Scope="User">
+    <Setting Name="Environment1" Type="SeleniumProject.Environments.EnvironmentType" Scope="User">
       <Value Profile="(Default)">QA_A</Value>
-    </Setting>
-    <Setting Name="Browser" Type="SP_Automation.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">NodeWebkit</Value>
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">30</Value>
@@ -27,7 +24,10 @@
       <Value Profile="(Default)">qa-spui-a</Value>
     </Setting>
     <Setting Name="Protocol" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://</Value>
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="User">
+      <Value Profile="(Default)">Chrome</Value>
     </Setting>
   </Settings>
 </SettingsFile>

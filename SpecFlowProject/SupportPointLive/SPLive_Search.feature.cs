@@ -31,8 +31,8 @@ namespace SpecFlowProject.SupportPointLive
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SPLive_Search", "In order search a dcoument in the viewer \nAs an author\nI want to use Supportpoint" +
-                    " Live/Search API", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SPLive_Search", "In order search a dcoument in the viewer \r\nAs an author\r\nI want to use Supportpoi" +
+                    "nt Live/Search API", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,7 +73,7 @@ namespace SpecFlowProject.SupportPointLive
         {
 #line 8
 #line 9
-testRunner.Given("I have a new \"authors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I create a new \"authors\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
 testRunner.And("I have an apiKey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11

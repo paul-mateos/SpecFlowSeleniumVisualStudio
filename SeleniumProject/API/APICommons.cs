@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace SP_Automation.API
+namespace SeleniumProject.API
 
 {
     public class APICommons

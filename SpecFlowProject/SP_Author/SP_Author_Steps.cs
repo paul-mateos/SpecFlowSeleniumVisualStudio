@@ -1,4 +1,4 @@
-﻿using SP_Automation.Tests;
+﻿using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,7 +52,7 @@ namespace SpecFlowProject.SP_Author
         public void GivenIAmAtTheManagementPage(string managementPage)
         {
             SupportPoint.IsCurrentBrowser(managementPage + " : SupportPoint");
-
+            
         }
 
         [Given(@"I click on the Save Button")]
@@ -60,7 +60,6 @@ namespace SpecFlowProject.SP_Author
         [Then(@"I click on the Save Button")]
         public void ThenIClickOnTheSaveButton()
         {
-            //SupportPoint.SPAuthorPage.ClickSaveButton();
             SupportPoint.SPManagerDetailsActionsPage.clickSave();
         }
 
@@ -77,8 +76,39 @@ namespace SpecFlowProject.SP_Author
         [Then(@"I Click on the Remove Button")]
         public void WhenIClickOnTheRemoveButton()
         {
-            //SupportPoint.ImageManagementPage.ClickRemoveButton();
             SupportPoint.SPAuthorPage.ClickRemoveButton();
+        }
+
+        [Given(@"I Click on the Add user Button")]
+        [When(@"I Click on the Add user Button")]
+        [Then(@"I Click on the Add user Button")]
+        public void WhenIClickOnTheAddUserButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUserButton();
+        }
+
+        [Given(@"I Click on the Add role Button")]
+        [When(@"I Click on the Add role Button")]
+        [Then(@"I Click on the Add role Button")]
+        public void WhenIClickOnTheAddRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddRoleButton();
+        }
+
+        [Given(@"I Click on the Add role to Roles Button")]
+        [When(@"I Click on the Add role to Roles Button")]
+        [Then(@"I Click on the Add role to Roles Button")]
+        public void WhenIClickOnTheAddRoleToRolesButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddRoleToRolesButton();
+        }
+
+        [Given(@"I Click on the Remove role from Roles Button")]
+        [When(@"I Click on the Remove role from Roles Button")]
+        [Then(@"I Click on the Remove role from Roles Button")]
+        public void WhenIClickOnTheARemoveRoleToRolesButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveRoleFromRolesButton();
         }
 
         [Given(@"I Click on the Delete Button")]
@@ -87,6 +117,14 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheDeleteButton()
         {
             SupportPoint.SPManagerDetailsActionsPage.clickDelete();
+        }
+
+        [Given(@"I Click on the Delete role Button")]
+        [When(@"I Click on the Delete role Button")]
+        [Then(@"I Click on the Delete role Button")]
+        public void WhenIClickOnTheDeleteRoleButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickDeleteRole();
         }
 
         [Given(@"I Confirm the Removal")]
@@ -143,6 +181,101 @@ namespace SpecFlowProject.SP_Author
         public void WhenISelectFromActions(string action)
         {
             SupportPoint.SPManagerActionsPage.SelectFromActionsList(action);
+        }
+
+        //[Given(@"I select (.*) using the column (.*) from the table")]
+        //[When(@"I select (.*) using the column (.*) from the table")]
+        //[Then(@"I select (.*) using the column (.*) from the table")]
+        //public void GivenISelectSearchSetupUsingTheColumnNameFromTheTable(string searchValue, string colName)
+        //{
+        //    // SupportPoint.AdminPage.ClickRecord(colName, searchValue);
+        //    SupportPoint.SPManagerSearchTablePage.ClickRecord(colName, searchValue);
+        //}
+
+        [Given(@"the Role Selector is opened")]
+        [When(@"the Role Selector is opened")]
+        [Then(@"the Role Selector is opened")]
+        public void TheRoleSelectorIsOpened()
+        {
+            SupportPoint.RoleSelectorPage.ConfirmRoleSelector();
+        }
+
+        [Given(@"the User Selector is opened")]
+        [When(@"the User Selector is opened")]
+        [Then(@"the User Selector is opened")]
+        public void TheUserSelectorIsOpened()
+        {
+            SupportPoint.UserSelectorPage.ConfirmUserSelector();
+        }
+
+        [Given(@"I search for user by (.*) for (.*)")]
+        [When(@"I search for user by (.*) for (.*)")]
+        [Then(@"I search for user by (.*) for (.*)")]
+        public void WhenISearchForUserByFindByForSearchText(String findBy,
+            String searchText)
+        {
+            ScenarioContext.Current.Add("SearchBy", searchText);           
+            SupportPoint.UserSelectorPage.SetSearchText(searchText);
+            SupportPoint.UserSelectorPage.ClickSearchButton();
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the User Selector table")]
+        [When(@"I select the record (.*) using column (.*) from the User Selector table")]
+        [Then(@"I select the record (.*) using column (.*) from the User Selector table")]
+        public void IselecttherecordfromtheUserSelectortable(string searchValue, string colName)
+        {
+            SupportPoint.UserSelectorPage.ClickSelectorRecord(colName, searchValue);
+
+        }
+
+        [Given(@"I Click on the Add user selector Button")]
+        [When(@"I Click on the Add user selector Button")]
+        [Then(@"I Click on the Add user selector Button")]
+        public void WhenIClickOnTheAddUserSelectorButton()
+        {
+            SupportPoint.UserSelectorPage.ClickAddUserButton();
+        }
+
+        [Given(@"I search for role for (.*)")]
+        [When(@"I search for role for (.*)")]
+        [Then(@"I search for role for (.*)")]
+        public void WhenISearchForRoleByFindByForSearchText(String searchText)
+        {
+            if (ScenarioContext.Current.ContainsKey("SearchBy"))
+            {
+                ScenarioContext.Current.Set(searchText, "SearchBy");
+            }else
+            {
+                ScenarioContext.Current.Add("SearchBy", searchText);
+            }
+            SupportPoint.RoleSelectorPage.searchRole(searchText);
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Role Selector table")]
+        [When(@"I select the record (.*) using column (.*) from the Role Selector table")]
+        [Then(@"I select the record (.*) using column (.*) from the Role Selector table")]
+        public void IselecttherecordfromtheRoleSelectortable(string searchValue, string colName)
+        {
+            SupportPoint.RoleSelectorPage.ClickSelectorRecord(colName, searchValue);
+
+        }
+
+        [Given(@"I Click on the Add role selector Button")]
+        [When(@"I Click on the Add role selector Button")]
+        [Then(@"I Click on the Add role selector Button")]
+        public void WhenIClickOnTheAddRoleSelectorButton()
+        {
+            SupportPoint.RoleSelectorPage.ClickAddRoleButton();
+        }
+
+
+        [Given(@"I click on the Cancel Button")]
+        [When(@"I click on the Cancel Button")]
+        [Then(@"I click on the Cancel Button")]
+        public void ThenIClickOnTheCancelButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickCancel();
         }
     }
 }

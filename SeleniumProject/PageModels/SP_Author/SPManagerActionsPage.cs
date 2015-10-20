@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SP_Automation.Commons;
+using SeleniumProject.Commons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.PageModels
+namespace SeleniumProject.PageModels
 {
     public class SPManagerActionsPage : BasePage
     {
@@ -20,6 +20,7 @@ namespace SP_Automation.PageModels
         By BackgroundTask = By.LinkText("Background tasks");
         By Close = By.LinkText("Close");
         By NewWorkflow = By.LinkText("New workflow");
+        By NewRole = By.LinkText("New Role");
         By ChangeInterfaceLanguage = By.LinkText("Change interface language");
 
         public SPManagerActionsPage(IWebDriver driver)
@@ -43,6 +44,9 @@ namespace SP_Automation.PageModels
                     break;
                 case "Background tasks":
                     UICommon.ClickLink(BackgroundTask, d);
+                    break;
+                case "New Role":
+                    UICommon.ClickLink(NewRole, d);
                     break;
                 case "Close":
                     UICommon.ClickLink(Close, d);

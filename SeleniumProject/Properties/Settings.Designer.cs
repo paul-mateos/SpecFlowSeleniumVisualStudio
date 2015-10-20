@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SP_Automation.Properties {
+namespace SeleniumProject.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,24 +26,12 @@ namespace SP_Automation.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("QA_A")]
-        public global::SP_Automation.Environments.EnvironmentType Environment1 {
+        public global::SeleniumProject.Environments.EnvironmentType Environment1 {
             get {
-                return ((global::SP_Automation.Environments.EnvironmentType)(this["Environment1"]));
+                return ((global::SeleniumProject.Environments.EnvironmentType)(this["Environment1"]));
             }
             set {
                 this["Environment1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NodeWebkit")]
-        public global::SP_Automation.Environments.BrowserType Browser {
-            get {
-                return ((global::SP_Automation.Environments.BrowserType)(this["Browser"]));
-            }
-            set {
-                this["Browser"] = value;
             }
         }
         
@@ -121,13 +109,25 @@ namespace SP_Automation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://")]
         public string Protocol {
             get {
                 return ((string)(this["Protocol"]));
             }
             set {
                 this["Protocol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
+        public global::SeleniumProject.Environments.BrowserType Browser {
+            get {
+                return ((global::SeleniumProject.Environments.BrowserType)(this["Browser"]));
+            }
+            set {
+                this["Browser"] = value;
             }
         }
     }

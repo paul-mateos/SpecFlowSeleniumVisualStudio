@@ -1,13 +1,13 @@
 ﻿using OpenQA.Selenium;
-using SP_Automation.PageModels;
-using SP_Automation.PageModels.SP_Viewer;
+using SeleniumProject.PageModels;
+using SeleniumProject.PageModels.SP_Viewer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Modules
+namespace SeleniumProject.Modules
 {
     public class Notification  : BaseWebDriverModule
     {

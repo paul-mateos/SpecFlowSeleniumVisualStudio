@@ -1,4 +1,4 @@
-﻿using SP_Automation.Tests;
+﻿using SeleniumProject.Tests;
 using System;
 using TechTalk.SpecFlow;
 
@@ -25,7 +25,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
 
         [Given(@"I have entered (.*) Type")]
         [When(@"I have entered (.*) Type")]
-        [Then(@"I have entered (.*)Type")]
+        [Then(@"I have entered (.*) Type")]
         public void IHaveEnteredType(string type)
         {
             SupportPoint.DocumentManagmentNew.SetType(type);

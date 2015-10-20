@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -9,21 +10,24 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SP_Automation.Commons
+namespace SeleniumProject.Commons
 {
     public class UICommon
     {
         public static int waitsec = Properties.Settings.Default.WaitTime;
+        
 
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
-
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-             IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
-            elementHighlight(elem, d);
-            return elem;
-
+            
+                WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+                IWebElement elem = wait.Until(ExpectedConditions.ElementIsVisible(searchType));
+                elementHighlight(elem, d);
+                return elem;
+           
         }
+
+        
 
         public static IReadOnlyCollection<IWebElement> GetElements(By searchType, IWebDriver d)
         {
@@ -32,11 +36,23 @@ namespace SP_Automation.Commons
 
         public static void ClickButton(By searchType, IWebDriver d)
         {
-            IWebElement elem = GetElement(searchType, d);
-            Actions action = new Actions(d);
-            action.MoveToElement(elem).Click().Build().Perform();
-            Thread.Sleep(1000);
+          
+                IWebElement elem = GetElement(searchType, d);
+                Actions action = new Actions(d);
+                action.MoveToElement(elem).ClickAndHold().Build().Perform();
+                Thread.Sleep(500);
+                action.MoveToElement(elem).Release().Build().Perform();
+                Thread.Sleep(100);
             
+            
+        }
+
+        private static string CreateScreenShot(IWebDriver d)
+        {
+            var randomName = "ScreenShot" + Guid.NewGuid().ToString().Substring(0, 8);
+            //Screenshot ss = ((ITakesScreenshot)d).GetScreenshot();
+            //ss.SaveAsFile(randomName, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return randomName;
         }
 
         public static void DoubleClickButton(By searchType, IWebDriver d)
@@ -52,7 +68,7 @@ namespace SP_Automation.Commons
             IWebElement elem = GetElement(searchType, d);
             elem.Clear();
             elem.SendKeys(value);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
 
         }
 
@@ -85,44 +101,66 @@ namespace SP_Automation.Commons
         {
             IWebElement elem = GetElement(by, d);
             elem.Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
 
 
-        public static IWebDriver SwitchToNewBrowserWithTitle(IWebDriver d, string title)
+        public static void SwitchToNewBrowserWithTitle(IWebDriver d, string title, string currentWindow)
         {
-            //wait for another window to open
-            for (int i = 1; i < 30; i++)
-            {
-                if (d.WindowHandles.Count == 1)
+            
+           
+                //wait for another window to open
+                for (int i = 1; i < 30; i++)
                 {
-                    Thread.Sleep(1000); 
+                    if (d.WindowHandles.Count == 1)
+                    {
+                        Thread.Sleep(1000); 
+                    }
+                    else { break; }
                 }
-                else { break; }
-            }
 
-            for (int i = 1; i < 3; i++)
-            {
-                foreach (string handle in d.WindowHandles)
+                for (int i = 1; i < 3; i++)
                 {
-                    if (d.SwitchTo().Window(handle).Title.Contains(title))
+                    foreach (string handle in d.WindowHandles)
                     {
-                        return d;
+                        
+                        if (d.SwitchTo().Window(handle).Title.Contains(title))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            //d.SwitchTo().Window(currentWindow); 
+                            Thread.Sleep(2000);
+                        }
                     }
-                    else
-                    {
-                        Thread.Sleep(2000);
-                    }
-                }
      
-            }throw new Exception("Error switching to new browser");
+                }
+           
+            
+            
         }
 
+         public static void SwitchToNewPageWithTitle(IWebDriver d, string Title)
+         {
+             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+             wait.Until((driver) => { return d.Title.Contains(Title); });   
+             
+        }
         public static IWebElement GetSearchResultTable(By searchTableBy, IWebDriver d)
         {
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             IWebElement webElementBody = wait.Until(ExpectedConditions.ElementIsVisible(searchTableBy));
+            //Check that the grid loading image has gone
+            Assert.IsTrue(ObjectNotExists(By.XPath("//div[@class='k-loading-mask']/span[contains(text(),'Loading')]"), d), "Table did not complete loading");
             return webElementBody;
+        }
+
+        public static bool ObjectNotExists(By searchType, IWebDriver d)
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait.Until((driver) => { return d.FindElements(searchType).Count == 0; });
+            return true;
         }
 
         public static string GetElementAttribute(By searchType, string attribute, IWebDriver d)
@@ -141,6 +179,38 @@ namespace SP_Automation.Commons
             return elem;
         }
 
+        public static void SelectCheckbox(By searchType, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
+
+            // gets the current checked state of the checkbox
+             bool ischecked = elem.FindElement(searchType).Selected;
+            
+            // enables the checkbox if it is currently not selected
+            if (!ischecked)
+            {
+                Actions action = new Actions(d);
+                action.MoveToElement(elem).Click().Build().Perform();
+                Thread.Sleep(500);
+            }
+        }
+
+        public static void DeselectCheckbox(By searchType, IWebDriver d)
+        {
+            IWebElement elem = GetElement(searchType, d);
+
+            // gets the current checked state of the checkbox
+            bool ischecked = elem.FindElement(searchType).Selected;
+
+            // disables the checkbox if it is currently selected
+            if (ischecked)
+            {
+                Actions action = new Actions(d);
+                action.MoveToElement(elem).Click().Build().Perform();
+                Thread.Sleep(500);
+            }
+        }
+
         public static void ClickOnFolder(string Page, string[] Folders, By FolderTree,IWebDriver d)
         {
             //get folder tree element
@@ -157,11 +227,14 @@ namespace SP_Automation.Commons
                 //get the number of available parent folders in docexplorertree
 
                 IReadOnlyCollection<IWebElement> folders = folderTree.FindElements(By.XPath("./ul/li"));
+              
 
                 //check each parent folder in tree. Go to exception if non are found         
                 foreach (IWebElement folder in folders)
                 {
-                    IWebElement folderText = folder.FindElement(By.CssSelector("div span span"));
+                    IWebElement folderText = folder.FindElement(By.XPath(".//div/span/span"));
+                   // IWebElement folderText = folder.FindElement(By.CssSelector("div span span"));
+
                     if (folderText.Text == FolderName)
                     {
                         //Expand the folder
@@ -177,6 +250,7 @@ namespace SP_Automation.Commons
                         {
                             Actions action = new Actions(d);
                             action.MoveToElement(folderText).Click().Build().Perform();
+                            Thread.Sleep(1000);
                             folderTree = folder;
                             folderFound = true;
                             break;
@@ -209,13 +283,49 @@ namespace SP_Automation.Commons
                      }
                 }
                 return false;
-  
         }
 
+        
         public static string getRandomName(string name)
         {
             string currentTime = DateTime.Now.ToString("hmmss");
             return name + currentTime;
+        }
+
+        public static bool confirmToastInfoMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-info')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast,d), "Object still exists");
+            return true;
+        }
+
+        public static bool confirmToastSuccessMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-success')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
+            return true;
+        }
+
+        public static bool confirmToastErrorMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-error')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
+            return true;
         }
 
     }

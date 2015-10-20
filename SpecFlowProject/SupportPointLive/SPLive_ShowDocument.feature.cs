@@ -73,7 +73,7 @@ namespace SpecFlowProject.SupportPointLive
         {
 #line 8
 #line 9
-testRunner.Given("I have a new \"authors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I create a new \"authors\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
 testRunner.And("I have an apiKey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11

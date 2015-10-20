@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 using Panviva.LiveAPI;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SP_Automation.Rest
+namespace SeleniumProject.Rest
 {
     /**
      * Low level RestAPI Lib
