@@ -84,7 +84,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"I click on the Add document Button")]
         public void ThenIClickOnTheAdddocumentButton()
         {
-            SupportPoint.DocumentManagementPage.clickAddDocumentButton();
+            SupportPoint.DocumentSelectorPage.clickAddDocumentButton();
         }
 
         [Given(@"I click on the Add folder Button")]
@@ -141,6 +141,18 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [When(@"I search by (.*) for (.*)")]
         [Then(@"I search by (.*) for (.*)")]
         public void WhenISearchByFindByForSeatchText(String findBy, String searchText)
+        {
+            ScenarioContext.Current.Add("FindBy", findBy);
+            ScenarioContext.Current.Add("SearchBy", searchText);
+            SupportPoint.DocumentManagementPage.SelectFindBy(findBy);
+            SupportPoint.DocumentManagementPage.SetSearchText(searchText);
+            SupportPoint.DocumentManagementPage.ClickSubmitSearchButton();
+        }
+
+        [Given(@"I search by (.*) for (.*) in Document Selector")]
+        [When(@"I search by (.*) for (.*) in Document Selector")]
+        [Then(@"I search by (.*) for (.*) in Document Selector")]
+        public void WhenISearchByFindByForSeatchTextInDocumentSelector(String findBy, String searchText)
         {
             ScenarioContext.Current.Add("FindBy", findBy);
             ScenarioContext.Current.Add("SearchBy", searchText);
