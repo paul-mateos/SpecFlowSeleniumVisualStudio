@@ -24,7 +24,7 @@ Scenario: 2.2.1_Manage Role Membership
 	Then the Role Selector is opened
 	And I search for role for authors
 	And I select the record authors using column Role from the Role Selector table
-	And I Click on the Add role selector Button
+	And I Click on the Add roles Button
 	And I click on the Save Button
 	And I select the record authors using column Role from the Role table
 	And I Click on the Remove role from Roles Button

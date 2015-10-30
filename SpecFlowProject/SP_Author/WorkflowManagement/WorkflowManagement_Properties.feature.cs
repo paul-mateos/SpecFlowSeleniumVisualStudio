@@ -179,7 +179,7 @@ this.FeatureBackground();
 #line 49
  testRunner.Then("the User Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 51
- testRunner.And("I search for user by User for WorkflowApprover", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search for user WorkflowApprover in User Selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
  testRunner.And("I select the record WorkflowApprover using column Username from the User Selector" +
                     " table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -236,7 +236,7 @@ this.FeatureBackground();
 #line 74
  testRunner.And("I select the record authors using column Role from the Role Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
- testRunner.And("I Click on the Add role selector Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Add roles Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77

@@ -196,10 +196,18 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentPreviewPage.confirmPreviewBrowserOpen(documentTitle);
         }
 
-        [Given(@"I view Wrtiers permission settings")]
-        [When(@"I view Wrtiers permission settings")]
-        [Then(@"I view Wrtiers permission settings")]
-        public void GivenIViewWrtiersPermissionSettings()
+        [Given(@"I view readers permission settings")]
+        [When(@"I view readers permission settings")]
+        [Then(@"I view readers permission settings")]
+        public void GivenIViewReadersPermissionSettings()
+        {
+            SupportPoint.DocumentManagementPage.ConfirmReadersPermissionsViewable();
+        }
+
+        [Given(@"I view Writers permission settings")]
+        [When(@"I view Writers permission settings")]
+        [Then(@"I view Writers permission settings")]
+        public void GivenIViewWritersPermissionSettings()
         {
             SupportPoint.DocumentManagementPage.ConfirmWritersPermissionsViewable();
         }
@@ -218,7 +226,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public void GivenIMakePermissionTableEmpty(string tableName)
         {
             SupportPoint.DocumentManagementPage.makePermissionsTableEmpty(tableName);
-            
+           
         }
 
         [Given(@"I confirm folder icon for (.*) is set to (.*)")]

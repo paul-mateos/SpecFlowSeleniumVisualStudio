@@ -23,4 +23,5 @@ Scenario: AccountLogin
 			"""
             When I send request
             Then My result is response
+			#define respone to be the status code as a string
 

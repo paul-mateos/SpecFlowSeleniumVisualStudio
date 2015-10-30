@@ -109,7 +109,7 @@ namespace SeleniumProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://")]
         public string Protocol {
             get {
                 return ((string)(this["Protocol"]));

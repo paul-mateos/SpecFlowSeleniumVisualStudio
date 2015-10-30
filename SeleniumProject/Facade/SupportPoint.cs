@@ -17,6 +17,7 @@ using SeleniumProject.PageModels.SP_Author;
 using SeleniumProject.Utility;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Remote;
+using System.Threading;
 
 namespace SeleniumProject.Tests
 {
@@ -44,7 +45,8 @@ namespace SeleniumProject.Tests
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
         static public WorkflowManagementPage WorkflowManagementPage { get { return new WorkflowManagementPage(WebDriver); } set { WorkflowManagementPage = value; } }
         static public RoleManagementPage RoleManagementPage { get { return new RoleManagementPage(WebDriver); } set { RoleManagementPage = value; } }
-        static public DocumentManagmentNewPage DocumentManagmentNew { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNew = value; } }
+        static public UserManagementPage UserManagementPage { get { return new UserManagementPage(WebDriver); } set { UserManagementPage = value; } }
+        static public DocumentManagmentNewPage DocumentManagmentNewPage { get { return new DocumentManagmentNewPage(WebDriver); } set { DocumentManagmentNewPage = value; } }
         static public SPManagerDetailsActionsPage SPManagerDetailsActionsPage { get { return new SPManagerDetailsActionsPage(WebDriver); } set { SPManagerDetailsActionsPage = value; } }
         static public SPManagerActionsPage SPManagerActionsPage { get { return new SPManagerActionsPage(WebDriver); } set { SPManagerActionsPage = value; } }
         static public PermissionsPage PermissionsPage { get { return new PermissionsPage(WebDriver); } set { PermissionsPage = value; } }
@@ -86,7 +88,7 @@ namespace SeleniumProject.Tests
                     break;
                 case BrowserType.Grid:
                     DesiredCapabilities capability = DesiredCapabilities.Chrome();
-                    WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4441/wd/hub"), capability);
+                    WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 default:
@@ -182,8 +184,23 @@ namespace SeleniumProject.Tests
             Assert.AreEqual(BrowserTitle, browserTitle, "Current Browser is not: " + BrowserTitle + ". It is: " + browserTitle);
         }
 
+        public static string GetCurrentBrowserHandle()
+        {
+
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
+            return WebDriver.CurrentWindowHandle;
+        }
+
+        public static void waitForPageLoading()
+        {
+            Thread.Sleep(500);
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
+            Thread.Sleep(500);
+
+        }
 
 
- 
     }
 }
