@@ -24,10 +24,10 @@
       <Value Profile="(Default)">qa-spui-a</Value>
     </Setting>
     <Setting Name="Protocol" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://</Value>
+      <Value Profile="(Default)">https://</Value>
     </Setting>
     <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">Chrome</Value>
+      <Value Profile="(Default)">NodeWebkit</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -137,8 +137,15 @@ namespace SeleniumProject.PageModels
                 case "Role membership":
                     UICommon.ClickLink(Rolemembership, d);
                     break;
-                default:
+                case "Readers":
+                    UICommon.ClickLink(Readers, d);
                     break;
+                case "Writers":
+                    UICommon.ClickLink(Writers, d);
+                    break;
+                default:
+                    throw new Exception("Invalid list item");
+                    
             }
             Thread.Sleep(1000);
         }

@@ -84,7 +84,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"I click on the Add document Button")]
         public void ThenIClickOnTheAdddocumentButton()
         {
-            SupportPoint.DocumentManagementPage.clickAddDocumentButton();
+            SupportPoint.DocumentSelectorPage.clickAddDocumentButton();
         }
 
         [Given(@"I click on the Add folder Button")]
@@ -149,6 +149,18 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagementPage.ClickSubmitSearchButton();
         }
 
+        [Given(@"I search by (.*) for (.*) in Document Selector")]
+        [When(@"I search by (.*) for (.*) in Document Selector")]
+        [Then(@"I search by (.*) for (.*) in Document Selector")]
+        public void WhenISearchByFindByForSeatchTextInDocumentSelector(String findBy, String searchText)
+        {
+            ScenarioContext.Current.Add("FindBy", findBy);
+            ScenarioContext.Current.Add("SearchBy", searchText);
+            SupportPoint.DocumentManagementPage.SelectFindBy(findBy);
+            SupportPoint.DocumentManagementPage.SetSearchText(searchText);
+            SupportPoint.DocumentManagementPage.ClickSubmitSearchButton();
+        }
+
         [Given(@"the search should return the record by FindBy")]
         [When(@"the search should return the record by FindBy")]
         [Then(@"the search should return the record by FindBy")]
@@ -184,10 +196,18 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentPreviewPage.confirmPreviewBrowserOpen(documentTitle);
         }
 
-        [Given(@"I view Wrtiers permission settings")]
-        [When(@"I view Wrtiers permission settings")]
-        [Then(@"I view Wrtiers permission settings")]
-        public void GivenIViewWrtiersPermissionSettings()
+        [Given(@"I view readers permission settings")]
+        [When(@"I view readers permission settings")]
+        [Then(@"I view readers permission settings")]
+        public void GivenIViewReadersPermissionSettings()
+        {
+            SupportPoint.DocumentManagementPage.ConfirmReadersPermissionsViewable();
+        }
+
+        [Given(@"I view Writers permission settings")]
+        [When(@"I view Writers permission settings")]
+        [Then(@"I view Writers permission settings")]
+        public void GivenIViewWritersPermissionSettings()
         {
             SupportPoint.DocumentManagementPage.ConfirmWritersPermissionsViewable();
         }
@@ -206,7 +226,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public void GivenIMakePermissionTableEmpty(string tableName)
         {
             SupportPoint.DocumentManagementPage.makePermissionsTableEmpty(tableName);
-            
+           
         }
 
         [Given(@"I confirm folder icon for (.*) is set to (.*)")]

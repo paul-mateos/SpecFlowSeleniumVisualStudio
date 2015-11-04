@@ -12,7 +12,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"I have selected (.*)")]
         public void WhenIHaveSelectedFolder(string newtype)
         {
-            SupportPoint.DocumentManagmentNew.clickFolder(newtype);
+            SupportPoint.DocumentManagmentNewPage.clickFolder(newtype);
         }
 
         [Given(@"I have entered Type (.*) Name (.*) Description (.*)")]
@@ -20,7 +20,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"I have entered Type (.*) Name (.*) Description (.*)")]
         public void IHaveEnteredTypeNameDescription(string type, string name, string description)
         {
-                SupportPoint.DocumentManagmentNew.fillIn(type, name, description);
+            SupportPoint.DocumentManagmentNewPage.fillIn(type, name, description);
         }
 
         [Given(@"I have entered (.*) Type")]
@@ -28,7 +28,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         [Then(@"I have entered (.*) Type")]
         public void IHaveEnteredType(string type)
         {
-            SupportPoint.DocumentManagmentNew.SetType(type);
+            SupportPoint.DocumentManagmentNewPage.SetType(type);
         }
     }
 }

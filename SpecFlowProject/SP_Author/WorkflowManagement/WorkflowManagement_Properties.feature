@@ -48,7 +48,7 @@ Scenario: 3.2.1_Required Approvers Add User
 	And I Click on the Add user Button
 	Then the User Selector is opened
 	#And I create a new "authors" user with username "WorkflowApprover"
-	And I search for user by User for WorkflowApprover
+	And I search for user WorkflowApprover in User Selector
 	And I select the record WorkflowApprover using column Username from the User Selector table
 	And I Click on the Add user selector Button
 	And I click on the Save Button
@@ -72,7 +72,7 @@ Scenario: 3.2.2_Required Approvers Add Role
 	Then the Role Selector is opened
 	And I search for role for authors
 	And I select the record authors using column Role from the Role Selector table
-	And I Click on the Add role selector Button
+	And I Click on the Add roles Button
 	And I click on the Save Button
 	And I press Details & Actions
 	And I select Properties from Details & Actions
