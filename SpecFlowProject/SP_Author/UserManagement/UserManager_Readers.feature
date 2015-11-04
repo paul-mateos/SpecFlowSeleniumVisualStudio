@@ -13,7 +13,6 @@ Then I Navigate to the Users Page
 Scenario: 3.4.1_Readers_AddRoles
 	Given I search for user currentuser in User Management
 	And I select the record currentuser using column Username from the User table
-	And I select the record currentuser using column Username from the User table
 	When I press Details & Actions
 	And I select Readers from Details & Actions
 	And I Click on the Add role(s) to readers Button
