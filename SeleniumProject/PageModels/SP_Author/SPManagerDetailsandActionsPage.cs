@@ -25,7 +25,7 @@ namespace SeleniumProject.PageModels
 
         
         //menu options
-        By DetailsandActions = By.XPath("//a/span[text()='Details & Actions']"); 
+        By DetailsandActions = By.XPath("//li/a[@href='#']/span[text()='Details & Actions']"); 
         By New = By.XPath("//a[@data-automation-id='doc-details-actions-new']");
         By Properties = By.XPath("//a[contains(text(),'Properties')]");
         By generalProperties = By.XPath("//a[@data-automation-id='doc-details-actions-general-properties']");
