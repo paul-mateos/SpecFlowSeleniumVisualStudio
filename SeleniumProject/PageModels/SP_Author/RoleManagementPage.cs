@@ -17,13 +17,11 @@ namespace SeleniumProject.PageModels.SP_Author
     {
         
        //Search Criteria
-        //By roleName = By.XPath("//input[@name='name']");
         By SearchQuery = By.XPath("//input[@placeholder='Search']");
         By SearchButton = By.XPath("//button[@title='Submit']");
         By roleTable = By.XPath("//table[@role='grid']");
-        //By Namevalidation = By.XPath("//div/p[contains(text@,'Checking if the name requested is available.')]");
-        //Buttons
-
+        By rolesinthisroleTable = By.XPath("//shr-role-grid-drct[@header-title='Roles in this role']/.//table");
+   
 
         public RoleManagementPage(IWebDriver driver)
             : base(driver)
@@ -31,32 +29,6 @@ namespace SeleniumProject.PageModels.SP_Author
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return d.Title.Contains("Role Management : SupportPoint"); }); 
         }
-
-        //public string SetRoleName(string RoleName)
-        //{
-
-        //    UICommon.SetValue(roleName, RoleName, d);
-        //    var wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-        //    wait.Until(ExpectedConditions.InvisibilityOfElementLocated(Namevalidation));
-        //    return RoleName;
-
-        //}
-
-        //public string SetRandomRoleName(string RoleName)
-        //{
-        //    string newName = UICommon.getRandomName(RoleName);
-        //    UICommon.SetValue(roleName, newName, d);
-        //    var wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-        //    wait.Until(ExpectedConditions.InvisibilityOfElementLocated(Namevalidation));
-        //    return newName;
-
-        //}
-
-
-        //public void ConfirmWorkflowName(string RoleName)
-        //{
-        //    Assert.IsTrue(UICommon.GetElementAttribute(roleName, "value", d) == RoleName);
-        //}
 
         public void SetSearchText(string searchText)
         {
@@ -82,9 +54,22 @@ namespace SeleniumProject.PageModels.SP_Author
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
 
-        public void ClickRecord(string lookUpColumn, string searchText)
+        public void ClickRecord(string lookUpColumn, string searchText, string tableName)
         {
-            IWebElement searchTable = UICommon.GetSearchResultTable(roleTable, d);
+            IWebElement searchTable;
+            switch(tableName)
+            {
+                case "RoleTable":
+                    searchTable = UICommon.GetSearchResultTable(roleTable, d);
+                break;
+                case "RolesinthisroleTable":
+                searchTable = UICommon.GetSearchResultTable(rolesinthisroleTable, d);
+                break;
+                default:
+                    throw new Exception("invalid Role table");
+
+            }
+            
             Table table = new Table(searchTable);
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }

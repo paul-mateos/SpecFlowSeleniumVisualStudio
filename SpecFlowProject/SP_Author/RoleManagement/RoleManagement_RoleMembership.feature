@@ -15,7 +15,7 @@ Scenario: 1.1,2.1.(1,4)_Create New Role
 	Given I click on Actions
 	And I select New Role from Actions
 	When I enter the random role Name AutomationRole
-	#Workflow name wil be prefixed with a random number
+	#Workflow name will be prefixed with a random number
 	Then I click on the Save Button
 	And I confirm the role Name
 	And I Click on the Delete role Button
@@ -23,11 +23,11 @@ Scenario: 1.1,2.1.(1,4)_Create New Role
 
 @Regression
 @RoleManagement_Properties
-Scenario: 2.1.3_Edit Existing Role
+Scenario: 2.1(2,3)_Edit Existing Role
 	Given I click on Actions
 	And I select New Role from Actions
 	And I enter the random role Name AutomationRole
-	#Workflow name wil be prefixed with a random number
+	#Workflow name will be prefixed with a random number
 	And I click on the Save Button
 	And I confirm the role Name
 	And I enter the role Description Test Description

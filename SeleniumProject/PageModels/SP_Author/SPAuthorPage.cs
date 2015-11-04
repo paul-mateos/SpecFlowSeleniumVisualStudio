@@ -20,7 +20,8 @@ namespace SeleniumProject.PageModels.SP_Author
         By addUserButton = By.XPath("//button[@title='Add user(s)']");
         By addRoleButton = By.XPath("//button[@title='Add role(s)']");
        
-       By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
+        By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
+        By addRolesToRoleButton = By.XPath("//button[@title='Add role(s) to role']");
         By addRoleToReadersButton = By.XPath("//button[@title='Add role to readers']");
         By addUserToReadersButton = By.XPath("//button[@title='Add user to readers']");
         By addRoleToWritersButton = By.XPath("//button[@title='Add role to writers']");
@@ -32,9 +33,10 @@ namespace SeleniumProject.PageModels.SP_Author
         By addUsersToWritersButton = By.XPath("//button[@title='Add user(s) to writers']");
        
         By removeRoleFromRolesButton = By.XPath("//button[@title='Remove role from role(s)']");
+        By removeRolesFromRoleButton = By.XPath("//button[@title='Remove role(s) from role']");
         By removeRoleFromReadersButton = By.XPath("//button[@title='Remove role(s) from readers']");
 
-         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
+        By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
         By refreshMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'refresh')]");
         By okButton = By.XPath("//button[@title='OK']");
@@ -81,6 +83,11 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(addRoleToRolesButton, d);
         }
 
+        public void ClickAddRolesToRoleButton()
+        {
+            UICommon.ClickButton(addRolesToRoleButton, d);
+        }
+
         public void ClickAddRoleToReadersButton()
         {
             UICommon.ClickButton(addRoleToReadersButton, d);
@@ -109,11 +116,17 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickRemoveRoleFromRolesButton()
         {
             UICommon.ClickButton(removeRoleFromRolesButton, d);
-
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until(driver => !d.FindElement(removeRoleFromRolesButton).Enabled);
             Thread.Sleep(1000);
- 
+        }
+
+        public void ClickRemoveRolesFromRoleButton()
+        {
+            UICommon.ClickButton(removeRolesFromRoleButton, d);
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(driver => !d.FindElement(removeRolesFromRoleButton).Enabled);
+            Thread.Sleep(1000);
         }
 
         public void ClickRemoveRoleFromReadersButton()
