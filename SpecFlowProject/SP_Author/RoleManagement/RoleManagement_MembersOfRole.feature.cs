@@ -19,19 +19,19 @@ namespace SpecFlowProject.SP_Author.RoleManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class RoleManagement_RoleMembershipFeature
+    public partial class RoleManagement_MembersOfRoleFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "RoleManagement_CreateNew.feature"
+#line 1 "RoleManagement_MembersOfRole.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RoleManagement_RoleMembership", "In order to manage role memberships\r\nAs a role creator\r\nI want to manage role mem" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RoleManagement_MembersOfRole", "In order to manage role memberships\r\nAs a role creator\r\nI want to manage role mem" +
                     "berships", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -47,9 +47,9 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "RoleManagement_RoleMembership")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "RoleManagement_MembersOfRole")))
             {
-                SpecFlowProject.SP_Author.RoleManagement.RoleManagement_RoleMembershipFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Author.RoleManagement.RoleManagement_MembersOfRoleFeature.FeatureSetup(null);
             }
         }
         
@@ -84,15 +84,15 @@ testRunner.Then("I am at Role Management page", ((string)(null)), ((TechTalk.Spe
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.2(1,2)_Manage Role Membership")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RoleManagement_RoleMembership")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.3(1,2)_AddRoleToRole")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RoleManagement_MembersOfRole")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RoleManagement_RoleMembership")]
-        public virtual void _2_212_ManageRoleMembership()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RoleManagement_MembersOfRole")]
+        public virtual void _2_312_AddRoleToRole()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.2(1,2)_Manage Role Membership", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.3(1,2)_AddRoleToRole", new string[] {
                         "Regression",
-                        "RoleManagement_RoleMembership"});
+                        "RoleManagement_MembersOfRole"});
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -110,9 +110,9 @@ this.FeatureBackground();
 #line 21
  testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.And("I select Role membership from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select Members of role from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And("I Click on the Add role to Roles Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Add roles to Role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
  testRunner.Then("the Role Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
@@ -124,9 +124,9 @@ this.FeatureBackground();
 #line 28
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And("I select the record authors using column Role from the Role table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select the record authors using column Role from the Roles in this role table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And("I Click on the Remove role from Roles Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Remove roles from Role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
@@ -136,6 +136,66 @@ this.FeatureBackground();
 #line 34
  testRunner.And("I Click on the Delete role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
+ testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.3(3,4)_AddUserToRole")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RoleManagement_MembersOfRole")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RoleManagement_MembersOfRole")]
+        public virtual void _2_334_AddUserToRole()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.3(3,4)_AddUserToRole", new string[] {
+                        "Regression",
+                        "RoleManagement_MembersOfRole"});
+#line 39
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 40
+ testRunner.Given("I click on Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 41
+ testRunner.And("I select New Role from Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("I enter the random role Name AutomationRole", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("I confirm the role Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
+ testRunner.And("I select Members of role from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("I Click on the Add users to Role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.Then("the User Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
+ testRunner.And("I search for user administrator in User Selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I select the record administrator using column Username from the User Selector ta" +
+                    "ble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I Click on the Add user selector Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("I select the record administrator using column Username from the Users in this ro" +
+                    "le table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("I Click on the Remove users from Role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And("I select Properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.And("I Click on the Delete role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
  testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

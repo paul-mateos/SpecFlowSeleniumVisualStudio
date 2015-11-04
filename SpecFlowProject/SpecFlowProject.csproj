@@ -98,6 +98,11 @@
     </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentPreview_Steps.cs" />
+    <Compile Include="SP_Author\RoleManagement\RoleManagement_MembersOfRole.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleManagement_MembersOfRole.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\RoleManagement\RoleManagement_RoleMembership.feature.cs">
       <DependentUpon>RoleManagement_RoleMembership.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -293,6 +298,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectMultipleFolders.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\RoleManagement\RoleManagement_MembersOfRole.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleManagement_MembersOfRole.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\RoleManagement\RoleManagement_RoleMembership.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

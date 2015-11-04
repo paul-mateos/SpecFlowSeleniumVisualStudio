@@ -11,7 +11,7 @@ Then I am at Role Management page
 
 @Regression
 @RoleManagement_RoleMembership
-Scenario: 2.2.1_Manage Role Membership
+Scenario: 2.2(1,2)_Manage Role Membership
 	Given I click on Actions
 	And I select New Role from Actions
 	And I enter the random role Name AutomationRole

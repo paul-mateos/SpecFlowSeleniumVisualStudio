@@ -116,13 +116,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.1.3_Edit Existing Role")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2.1(2,3)_Edit Existing Role")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RoleManagement_CreateNew")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RoleManagement_Properties")]
-        public virtual void _2_1_3_EditExistingRole()
+        public virtual void _2_123_EditExistingRole()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.1.3_Edit Existing Role", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.1(2,3)_Edit Existing Role", new string[] {
                         "Regression",
                         "RoleManagement_Properties"});
 #line 26
