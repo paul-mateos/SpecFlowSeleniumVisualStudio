@@ -111,6 +111,14 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddRolesToRoleButton();
         }
 
+        [Given(@"I Click on the Add users to Role Button")]
+        [When(@"I Click on the Add users to Role Button")]
+        [Then(@"I Click on the Add users to Role Button")]
+        public void WhenIClickOnTheAddUsersToRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUsersToRoleButton();
+        }
+
         [Given(@"I Click on the Remove role from Roles Button")]
         [When(@"I Click on the Remove role from Roles Button")]
         [Then(@"I Click on the Remove role from Roles Button")]
@@ -125,6 +133,14 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheRemoveRolesToRoleButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveRolesFromRoleButton();
+        }
+
+        [Given(@"I Click on the Remove users from Role Button")]
+        [When(@"I Click on the Remove users from Role Button")]
+        [Then(@"I Click on the Remove users from Role Button")]
+        public void WhenIClickOnTheRemoveUsersToRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveUsersFromRoleButton();
         }
 
         [Given(@"I Click on the Remove role from readers Button")]

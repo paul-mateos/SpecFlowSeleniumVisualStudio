@@ -81,5 +81,14 @@ namespace SpecFlowProject.SP_Author.RoleManagement
             SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "RolesinthisroleTable");
 
         }
+
+        [Given(@"I select the record (.*) using column (.*) from the Users in this role table")]
+        [When(@"I select the record (.*) using column (.*) from the Users in this role table")]
+        [Then(@"I select the record (.*) using column (.*) from the Users in this role table")]
+        public void IselecttherecordfromtheUsersinthisroletable(string searchValue, string colName)
+        {
+            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "UsersinthisroleTable");
+
+        }
     }
 }

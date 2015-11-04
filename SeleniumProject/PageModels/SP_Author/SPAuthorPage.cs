@@ -22,6 +22,7 @@ namespace SeleniumProject.PageModels.SP_Author
        
         By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
         By addRolesToRoleButton = By.XPath("//button[@title='Add role(s) to role']");
+        By addUsersToRoleButton = By.XPath("//button[@title='Add user(s) to role']");
         By addRoleToReadersButton = By.XPath("//button[@title='Add role to readers']");
         By addUserToReadersButton = By.XPath("//button[@title='Add user to readers']");
         By addRoleToWritersButton = By.XPath("//button[@title='Add role to writers']");
@@ -34,6 +35,7 @@ namespace SeleniumProject.PageModels.SP_Author
        
         By removeRoleFromRolesButton = By.XPath("//button[@title='Remove role from role(s)']");
         By removeRolesFromRoleButton = By.XPath("//button[@title='Remove role(s) from role']");
+        By removeUsersFromRoleButton = By.XPath("//button[@title='Remove user(s) from role']");
         By removeRoleFromReadersButton = By.XPath("//button[@title='Remove role(s) from readers']");
 
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
@@ -88,6 +90,11 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(addRolesToRoleButton, d);
         }
 
+        public void ClickAddUsersToRoleButton()
+        {
+            UICommon.ClickButton(addUsersToRoleButton, d);
+        }
+
         public void ClickAddRoleToReadersButton()
         {
             UICommon.ClickButton(addRoleToReadersButton, d);
@@ -126,6 +133,14 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(removeRolesFromRoleButton, d);
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until(driver => !d.FindElement(removeRolesFromRoleButton).Enabled);
+            Thread.Sleep(1000);
+        }
+
+        public void ClickRemoveUsersFromRoleButton()
+        {
+            UICommon.ClickButton(removeUsersFromRoleButton, d);
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(driver => !d.FindElement(removeUsersFromRoleButton).Enabled);
             Thread.Sleep(1000);
         }
 
