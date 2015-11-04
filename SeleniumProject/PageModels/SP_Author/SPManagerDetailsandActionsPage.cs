@@ -33,6 +33,7 @@ namespace SeleniumProject.PageModels
         By TrainingObjectives = By.LinkText("Training objectives");
         By Readers = By.LinkText("Readers");
         By Writers = By.LinkText("Writers");
+        By Membersofrole = By.LinkText("Members of role");
         By Notifications = By.XPath("//a[@data-automation-id='doc-details-actions-notifications']");
         By CustomProperties = By.LinkText("Custom properties");
         By Permissions = By.XPath("//a[@data-automation-id='doc-details-actions-permissions']");
@@ -143,6 +144,10 @@ namespace SeleniumProject.PageModels
                 case "Writers":
                     UICommon.ClickLink(Writers, d);
                     break;
+                case "Members of role":
+                    UICommon.ClickLink(Membersofrole, d);
+                    break;
+                    
                 default:
                     throw new Exception("Invalid list item");
                     
