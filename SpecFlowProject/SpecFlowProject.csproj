@@ -109,6 +109,13 @@
       <DependentUpon>RoleManagement_CreateNew.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\RoleManagement\RoleManagement_Steps.cs" />
+    <Compile Include="SP_Author\RoleSelector_Steps.cs" />
+    <Compile Include="SP_Author\UserManagement\UserManager_Readers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManager_Readers.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\UserSelector_Steps.cs" />
     <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Properties.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -234,6 +241,7 @@
     </Compile>
     <Compile Include="SP_Author\UserManagement\UserManagement_ImportUsersSteps.cs" />
     <Compile Include="SupportPointAPI\UserImportFeatureSteps.cs" />
+    <Compile Include="SupportPointCommon\SupportPointCommon_Steps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -297,6 +305,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\UserManagement\UserManager_Readers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserManager_Readers.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

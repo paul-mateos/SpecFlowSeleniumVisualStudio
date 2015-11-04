@@ -32,11 +32,12 @@ namespace SeleniumProject.PageModels.SP_Author
         By searchButton = By.XPath("//button[@data-automation-id='doc-explorer-search-submit']");
         By previewDocumentButton = By.XPath("//span[@title='Preview']");
 
+        By readersPermissionsPane = By.XPath("//ul/li[descendent::span[contains(text(),'Readers')]]");
         By writersPermissionsPane = By.XPath("//ul/li[descendent::span[contains(text(),'Writers')]]");
         By permissionsAdminPermissionsPane = By.XPath("//ul/li[descendent::span[contains(text(),'Permissions administrators')]]");
         By removeWriterRolesBtn = By.XPath("//button[!title='Remove role(s) from writers']");
         By removeAdministratorsRolesBtn = By.XPath("//button[!title='Remove roles(s) from administrators']");
-
+        By removeReadersRolesBtn = By.XPath("//button[!title='Remove role(s) from readers']");
         By folderIconTitle = By.XPath("//li[@aria-selected='true']/div/span/div");
 
         public DocumentManagementPage(IWebDriver driver)
@@ -141,8 +142,7 @@ namespace SeleniumProject.PageModels.SP_Author
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//select[@data-automation-id='doc-explorer-search-type']/.."))).Click();
             Thread.Sleep(2000);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//li[contains(text(),'Name')]/../li[text()='" + findBy + "']"))).Click();
-            //wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//ul[@id='imgSearchType_listbox']/li[text()='"+findBy+"']"))).Click();
-
+            
         }
 
         public void SetSearchText(string searchText)
@@ -160,6 +160,17 @@ namespace SeleniumProject.PageModels.SP_Author
             var currentBrowser = d.CurrentWindowHandle;
             UICommon.ClickButton(previewDocumentButton, d);
             UICommon.SwitchToNewBrowserWithTitle(d, documentTitle, currentBrowser);
+        }
+
+        public void ConfirmReadersPermissionsViewable()
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement elem = UICommon.GetElement(writersPermissionsPane, d);
+            //check if expanded
+            if (elem.GetAttribute("aria-expanded") == "false")
+            {
+                elem.Click();
+            }
         }
 
         public void ConfirmWritersPermissionsViewable()
@@ -192,6 +203,10 @@ namespace SeleniumProject.PageModels.SP_Author
             //get the table
             switch (tableName)
             {
+                case "Roles in readers permission:":
+                     tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+                     removeButton = removeReadersRolesBtn;
+                     break;
                 case "Roles in writers permission:":
                      tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
                      removeButton = removeWriterRolesBtn;
@@ -228,6 +243,36 @@ namespace SeleniumProject.PageModels.SP_Author
         
         }
 
+        public bool ConfirmPermissionsTableEmpty(string tableName)
+        {
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement tableElem;
+            By removeButton;
+            //get the table
+            switch (tableName)
+            {
+                case "Roles in readers permission:":
+                    tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+                    removeButton = removeReadersRolesBtn;
+                    break;
+                case "Roles in writers permission:":
+                    tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+                    removeButton = removeWriterRolesBtn;
+                    break;
+
+                case "Roles in permissions administrators:":
+                    tableElem = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/shr-role-grid-drct[@header-title='" + tableName + "'].//table")));
+                    removeButton = removeAdministratorsRolesBtn;
+                    break;
+                default:
+                    throw new Exception("Unknown table");
+            }
+
+            Table table = new Table(tableElem);
+            return table.GetNoRecordsInTable();
+
+
+        }
 
         public string GetFolderIconTitle()
         {
