@@ -91,29 +91,29 @@ namespace SeleniumProject.PageModels.SP_Viewer
 
         public void ClickUserLogOff()
         {
-            try
-            {
-                if (!d.FindElement(User).Displayed)
-                {
-                    UICommon.ClickButton(moreMenu, d);
-                }
-            }
-            catch (NoSuchElementException)
-            {
+            //try
+            //{
+            //    if (!d.FindElement(User).Displayed)
+            //    {
+            //        UICommon.ClickButton(moreMenu, d);
+            //    }
+            //}
+            //catch (NoSuchElementException)
+            //{
                 UICommon.ClickButton(moreMenu, d);
-            }
+            //}
           
-            try
-            {
-            if ( ! d.FindElement(User_LogOff).Displayed )
-            {
+            //try
+            //{
+            //if ( ! d.FindElement(User_LogOff).Displayed )
+            //{
+            //    UICommon.ClickButton(User, d);
+            //}
+            //}
+            //catch (NoSuchElementException)
+            //{
                 UICommon.ClickButton(User, d);
-            }
-            }
-            catch (NoSuchElementException)
-            {
-                UICommon.ClickButton(User, d);
-            }
+            //}
 
             UICommon.ClickButton(User_LogOff, d);
 
