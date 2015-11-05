@@ -109,6 +109,15 @@ namespace SpecFlowProject.SP_Author.RoleManagement
 
         }
 
+        [Given(@"I select the record (.*) using column (.*) from the Role has notifiaction table")]
+        [When(@"I select the record (.*) using column (.*) from the Role has notifiaction table")]
+        [Then(@"I select the record (.*) using column (.*) from the Role has notifiaction table")]
+        public void IselecttherecordfromtheRoleHasNotificationTable(string searchValue, string colName)
+        {
+            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "RoleHasNotificationTable");
+
+        }
+
 
         [Given(@"I select the record (.*) using column (.*) from the Users that can read table")]
         [When(@"I select the record (.*) using column (.*) from the Users that can read table")]

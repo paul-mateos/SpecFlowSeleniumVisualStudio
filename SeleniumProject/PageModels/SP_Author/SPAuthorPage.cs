@@ -33,7 +33,9 @@ namespace SeleniumProject.PageModels.SP_Author
         By addUsersToReadersButton = By.XPath("//button[@title='Add user(s) to readers']");
         By addRolesToWritersButton = By.XPath("//button[@title='Add role(s) to writers']");
         By addUsersToWritersButton = By.XPath("//button[@title='Add user(s) to writers']");
-       
+        By addnotificationToRoleButton = By.XPath("//button[@title='Add notification to role']");
+        By addnotificationToRolePopupButton = By.XPath("//div[@id='kWindow0']/.//button[text()='Add notification to role']");
+
         By removeRoleFromRolesButton = By.XPath("//button[@title='Remove role from role(s)']");
         By removeRolesFromRoleButton = By.XPath("//button[@title='Remove role(s) from role']");
         By removeUsersFromRoleButton = By.XPath("//button[@title='Remove user(s) from role']");
@@ -41,6 +43,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By removeUsersFromWritersButton = By.XPath("//button[@title='Remove user(s) from writers']");
         By removeRolesFromReadersButton = By.XPath("//button[@title='Remove role(s) from readers']");
         By removeRolesFromWritersButton = By.XPath("//button[@title='Remove role(s) from writers']");
+        By removeNotificationsFromRoleButton = By.XPath("//button[@title='Remove notifications from role']");
 
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
@@ -140,6 +143,17 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(addRolesToWritersButton, d);
         }
 
+        public void ClickAddNotificationToRoleButton()
+        {
+            UICommon.ClickButton(addnotificationToRoleButton, d);
+        }
+
+        public void ClickAddNotificationToRolePopupButton()
+        {
+            UICommon.ClickButton(addnotificationToRolePopupButton, d);
+        }
+       
+
         public void ClickAddUserToWritersButton()
         {
             UICommon.ClickButton(addUserToWritersButton, d);
@@ -206,6 +220,16 @@ namespace SeleniumProject.PageModels.SP_Author
 
         }
 
+        public void ClickRemoveNotificationsFromRoleButton()
+        {
+            UICommon.ClickButton(removeNotificationsFromRoleButton, d);
+            //WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            //wait.Until(driver => !d.FindElement(removeNotificationsFromRoleButton).Enabled);
+            Thread.Sleep(1000);
+
+        }
+
+
         public void ConfirmRemovalMessage()
         {
             IWebElement elem = UICommon.GetElement(removalMessagePopup, d);
@@ -227,5 +251,10 @@ namespace SeleniumProject.PageModels.SP_Author
         }
 
 
+
+        public void ClickNotificationPeriod(string notificationPeriod)
+        {
+            UICommon.SelectCheckbox(By.XPath("//div[@id='kWindow0']/.//input[@id='" + notificationPeriod.ToLower() + "']"), d);
+        }
     }
 }

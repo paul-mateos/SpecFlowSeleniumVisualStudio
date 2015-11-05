@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentPreview_Steps.cs" />
+    <Compile Include="SP_Author\DocumentSelector_Steps.cs" />
+    <Compile Include="SP_Author\RoleManagement\RoleManagement_Notifications.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleManagement_Notifications.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\RoleManagement\RoleManagement_Readers.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -308,6 +314,10 @@
     <None Include="SP_Author\DocumentManagement\DocumentManagement_SelectMultipleFolders.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectMultipleFolders.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\RoleManagement\RoleManagement_Notifications.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleManagement_Notifications.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\RoleManagement\RoleManagement_Readers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

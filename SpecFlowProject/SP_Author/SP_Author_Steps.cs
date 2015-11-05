@@ -199,6 +199,13 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickRemoveRolesFromWritersButton();
         }
 
+        [Given(@"I Click on the Remove notifications from role Button")]
+        [When(@"I Click on the Remove notifications from role Button")]
+        [Then(@"I Click on the Remove notifications from role Button")]
+        public void WhenIClickOnTheARemoveNotificationsFromRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveNotificationsFromRoleButton();
+        }
 
         [Given(@"I Click on the Delete Button")]
         [When(@"I Click on the Delete Button")]
@@ -327,7 +334,21 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddRolesToWritersButton();
         }
 
-       
+        [Given(@"I Click on the Add notification to role Button")]
+        [When(@"I Click on the Add notification to role Button")]
+        [Then(@"I Click on the Add notification to role Button")]
+        public void WhenIClickOnTheAddNotificationToRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddNotificationToRoleButton();
+        }
+
+        [Given(@"I Click on the Add notification to role popup Button")]
+        [When(@"I Click on the Add notification to role popup Button")]
+        [Then(@"I Click on the Add notification to role popup Button")]
+        public void WhenIClickOnTheAddNotificationToRolePopupButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddNotificationToRolePopupButton();
+        }
 
         [Given(@"I Click on the Add user to writers Button")]
         [When(@"I Click on the Add user to writers Button")]
@@ -336,6 +357,15 @@ namespace SpecFlowProject.SP_Author
         {
             SupportPoint.SPAuthorPage.ClickAddUserToWritersButton();
         }
+
+        [Given(@"I select (.*) from the Notification period")]
+        [When(@"I select (.*) from the Notification period")]
+        [Then(@"I select (.*) from the Notification period")]
+        public void ThenISelectFromTheNotificationPeriod(string notificationPeriod)
+        {
+            SupportPoint.SPAuthorPage.ClickNotificationPeriod(notificationPeriod);
+        }
+
 
     }
 }

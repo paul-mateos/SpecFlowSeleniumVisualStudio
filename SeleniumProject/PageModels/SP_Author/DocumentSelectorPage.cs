@@ -22,6 +22,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By docSearchQuery = By.XPath("//input[@data-automation-id='doc-explorer-search-query']/../ancestor::div[@id='kWindow0']");
         By searchButton = By.XPath("//button[@data-automation-id='doc-explorer-search-submit']../ancestor::div[@id='kWindow0']");
         By findBy = By.XPath("//select[@data-automation-id='doc-explorer-search-type']/../ancestor::div[@id='kWindow0']");
+        By Title = By.Id("kWindow0_wnd_title");
         
 
         public DocumentSelectorPage(IWebDriver driver)
@@ -74,7 +75,19 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(searchButton, d);
         }
 
-      
+
+
+        public void ConfirmDocumentSelector()
+        {
+            IWebElement documentPage = UICommon.GetElement(Title, d);
+            if (!documentPage.Displayed)
+            {
+                throw new Exception("Document Selector failed to open");
+            }
+            Assert.IsTrue(documentPage.Displayed);
+        }
+
+       
     }
     
 }
