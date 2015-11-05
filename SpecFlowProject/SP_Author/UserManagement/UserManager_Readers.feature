@@ -21,6 +21,6 @@ Scenario: 3.4.1_Readers_AddRoles
 	And I Click on the Add roles Button
 	Then I click on the Save Button
 	And I select the record authors using column Role from the Roles that read table
-	And I Click on the Remove role from readers Button
+	And I Click on the Remove roles from readers Button
 	Then I click on the Save Button
 

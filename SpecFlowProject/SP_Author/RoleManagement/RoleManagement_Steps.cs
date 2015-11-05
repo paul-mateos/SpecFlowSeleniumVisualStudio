@@ -90,5 +90,24 @@ namespace SpecFlowProject.SP_Author.RoleManagement
             SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "UsersinthisroleTable");
 
         }
+
+        [Given(@"I select the record (.*) using column (.*) from the Roles that can read table")]
+        [When(@"I select the record (.*) using column (.*) from the Roles that can read table")]
+        [Then(@"I select the record (.*) using column (.*) from the Roles that can read table")]
+        public void IselecttherecordfromtheRolesThatCanReadTable(string searchValue, string colName)
+        {
+            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "RolesthatcanreadTable");
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Users that can read table")]
+        [When(@"I select the record (.*) using column (.*) from the Users that can read table")]
+        [Then(@"I select the record (.*) using column (.*) from the Users that can read table")]
+        public void IselecttherecordfromtheUsersThatCanReadTable(string searchValue, string colName)
+        {
+            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "UsersthatcanreadTable");
+
+        }
+
     }
 }

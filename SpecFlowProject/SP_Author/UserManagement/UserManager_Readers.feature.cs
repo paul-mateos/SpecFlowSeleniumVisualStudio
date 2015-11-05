@@ -116,7 +116,7 @@ this.FeatureBackground();
 #line 23
  testRunner.And("I select the record authors using column Role from the Roles that read table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.And("I Click on the Remove role from readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Remove roles from readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
  testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
