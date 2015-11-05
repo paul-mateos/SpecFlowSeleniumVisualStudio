@@ -127,6 +127,14 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddUsersToReadersButton();
         }
 
+        [Given(@"I Click on the Add users to writers Button")]
+        [When(@"I Click on the Add users to writers Button")]
+        [Then(@"I Click on the Add users to writers Button")]
+        public void WhenIClickOnTheAddUsersToWritersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUsersToWritersButton();
+        }
+
         [Given(@"I Click on the Add user to readers Button")]
         [When(@"I Click on the Add user to readers Button")]
         [Then(@"I Click on the Add user to readers Button")]
@@ -167,12 +175,28 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickRemoveUsersFromReadersButton();
         }
 
+        [Given(@"I Click on the Remove users from writers Button")]
+        [When(@"I Click on the Remove users from writers Button")]
+        [Then(@"I Click on the Remove users from writers Button")]
+        public void WhenIClickOnTheRemoveUsersToWritersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveUsersFromWritersButton();
+        }
+
         [Given(@"I Click on the Remove roles from readers Button")]
         [When(@"I Click on the Remove roles from readers Button")]
         [Then(@"I Click on the Remove roles from readers Button")]
         public void WhenIClickOnTheARemoveRolesToReadersButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveRolesFromReadersButton();
+        }
+
+        [Given(@"I Click on the Remove roles from writers Button")]
+        [When(@"I Click on the Remove roles from writers Button")]
+        [Then(@"I Click on the Remove roles from writers Button")]
+        public void WhenIClickOnTheARemoveRolesToWritersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveRolesFromWritersButton();
         }
 
 
@@ -293,6 +317,14 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheAddRoleToWritersButton()
         {
             SupportPoint.SPAuthorPage.ClickAddRoleToWritersButton();
+        }
+
+        [Given(@"I Click on the Add roles to writers Button")]
+        [When(@"I Click on the Add roles to writers Button")]
+        [Then(@"I Click on the Add roles to writers Button")]
+        public void WhenIClickOnTheAddRolesToWritersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddRolesToWritersButton();
         }
 
        

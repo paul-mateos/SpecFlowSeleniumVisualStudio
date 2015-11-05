@@ -100,12 +100,31 @@ namespace SpecFlowProject.SP_Author.RoleManagement
 
         }
 
+        [Given(@"I select the record (.*) using column (.*) from the Roles that can edit table")]
+        [When(@"I select the record (.*) using column (.*) from the Roles that can edit table")]
+        [Then(@"I select the record (.*) using column (.*) from the Roles that can edit table")]
+        public void IselecttherecordfromtheRolesThatCanEditTable(string searchValue, string colName)
+        {
+            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "RolesthatcaneditTable");
+
+        }
+
+
         [Given(@"I select the record (.*) using column (.*) from the Users that can read table")]
         [When(@"I select the record (.*) using column (.*) from the Users that can read table")]
         [Then(@"I select the record (.*) using column (.*) from the Users that can read table")]
         public void IselecttherecordfromtheUsersThatCanReadTable(string searchValue, string colName)
         {
             SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "UsersthatcanreadTable");
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Users that can edit table")]
+        [When(@"I select the record (.*) using column (.*) from the Users that can edit table")]
+        [Then(@"I select the record (.*) using column (.*) from the Users that can edit table")]
+        public void IselecttherecordfromtheUsersThatCanEditTable(string searchValue, string colName)
+        {
+            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "UsersthatcaneditTable");
 
         }
 

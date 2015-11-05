@@ -23,6 +23,8 @@ namespace SeleniumProject.PageModels.SP_Author
         By rolesinthisroleTable = By.XPath("//shr-role-grid-drct[@header-title='Roles in this role']/.//table");
         By usersinthisroleTable = By.XPath("//shr-user-grid-drct[@header-title='Users in this role']/.//table");
         By rolesthatcanreadTable = By.XPath("//shr-role-grid-drct[@header-title='Roles that can read the details of this role:']/.//table");
+        By rolesthatcaneditTable = By.XPath("//shr-role-grid-drct[@header-title='Roles that can edit the details of this role:']/.//table");
+        By usersthatcaneditTable = By.XPath("//shr-user-grid-drct[@header-title='Users that can edit the details of this role:']/.//table"); 
         By usersthatcanreadTable = By.XPath("//shr-user-grid-drct[@header-title='Users that can read the details of this role:']/.//table");
 
         public RoleManagementPage(IWebDriver driver)
@@ -76,6 +78,13 @@ namespace SeleniumProject.PageModels.SP_Author
                 case "UsersthatcanreadTable":
                 searchTable = UICommon.GetSearchResultTable(usersthatcanreadTable, d);
                 break;
+                case "RolesthatcaneditTable":
+                searchTable = UICommon.GetSearchResultTable(rolesthatcaneditTable, d);
+                break;
+                case "UsersthatcaneditTable":
+                searchTable = UICommon.GetSearchResultTable(usersthatcaneditTable, d);
+                break;
+                    
                 default:
                     throw new Exception("Invalid Role table");
 
