@@ -21,8 +21,8 @@ namespace SeleniumProject.PageModels.SP_Author
         By SearchQuery = By.XPath("//input[@placeholder='Search']");
         By SearchButton = By.XPath("//button[@title='Submit']");
         By userTable = By.XPath("//table[@role='grid']");
-        By roleReadersTable = By.XPath("//shr-role-grid-drct[@header-title='Role(s) that can read the details of this user:']/descendant::table");
-        By userReadersTable = By.XPath("//div/shr-role-grid-drct[contains(@header-title, 'Users(s)'].//table");
+        By rolesthatcanreadTable = By.XPath("//shr-role-grid-drct[@header-title='Role(s) that can read the details of this user:']/.//table");
+        By usersthatcanreadTable = By.XPath("//shr-user-grid-drct[@header-title='User(s) that can read the details of this user:']/.//table");
         //By Namevalidation = By.XPath("//div/p[contains(text@,'Checking if the name requested is available.')]");
         //Buttons
 
@@ -44,19 +44,26 @@ namespace SeleniumProject.PageModels.SP_Author
         {
             UICommon.ClickButton(SearchButton, d);
         }
-
-        public void ClickUserRecord(string lookUpColumn, string searchText)
+        
+        public void ClickUserRecord(string lookUpColumn, string searchText, string tableName)
         {
-            IWebElement searchTable = UICommon.GetSearchResultTable(userTable, d);
-            Table table = new Table(searchTable);
-            Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d), "Problem selecting value from table");
-        }
+            IWebElement searchTable;
+            switch (tableName)
+            {
+                case "UserTable":
+                    searchTable = UICommon.GetSearchResultTable(userTable, d);
+                    break;
+                case "RolesthatcanreadTable":
+                    searchTable = UICommon.GetSearchResultTable(rolesthatcanreadTable, d);
+                    break;
+                case "UsersthatcanreadTable":
+                    searchTable = UICommon.GetSearchResultTable(usersthatcanreadTable, d);
+                    break;
+                default:
+                    throw new Exception("Invalid User table");
 
-          
+            }
 
-        public void ClickRoleReaderRecord(string lookUpColumn, string searchText)
-        {
-            IWebElement searchTable = UICommon.GetSearchResultTable(roleReadersTable, d);
             Table table = new Table(searchTable);
             Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d), "Problem selecting value from table");
         }

@@ -119,6 +119,30 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddUsersToRoleButton();
         }
 
+        [Given(@"I Click on the Add users to readers Button")]
+        [When(@"I Click on the Add users to readers Button")]
+        [Then(@"I Click on the Add users to readers Button")]
+        public void WhenIClickOnTheAddUsersToReadersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUsersToReadersButton();
+        }
+
+        [Given(@"I Click on the Add users to writers Button")]
+        [When(@"I Click on the Add users to writers Button")]
+        [Then(@"I Click on the Add users to writers Button")]
+        public void WhenIClickOnTheAddUsersToWritersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUsersToWritersButton();
+        }
+
+        [Given(@"I Click on the Add user to readers Button")]
+        [When(@"I Click on the Add user to readers Button")]
+        [Then(@"I Click on the Add user to readers Button")]
+        public void WhenIClickOnTheAddUserToReadersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUserToReadersButton();
+        }
+
         [Given(@"I Click on the Remove role from Roles Button")]
         [When(@"I Click on the Remove role from Roles Button")]
         [Then(@"I Click on the Remove role from Roles Button")]
@@ -143,12 +167,44 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickRemoveUsersFromRoleButton();
         }
 
-        [Given(@"I Click on the Remove role from readers Button")]
-        [When(@"I Click on the Remove role from readers Button")]
-        [Then(@"I Click on the Remove role from readers Button")]
-        public void WhenIClickOnTheARemoveRoleToReadersButton()
+        [Given(@"I Click on the Remove users from readers Button")]
+        [When(@"I Click on the Remove users from readers Button")]
+        [Then(@"I Click on the Remove users from readers Button")]
+        public void WhenIClickOnTheRemoveUsersToReadersButton()
         {
-            SupportPoint.SPAuthorPage.ClickRemoveRoleFromReadersButton();
+            SupportPoint.SPAuthorPage.ClickRemoveUsersFromReadersButton();
+        }
+
+        [Given(@"I Click on the Remove users from writers Button")]
+        [When(@"I Click on the Remove users from writers Button")]
+        [Then(@"I Click on the Remove users from writers Button")]
+        public void WhenIClickOnTheRemoveUsersToWritersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveUsersFromWritersButton();
+        }
+
+        [Given(@"I Click on the Remove roles from readers Button")]
+        [When(@"I Click on the Remove roles from readers Button")]
+        [Then(@"I Click on the Remove roles from readers Button")]
+        public void WhenIClickOnTheARemoveRolesToReadersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveRolesFromReadersButton();
+        }
+
+        [Given(@"I Click on the Remove roles from writers Button")]
+        [When(@"I Click on the Remove roles from writers Button")]
+        [Then(@"I Click on the Remove roles from writers Button")]
+        public void WhenIClickOnTheARemoveRolesToWritersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveRolesFromWritersButton();
+        }
+
+        [Given(@"I Click on the Remove notifications from role Button")]
+        [When(@"I Click on the Remove notifications from role Button")]
+        [Then(@"I Click on the Remove notifications from role Button")]
+        public void WhenIClickOnTheARemoveNotificationsFromRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveNotificationsFromRoleButton();
         }
 
         [Given(@"I Click on the Delete Button")]
@@ -165,6 +221,14 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheDeleteRoleButton()
         {
             SupportPoint.SPManagerDetailsActionsPage.clickDeleteRole();
+        }
+
+        [Given(@"I Click on the Delete user Button")]
+        [When(@"I Click on the Delete user Button")]
+        [Then(@"I Click on the Delete user Button")]
+        public void WhenIClickOnTheDeleteUserButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickDeleteUser();
         }
 
         [Given(@"I Confirm the Removal")]
@@ -249,6 +313,14 @@ namespace SpecFlowProject.SP_Author
         [Given(@"I Click on the Add role\(s\) to readers Button")]
         [When(@"I Click on the Add role\(s\) to readers Button")]
         [Then(@"I Click on the Add role\(s\) to readers Button")]
+        public void WhenIClickOnTheAddrolesToReadersButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddrolesToReadersButton();
+        }
+
+        [Given(@"I Click on the Add Role\(s\) to readers Button")]
+        [When(@"I Click on the Add Role\(s\) to readers Button")]
+        [Then(@"I Click on the Add Role\(s\) to readers Button")]
         public void WhenIClickOnTheAddRolesToReadersButton()
         {
             SupportPoint.SPAuthorPage.ClickAddRolesToReadersButton();
@@ -262,12 +334,28 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddRoleToWritersButton();
         }
 
-        [Given(@"I Click on the Add user to readers Button")]
-        [When(@"I Click on the Add user to readers Button")]
-        [Then(@"I Click on the Add user to readers Button")]
-        public void WhenIClickOnTheAddUserToReadersButton()
+        [Given(@"I Click on the Add roles to writers Button")]
+        [When(@"I Click on the Add roles to writers Button")]
+        [Then(@"I Click on the Add roles to writers Button")]
+        public void WhenIClickOnTheAddRolesToWritersButton()
         {
-            SupportPoint.SPAuthorPage.ClickAddUserToReadersButton();
+            SupportPoint.SPAuthorPage.ClickAddRolesToWritersButton();
+        }
+
+        [Given(@"I Click on the Add notification to role Button")]
+        [When(@"I Click on the Add notification to role Button")]
+        [Then(@"I Click on the Add notification to role Button")]
+        public void WhenIClickOnTheAddNotificationToRoleButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddNotificationToRoleButton();
+        }
+
+        [Given(@"I Click on the Add notification to role popup Button")]
+        [When(@"I Click on the Add notification to role popup Button")]
+        [Then(@"I Click on the Add notification to role popup Button")]
+        public void WhenIClickOnTheAddNotificationToRolePopupButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddNotificationToRolePopupButton();
         }
 
         [Given(@"I Click on the Add user to writers Button")]
@@ -277,6 +365,15 @@ namespace SpecFlowProject.SP_Author
         {
             SupportPoint.SPAuthorPage.ClickAddUserToWritersButton();
         }
+
+        [Given(@"I select (.*) from the Notification period")]
+        [When(@"I select (.*) from the Notification period")]
+        [Then(@"I select (.*) from the Notification period")]
+        public void ThenISelectFromTheNotificationPeriod(string notificationPeriod)
+        {
+            SupportPoint.SPAuthorPage.ClickNotificationPeriod(notificationPeriod);
+        }
+
 
     }
 }

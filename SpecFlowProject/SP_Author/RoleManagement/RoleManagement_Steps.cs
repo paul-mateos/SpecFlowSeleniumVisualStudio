@@ -69,7 +69,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         [Then(@"I select the record (.*) using column (.*) from the Role table")]
         public void IselecttherecordfromtheRoletable(string searchValue, string colName)
         {
-            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "RoleTable");
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RoleTable");
 
         }
 
@@ -78,7 +78,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         [Then(@"I select the record (.*) using column (.*) from the Roles in this role table")]
         public void IselecttherecordfromtheRolesinthisroletable(string searchValue, string colName)
         {
-            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "RolesinthisroleTable");
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RolesinthisroleTable");
 
         }
 
@@ -87,8 +87,55 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         [Then(@"I select the record (.*) using column (.*) from the Users in this role table")]
         public void IselecttherecordfromtheUsersinthisroletable(string searchValue, string colName)
         {
-            SupportPoint.RoleManagementPage.ClickRecord(colName, searchValue, "UsersinthisroleTable");
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "UsersinthisroleTable");
 
         }
+
+        [Given(@"I select the record (.*) using column (.*) from the Roles that can read table")]
+        [When(@"I select the record (.*) using column (.*) from the Roles that can read table")]
+        [Then(@"I select the record (.*) using column (.*) from the Roles that can read table")]
+        public void IselecttherecordfromtheRolesThatCanReadTable(string searchValue, string colName)
+        {
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RolesthatcanTable");
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Roles that can edit table")]
+        [When(@"I select the record (.*) using column (.*) from the Roles that can edit table")]
+        [Then(@"I select the record (.*) using column (.*) from the Roles that can edit table")]
+        public void IselecttherecordfromtheRolesThatCanEditTable(string searchValue, string colName)
+        {
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RolesthatcanTable");
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Role has notifiaction table")]
+        [When(@"I select the record (.*) using column (.*) from the Role has notifiaction table")]
+        [Then(@"I select the record (.*) using column (.*) from the Role has notifiaction table")]
+        public void IselecttherecordfromtheRoleHasNotificationTable(string searchValue, string colName)
+        {
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RoleHasNotificationTable");
+
+        }
+
+
+        [Given(@"I select the record (.*) using column (.*) from the Users that can read table")]
+        [When(@"I select the record (.*) using column (.*) from the Users that can read table")]
+        [Then(@"I select the record (.*) using column (.*) from the Users that can read table")]
+        public void IselecttherecordfromtheUsersThatCanReadTable(string searchValue, string colName)
+        {
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "UsersthatcanTable");
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Users that can edit table")]
+        [When(@"I select the record (.*) using column (.*) from the Users that can edit table")]
+        [Then(@"I select the record (.*) using column (.*) from the Users that can edit table")]
+        public void IselecttherecordfromtheUsersThatCanEditTable(string searchValue, string colName)
+        {
+            SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "UsersthatcanTable");
+
+        }
+
     }
 }

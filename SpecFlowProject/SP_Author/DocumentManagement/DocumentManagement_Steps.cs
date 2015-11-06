@@ -42,16 +42,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
 
         }
 
-        [Given(@"I select the (.*) Document Selector Folder")]
-        [When(@"I select the (.*) Document Selector Folder")]
-        [Then(@"I select the (.*) Document Selector Folder")]
-        public void WhenISelectADocumentSelectorFolder(string folderString)
-        {
-            char[] splitter = { ',' };
-            string[] folders = folderString.Split(splitter);
-            childFolder = folders[folders.Length - 1];
-            SupportPoint.SPManagerFolder.ClickOnFolder("Document Selector", folders);
-        }
+       
         
         [Given(@"I click on the Document Save Button")]
         [When(@"I click on the Document Save Button")]
@@ -59,15 +50,6 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
         public void ThenIClickOnTheDocumentSaveButton()
         {
             SupportPoint.SPAuthorPage.ClickSaveButton();
-        }
-
-        [Given(@"I select the record (.*) using column (.*) from the Document Selector table")]
-        [When(@"I select the record (.*) using column (.*) from the Document Selector table")]
-        [Then(@"I select the record (.*) using column (.*) from the Document Selector table")]
-        public void IselecttherecordfromtheDocumentSelectortable(string searchValue, string colName)
-        {
-            SupportPoint.DocumentManagementPage.ClickSelectorRecord(colName, searchValue);
-                
         }
 
         [Given(@"I select the record (.*) using column (.*) from the Document table")]
@@ -79,14 +61,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
 
         }
 
-        [Given(@"I click on the Add document Button")]
-        [When(@"I click on the Add document Button")]
-        [Then(@"I click on the Add document Button")]
-        public void ThenIClickOnTheAdddocumentButton()
-        {
-            SupportPoint.DocumentSelectorPage.clickAddDocumentButton();
-        }
-
+       
         [Given(@"I click on the Add folder Button")]
         [When(@"I click on the Add folder Button")]
         [Then(@"I click on the Add folder Button")]
@@ -149,17 +124,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             SupportPoint.DocumentManagementPage.ClickSubmitSearchButton();
         }
 
-        [Given(@"I search by (.*) for (.*) in Document Selector")]
-        [When(@"I search by (.*) for (.*) in Document Selector")]
-        [Then(@"I search by (.*) for (.*) in Document Selector")]
-        public void WhenISearchByFindByForSeatchTextInDocumentSelector(String findBy, String searchText)
-        {
-            ScenarioContext.Current.Add("FindBy", findBy);
-            ScenarioContext.Current.Add("SearchBy", searchText);
-            SupportPoint.DocumentManagementPage.SelectFindBy(findBy);
-            SupportPoint.DocumentManagementPage.SetSearchText(searchText);
-            SupportPoint.DocumentManagementPage.ClickSubmitSearchButton();
-        }
+       
 
         [Given(@"the search should return the record by FindBy")]
         [When(@"the search should return the record by FindBy")]
