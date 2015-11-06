@@ -223,6 +223,14 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPManagerDetailsActionsPage.clickDeleteRole();
         }
 
+        [Given(@"I Click on the Delete user Button")]
+        [When(@"I Click on the Delete user Button")]
+        [Then(@"I Click on the Delete user Button")]
+        public void WhenIClickOnTheDeleteUserButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickDeleteUser();
+        }
+
         [Given(@"I Confirm the Removal")]
         [When(@"I Confirm the Removal")]
         [Then(@"I Confirm the Removal")]

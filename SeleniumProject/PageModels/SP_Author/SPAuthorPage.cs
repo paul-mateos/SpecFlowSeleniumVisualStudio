@@ -53,6 +53,15 @@ namespace SeleniumProject.PageModels.SP_Author
         By confirmDeleteButton = By.XPath("//div[@id='kWindow0']//button[@title='Delete']");
         By confirmRefreshButton = By.XPath("//div[@id='kWindow0']//button[@title='Refresh now']");
 
+        By roleTable = By.XPath("//table[@role='grid']");
+        By rolesinthisroleTable = By.XPath("//shr-role-grid-drct[@header-title='Roles in this role']/.//table");
+        By usersinthisroleTable = By.XPath("//shr-user-grid-drct[@header-title='Users in this role']/.//table");
+        //By rolesthatcanreadTable = By.XPath("//shr-role-grid-drct[@header-title='Roles that can read the details of this role:']/.//table");
+        By rolesthatcanTable = By.XPath("//shr-role-grid-drct[@source='data.edit.roles']/.//table");
+        By usersthatcanTable = By.XPath("//shr-user-grid-drct[@source='data.edit.users']/.//table");
+        //By usersthatcanreadTable = By.XPath("//shr-user-grid-drct[@header-title='Users that can read the details of this role:']/.//table");
+        By rolehasnotificationTable = By.XPath("//shr-notification-grid-drct[@header-title='This role has the following notification(s):']/.//table");
+        
 
         public SPAuthorPage(IWebDriver driver)
             : base(driver)
@@ -203,9 +212,8 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickRemoveRolesFromReadersButton()
         {
             UICommon.ClickButton(removeRolesFromReadersButton, d);
-
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
-            wait.Until(driver => !d.FindElement(removeRolesFromReadersButton).Enabled);
+            //WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            //wait.Until(driver => !d.FindElement(removeRolesFromReadersButton).Enabled);
             Thread.Sleep(1000);
 
         }
@@ -213,7 +221,6 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickRemoveRolesFromWritersButton()
         {
             UICommon.ClickButton(removeRolesFromWritersButton, d);
-
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until(driver => !d.FindElement(removeRolesFromWritersButton).Enabled);
             Thread.Sleep(1000);
@@ -255,6 +262,44 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickNotificationPeriod(string notificationPeriod)
         {
             UICommon.SelectCheckbox(By.XPath("//div[@id='kWindow0']/.//input[@id='" + notificationPeriod.ToLower() + "']"), d);
+        }
+
+        public void ClickRecord(string lookUpColumn, string searchText, string tableName)
+        {
+            IWebElement searchTable;
+            switch (tableName)
+            {
+                case "RoleTable":
+                    searchTable = UICommon.GetSearchResultTable(roleTable, d);
+                    break;
+                case "RolesinthisroleTable":
+                    searchTable = UICommon.GetSearchResultTable(rolesinthisroleTable, d);
+                    break;
+                case "UsersinthisroleTable":
+                    searchTable = UICommon.GetSearchResultTable(usersinthisroleTable, d);
+                    break;
+                case "RolesthatcanTable":
+                    searchTable = UICommon.GetSearchResultTable(rolesthatcanTable, d);
+                    break;
+                case "UsersthatcanTable":
+                    searchTable = UICommon.GetSearchResultTable(usersthatcanTable, d);
+                    break;
+                //case "RolesthatcaneditTable":
+                //    searchTable = UICommon.GetSearchResultTable(rolesthatcaneditTable, d);
+                //    break;
+                //case "UsersthatcaneditTable":
+                //    searchTable = UICommon.GetSearchResultTable(usersthatcaneditTable, d);
+                //    break;
+                case "RoleHasNotificationTable":
+                    searchTable = UICommon.GetSearchResultTable(rolehasnotificationTable, d);
+                    break;
+                default:
+                    throw new Exception("Invalid Role table");
+
+            }
+
+            Table table = new Table(searchTable);
+            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
     }
 }

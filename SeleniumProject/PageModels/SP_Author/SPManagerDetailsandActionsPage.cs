@@ -21,6 +21,7 @@ namespace SeleniumProject.PageModels
         By CancelBtn = By.XPath("//button[@title='Cancel']");
         By DeleteBtn = By.XPath("//button[@title='Delete']");
         By DeleteRoleBtn = By.XPath("//button[@title='Delete Role']");
+        By DeleteUserBtn = By.XPath("//button[@title='Delete user']");
         By EditBtn = By.XPath("//span[@title='Edit']");
 
         
@@ -93,6 +94,11 @@ namespace SeleniumProject.PageModels
             UICommon.ClickButton(DeleteRoleBtn, d);
         }
 
+
+        public void clickDeleteUser()
+        {
+            UICommon.ClickButton(DeleteUserBtn, d);
+        }
         public void clickSave()
         {
             try

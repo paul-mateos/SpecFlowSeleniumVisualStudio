@@ -24,7 +24,7 @@ namespace SpecFlowProject.SP_Author
         [Then(@"I search for user (.*) in User Selector")]
         public void WhenISearchForUserUserSelector(String searchText)
         {
-            ScenarioContext.Current.Add("SearchBy", searchText);
+            //ScenarioContext.Current.Add("SearchBy", searchText);
             if (searchText == "currentuser")
             {
                 var user = FeatureContext.Current.Get<string>("UserName");
