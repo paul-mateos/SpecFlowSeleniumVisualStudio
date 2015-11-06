@@ -37,11 +37,11 @@ namespace SpecFlowProject.SP_Author.UserManagement
             if (searchValue == "currentuser")
             {
                 var user = FeatureContext.Current.Get<string>("UserName");
-                SupportPoint.UserManagementPage.ClickUserRecord(colName, user);
+                SupportPoint.UserManagementPage.ClickUserRecord(colName, user, "UserTable");
             }
             else
             {
-                SupportPoint.UserManagementPage.ClickUserRecord(colName, searchValue);
+                SupportPoint.UserManagementPage.ClickUserRecord(colName, searchValue, "UserTable");
             }
 
             SupportPoint.waitForPageLoading();
@@ -54,7 +54,16 @@ namespace SpecFlowProject.SP_Author.UserManagement
         [Then(@"I select the record (.*) using column (.*) from the Roles that read table")]
         public void IselecttherecordfromtheRolesThatReadtable(string searchValue, string colName)
         {
-            SupportPoint.UserManagementPage.ClickRoleReaderRecord(colName, searchValue);
+            SupportPoint.UserManagementPage.ClickUserRecord(colName, searchValue, "RolesthatcanreadTable");
+
+        }
+
+        [Given(@"I select the record (.*) using column (.*) from the Users that read table")]
+        [When(@"I select the record (.*) using column (.*) from the Users that read table")]
+        [Then(@"I select the record (.*) using column (.*) from the Users that read table")]
+        public void IselecttherecordfromtheUsersThatReadtable(string searchValue, string colName)
+        {
+            SupportPoint.UserManagementPage.ClickUserRecord(colName, searchValue, "UsersthatcanreadTable");
 
         }
     }

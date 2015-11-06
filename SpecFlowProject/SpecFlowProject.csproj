@@ -98,6 +98,17 @@
     </Compile>
     <Compile Include="SP_Author\DocumentManagement\DocumentManagement_Steps.cs" />
     <Compile Include="SP_Author\DocumentManagement\DocumentPreview_Steps.cs" />
+    <Compile Include="SP_Author\DocumentSelector_Steps.cs" />
+    <Compile Include="SP_Author\RoleManagement\RoleManagement_Notifications.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleManagement_Notifications.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\RoleManagement\RoleManagement_Readers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleManagement_Readers.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\RoleManagement\RoleManagement_MembersOfRole.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,11 +125,21 @@
       <DependentUpon>RoleManagement_CreateNew.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\RoleManagement\RoleManagement_Steps.cs" />
+    <Compile Include="SP_Author\RoleManagement\RoleManagement_Writers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleManagement_Writers.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\RoleSelector_Steps.cs" />
     <Compile Include="SP_Author\UserManagement\UserManager_Readers.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManager_Readers.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManager_Writers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManager_Writers.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\UserSelector_Steps.cs" />
     <Compile Include="SP_Author\WorkflowManagement\WorkflowManagement_Properties.feature.cs">
@@ -299,6 +320,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DocumentManagement_SelectMultipleFolders.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Author\RoleManagement\RoleManagement_Notifications.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleManagement_Notifications.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\RoleManagement\RoleManagement_Readers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleManagement_Readers.feature.cs</LastGenOutput>
+    </None>
     <None Include="SP_Author\RoleManagement\RoleManagement_MembersOfRole.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RoleManagement_MembersOfRole.feature.cs</LastGenOutput>
@@ -311,6 +340,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RoleManagement_CreateNew.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Author\RoleManagement\RoleManagement_Writers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleManagement_Writers.feature.cs</LastGenOutput>
+    </None>
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
@@ -318,6 +351,10 @@
     <None Include="SP_Author\UserManagement\UserManager_Readers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManager_Readers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\UserManagement\UserManager_Writers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserManager_Writers.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\WorkflowManagement\WorkflowManagement_CreateNew.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

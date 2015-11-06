@@ -76,13 +76,7 @@ namespace SeleniumProject.PageModels.SP_Author
         }
 
 
-        public void ClickSelectorRecord(string lookUpColumn, string searchText)
-        {
-            IWebElement searchTable = UICommon.GetSearchResultTable(docSelectorTable, d);
-            Table table = new Table(searchTable);
-            Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d), "Problem selecting value from table");
-            Thread.Sleep(1000);
-        }
+       
 
         public void clickAddDocumentButton()
         {

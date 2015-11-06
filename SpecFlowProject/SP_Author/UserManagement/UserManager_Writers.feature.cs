@@ -19,19 +19,19 @@ namespace SpecFlowProject.SP_Author.UserManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class UserManager_ReadersFeature
+    public partial class UserManager_WritersFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "UserManager_Readers.feature"
+#line 1 "UserManager_Writers.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UserManager_Readers", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UserManager_Writers", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -46,9 +46,9 @@ namespace SpecFlowProject.SP_Author.UserManagement
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "UserManager_Readers")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "UserManager_Writers")))
             {
-                SpecFlowProject.SP_Author.UserManagement.UserManager_ReadersFeature.FeatureSetup(null);
+                SpecFlowProject.SP_Author.UserManagement.UserManager_WritersFeature.FeatureSetup(null);
             }
         }
         
@@ -81,13 +81,13 @@ testRunner.Then("I Navigate to the Users Page", ((string)(null)), ((TechTalk.Spe
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3.4(1,2)_AddRolesToReaders")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UserManager_Readers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3.5(1,2)_AddRolesToWriters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UserManager_Writers")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UserManagement_Readers")]
-        public virtual void _3_412_AddRolesToReaders()
+        public virtual void _3_512_AddRolesToWriters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.4(1,2)_AddRolesToReaders", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.5(1,2)_AddRolesToWriters", new string[] {
                         "Regression",
                         "UserManagement_Readers"});
 #line 11
@@ -101,9 +101,9 @@ this.FeatureBackground();
 #line 14
  testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
- testRunner.And("I select Readers from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select Writers from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("I Click on the Add role(s) to readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Add roles to writers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.And("the Role Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
@@ -113,9 +113,9 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
- testRunner.And("I select the record authors using column Role from the Roles that read table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select the record authors using column Role from the Roles that can edit table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.And("I Click on the Remove roles from readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Remove roles from writers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
@@ -131,13 +131,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3.4(3,4)_AddUsersToReaders")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UserManager_Readers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3.5(3,4)_AddUsersToWriters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UserManager_Writers")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UserManagement_Readers")]
-        public virtual void _3_434_AddUsersToReaders()
+        public virtual void _3_534_AddUsersToWriters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.4(3,4)_AddUsersToReaders", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.5(3,4)_AddUsersToWriters", new string[] {
                         "Regression",
                         "UserManagement_Readers"});
 #line 33
@@ -151,9 +151,9 @@ this.FeatureBackground();
 #line 36
  testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.And("I select Readers from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select Writers from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("I Click on the Add users to readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Add users to writers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
  testRunner.And("the User Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
@@ -166,10 +166,10 @@ this.FeatureBackground();
 #line 43
  testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
- testRunner.And("I select the record administrator using column Username from the Users that read " +
-                    "table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select the record administrator using column Username from the Users that can e" +
+                    "dit table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("I Click on the Remove users from readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Remove users from writers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
  testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47

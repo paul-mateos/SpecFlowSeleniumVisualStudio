@@ -20,10 +20,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By SearchQuery = By.XPath("//input[@placeholder='Search']");
         By SearchButton = By.XPath("//button[@title='Submit']");
         By roleTable = By.XPath("//table[@role='grid']");
-        By rolesinthisroleTable = By.XPath("//shr-role-grid-drct[@header-title='Roles in this role']/.//table");
-        By usersinthisroleTable = By.XPath("//shr-user-grid-drct[@header-title='Users in this role']/.//table");
-   
-
+             
         public RoleManagementPage(IWebDriver driver)
             : base(driver)
         {
@@ -55,27 +52,6 @@ namespace SeleniumProject.PageModels.SP_Author
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
 
-        public void ClickRecord(string lookUpColumn, string searchText, string tableName)
-        {
-            IWebElement searchTable;
-            switch(tableName)
-            {
-                case "RoleTable":
-                    searchTable = UICommon.GetSearchResultTable(roleTable, d);
-                break;
-                case "RolesinthisroleTable":
-                searchTable = UICommon.GetSearchResultTable(rolesinthisroleTable, d);
-                break;
-                case "UsersinthisroleTable":
-                searchTable = UICommon.GetSearchResultTable(usersinthisroleTable, d);
-                break;
-                default:
-                    throw new Exception("invalid Role table");
-
-            }
-            
-            Table table = new Table(searchTable);
-            table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
-        }
+     
     }
 }

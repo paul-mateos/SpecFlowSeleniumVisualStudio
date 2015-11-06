@@ -16,7 +16,7 @@ namespace SeleniumProject.PageModels.SP_Author
     {
         By Title = By.XPath("//div/span[(@id='kWindow0_wnd_title' and text() = 'User selector')]");
         By FindList = By.XPath("//div[@id='kWindow0']//table[@class='search-table list-search']//span[@class='k-select']");
-        By SearchText = By.XPath("//div/input[@type='text']");
+        By SearchText = By.XPath("//div[@id='kWindow0']//div/input[@data-automation-id='usr-search-query']");
         By SearchBtn = By.XPath("//div[@id='kWindow0']//button[@title='Submit']");
         By userSelectorTable = By.XPath("//div[@id='kWindow0']//table[@role='grid']");
         By AddUserBtn = By.XPath("//div[@id='kWindow0']//button[@title='Add user(s)']");

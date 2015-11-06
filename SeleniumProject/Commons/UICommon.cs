@@ -184,15 +184,17 @@ namespace SeleniumProject.Commons
             IWebElement elem = GetElement(searchType, d);
 
             // gets the current checked state of the checkbox
-             bool ischecked = elem.FindElement(searchType).Selected;
+            bool ischecked = elem.FindElement(searchType).Selected;
             
             // enables the checkbox if it is currently not selected
             if (!ischecked)
             {
                 Actions action = new Actions(d);
-                action.MoveToElement(elem).Click().Build().Perform();
+                action.MoveToElement(elem).ClickAndHold().Build().Perform();
                 Thread.Sleep(500);
+                action.MoveToElement(elem).Release().Build().Perform();
             }
+            Assert.IsTrue(elem.FindElement(searchType).Selected, "checkbox not selected");
         }
 
         public static void DeselectCheckbox(By searchType, IWebDriver d)

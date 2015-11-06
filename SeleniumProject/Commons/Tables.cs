@@ -67,8 +67,9 @@ namespace SeleniumProject.Commons
                     {
                         IWebElement cell = cells.ElementAt(returnColumnIndex);
                         Actions action = new Actions(d);
-                        action.MoveToElement(cell, cell.Size.Width / 2, cell.Size.Height / 2).Click().Build().Perform();
-                        //cells.ElementAt(returnColumnIndex).Click();
+                        action.MoveToElement(cell, cell.Size.Width / 2, cell.Size.Height / 2).ClickAndHold().Build().Perform();
+                        Thread.Sleep(500);
+                        action.MoveToElement(cell, cell.Size.Width / 2, cell.Size.Height / 2).Release().Build().Perform();
                         return true;
                     }
                 }
