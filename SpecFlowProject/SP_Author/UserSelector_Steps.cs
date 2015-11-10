@@ -17,6 +17,7 @@ namespace SpecFlowProject.SP_Author
         public void TheUserSelectorIsOpened()
         {
             SupportPoint.UserSelectorPage.ConfirmUserSelector();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I search for user (.*) in User Selector")]

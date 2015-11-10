@@ -3,7 +3,7 @@
 
 Background: 
 Given I have logged in to SP as a new "rolecreators"
-When I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 Then I Navigate to the Users Page
 
 @Regression

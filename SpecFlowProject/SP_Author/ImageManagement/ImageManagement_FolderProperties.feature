@@ -8,7 +8,7 @@ Background: SuportPoint is open
 #And I create the Automation Image Folder
 #And I created the Test Image in the Automation Folder
 Given I have logged in to SP as a new "authors"
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 @ImageManagement_Folder
 Scenario: 2.1.1.1_Move Folder To Folder

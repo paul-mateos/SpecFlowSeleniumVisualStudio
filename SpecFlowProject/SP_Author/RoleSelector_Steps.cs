@@ -18,6 +18,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheAddRolesButton()
         {
             SupportPoint.RoleSelectorPage.ClickAddRoleButton();
+            SupportPoint.waitForPageLoading();
         }
 
 
@@ -27,6 +28,7 @@ namespace SpecFlowProject.SP_Author
         public void TheRoleSelectorIsOpened()
         {
             SupportPoint.RoleSelectorPage.ConfirmRoleSelector();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I search for role for (.*)")]

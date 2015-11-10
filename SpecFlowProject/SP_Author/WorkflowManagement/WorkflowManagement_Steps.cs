@@ -17,6 +17,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
         [Then(@"I confirm the workflow Name")]
         public void ThenIConfirmTheWorkflowName()
         {
+            SupportPoint.waitForPageLoading(); 
             string workflowName = ScenarioContext.Current.Get<string>("WorkflowName");
             SupportPoint.SPManagerDetailsActionsPage.ConfirmName(workflowName);
         }
@@ -65,6 +66,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
             ScenarioContext.Current.Add("SearchBy", searchText);
             SupportPoint.WorkflowManagementPage.SetSearchText(searchText);
             SupportPoint.WorkflowManagementPage.ClickSubmitSearchButton();
+            SupportPoint.waitForPageLoading();
 
         }
 
