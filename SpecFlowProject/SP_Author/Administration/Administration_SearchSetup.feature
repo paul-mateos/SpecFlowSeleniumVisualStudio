@@ -5,7 +5,7 @@
 
 Background: SuportPoint is open
 Given I have logged in to SP as a new "configurators"
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 @2.2.1.1_Administration_ConfigureSearchSettings
 Scenario: Move Image To Folder

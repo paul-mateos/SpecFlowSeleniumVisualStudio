@@ -74,11 +74,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
 #line 8
 testRunner.Given("I have logged in to SP as a new \"workflow_managers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-testRunner.And("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
-testRunner.When("I Navigate to the Workflow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
-testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I Open SP Manager to Workflow Management : SupportPoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -92,23 +88,23 @@ testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.1.1_Set Workflow Name", new string[] {
                         "Regression",
                         "WorkflowManagement_Properties"});
-#line 15
+#line 14
 this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
-#line 16
+#line 15
  testRunner.Given("I search for workflow by name for Automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 17
+#line 16
  testRunner.And("the search should click on the record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
+#line 17
  testRunner.When("I enter the workflow Name Automation1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
+#line 18
  testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 20
+#line 19
  testRunner.And("I enter the workflow Name Automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 20
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 21
  testRunner.And("the search should return the record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -124,23 +120,23 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.1.(2,3,4)_Delete Workflow", new string[] {
                         "Regression",
                         "WorkflowManagement_Properties"});
-#line 26
+#line 25
 this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
-#line 27
+#line 26
  testRunner.Given("I click on Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
+#line 27
  testRunner.And("I select New workflow from Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 28
  testRunner.When("I enter the random workflow Name AutomationWorkflow", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 30
  testRunner.Then("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line 31
  testRunner.And("I confirm the workflow Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
+#line 32
  testRunner.And("I Click on the Delete Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 33
  testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -156,44 +152,44 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.2.1_Required Approvers Add User", new string[] {
                         "Regression",
                         "WorkflowManagement_Properties"});
-#line 38
+#line 37
 this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
-#line 39
+#line 38
  testRunner.Given("I click on Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
+#line 40
  testRunner.And("I select New workflow from Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line 41
  testRunner.And("I enter the random workflow Name AutomationWorkflow", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 43
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
+#line 44
  testRunner.And("I confirm the workflow Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 45
  testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
+#line 46
  testRunner.And("I select Required approvers from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 47
  testRunner.And("I Click on the Add user Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
+#line 48
  testRunner.Then("the User Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 51
+#line 50
  testRunner.And("I search for user WorkflowApprover in User Selector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 51
  testRunner.And("I select the record WorkflowApprover using column Username from the User Selector" +
                     " table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 52
  testRunner.And("I Click on the Add user selector Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 53
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 54
  testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 55
  testRunner.And("I select Properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 56
  testRunner.And("I Click on the Delete Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 57
  testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -209,43 +205,43 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.2.2_Required Approvers Add Role", new string[] {
                         "Regression",
                         "WorkflowManagement_Properties"});
-#line 62
+#line 61
 this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
-#line 63
+#line 62
  testRunner.Given("I click on Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 64
+#line 63
  testRunner.And("I select New workflow from Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 64
  testRunner.And("I enter the random workflow Name AutomationWorkflow", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
- testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
  testRunner.And("I confirm the workflow Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 68
  testRunner.When("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
+#line 69
  testRunner.And("I select Required approvers from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 70
  testRunner.And("I Click on the Add role Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 71
  testRunner.Then("the Role Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 73
+#line 72
  testRunner.And("I search for role for authors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 73
  testRunner.And("I select the record authors using column Role from the Role Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 74
  testRunner.And("I Click on the Add roles Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 75
  testRunner.And("I click on the Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 76
  testRunner.And("I press Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 77
  testRunner.And("I select Properties from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 78
  testRunner.And("I Click on the Delete Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 79
  testRunner.And("I Confirm the Delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

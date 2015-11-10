@@ -40,12 +40,12 @@ namespace SeleniumProject.Modules
             Assert.IsTrue(homepage.GetWelcomeTitleDisplayProperty());
         }
 
-        public void ToSupportPointManager()
+        public void ToSupportPointManager(string managementPage)
         {
             string BaseWindow = driver.CurrentWindowHandle;
             new NavBarPage(driver).ClickSPManagerButton();
-            SupportPoint.SwitchToBrowser("Document Management : SupportPoint", BaseWindow);
-            SupportPoint.IsCurrentBrowser("Document Management : SupportPoint");
+            SupportPoint.SwitchToBrowser(managementPage, BaseWindow);
+            SupportPoint.IsCurrentBrowser(managementPage);
         }
 
     }

@@ -60,6 +60,7 @@ namespace SpecFlowProject.SP_Author
         public void ThenIClickOnTheAdddocumentButton()
         {
             SupportPoint.DocumentSelectorPage.clickAddDocumentButton();
+            SupportPoint.waitForPageLoading();
         }
 
 

@@ -12,12 +12,13 @@ namespace SpecFlowProject.SP_Viewer
     {
 
 
-        [Given(@"I Open SP Manager")]
-        [When(@"I Open SP Manager")]
-        [Then(@"I Open SP Manager")]
-        public void ThenIOpenSPManager()
+        [Given(@"I Open SP Manager to (.*)")]
+        [When(@"I Open SP Manager to (.*)")]
+        [Then(@"I Open SP Manager to (.*)")]
+        public void ThenIOpenSPManager(string managementPage)
         {
-            SupportPoint.Nav.ToSupportPointManager();            
+            SupportPoint.Nav.ToSupportPointManager(managementPage);
+            SupportPoint.waitForPageLoading();
         }
 
     }

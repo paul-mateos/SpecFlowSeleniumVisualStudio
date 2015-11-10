@@ -6,7 +6,7 @@
 Background: SuportPoint is open
 #Need to create test image
 Given I have logged in to SP as a new "authors"
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 @ImageManagement_ImageProperties
 Scenario: 2.2.1.1_Move Image To Folder

@@ -75,7 +75,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
 #line 7
 testRunner.Given("I have logged in to SP as a new \"rolecreators\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
-testRunner.And("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I Open SP Manager to Document Management : SupportPoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
 testRunner.When("I Navigate to the Roles Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10

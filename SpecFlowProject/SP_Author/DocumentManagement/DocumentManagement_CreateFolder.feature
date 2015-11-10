@@ -6,7 +6,7 @@
 Background: SuportPoint is open
 Given I have logged in to SP as a new "advanced_authors"
 #And I create test data for Document Folders (API)
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 @DocumentManagement_CreateNewFolder
 Scenario: 4.1.1.1_Create new Folder for Blank

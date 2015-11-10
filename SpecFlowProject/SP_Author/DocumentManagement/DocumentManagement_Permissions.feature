@@ -5,7 +5,7 @@
 
 Background: SuportPoint is open
 Given I have logged in to SP as a new "rolecreators"
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 #Need to set up test data with folder and documentname
 #Need to delete the test data after scenario is executed
 

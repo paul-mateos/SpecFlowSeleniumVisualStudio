@@ -6,7 +6,7 @@ In order to select multiple Folders
 	Background: SupportPoint is open
 	#Needs to set up test data so that there are foldres and files that can be selected and renamed
 	Given I have logged in to SP as a new "authors"
-	And I Open SP Manager
+	And I Open SP Manager to Document Management : SupportPoint
 	
 @DocumentManagement_SelectMultipleFolders
 Scenario: 5_Select multiple Folders
