@@ -7,7 +7,7 @@
 Background: SuportPoint is open
 Given I have logged in to SP as a new "authors"
 #need to create test image
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 @ImageManagement_SearchBy
 	Scenario: 1.1_Search By ID

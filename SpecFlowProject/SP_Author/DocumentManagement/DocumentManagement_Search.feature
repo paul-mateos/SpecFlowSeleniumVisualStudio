@@ -6,7 +6,7 @@ Feature: DocumentManagement_Search
 
 Background: SuportPoint is open
 Given I have logged in to SP as a new "authors"
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 @DocumentManagement_SearchBy
 @Regression

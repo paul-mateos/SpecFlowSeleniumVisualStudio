@@ -22,22 +22,27 @@ namespace SpecFlowProject.SP_Author
                 case "Images":
                     SupportPoint.SPManagerNav.ClickImages();
                     SupportPoint.SwitchToPage("Image Management : SupportPoint");
+                    SupportPoint.waitForPageLoading();
                     break;
                 case "Users":
                     SupportPoint.SPManagerNav.ClickUsers();
                     SupportPoint.SwitchToPage("User Management : SupportPoint");
+                    SupportPoint.waitForPageLoading();
                     break;
                 case "Roles":
                     SupportPoint.SPManagerNav.ClickRoles();
                     SupportPoint.SwitchToPage("Role Management : SupportPoint");
+                    SupportPoint.waitForPageLoading();
                     break;
                 case "Workflow":
                     SupportPoint.SPManagerNav.ClickWorkflow();
                     SupportPoint.SwitchToPage("Workflow Management : SupportPoint");
+                    SupportPoint.waitForPageLoading();
                     break;
                 case "Admin":
                     SupportPoint.SPManagerNav.ClickAdmin();
                     SupportPoint.SwitchToPage("Administration : SupportPoint");
+                    SupportPoint.waitForPageLoading();
                     break;
                 default:
                     throw new Exception("Invalid Page");
@@ -61,6 +66,7 @@ namespace SpecFlowProject.SP_Author
         public void ThenIClickOnTheSaveButton()
         {
             SupportPoint.SPManagerDetailsActionsPage.clickSave();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I click on the Browse Button")]
@@ -245,6 +251,7 @@ namespace SpecFlowProject.SP_Author
         public void ThenIConfirmTheDelete()
         {
             SupportPoint.SPAuthorPage.ConfirmDeleteMessage();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Confirm the Refresh")]
@@ -286,6 +293,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenISelectFromActions(string action)
         {
             SupportPoint.SPManagerActionsPage.SelectFromActionsList(action);
+            SupportPoint.waitForPageLoading();
         }
 
 

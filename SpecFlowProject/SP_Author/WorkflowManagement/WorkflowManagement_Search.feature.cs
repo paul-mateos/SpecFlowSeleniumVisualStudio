@@ -75,11 +75,7 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
 #line 7
 testRunner.Given("I have logged in to SP as a new \"workflow_managers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
-testRunner.And("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
-testRunner.When("I Navigate to the Workflow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
-testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I Open SP Manager to Workflow Management : SupportPoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -93,13 +89,13 @@ testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2.1_Search for workflow", new string[] {
                         "Regression",
                         "WorkflowManagement_Search"});
-#line 14
+#line 13
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 15
+#line 14
  testRunner.Given("I search for workflow by name for Automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 16
+#line 15
  testRunner.Then("the search should return the record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

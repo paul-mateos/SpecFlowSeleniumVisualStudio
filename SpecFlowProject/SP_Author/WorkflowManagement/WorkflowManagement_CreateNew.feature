@@ -5,9 +5,7 @@
 
 Background: Logon to SP and navigate to Workflow Manager
 Given I have logged in to SP as a new "workflow_managers"
-And I Open SP Manager
-When I Navigate to the Workflow Page
-Then I am at Workflow Management page
+And I Open SP Manager to Workflow Management : SupportPoint
 
 @Regression
 @WorkflowManagement_CreateNew

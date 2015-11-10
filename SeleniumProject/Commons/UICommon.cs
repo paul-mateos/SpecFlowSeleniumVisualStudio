@@ -181,10 +181,11 @@ namespace SeleniumProject.Commons
 
         public static void SelectCheckbox(By searchType, IWebDriver d)
         {
-            IWebElement elem = GetElement(searchType, d);
-
+            //IWebElement elem = GetElement(searchType, d);
             // gets the current checked state of the checkbox
-            bool ischecked = elem.FindElement(searchType).Selected;
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            IWebElement elem = wait.Until(ExpectedConditions.ElementToBeClickable(searchType));
+            bool ischecked = elem.Selected;
             
             // enables the checkbox if it is currently not selected
             if (!ischecked)

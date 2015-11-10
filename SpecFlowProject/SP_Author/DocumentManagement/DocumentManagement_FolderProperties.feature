@@ -6,7 +6,7 @@
 Background: SuportPoint is open
 #Create test folder
 Given I have logged in to SP as a new "authors"
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 @DocumentManagement_FolderProperties
 Scenario: 4.1.1.1.1_Move Folder to new location

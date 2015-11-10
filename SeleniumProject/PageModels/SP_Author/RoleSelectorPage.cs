@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumProject.Commons;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

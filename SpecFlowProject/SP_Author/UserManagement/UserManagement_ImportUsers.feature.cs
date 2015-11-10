@@ -77,7 +77,7 @@ testRunner.Given("SupportPoint is opened", ((string)(null)), ((TechTalk.SpecFlow
 #line 8
 testRunner.And("I login as a valid user with login is panviva and password is Burke6368", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.Then("I Open SP Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I Open SP Manager to \"User Management : SupportPoint\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -97,7 +97,7 @@ this.FeatureBackground();
 #line 14
  testRunner.Given("I am at User Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.When("I press Action", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.When(string.Format("I press Import user, which contains {0} and {1}", username, role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17

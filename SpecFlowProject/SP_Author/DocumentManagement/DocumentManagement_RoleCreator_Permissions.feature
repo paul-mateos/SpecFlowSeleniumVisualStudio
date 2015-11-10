@@ -2,7 +2,7 @@
 	
 Background: SuportPoint is open
 Given I have logged in to SP as a new "rolecreators"
-Then I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 
 #Data setup has already been done in qa-b.pv.local where these tests will be run
 

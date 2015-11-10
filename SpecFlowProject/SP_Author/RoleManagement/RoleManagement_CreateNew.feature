@@ -5,7 +5,7 @@
 
 Background: Logon to SP and navigate to Role Manager
 Given I have logged in to SP as a new "rolecreators"
-And I Open SP Manager
+And I Open SP Manager to Document Management : SupportPoint
 When I Navigate to the Roles Page
 Then I am at Role Management page
 
