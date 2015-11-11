@@ -155,6 +155,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheRemoveRoleToRolesButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveRoleFromRolesButton();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Click on the Remove roles from Role Button")]
@@ -163,6 +164,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheRemoveRolesToRoleButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveRolesFromRoleButton();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Click on the Remove users from Role Button")]
@@ -171,6 +173,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheRemoveUsersToRoleButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveUsersFromRoleButton();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Click on the Remove users from readers Button")]
@@ -187,6 +190,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheRemoveUsersToWritersButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveUsersFromWritersButton();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Click on the Remove roles from readers Button")]
@@ -195,6 +199,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheARemoveRolesToReadersButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveRolesFromReadersButton();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Click on the Remove roles from writers Button")]
@@ -203,6 +208,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheARemoveRolesToWritersButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveRolesFromWritersButton();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Click on the Remove notifications from role Button")]
@@ -211,6 +217,7 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheARemoveNotificationsFromRoleButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveNotificationsFromRoleButton();
+            SupportPoint.waitForPageLoading();
         }
 
         [Given(@"I Click on the Delete Button")]

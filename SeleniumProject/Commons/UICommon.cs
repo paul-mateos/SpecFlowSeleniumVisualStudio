@@ -38,6 +38,8 @@ namespace SeleniumProject.Commons
         {
           
                 IWebElement elem = GetElement(searchType, d);
+                WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+                elem = wait.Until(ExpectedConditions.ElementToBeClickable(searchType));
                 Actions action = new Actions(d);
                 action.MoveToElement(elem).ClickAndHold().Build().Perform();
                 Thread.Sleep(500);
