@@ -66,6 +66,7 @@ namespace SeleniumProject.PageModels.SP_Author
 
             Table table = new Table(searchTable);
             Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d), "Problem selecting value from table");
+            Thread.Sleep(2000);
         }
         
     }
