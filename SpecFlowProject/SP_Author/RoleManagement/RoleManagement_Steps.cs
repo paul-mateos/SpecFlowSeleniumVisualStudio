@@ -70,6 +70,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheRoletable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RoleTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
@@ -79,6 +80,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheRolesinthisroletable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RolesinthisroleTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
@@ -88,6 +90,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheUsersinthisroletable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "UsersinthisroleTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
@@ -97,6 +100,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheRolesThatCanReadTable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RolesthatcanTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
@@ -106,6 +110,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheRolesThatCanEditTable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RolesthatcanTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
@@ -115,6 +120,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheRoleHasNotificationTable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "RoleHasNotificationTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
@@ -125,6 +131,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheUsersThatCanReadTable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "UsersthatcanTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
@@ -134,6 +141,7 @@ namespace SpecFlowProject.SP_Author.RoleManagement
         public void IselecttherecordfromtheUsersThatCanEditTable(string searchValue, string colName)
         {
             SupportPoint.SPAuthorPage.ClickRecord(colName, searchValue, "UsersthatcanTable");
+            SupportPoint.waitForPageLoading();
 
         }
 
