@@ -21,11 +21,13 @@ namespace SpecFlowProject.SP_Author.UserManagement
                 var user = FeatureContext.Current.Get<string>("UserName");
                 SupportPoint.UserManagementPage.SetSearchText(user);
                 SupportPoint.UserManagementPage.ClickSubmitSearchButton();
+                SupportPoint.waitForPageLoading();
             }
             else
             {
                 SupportPoint.UserManagementPage.SetSearchText(searchText);
                 SupportPoint.UserManagementPage.ClickSubmitSearchButton();
+                SupportPoint.waitForPageLoading();
             }
         }
 
