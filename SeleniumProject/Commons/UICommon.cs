@@ -102,6 +102,8 @@ namespace SeleniumProject.Commons
         internal static void ClickLink(By by, IWebDriver d)
         {
             IWebElement elem = GetElement(by, d);
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            elem = wait.Until(ExpectedConditions.ElementToBeClickable(by));
             elem.Click();
             Thread.Sleep(500);
         }
