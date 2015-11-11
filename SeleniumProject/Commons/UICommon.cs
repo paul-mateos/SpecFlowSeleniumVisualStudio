@@ -69,8 +69,13 @@ namespace SeleniumProject.Commons
         {
             IWebElement elem = GetElement(searchType, d);
             elem.Clear();
-            elem.SendKeys(value);
-            Thread.Sleep(500);
+            //elem.SendKeys(value);
+            foreach (char c in value)
+            {
+                elem.SendKeys(c.ToString());
+                Thread.Sleep(20);
+            }
+            
 
         }
 
