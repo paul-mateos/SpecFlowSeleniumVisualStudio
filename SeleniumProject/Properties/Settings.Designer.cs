@@ -97,7 +97,7 @@ namespace SeleniumProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-a")]
+        [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-b")]
         public string Environment {
             get {
                 return ((string)(this["Environment"]));
