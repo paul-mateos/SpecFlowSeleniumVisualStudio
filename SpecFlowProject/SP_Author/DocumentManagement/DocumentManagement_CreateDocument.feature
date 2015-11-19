@@ -23,7 +23,7 @@ Scenario: 4.1.2.1_Create new Documents From Template
 	And I have selected Document
 	Then I have entered Type From template Name docTemplateName Description sel_docTemplateDescription
 	And I click on the Browse Button	
-	And I search by {findBy} for {searchText}
+	And I select the Home,Templates Document Selector Folder
 	And I select the record Overview using column Name from the Document Selector table
 	And I click on the Add document Button
 	And I click on the Save Button

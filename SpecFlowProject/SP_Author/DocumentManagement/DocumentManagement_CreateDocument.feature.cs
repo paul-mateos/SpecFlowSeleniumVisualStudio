@@ -109,7 +109,7 @@ this.FeatureBackground();
 #line 25
  testRunner.And("I click on the Browse Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I search by {findBy} for {searchText}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select the Home,Templates Document Selector Folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
  testRunner.And("I select the record Overview using column Name from the Document Selector table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28

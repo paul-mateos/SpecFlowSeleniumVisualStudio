@@ -69,6 +69,15 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.waitForPageLoading();
         }
 
+        [Given(@"I click on the Change Password Button")]
+        [When(@"I click on the Change Password Button")]
+        [Then(@"I click on the Change Password Button")]
+        public void ThenIClickOnTheChangePasswordButton()
+        {
+            SupportPoint.SPManagerDetailsActionsPage.clickChangePassword();
+            SupportPoint.waitForPageLoading();
+        }
+
         [Given(@"I click on the Browse Button")]
         [When(@"I click on the Browse Button")]
         [Then(@"I click on the Browse Button")]
@@ -123,6 +132,14 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheAddUsersToRoleButton()
         {
             SupportPoint.SPAuthorPage.ClickAddUsersToRoleButton();
+        }
+
+        [Given(@"I Click on the Add user to Roles Button")]
+        [When(@"I Click on the Add user to Roles Button")]
+        [Then(@"I Click on the Add user to Roles Button")]
+        public void WhenIClickOnTheAddUserToRolesButton()
+        {
+            SupportPoint.SPAuthorPage.ClickAddUserToRolesButton();
         }
 
         [Given(@"I Click on the Add users to readers Button")]
@@ -217,6 +234,15 @@ namespace SpecFlowProject.SP_Author
         public void WhenIClickOnTheARemoveNotificationsFromRoleButton()
         {
             SupportPoint.SPAuthorPage.ClickRemoveNotificationsFromRoleButton();
+            SupportPoint.waitForPageLoading();
+        }
+
+        [Given(@"I Click on the Remove user from roles Button")]
+        [When(@"I Click on the Remove user from roles Button")]
+        [Then(@"I Click on the Remove user from roles Button")]
+        public void WhenIClickOnTheARemoveuserfromrolesButton()
+        {
+            SupportPoint.SPAuthorPage.ClickRemoveUserFromRolesButton();
             SupportPoint.waitForPageLoading();
         }
 

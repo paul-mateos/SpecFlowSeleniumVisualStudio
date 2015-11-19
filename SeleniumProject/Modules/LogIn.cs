@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using SeleniumProject.Commons;
 using SeleniumProject.PageModels;
 using SeleniumProject.PageModels.SP_Author;
 using SeleniumProject.PageModels.SP_Viewer;
@@ -30,15 +31,21 @@ namespace SeleniumProject.Modules
                 loginPage.ClickLogOnButton();
                 String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
                 loginPage.ConfirmWarningMessage(warningMessage);
+                warningMessage = "The license limit has been exceeded. Do you want to continue?";
+                loginPage.ConfirmLicenseMessage(warningMessage);
                 if (Properties.Settings.Default.Browser.ToString() == "NodeWebkit")
                 {
+                    SupportPoint.waitForAjaxLoading(); 
                     loginPage.SwitchToNewPageWithTitle("Home");
                     HomePage homePage = new HomePage(driver);
+                    SupportPoint.LogIn.waitForInfoMessageClose();
                 }
                 else
                 {
+                    SupportPoint.waitForAjaxLoading();
                     loginPage.SwitchToNewBrowserWithTitle("Home", currentWindow);
                     HomePage homePage = new HomePage(driver);
+                    SupportPoint.LogIn.waitForInfoMessageClose();
                 }
         }
 
@@ -65,6 +72,15 @@ namespace SeleniumProject.Modules
             Thread.Sleep(1000);
             LogoutPage p = new LogoutPage(driver);
             p.LogOutAndCloseApp();
+        }
+
+        public void waitForInfoMessageClose()
+        {
+            try
+            {
+                UICommon.confirmToastInfoMessage("Welcome", driver);
+            }
+            catch { }
         }
     }
 }
