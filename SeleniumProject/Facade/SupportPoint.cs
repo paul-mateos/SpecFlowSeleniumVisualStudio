@@ -55,6 +55,7 @@ namespace SeleniumProject.Tests
         static public SPAuthorPage SPAuthorPage { get { return new SPAuthorPage(WebDriver); } set { SPAuthorPage = value; } }
         static public AdminPage AdminPage { get { return new AdminPage(WebDriver); } set { AdminPage = value; } }
         static public DocumentPreviewPage DocumentPreviewPage { get { return new DocumentPreviewPage(WebDriver); } set { DocumentPreviewPage = value; } }
+        static public ChangePasswordPage ChangePasswordPage { get { return new ChangePasswordPage(WebDriver); } set { ChangePasswordPage = value; } }
 
 
         /*
@@ -78,7 +79,7 @@ namespace SeleniumProject.Tests
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 case BrowserType.Chrome:
-                    WebDriver = (new ChromeDriver());
+                    WebDriver = (new ChromeDriver(@"F:\TestAutomationFiles\Drivers\"));
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 case BrowserType.NodeWebkit:
@@ -200,6 +201,21 @@ namespace SeleniumProject.Tests
             Thread.Sleep(500);
 
         }
+
+        public static void waitForAjaxLoading()
+        {
+            try
+            {
+                Thread.Sleep(500);
+                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+                wait.Until((d) => { return WebDriver.FindElement(By.XPath("//div[@id='AjaxLoading' and @style='display: none;']")); });
+                Thread.Sleep(500);
+            }
+            catch { }
+
+        }
+
+        
 
 
     }

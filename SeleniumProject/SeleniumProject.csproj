@@ -112,6 +112,7 @@
     <Compile Include="PageModels\SP_Author\DocumentSelectorPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentPreviewPage.cs" />
     <Compile Include="PageModels\SP_Author\UserManagementPage.cs" />
+    <Compile Include="PageModels\SP_Author\ChangePasswordPage.cs" />
     <Compile Include="PageModels\SP_Author\UserSelectorPage.cs" />
     <Compile Include="PageModels\SP_Author\RoleManagementPage.cs" />
     <Compile Include="PageModels\SP_Author\WorkflowManagementPage.cs" />

@@ -68,5 +68,33 @@ namespace SpecFlowProject.SP_Author.UserManagement
             SupportPoint.UserManagementPage.ClickUserRecord(colName, searchValue, "UsersthatcanreadTable");
 
         }
+
+        [Given(@"I select the record (.*) using column (.*) from the User in roles table")]
+        [When(@"I select the record (.*) using column (.*) from the User in roles table")]
+        [Then(@"I select the record (.*) using column (.*) from the User in roles table")]
+        public void IselecttherecordfromtheUserInRolesTable(string searchValue, string colName)
+        {
+            SupportPoint.UserManagementPage.ClickUserRecord(colName, searchValue, "UserInRolesTable");
+
+        }
+
+
+        [Given(@"I enter the first name (.*)")]
+        [When(@"I enter the first name (.*)")]
+        [Then(@"I enter the first name (.*)")]
+        public void WhenIEnterTheFirstName(string firstName)
+        {
+            SupportPoint.UserManagementPage.SetFirstName(firstName);
+        }
+
+        [Given(@"The first name does not equal (.*)")]
+        [When(@"The first name does not equal (.*)")]
+        [Then(@"The first name does not equal (.*)")]
+        public void ThenTheFirstNameDoesNotEqual(string firstName)
+        {
+            SupportPoint.UserManagementPage.FirstNameNotEqualTo(firstName);
+        }
+
+
     }
 }

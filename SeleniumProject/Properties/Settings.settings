@@ -21,13 +21,13 @@
       <Value Profile="(Default)">usersList</Value>
     </Setting>
     <Setting Name="Environment" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qa-spui-a</Value>
+      <Value Profile="(Default)">qa-spui-b</Value>
     </Setting>
     <Setting Name="Protocol" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://</Value>
     </Setting>
     <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">NodeWebkit</Value>
+      <Value Profile="(Default)">Chrome</Value>
     </Setting>
   </Settings>
 </SettingsFile>
