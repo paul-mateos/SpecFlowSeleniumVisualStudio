@@ -23,6 +23,7 @@ namespace SeleniumProject.PageModels
         By DeleteRoleBtn = By.XPath("//button[@title='Delete Role']");
         By DeleteUserBtn = By.XPath("//button[@title='Delete user']");
         By EditBtn = By.XPath("//span[@title='Edit']");
+        By ChangePasswordBtn = By.XPath("//button[contains(text(),'Change password')]");
 
         
         //menu options
@@ -197,6 +198,12 @@ namespace SeleniumProject.PageModels
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(Namevalidation));
             return name;
 
+        }
+
+        public void clickChangePassword()
+        {
+            UICommon.ClickButton(ChangePasswordBtn, d);
+            
         }
     }
 }

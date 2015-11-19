@@ -131,6 +131,17 @@
       <DependentUpon>RoleManagement_Writers.feature</DependentUpon>
     </Compile>
     <Compile Include="SP_Author\RoleSelector_Steps.cs" />
+    <Compile Include="SP_Author\UserManagement\ChangePassword_Steps.cs" />
+    <Compile Include="SP_Author\UserManagement\UserManagement_Properties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement_Properties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Author\UserManagement\UserManagement_RoleMembership.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement_RoleMembership.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\UserManagement\UserManager_Readers.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -347,6 +358,14 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\UserManagement\UserManagement_Properties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserManagement_Properties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\UserManagement\UserManagement_RoleMembership.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserManagement_RoleMembership.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\UserManagement\UserManager_Readers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -23,6 +23,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By addRoleToRolesButton = By.XPath("//button[@title='Add role to role(s)']");
         By addRolesToRoleButton = By.XPath("//button[@title='Add role(s) to role']");
         By addUsersToRoleButton = By.XPath("//button[@title='Add user(s) to role']");
+        By addUserToRolesButton = By.XPath("//button[@title='Add user to role(s)']");
         By addRoleToReadersButton = By.XPath("//button[@title='Add role to readers']");
         By addUserToReadersButton = By.XPath("//button[@title='Add user to readers']");
         By addRoleToWritersButton = By.XPath("//button[@title='Add role to writers']");
@@ -44,6 +45,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By removeRolesFromReadersButton = By.XPath("//button[@title='Remove role(s) from readers']");
         By removeRolesFromWritersButton = By.XPath("//button[@title='Remove role(s) from writers']");
         By removeNotificationsFromRoleButton = By.XPath("//button[@title='Remove notifications from role']");
+        By removeUserFromRolesButton = By.XPath("//button[@title='Remove user from role(s)']");
 
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
         By deleteMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Delete')]");
@@ -109,6 +111,11 @@ namespace SeleniumProject.PageModels.SP_Author
         public void ClickAddUsersToRoleButton()
         {
             UICommon.ClickButton(addUsersToRoleButton, d);
+        }
+
+        public void ClickAddUserToRolesButton()
+        {
+            UICommon.ClickButton(addUserToRolesButton, d);
         }
 
         
@@ -236,6 +243,13 @@ namespace SeleniumProject.PageModels.SP_Author
 
         }
 
+        public void ClickRemoveUserFromRolesButton()
+        {
+            UICommon.ClickButton(removeUserFromRolesButton, d);
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(driver => !d.FindElement(removeUserFromRolesButton).Enabled);
+            Thread.Sleep(1000);
+        }
 
         public void ConfirmRemovalMessage()
         {

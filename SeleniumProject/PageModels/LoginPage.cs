@@ -48,12 +48,12 @@ namespace SeleniumProject.PageModels
 
         public void ConfirmWarningMessage(string warningMessage)
         {
-            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             IList<IWebElement> messages = d.FindElements(By.Id("qtip-Warning-content"));
             if (messages.Count != 0)
             {
                 IWebElement elem = UICommon.GetElement(By.Id("qtip-Warning-content"), d);
-                if(elem.Text.Equals(warningMessage))
+                if (elem.Text.Contains(warningMessage))
                 {
                     UICommon.ClickButton(By.Id("okTitle"), d);
                 }
@@ -61,6 +61,20 @@ namespace SeleniumProject.PageModels
             }
         }
 
+        public void ConfirmLicenseMessage(string warningMessage)
+        {
+            d.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
+            IList<IWebElement> messages = d.FindElements(By.Id("qtip-V2FybmluZw-content"));
+            if (messages.Count != 0)
+            {
+                IWebElement elem = UICommon.GetElement(By.Id("qtip-V2FybmluZw-content"), d);
+                if (elem.Text.Contains(warningMessage))
+                {
+                    UICommon.ClickButton(By.Id("okTitle"), d);
+                }
+
+            }
+        }
         
         internal void GetObjValue()
         {
