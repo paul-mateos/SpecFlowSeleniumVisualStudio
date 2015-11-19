@@ -79,7 +79,7 @@ namespace SeleniumProject.Tests
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 case BrowserType.Chrome:
-                    WebDriver = (new ChromeDriver(@"F:\TestAutomationFiles\Drivers\"));
+                    WebDriver = (new ChromeDriver(@"\\pvfs01\Fileserver\data\TestAutomationFiles\Drivers\"));
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 case BrowserType.NodeWebkit:
