@@ -36,6 +36,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By addUsersToWritersButton = By.XPath("//button[@title='Add user(s) to writers']");
         By addnotificationToRoleButton = By.XPath("//button[@title='Add notification to role']");
         By addnotificationToRolePopupButton = By.XPath("//div[@id='kWindow0']/.//button[text()='Add notification to role']");
+        
 
         By removeRoleFromRolesButton = By.XPath("//button[@title='Remove role from role(s)']");
         By removeRolesFromRoleButton = By.XPath("//button[@title='Remove role(s) from role']");
@@ -45,6 +46,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By removeRolesFromReadersButton = By.XPath("//button[@title='Remove role(s) from readers']");
         By removeRolesFromWritersButton = By.XPath("//button[@title='Remove role(s) from writers']");
         By removeNotificationsFromRoleButton = By.XPath("//button[@title='Remove notifications from role']");
+        
         By removeUserFromRolesButton = By.XPath("//button[@title='Remove user from role(s)']");
 
         By removalMessagePopup = By.XPath("//div[(@id='kWindow0')]/div[contains(text(),'Remov')]");
@@ -298,12 +300,6 @@ namespace SeleniumProject.PageModels.SP_Author
                 case "UsersthatcanTable":
                     searchTable = UICommon.GetSearchResultTable(usersthatcanTable, d);
                     break;
-                //case "RolesthatcaneditTable":
-                //    searchTable = UICommon.GetSearchResultTable(rolesthatcaneditTable, d);
-                //    break;
-                //case "UsersthatcaneditTable":
-                //    searchTable = UICommon.GetSearchResultTable(usersthatcaneditTable, d);
-                //    break;
                 case "RoleHasNotificationTable":
                     searchTable = UICommon.GetSearchResultTable(rolehasnotificationTable, d);
                     break;
@@ -315,5 +311,9 @@ namespace SeleniumProject.PageModels.SP_Author
             Table table = new Table(searchTable);
             table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d);
         }
+
+       
+
+      
     }
 }

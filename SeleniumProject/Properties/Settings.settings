@@ -6,7 +6,7 @@
       <Value Profile="(Default)">QA_A</Value>
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">30</Value>
+      <Value Profile="(Default)">40</Value>
     </Setting>
     <Setting Name="username" Type="System.String" Scope="User">
       <Value Profile="(Default)">panviva</Value>
@@ -21,7 +21,7 @@
       <Value Profile="(Default)">usersList</Value>
     </Setting>
     <Setting Name="Environment" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qa-spui-b</Value>
+      <Value Profile="(Default)">qa-spui-prod</Value>
     </Setting>
     <Setting Name="Protocol" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://</Value>

@@ -132,6 +132,11 @@
     </Compile>
     <Compile Include="SP_Author\RoleSelector_Steps.cs" />
     <Compile Include="SP_Author\UserManagement\ChangePassword_Steps.cs" />
+    <Compile Include="SP_Author\UserManagement\UserManagement_Notifications.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement_Notifications.feature</DependentUpon>
+    </Compile>
     <Compile Include="SP_Author\UserManagement\UserManagement_Properties.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -358,6 +363,10 @@
     <None Include="SP_Author\UserManagement\UserManagement_ImportUsers.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserManagement_ImportUsers.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Author\UserManagement\UserManagement_Notifications.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserManagement_Notifications.feature.cs</LastGenOutput>
     </None>
     <None Include="SP_Author\UserManagement\UserManagement_Properties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

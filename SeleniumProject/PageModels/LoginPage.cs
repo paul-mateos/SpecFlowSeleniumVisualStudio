@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumProject.Commons;
 using System;
@@ -27,6 +28,7 @@ namespace SeleniumProject.PageModels
 
         //Search Criteria
         //By loginButton = By.XPath(" //button[(@type='submit' and @name='login')]");
+        By Password = By.Id("Password");
         By loginButton = By.Id("btnLogin");
         
         public void SetUserName(string username)
@@ -36,7 +38,9 @@ namespace SeleniumProject.PageModels
 
         public void SetPassword(string password)
         {
-            UICommon.SetValue(By.Id("Password"), password, d);
+            
+            UICommon.SetValue(Password, password, d);
+            StringAssert.Contains("password", UICommon.GetElementAttribute(Password, "type", d), "The password field is not a password type");
         }
 
         public void ClickLogOnButton()

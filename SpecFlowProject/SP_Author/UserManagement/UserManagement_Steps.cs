@@ -95,6 +95,39 @@ namespace SpecFlowProject.SP_Author.UserManagement
             SupportPoint.UserManagementPage.FirstNameNotEqualTo(firstName);
         }
 
+        [Given(@"I select the record (.*) using column (.*) from the User has notifications table")]
+        [When(@"I select the record (.*) using column (.*) from the User has notifications table")]
+        [Then(@"I select the record (.*) using column (.*) from the User has notifications table")]
+        public void IselecttherecordfromtheUserHasNotificationtable(string searchValue, string colName)
+        {
+            SupportPoint.UserManagementPage.ClickUserRecord(colName, searchValue, "UserHasnotifiactionTable");
+
+        }
+
+
+        [Given(@"I Click on the Add notification to User Button")]
+        [When(@"I Click on the Add notification to User Button")]
+        [Then(@"I Click on the Add notification to User Button")]
+        public void WhenIClickOnTheAddNotificationToUserButton()
+        {
+            SupportPoint.UserManagementPage.ClickAddNotificationsToUserButton();
+        }
+
+        [Given(@"I Click on the Remove notifications from User Button")]
+        [When(@"I Click on the Remove notifications from User Button")]
+        [Then(@"I Click on the Remove notifications from User Button")]
+        public void WhenIClickOnTheremoveNotificationsFromUserButton()
+        {
+            SupportPoint.UserManagementPage.ClickRemoveNotificationsFromUserButton();
+        }
+
+        [Given(@"I Click on the Add notification to User popup Button")]
+        [When(@"I Click on the Add notification to User popup Button")]
+        [Then(@"I Click on the Add notification to User popup Button")]
+        public void WhenIClickOnTheAddNotificationToUserPopupButton()
+        {
+            SupportPoint.UserManagementPage.ClickAddNotificationsToUserPopupButton();
+        }
 
     }
 }
