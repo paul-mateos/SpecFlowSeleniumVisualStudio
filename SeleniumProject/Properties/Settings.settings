@@ -6,7 +6,7 @@
       <Value Profile="(Default)">QA_A</Value>
     </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">40</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="username" Type="System.String" Scope="User">
       <Value Profile="(Default)">panviva</Value>
