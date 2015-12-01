@@ -2,14 +2,15 @@
 	In order modify a workflow
 	As a workflow manager
 	I want to modify a workflow
-#WorkflowApprover user needs to exist before the test
+#Workflow Automation needs to exist in the database
 
 Background: Logon to SP and navigate to Workflow Manager
 Given I have logged in to SP as a new "workflow_managers"
 And I Open SP Manager to Document Management : SupportPoint
+And I select the Home DocumentFolder
 And I Navigate to the Workflow Page
 And I am at Workflow Management page
-
+#Create Automation Workflow required here
 
 @Regression
 @WorkflowManagement_Properties
