@@ -21,10 +21,17 @@ namespace SeleniumProject.PageModels.SP_Author
         By SearchQuery = By.XPath("//input[@placeholder='Search']");
         By SearchButton = By.XPath("//button[@title='Submit']");
         By userTable = By.XPath("//table[@role='grid']");
+        By FirstName = By.XPath("//input[@name='firstName']");
+
+        By addNotificationToUserButton = By.XPath("//button[@title='Add notification to user']");
+        By removeNotificationFromUserButton = By.XPath("//button[@title='Remove notification(s) from user']");
+        By addNotificationToUserPopupButton = By.XPath("//div[@id='kWindow0']/.//button[text()='Add notification to user']");
+
         By rolesthatcanreadTable = By.XPath("//shr-role-grid-drct[@header-title='Role(s) that can read the details of this user:']/.//table");
         By usersthatcanreadTable = By.XPath("//shr-user-grid-drct[@header-title='User(s) that can read the details of this user:']/.//table");
         By userinrolesTable = By.XPath("//shr-role-grid-drct[@header-title='This user is in the following roles:']/.//table");
-        By FirstName = By.XPath("//input[@name='firstName']");
+        By userhasnotificationTable = By.XPath("//shr-notification-grid-drct[@header-title='This user has the following notification(s):']/.//table");
+        
         //By Namevalidation = By.XPath("//div/p[contains(text@,'Checking if the name requested is available.')]");
         //Buttons
 
@@ -75,6 +82,9 @@ namespace SeleniumProject.PageModels.SP_Author
                 case "UserInRolesTable":
                     searchTable = UICommon.GetSearchResultTable(userinrolesTable, d);
                     break;
+                case "UserHasnotifiactionTable":
+                    searchTable = UICommon.GetSearchResultTable(userhasnotificationTable, d);
+                    break;
                 default:
                     throw new Exception("Invalid User table");
 
@@ -84,6 +94,21 @@ namespace SeleniumProject.PageModels.SP_Author
             Assert.IsTrue(table.ClickCellValue(lookUpColumn, searchText, lookUpColumn, d), "Problem selecting value from table");
             Thread.Sleep(2000);
         }
-        
+
+        public void ClickAddNotificationsToUserButton()
+        {
+            UICommon.ClickButton(addNotificationToUserButton, d);
+        }
+
+        public void ClickRemoveNotificationsFromUserButton()
+        {
+            UICommon.ClickButton(removeNotificationFromUserButton, d);
+        }
+
+        public void ClickAddNotificationsToUserPopupButton()
+        {
+            UICommon.ClickButton(addNotificationToUserPopupButton, d);
+        }
+
     }
 }
