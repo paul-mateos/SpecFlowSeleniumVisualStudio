@@ -23,111 +23,84 @@ namespace SeleniumProject.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("QA_A")]
         public global::SeleniumProject.Environments.EnvironmentType Environment1 {
             get {
                 return ((global::SeleniumProject.Environments.EnvironmentType)(this["Environment1"]));
             }
-            set {
-                this["Environment1"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("20")]
         public int WaitTime {
             get {
                 return ((int)(this["WaitTime"]));
             }
-            set {
-                this["WaitTime"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("panviva")]
         public string username {
             get {
                 return ((string)(this["username"]));
             }
-            set {
-                this["username"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Burke6368")]
         public string password {
             get {
                 return ((string)(this["password"]));
             }
-            set {
-                this["password"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("TestAutomationData")]
         public string folderName {
             get {
                 return ((string)(this["folderName"]));
             }
-            set {
-                this["folderName"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("usersList")]
         public string fileName {
             get {
                 return ((string)(this["fileName"]));
             }
-            set {
-                this["fileName"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-a")]
         public string Environment {
             get {
                 return ((string)(this["Environment"]));
             }
-            set {
-                this["Environment"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://")]
         public string Protocol {
             get {
                 return ((string)(this["Protocol"]));
             }
-            set {
-                this["Protocol"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
+        [global::System.Configuration.DefaultSettingValueAttribute("NodeWebkit")]
         public global::SeleniumProject.Environments.BrowserType Browser {
             get {
                 return ((global::SeleniumProject.Environments.BrowserType)(this["Browser"]));
-            }
-            set {
-                this["Browser"] = value;
             }
         }
     }

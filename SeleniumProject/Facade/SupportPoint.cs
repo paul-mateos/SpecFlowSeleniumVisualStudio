@@ -181,7 +181,7 @@ namespace SeleniumProject.Tests
            
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
-            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
+            //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             string browserTitle = WebDriver.Title.ToString();
             Assert.AreEqual(BrowserTitle, browserTitle, "Current Browser is not: " + BrowserTitle + ". It is: " + browserTitle);
         }
@@ -191,7 +191,7 @@ namespace SeleniumProject.Tests
 
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
-            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
+            //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             return WebDriver.CurrentWindowHandle;
         }
 
@@ -200,7 +200,7 @@ namespace SeleniumProject.Tests
             Thread.Sleep(500);
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
-            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
+            //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             Thread.Sleep(500);
 
         }
