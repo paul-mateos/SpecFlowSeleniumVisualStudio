@@ -74,12 +74,8 @@ namespace SpecFlowProject.SP_Author.WorkflowManagement
 #line 6
 #line 7
 testRunner.Given("I have logged in to SP as a new \"workflow_managers\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
-testRunner.And("I Open SP Manager to Document Management : SupportPoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
-testRunner.When("I Navigate to the Workflow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
-testRunner.Then("I am at Workflow Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I am at Workflow Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
