@@ -21,7 +21,7 @@
       <Value Profile="(Default)">usersList</Value>
     </Setting>
     <Setting Name="Environment" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qa-spui-prod</Value>
+      <Value Profile="(Default)">qa-spui-a</Value>
     </Setting>
     <Setting Name="Protocol" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://</Value>
