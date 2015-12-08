@@ -11,7 +11,7 @@ using System.Xml.Linq;
 namespace SeleniumProject.API
 
 {
-    public class APICommons
+    public class APICommons 
     {
         public string username{ get; set; }
         public string password { get; set; }
@@ -31,6 +31,8 @@ namespace SeleniumProject.API
             private string fullUrl;
             public APICommons()
             {
+
+
                 this.username = Properties.Settings.Default.username;
                 this.password = Properties.Settings.Default.password;
                 this.folderName = Properties.Settings.Default.folderName;

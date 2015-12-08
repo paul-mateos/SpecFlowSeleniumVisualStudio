@@ -18,6 +18,10 @@ using SeleniumProject.Utility;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Remote;
 using System.Threading;
+using System.Configuration;
+using System.Globalization;
+using System.ComponentModel;
+using System.Collections.Specialized;
 
 namespace SeleniumProject.Tests
 {
@@ -57,7 +61,10 @@ namespace SeleniumProject.Tests
         static public DocumentPreviewPage DocumentPreviewPage { get { return new DocumentPreviewPage(WebDriver); } set { DocumentPreviewPage = value; } }
         static public ChangePasswordPage ChangePasswordPage { get { return new ChangePasswordPage(WebDriver); } set { ChangePasswordPage = value; } }
 
-
+        static public string environment;
+        static public string protocol;
+        static public BrowserType browser;
+        static public int waitsec;
         /*
          * Open Support Point app: if there is existing one, it will kill it
          */
@@ -65,15 +72,35 @@ namespace SeleniumProject.Tests
         {
             
             ExitSuportPoint(); //just in case previous test not cleanup properly
-            Properties.Settings.Default.Reload();
-            string environment = Properties.Settings.Default.Environment;
-            string protocol = Properties.Settings.Default.Protocol;
+
+            // Get the current configuration file.
+            //System.Configuration.Configuration config =
+            //        ConfigurationManager.OpenExeConfiguration(
+            //        ConfigurationUserLevel.None) as Configuration;
+
+            System.Configuration.Configuration config =
+                    ConfigurationManager.OpenExeConfiguration(@"..\..\..\SeleniumProject\bin\Release\SeleniumProject.dll") as Configuration;
+
+            ApplicationSettingsGroup appSettingsGroup = config.GetSectionGroup("applicationSettings") as ApplicationSettingsGroup;
+            ClientSettingsSection clientSettingsSection = appSettingsGroup.Sections.Get("SeleniumProject.Properties.Settings") as ClientSettingsSection;
+           
+            environment = clientSettingsSection.Settings.Get("Environment").Value.ValueXml.InnerText;
+            protocol = clientSettingsSection.Settings.Get("Protocol").Value.ValueXml.InnerText;
+            browser = (BrowserType) Enum.Parse(typeof(BrowserType), clientSettingsSection.Settings.Get("Browser").Value.ValueXml.InnerText);
+            waitsec = Int32.Parse(clientSettingsSection.Settings.Get("WaitTime").Value.ValueXml.InnerText);
+
+        
+
+
+            //string environment = Properties.Settings.Default.Environment;
+            //string protocol = Properties.Settings.Default.Protocol;
+            
             var options = new InternetExplorerOptions()
             {
                 IntroduceInstabilityByIgnoringProtectedModeSettings = true
             };
 
-            switch (Properties.Settings.Default.Browser)
+            switch (browser)//Properties.Settings.Default.Browser)
             {
                 case BrowserType.IE:
                     WebDriver = (new InternetExplorerDriver(options));
@@ -85,7 +112,8 @@ namespace SeleniumProject.Tests
                     break;
                 case BrowserType.NodeWebkit:
                     string FileLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Panviva\\SupportPoint\\Viewer\\configSPViewer.json";
-                    SPConfigFileCreator.UpdateSPConfigFile(Properties.Settings.Default.Environment, FileLocation);
+                    //SPConfigFileCreator.UpdateSPConfigFile(Properties.Settings.Default.Environment, FileLocation);
+                    SPConfigFileCreator.UpdateSPConfigFile(environment, FileLocation);
                     WebDriver = (new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\"));
                     break;
                 case BrowserType.Grid:
@@ -122,7 +150,7 @@ namespace SeleniumProject.Tests
                 catch (Exception) { }
             }
             WebDriver = null;
-            switch (Properties.Settings.Default.Browser)
+            switch (browser)//Properties.Settings.Default.Browser)
             {
                 case BrowserType.IE:
 
@@ -180,7 +208,7 @@ namespace SeleniumProject.Tests
         public static void IsCurrentBrowser(string BrowserTitle)
         {
            
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
             //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             string browserTitle = WebDriver.Title.ToString();
@@ -190,7 +218,7 @@ namespace SeleniumProject.Tests
         public static string GetCurrentBrowserHandle()
         {
 
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
             //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             return WebDriver.CurrentWindowHandle;
@@ -199,7 +227,7 @@ namespace SeleniumProject.Tests
         public static void waitForPageLoading()
         {
             Thread.Sleep(500);
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
             //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             Thread.Sleep(500);
@@ -211,7 +239,7 @@ namespace SeleniumProject.Tests
             try
             {
                 Thread.Sleep(500);
-                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
                 wait.Until((d) => { return WebDriver.FindElement(By.XPath("//div[@id='AjaxLoading' and @style='display: none;']")); });
                 Thread.Sleep(500);
             }
