@@ -65,6 +65,7 @@ namespace SeleniumProject.Tests
         {
             
             ExitSuportPoint(); //just in case previous test not cleanup properly
+            Properties.Settings.Default.Reload();
             string environment = Properties.Settings.Default.Environment;
             string protocol = Properties.Settings.Default.Protocol;
             var options = new InternetExplorerOptions()
