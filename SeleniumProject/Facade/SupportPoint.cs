@@ -78,8 +78,9 @@ namespace SeleniumProject.Tests
             //        ConfigurationManager.OpenExeConfiguration(
             //        ConfigurationUserLevel.None) as Configuration;
 
+            string dir = System.IO.Path.GetFullPath(@"..\..\..\SeleniumProject\bin\Release\SeleniumProject.dll");
             System.Configuration.Configuration config =
-                    ConfigurationManager.OpenExeConfiguration(@"..\..\..\SeleniumProject\bin\Release\SeleniumProject.dll") as Configuration;
+                    ConfigurationManager.OpenExeConfiguration(dir) as Configuration;
 
             ApplicationSettingsGroup appSettingsGroup = config.GetSectionGroup("applicationSettings") as ApplicationSettingsGroup;
             ClientSettingsSection clientSettingsSection = appSettingsGroup.Sections.Get("SeleniumProject.Properties.Settings") as ClientSettingsSection;
@@ -89,8 +90,8 @@ namespace SeleniumProject.Tests
             browser = (BrowserType) Enum.Parse(typeof(BrowserType), clientSettingsSection.Settings.Get("Browser").Value.ValueXml.InnerText);
             waitsec = Int32.Parse(clientSettingsSection.Settings.Get("WaitTime").Value.ValueXml.InnerText);
 
-        
 
+            
 
             //string environment = Properties.Settings.Default.Environment;
             //string protocol = Properties.Settings.Default.Protocol;
