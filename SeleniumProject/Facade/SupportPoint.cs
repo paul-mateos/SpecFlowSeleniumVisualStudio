@@ -77,6 +77,7 @@ namespace SeleniumProject.Tests
             //System.Configuration.Configuration config =
             //        ConfigurationManager.OpenExeConfiguration(
             //        ConfigurationUserLevel.None) as Configuration;
+            Console.Write("AppDomain.CurrentDomain.BaseDirectory");
             string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\SeleniumProject\bin\Release\SeleniumProject.dll");
             //string dir = AppDomain.CurrentDomain.BaseDirectory.GetFullPath(@"..\..\..\SeleniumProject\bin\Release\SeleniumProject.dll");
             
