@@ -74,7 +74,7 @@ namespace SeleniumProject.Tests
             ExitSuportPoint(); //just in case previous test not cleanup properly
 
 
-
+           
             
             System.Configuration.Configuration config =
                     ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;

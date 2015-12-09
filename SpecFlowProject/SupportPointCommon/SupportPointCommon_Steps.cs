@@ -18,6 +18,7 @@ namespace SpecFlowProject.SupportPointCommon
         [Then(@"I switch to (.*) Browser")]
         public void GivenISwitchToBrowser(string browserName)
         {
+           
             SupportPoint.SwitchToBrowser(browserName, SupportPoint.GetCurrentBrowserHandle());
         }
 
