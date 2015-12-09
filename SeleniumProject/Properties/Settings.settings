@@ -5,12 +5,6 @@
     <Setting Name="WaitTime" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="username" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">panviva</Value>
-    </Setting>
-    <Setting Name="password" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Burke6368</Value>
-    </Setting>
     <Setting Name="folderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">TestAutomationData</Value>
     </Setting>

@@ -38,14 +38,12 @@ namespace SeleniumProject.API
 
                 environment = ConfigurationManager.AppSettings.Get("Environment");
                 protocol = ConfigurationManager.AppSettings.Get("Protocol");
+                username = ConfigurationManager.AppSettings.Get("Username");
+                password = ConfigurationManager.AppSettings.Get("Password");
 
-                this.username = Properties.Settings.Default.username;
-                this.password = Properties.Settings.Default.password;
                 this.folderName = Properties.Settings.Default.folderName;
                 this.fileName = Properties.Settings.Default.fileName;
-                //this.environment = Properties.Settings.Default.Environment;
-                //this.protocol = Properties.Settings.Default.Protocol;
-               // CreateTestEnvironment();
+                
 
             }
 
