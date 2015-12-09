@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SeleniumProject.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Environment1" Type="SeleniumProject.Environments.EnvironmentType" Scope="Application">
-      <Value Profile="(Default)">QA_A</Value>
-    </Setting>
     <Setting Name="WaitTime" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">20</Value>
     </Setting>

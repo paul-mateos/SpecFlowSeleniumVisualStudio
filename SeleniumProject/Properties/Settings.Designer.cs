@@ -25,15 +25,6 @@ namespace SeleniumProject.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("QA_A")]
-        public global::SeleniumProject.Environments.EnvironmentType Environment1 {
-            get {
-                return ((global::SeleniumProject.Environments.EnvironmentType)(this["Environment1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("20")]
         public int WaitTime {
             get {
