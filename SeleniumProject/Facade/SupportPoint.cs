@@ -73,31 +73,17 @@ namespace SeleniumProject.Tests
             
             ExitSuportPoint(); //just in case previous test not cleanup properly
 
-            // Get the current configuration file.
-            //System.Configuration.Configuration config =
-            //        ConfigurationManager.OpenExeConfiguration(
-            //        ConfigurationUserLevel.None) as Configuration;
-            Console.Write("AppDomain.CurrentDomain.BaseDirectory");
-            string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\SeleniumProject\bin\Release\SeleniumProject.dll");
-            //string dir = AppDomain.CurrentDomain.BaseDirectory.GetFullPath(@"..\..\..\SeleniumProject\bin\Release\SeleniumProject.dll");
+
+
             
             System.Configuration.Configuration config =
-                    ConfigurationManager.OpenExeConfiguration(dir) as Configuration;
-
-            ApplicationSettingsGroup appSettingsGroup = config.GetSectionGroup("applicationSettings") as ApplicationSettingsGroup;
-            ClientSettingsSection clientSettingsSection = appSettingsGroup.Sections.Get("SeleniumProject.Properties.Settings") as ClientSettingsSection;
-           
-            environment = clientSettingsSection.Settings.Get("Environment").Value.ValueXml.InnerText;
-            protocol = clientSettingsSection.Settings.Get("Protocol").Value.ValueXml.InnerText;
-            browser = (BrowserType) Enum.Parse(typeof(BrowserType), clientSettingsSection.Settings.Get("Browser").Value.ValueXml.InnerText);
-            waitsec = Int32.Parse(clientSettingsSection.Settings.Get("WaitTime").Value.ValueXml.InnerText);
+                    ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
 
 
-            
-
-            //string environment = Properties.Settings.Default.Environment;
-            //string protocol = Properties.Settings.Default.Protocol;
-            
+            environment = ConfigurationManager.AppSettings.Get("Environment");
+            browser = (BrowserType) Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings.Get("Browser"));
+            protocol = ConfigurationManager.AppSettings.Get("Protocol");
+            waitsec = Properties.Settings.Default.WaitTime;
             var options = new InternetExplorerOptions()
             {
                 IntroduceInstabilityByIgnoringProtectedModeSettings = true

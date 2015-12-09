@@ -1,12 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SeleniumProject.Commons;
+using SeleniumProject.Environments;
 using SeleniumProject.PageModels;
 using SeleniumProject.PageModels.SP_Author;
 using SeleniumProject.PageModels.SP_Viewer;
 using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -16,8 +18,16 @@ namespace SeleniumProject.Modules
 {
     public class LogIn : BaseWebDriverModule
     {
+        public static BrowserType browser;
+        public LogIn(IWebDriver d) : base(d) 
+        {
+            System.Configuration.Configuration config =
+                      ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
+
+            browser = (BrowserType) Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings.Get("Browser"));
+
         
-        public LogIn(IWebDriver d) : base(d) { }
+        }
 
         public void Login(String name, String password)
         {
@@ -33,7 +43,7 @@ namespace SeleniumProject.Modules
                 loginPage.ConfirmWarningMessage(warningMessage);
                 warningMessage = "The license limit has been exceeded. Do you want to continue?";
                 loginPage.ConfirmLicenseMessage(warningMessage);
-                if (Properties.Settings.Default.Browser.ToString() == "NodeWebkit")
+                if (browser.ToString() == "NodeWebkit")
                 {
                     SupportPoint.waitForAjaxLoading(); 
                     loginPage.SwitchToNewPageWithTitle("Home");

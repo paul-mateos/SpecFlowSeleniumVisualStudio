@@ -20,14 +20,5 @@
     <Setting Name="fileName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usersList</Value>
     </Setting>
-    <Setting Name="Environment" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">qa-spui-a</Value>
-    </Setting>
-    <Setting Name="Protocol" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://</Value>
-    </Setting>
-    <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="Application">
-      <Value Profile="(Default)">NodeWebkit</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

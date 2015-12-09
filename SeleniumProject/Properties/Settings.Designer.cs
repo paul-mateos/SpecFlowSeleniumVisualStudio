@@ -76,32 +76,5 @@ namespace SeleniumProject.Properties {
                 return ((string)(this["fileName"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("qa-spui-a")]
-        public string Environment {
-            get {
-                return ((string)(this["Environment"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://")]
-        public string Protocol {
-            get {
-                return ((string)(this["Protocol"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("NodeWebkit")]
-        public global::SeleniumProject.Environments.BrowserType Browser {
-            get {
-                return ((global::SeleniumProject.Environments.BrowserType)(this["Browser"]));
-            }
-        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SeleniumProject.API;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -23,6 +24,8 @@ namespace SeleniumProject.Facade
         public static string requestMethod;
         private static string fullUrl;
         private static int contentLength = 0;
+        public static string environment;
+        public static string protocol;
         //private string contentType = "application/xml";
         public static APICommons apiRequest = new APICommons();
         private static List<Parameter> parameters = new List<Parameter>();
@@ -36,10 +39,21 @@ namespace SeleniumProject.Facade
 
         }
 
+        public API()
+        {
+              System.Configuration.Configuration config =
+                  ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
+
+            environment = ConfigurationManager.AppSettings.Get("Environment");
+            protocol = ConfigurationManager.AppSettings.Get("Protocol");
+        }
+
         public static string getFullUrl()
         {
-            string environment = Properties.Settings.Default.Environment;
-            string protocol = Properties.Settings.Default.Protocol;
+          
+
+            //environment = Properties.Settings.Default.Environment;
+            //string protocol = Properties.Settings.Default.Protocol;
             fullUrl = protocol + environment + "/" + webservice;
             string urlParam = "?";
             if(parameters.Count > 0)

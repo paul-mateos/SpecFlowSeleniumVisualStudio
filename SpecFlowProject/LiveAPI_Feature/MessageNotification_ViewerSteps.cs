@@ -18,7 +18,7 @@ namespace SpecFlowProject
         /**
          * key/value stored in Scenario Context
          */
-        readonly string KEY_API = "APIObject";
+        //readonly string KEY_API = "APIObject";
        
 
         [Given(@"a OpenDocument is issued with '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")]
