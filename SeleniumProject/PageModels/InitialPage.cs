@@ -17,7 +17,7 @@ namespace SeleniumProject.PageModels
         {
             this.driver = driver; 
             //Wait for title to be displayed 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return d.Title.Contains("SupportPoint"); }); 
 
         }

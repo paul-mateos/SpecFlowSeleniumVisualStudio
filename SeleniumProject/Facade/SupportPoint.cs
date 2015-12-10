@@ -25,7 +25,7 @@ using System.Collections.Specialized;
 
 namespace SeleniumProject.Tests
 {
-    static public class SupportPoint 
+     public class SupportPoint 
     {
         static public IWebDriver WebDriver {get; set;}
 
@@ -65,6 +65,20 @@ namespace SeleniumProject.Tests
         static public string protocol;
         static public BrowserType browser;
         static public int waitsec;
+        
+        public SupportPoint()
+        {
+            System.Configuration.Configuration config =
+                    ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
+
+
+            environment = ConfigurationManager.AppSettings.Get("Environment");
+            browser = (BrowserType)Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings.Get("Browser"));
+            protocol = ConfigurationManager.AppSettings.Get("Protocol");
+            waitsec = Int32.Parse(ConfigurationManager.AppSettings.Get("WaitSec"));
+
+        }
+        
         /*
          * Open Support Point app: if there is existing one, it will kill it
          */
@@ -73,17 +87,6 @@ namespace SeleniumProject.Tests
             
             ExitSuportPoint(); //just in case previous test not cleanup properly
 
-
-           
-            
-            System.Configuration.Configuration config =
-                    ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
-
-
-            environment = ConfigurationManager.AppSettings.Get("Environment");
-            browser = (BrowserType) Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings.Get("Browser"));
-            protocol = ConfigurationManager.AppSettings.Get("Protocol");
-            waitsec = Properties.Settings.Default.WaitTime;
             var options = new InternetExplorerOptions()
             {
                 IntroduceInstabilityByIgnoringProtectedModeSettings = true
@@ -117,7 +120,7 @@ namespace SeleniumProject.Tests
             //Log on to site as user.
             InitialPage initialPage = new InitialPage(WebDriver);
             string BaseWindow = WebDriver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login", BaseWindow);
+            //UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login", BaseWindow);
 
         }
 

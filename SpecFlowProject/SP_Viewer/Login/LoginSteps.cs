@@ -29,6 +29,7 @@ namespace SpecFlowProject
             }
             if (tagFound == false)
             {
+                SupportPoint supportPoint = new SupportPoint();
                 SupportPoint.OpenSupportPoint();
             }
 
