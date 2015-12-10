@@ -9,13 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SeleniumProject.Facade;
+using System.Configuration;
 
 namespace SeleniumProject.Commons
 {
     public class UICommon
     {
-        public static int waitsec = Properties.Settings.Default.WaitTime;
-        
+        //public static int waitsec = Properties.Settings.Default.WaitTime;
+          System.Configuration.Configuration config =
+          ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
+          public static int waitsec = Int32.Parse(ConfigurationManager.AppSettings.Get("WaitSec"));
 
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
@@ -152,7 +156,7 @@ namespace SeleniumProject.Commons
 
          public static void SwitchToNewPageWithTitle(IWebDriver d, string Title)
          {
-             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
              wait.Until((driver) => { return d.Title.Contains(Title); });   
              
         }
@@ -167,7 +171,7 @@ namespace SeleniumProject.Commons
 
         public static bool ObjectNotExists(By searchType, IWebDriver d)
         {
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until((driver) => { return d.FindElements(searchType).Count == 0; });
             return true;
         }

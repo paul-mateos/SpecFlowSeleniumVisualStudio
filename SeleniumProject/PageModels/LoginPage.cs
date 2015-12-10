@@ -19,7 +19,7 @@ namespace SeleniumProject.PageModels
             d = driver; 
             //Wait for title to be displayed 
             System.Diagnostics.Debug.WriteLine("wait4title");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((D) => {
                 System.Diagnostics.Debug.WriteLine("testTitle:" + d.Title);
                 return d.Title.Contains("Login : SupportPoint"); });

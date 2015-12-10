@@ -117,10 +117,14 @@ namespace SeleniumProject.Tests
                     throw new ArgumentException("Browser Type Invalid");
             }
 
+            
             //Log on to site as user.
             InitialPage initialPage = new InitialPage(WebDriver);
             string BaseWindow = WebDriver.CurrentWindowHandle;
-            //UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login", BaseWindow);
+            if (browser.ToString() == "NodeWebkit")
+            {
+                UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login", BaseWindow);
+            }
 
         }
 

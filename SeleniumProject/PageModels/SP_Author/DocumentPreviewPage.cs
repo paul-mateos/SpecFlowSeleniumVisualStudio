@@ -26,7 +26,7 @@ namespace SeleniumProject.PageModels.SP_Author
 
         public void confirmPreviewBrowserOpen(string documentTitle)
         {
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until((driver) => { return d.Title.Contains(documentTitle); });
         }
 

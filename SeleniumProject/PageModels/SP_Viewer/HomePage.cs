@@ -17,7 +17,7 @@ namespace SeleniumProject.PageModels.SP_Viewer
         {
             d = driver;
             //Wait for title to be displayed 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((D) => { return d.Title.Contains("Home : SupportPoint"); }); 
         }
 
@@ -35,7 +35,7 @@ namespace SeleniumProject.PageModels.SP_Viewer
 
         internal void ClickFolderNavButton()
         { 
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
            // wait.Until(drv => drv.FindElement(By.XPath("//div[@class='loadmask']")));
             wait.Until(drv => drv.FindElement(By.Id("Folder")));
             UICommon.ClickButton(By.Id("Folder"), d);
