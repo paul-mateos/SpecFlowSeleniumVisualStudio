@@ -45,8 +45,8 @@ namespace SeleniumProject.Facade
         private static WebResponse response;
         public static string password;
         public static string username;
-        private string folderName;
-        private string fileName;
+        private string folderName = "";
+        private string fileName = "";
 
 
         public API()
