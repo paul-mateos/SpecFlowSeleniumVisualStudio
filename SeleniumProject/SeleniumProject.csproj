@@ -184,7 +184,7 @@
     <Folder Include="PageModels\SP_Editor\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
+    <Content Include="Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
     <Content Include="REST\readme.txt" />
   </ItemGroup>
   <Choose>
