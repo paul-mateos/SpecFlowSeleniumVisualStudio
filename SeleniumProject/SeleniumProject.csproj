@@ -59,7 +59,7 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -180,11 +180,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Binaries\" />
     <Folder Include="Data\" />
     <Folder Include="PageModels\SP_Editor\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
     <Content Include="REST\readme.txt" />
   </ItemGroup>
   <Choose>
