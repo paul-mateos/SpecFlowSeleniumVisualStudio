@@ -11,9 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumProject", "SeleniumProject\SeleniumProject.csproj", "{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BEAB4410-A77F-480A-AB40-A4284A873D97}"
-	ProjectSection(SolutionItems) = preProject
-		Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll = Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
