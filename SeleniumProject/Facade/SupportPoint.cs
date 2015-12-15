@@ -92,6 +92,7 @@ namespace SeleniumProject.Tests
                 IntroduceInstabilityByIgnoringProtectedModeSettings = true
             };
 
+            DesiredCapabilities capability;
             switch (browser)//Properties.Settings.Default.Browser)
             {
                 case BrowserType.IE:
@@ -108,8 +109,13 @@ namespace SeleniumProject.Tests
                     SPConfigFileCreator.UpdateSPConfigFile(environment, FileLocation);
                     WebDriver = (new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\"));
                     break;
-                case BrowserType.Grid:
-                    DesiredCapabilities capability = DesiredCapabilities.Chrome();
+                case BrowserType.GridChrome:
+                    capability = DesiredCapabilities.Chrome();
+                    WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    WebDriver.Navigate().GoToUrl(protocol + environment);
+                    break;
+                case BrowserType.GridIE:
+                    capability = DesiredCapabilities.InternetExplorer();
                     WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
@@ -161,10 +167,11 @@ namespace SeleniumProject.Tests
                     KillProcess("chromedriver.exe");
                     KillProcess("nw.exe");
                     break;
-                case BrowserType.Grid:
-                    KillProcess("Viewer.exe");
+                case BrowserType.GridChrome:
                     KillProcess("chromedriver.exe");
-                    KillProcess("nw.exe");
+                    break;
+                case BrowserType.GridIE:
+                    KillProcess("chromedriver.exe");
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");

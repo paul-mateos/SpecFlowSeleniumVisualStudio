@@ -15,8 +15,10 @@ namespace SeleniumProject.Environments
         Chrome = 1,
         [Description("NodeWebkit")]
         NodeWebkit = 2,
-        [Description("Grid")]
-        Grid = 3,
+        [Description("GridChrome")]
+        GridChrome = 3,
+        [Description("GridIE")]
+        GridIE = 4,
         
 
     }
