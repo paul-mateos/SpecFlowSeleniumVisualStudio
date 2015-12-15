@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowProject", "SpecFlowProject\SpecFlowProject.csproj", "{0E93B7B3-98C2-44BA-A791-C905EE68DA0C}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -26,6 +26,7 @@ Global
 		{0E93B7B3-98C2-44BA-A791-C905EE68DA0C}.Debug|x64.Build.0 = Release|x64
 		{0E93B7B3-98C2-44BA-A791-C905EE68DA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E93B7B3-98C2-44BA-A791-C905EE68DA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E93B7B3-98C2-44BA-A791-C905EE68DA0C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{0E93B7B3-98C2-44BA-A791-C905EE68DA0C}.Release|x64.ActiveCfg = Release|Any CPU
 		{0E93B7B3-98C2-44BA-A791-C905EE68DA0C}.Release|x64.Build.0 = Release|Any CPU
 		{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}.Debug|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +36,7 @@ Global
 		{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}.Debug|x64.Build.0 = Release|x64
 		{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}.Release|x64.ActiveCfg = Release|Any CPU
 		{C3D98F0A-590F-408F-8F05-4DDA1CF2DB26}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
