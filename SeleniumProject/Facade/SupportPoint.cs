@@ -111,12 +111,14 @@ namespace SeleniumProject.Tests
                     break;
                 case BrowserType.GridChrome:
                     capability = DesiredCapabilities.Chrome();
-                    WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    //WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    WebDriver = new RemoteWebDriver(new Uri("http://pvjenkins01:4444/wd/hub"), capability); 
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 case BrowserType.GridIE:
                     capability = DesiredCapabilities.InternetExplorer();
-                    WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    //WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    WebDriver = new RemoteWebDriver(new Uri("http://pvjenkins01:4444/wd/hub"), capability);
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 default:
