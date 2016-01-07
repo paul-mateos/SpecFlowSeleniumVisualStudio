@@ -131,10 +131,10 @@ namespace SeleniumProject.PageModels.SP_Author
             UICommon.ClickButton(addrolesToReadersButton, d);
         }
 
-        public void ClickAddRolesToReadersButton()
-        {
-            UICommon.ClickButton(addRolesToReadersButton, d);
-        }
+        //public void ClickAddRolesToReadersButton()
+        //{
+        //    UICommon.ClickButton(addRolesToReadersButton, d);
+        //}
 
         public void ClickAddUsersToReadersButton()
         {

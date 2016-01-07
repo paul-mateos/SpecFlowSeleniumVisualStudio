@@ -359,13 +359,13 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddrolesToReadersButton();
         }
 
-        [Given(@"I Click on the Add Role\(s\) to readers Button")]
-        [When(@"I Click on the Add Role\(s\) to readers Button")]
-        [Then(@"I Click on the Add Role\(s\) to readers Button")]
-        public void WhenIClickOnTheAddRolesToReadersButton()
-        {
-            SupportPoint.SPAuthorPage.ClickAddRolesToReadersButton();
-        }
+        //[Given(@"I Click on the Add Role\(s\) to readers Button")]
+        //[When(@"I Click on the Add Role\(s\) to readers Button")]
+        //[Then(@"I Click on the Add Role\(s\) to readers Button")]
+        //public void WhenIClickOnTheAddRolesToReadersButton()
+        //{
+        //    SupportPoint.SPAuthorPage.ClickAddRolesToReadersButton();
+        //}
 
         [Given(@"I Click on the Add role to writers Button")]
         [When(@"I Click on the Add role to writers Button")]
