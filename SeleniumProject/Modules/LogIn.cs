@@ -48,15 +48,18 @@ namespace SeleniumProject.Modules
                     SupportPoint.waitForAjaxLoading(); 
                     loginPage.SwitchToNewPageWithTitle("Home");
                     HomePage homePage = new HomePage(driver);
+                    SupportPoint.LogIn.waitForInterruptMessageClose();
                     SupportPoint.LogIn.waitForInfoMessageClose();
+                    
                 }
                 else
                 {
                     SupportPoint.waitForAjaxLoading();
                     loginPage.SwitchToNewBrowserWithTitle("Home", currentWindow);
                     HomePage homePage = new HomePage(driver);
+                    SupportPoint.LogIn.waitForInterruptMessageClose();
                     SupportPoint.LogIn.waitForInfoMessageClose();
-                }
+            }
         }
 
         public void LogOut()
@@ -89,6 +92,15 @@ namespace SeleniumProject.Modules
             try
             {
                 UICommon.confirmToastInfoMessage("Welcome", driver);
+            }
+            catch { }
+        }
+
+        public void waitForInterruptMessageClose()
+        {
+            try
+            {
+                UICommon.confirmInterruptMessage(driver);
             }
             catch { }
         }

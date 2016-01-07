@@ -308,6 +308,25 @@ namespace SeleniumProject.Commons
             return name + currentTime;
         }
 
+        public static bool confirmInterruptMessage(IWebDriver d)
+        {
+            //Read Interrupt Message Later
+            By interruptMessage = By.Id("qtip-interruptMsgModal");
+            IWebElement elem = d.FindElement(interruptMessage);
+            try
+            {
+                elem.FindElement(By.Id("cancelTitle")).Click();
+            }
+            catch { }
+            try
+            {
+                elem.FindElement(By.Id("alertMesgOkTitle")).Click();
+            }
+            catch { }
+
+            return true;
+        }
+
         public static bool confirmToastInfoMessage(string message, IWebDriver d)
         {
             //wait until toast message is exists

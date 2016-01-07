@@ -9,7 +9,7 @@
 
 Background: SuportPoint is open
 #Given I create the Automation template Folder
-Given I have logged in to SP as a new "authors"
+Given I have logged in to SP as a new "advanced_authors"
 #And I create test data for Document Type Template
 And I Open SP Manager to Document Management : SupportPoint
 

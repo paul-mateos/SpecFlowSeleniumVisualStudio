@@ -244,7 +244,7 @@ namespace SeleniumProject.Tests
             try
             {
                 Thread.Sleep(500);
-                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
+                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5));
                 wait.Until((d) => { return WebDriver.FindElement(By.XPath("//div[@id='AjaxLoading' and @style='display: none;']")); });
                 Thread.Sleep(500);
             }
