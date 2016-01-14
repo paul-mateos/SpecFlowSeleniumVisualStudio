@@ -99,14 +99,14 @@ namespace SpecFlowProject.SP_Editor.InsertMenu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SP_Editor")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("InsertMenu")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ImageMap")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("InProgress")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         public virtual void _4_4_InsertMenu_ImageMap()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.4_InsertMenu_ImageMap", new string[] {
                         "SP_Editor",
                         "InsertMenu",
                         "ImageMap",
-                        "InProgress"});
+                        "Regression"});
 #line 21
 this.ScenarioSetup(scenarioInfo);
 #line 5

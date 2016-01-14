@@ -17,7 +17,7 @@ Background:
 @SP_Editor
 @InsertMenu
 @ImageMap
-@InProgress
+@Regression
 Scenario: 4.4_InsertMenu_ImageMap
 	Given I am at Document Management page
 	And I edit the current document
