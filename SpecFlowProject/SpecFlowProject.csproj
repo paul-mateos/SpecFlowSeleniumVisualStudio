@@ -199,6 +199,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkflowManagement_CreateNew.feature</DependentUpon>
     </Compile>
+    <Compile Include="SP_Editor\Save_Steps.cs" />
+    <Compile Include="SP_Editor\ImageMapping_Steps.cs" />
+    <Compile Include="SP_Editor\Insert Menu\InsertMenu_ImageMap.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertMenu_ImageMap.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Editor\SPEditor_Steps.cs" />
+    <Compile Include="SP_Editor\ImageSelector_Steps.cs" />
     <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -421,6 +430,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WorkflowManagement_Search.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Editor\Insert Menu\InsertMenu_ImageMap.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>InsertMenu_ImageMap.feature.cs</LastGenOutput>
+    </None>
     <None Include="SupportPointAPI\ChangePasswordAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ChangePasswordAPI.feature.cs</LastGenOutput>
@@ -471,9 +484,7 @@
       <Name>SeleniumProject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SP_Editor\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\packages\Selenium.WebDriver.ChromeDriver.2.18.0.0\driver\chromedriver.exe">
       <Link>chromedriver.exe</Link>

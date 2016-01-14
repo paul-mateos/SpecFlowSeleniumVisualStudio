@@ -33,10 +33,10 @@ namespace SeleniumProject.PageModels.SP_Author
 
         public void closeOpenPreviewBrowser()
         {
-            var currentBrowser = d.CurrentWindowHandle;
+            //var currentBrowser = d.CurrentWindowHandle;
             UICommon.ClickButton(moreButton, d);
             UICommon.ClickLink(closePreview, d);
-            UICommon.SwitchToNewBrowserWithTitle(d, "Document Management", currentBrowser);
+            UICommon.SwitchToNewBrowserWithTitle(d, "Document Management");
         }
     }
 }

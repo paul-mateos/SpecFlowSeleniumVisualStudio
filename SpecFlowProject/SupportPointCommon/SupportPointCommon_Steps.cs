@@ -19,7 +19,7 @@ namespace SpecFlowProject.SupportPointCommon
         public void GivenISwitchToBrowser(string browserName)
         {
            
-            SupportPoint.SwitchToBrowser(browserName, SupportPoint.GetCurrentBrowserHandle());
+            SupportPoint.SwitchToBrowser(browserName);
         }
 
        

@@ -118,7 +118,7 @@ namespace SeleniumProject.Commons
         }
 
 
-        public static void SwitchToNewBrowserWithTitle(IWebDriver d, string title, string currentWindow)
+        public static void SwitchToNewBrowserWithTitle(IWebDriver d, string title)
         {
             
            
@@ -139,6 +139,7 @@ namespace SeleniumProject.Commons
                         
                         if (d.SwitchTo().Window(handle).Title.Contains(title))
                         {
+                            i = 3;
                             break;
                         }
                         else
@@ -346,6 +347,19 @@ namespace SeleniumProject.Commons
             IWebElement elem = GetElement(infoToast, d);
             //confirm message is correct
             StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
+            return true;
+        }
+
+
+        public static bool confirmEditorToastSuccessMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-success')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-title']")).Text, message, "Info message is invalid");
             //wait until toast message does not exist
             Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
             return true;

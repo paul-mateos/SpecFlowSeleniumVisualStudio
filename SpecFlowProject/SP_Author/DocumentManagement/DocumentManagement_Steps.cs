@@ -204,6 +204,14 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             StringAssert.Contains(folderIconString, folderIcon, "Folder Icon is not as expected:" + folderIconString);
         }
 
+        [Given(@"I edit the current document")]
+        [When(@"I edit the current document")]
+        [Then(@"I edit the current document")]
+        public void WhenIEditTheCurrentDocument()
+        {
+            SupportPoint.DocumentManagementPage.clickEditDocumentButton();
+        }
+
 
     }
 }

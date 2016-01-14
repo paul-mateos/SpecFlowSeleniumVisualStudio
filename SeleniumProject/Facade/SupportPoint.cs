@@ -22,6 +22,7 @@ using System.Configuration;
 using System.Globalization;
 using System.ComponentModel;
 using System.Collections.Specialized;
+using SeleniumProject.PageModels.SP_Editor;
 
 namespace SeleniumProject.Tests
 {
@@ -42,7 +43,7 @@ namespace SeleniumProject.Tests
         /*
          *  Page Models
          *  */
-
+        //SP Author Pages
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public DocumentSelectorPage DocumentSelectorPage { get { return new DocumentSelectorPage(WebDriver); } set { DocumentSelectorPage = value; } }
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
@@ -60,6 +61,12 @@ namespace SeleniumProject.Tests
         static public AdminPage AdminPage { get { return new AdminPage(WebDriver); } set { AdminPage = value; } }
         static public DocumentPreviewPage DocumentPreviewPage { get { return new DocumentPreviewPage(WebDriver); } set { DocumentPreviewPage = value; } }
         static public ChangePasswordPage ChangePasswordPage { get { return new ChangePasswordPage(WebDriver); } set { ChangePasswordPage = value; } }
+
+        //SP Editor Pages
+        static public SPEditorPage SPEditorPage { get { return new SPEditorPage(WebDriver); } set { SPEditorPage = value; } }
+        static public ImageSelectorPage ImageSelectorPage { get { return new ImageSelectorPage(WebDriver); } set { ImageSelectorPage = value; } }
+        static public ImageMappingPage ImageMappingPage { get { return new ImageMappingPage(WebDriver); } set { ImageMappingPage = value; } }
+        static public SavePage SavePage { get { return new SavePage(WebDriver); } set { SavePage = value; } }
 
         static public string environment;
         static public string protocol;
@@ -128,10 +135,10 @@ namespace SeleniumProject.Tests
             
             //Log on to site as user.
             InitialPage initialPage = new InitialPage(WebDriver);
-            string BaseWindow = WebDriver.CurrentWindowHandle;
+            //string BaseWindow = WebDriver.CurrentWindowHandle;
             if (browser.ToString() == "NodeWebkit")
             {
-                UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login", BaseWindow);
+                UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login");
             }
 
         }
@@ -145,9 +152,9 @@ namespace SeleniumProject.Tests
             {
                 try
                 {
-                    string BaseWindow = WebDriver.CurrentWindowHandle;
+                    //string BaseWindow = WebDriver.CurrentWindowHandle;
                     LogIn.CloseSPManager();
-                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home", BaseWindow);
+                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home");
                     LogIn.LogOutAndCloseApp();
                     WebDriver.Quit();
                 }
@@ -191,9 +198,9 @@ namespace SeleniumProject.Tests
             UICommon.SwitchToNewPageWithTitle(WebDriver,PageTitle);
         }
 
-        static public void SwitchToBrowser(string PageTitle, string currentWindow)
+        static public void SwitchToBrowser(string PageTitle)
         {
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver, PageTitle, currentWindow);
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver, PageTitle);
         }
 
         public static void KillProcess(string processName)
@@ -220,14 +227,13 @@ namespace SeleniumProject.Tests
             Assert.AreEqual(BrowserTitle, browserTitle, "Current Browser is not: " + BrowserTitle + ". It is: " + browserTitle);
         }
 
-        public static string GetCurrentBrowserHandle()
-        {
+        //public static string GetCurrentBrowserHandle()
+        //{
 
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
-            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
-            //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
-            return WebDriver.CurrentWindowHandle;
-        }
+        //    WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
+        //    wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
+        //    return WebDriver.CurrentWindowHandle;
+        //}
 
         public static void waitForPageLoading()
         {

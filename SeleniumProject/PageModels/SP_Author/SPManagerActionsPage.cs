@@ -19,6 +19,7 @@ namespace SeleniumProject.PageModels
         By ChangeLanguage = By.LinkText("Change interface language");
         By BackgroundTask = By.LinkText("Background tasks");
         By Close = By.LinkText("Close");
+        By Paul = By.LinkText("paul");
         By NewWorkflow = By.LinkText("New workflow");
         By NewRole = By.LinkText("New Role");
         By ChangeInterfaceLanguage = By.LinkText("Change interface language");

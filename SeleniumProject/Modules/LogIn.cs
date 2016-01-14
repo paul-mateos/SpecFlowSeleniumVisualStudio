@@ -37,7 +37,7 @@ namespace SeleniumProject.Modules
                 loginPage.ClickLoginAs();
                 loginPage.SetUserName(name);
                 loginPage.SetPassword(password);
-                string currentWindow = driver.CurrentWindowHandle;
+                //string currentWindow = driver.CurrentWindowHandle;
                 loginPage.ClickLogOnButton();
                 String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
                 loginPage.ConfirmWarningMessage(warningMessage);
@@ -55,7 +55,7 @@ namespace SeleniumProject.Modules
                 else
                 {
                     SupportPoint.waitForAjaxLoading();
-                    loginPage.SwitchToNewBrowserWithTitle("Home", currentWindow);
+                    loginPage.SwitchToNewBrowserWithTitle("Home");
                     HomePage homePage = new HomePage(driver);
                     SupportPoint.LogIn.waitForInterruptMessageClose();
                     SupportPoint.LogIn.waitForInfoMessageClose();

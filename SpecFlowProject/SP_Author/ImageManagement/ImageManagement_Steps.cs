@@ -14,9 +14,9 @@ namespace SpecFlowProject.SP_Author.ImageManagement
         //public string FindBy;
         //public string SearchText;
 
-        [Given(@"I search for image by (.*) for (.*)")]
-        [When(@"I search for image by (.*) for (.*)")]
-        [Then(@"I search for image by (.*) for (.*)")]
+        [Given(@"I search for image by (.*) for (.*) text")]
+        [When(@"I search for image by (.*) for (.*) text")]
+        [Then(@"I search for image by (.*) for (.*) text")]
         public void WhenISearchForImageByFindByForSearchText(String findBy, 
             String searchText)
         {

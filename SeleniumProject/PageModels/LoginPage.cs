@@ -96,9 +96,9 @@ namespace SeleniumProject.PageModels
 
         }
 
-        internal void SwitchToNewBrowserWithTitle(string title, string currentWindow)
+        internal void SwitchToNewBrowserWithTitle(string title)
         {
-            UICommon.SwitchToNewBrowserWithTitle(d, title, currentWindow);
+            UICommon.SwitchToNewBrowserWithTitle(d, title);
         }
         internal void SwitchToNewPageWithTitle(string title)
         {

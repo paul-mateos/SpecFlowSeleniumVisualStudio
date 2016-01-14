@@ -1,4 +1,5 @@
-﻿Feature: RoleManagement_CreateNew
+﻿@Regression
+Feature: RoleManagement_CreateNew
 	In order to create a new role
 	As a role creator
 	I want to create a role that does not exist
@@ -9,11 +10,11 @@ And I Open SP Manager to Document Management : SupportPoint
 When I Navigate to the Roles Page
 Then I am at Role Management page
 
-@Regression
+
 @RoleManagement_Properties
 Scenario: 1.1,2.1.(1,4)_Create New Role
 	Given I click on Actions
-	And I select New Role from Actions
+	And I select paul from Actions
 	When I enter the random role Name AutomationRole
 	#Workflow name will be prefixed with a random number
 	Then I click on the Save Button
@@ -21,7 +22,7 @@ Scenario: 1.1,2.1.(1,4)_Create New Role
 	And I Click on the Delete role Button
 	And I Confirm the Delete
 
-@Regression
+
 @RoleManagement_Properties
 Scenario: 2.1(2,3)_Edit Existing Role
 	Given I click on Actions
