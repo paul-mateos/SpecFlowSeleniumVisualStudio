@@ -1,6 +1,5 @@
 ﻿using System;
 using TechTalk.SpecFlow;
-using Panviva.LiveAPI;
 using SeleniumProject.Tests;
 using SeleniumProject;
 

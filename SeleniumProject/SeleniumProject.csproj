@@ -175,7 +175,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Facade\DELETE-LiveAPI.cs" />
     <Compile Include="REST\RestAPI.cs" />
     <Compile Include="API\UserImport.cs" />
     <Compile Include="PageModels\FoldersPage.cs" />

@@ -8,7 +8,6 @@ using System.Net.Http.Headers;
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using Panviva.LiveAPI;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumProject.Rest
