@@ -18,9 +18,9 @@ namespace SpecFlowProject.SupportPointAPI
     [Binding]
     public class CommonFeatureSteps:Steps
     {
-        public APICommons apiRequest = new APICommons();
+        //public APICommons apiRequest = new APICommons();
         private WebResponse response;
-        //private API api;
+        //private API api = new API();
         private Stream dataStream;
         private StreamReader reader;
         private JObject myJsonResponse;
@@ -28,7 +28,7 @@ namespace SpecFlowProject.SupportPointAPI
 
         public CommonFeatureSteps()
         {
-            //api = new API();
+            API api = new API();
         }
 
         //SPLive_CommonSteps splive_commonSteps = new SPLive_CommonSteps();

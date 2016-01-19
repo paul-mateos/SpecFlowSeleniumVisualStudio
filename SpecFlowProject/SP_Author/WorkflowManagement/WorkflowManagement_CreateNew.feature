@@ -5,14 +5,16 @@
 
 Background: Logon to SP and navigate to Workflow Manager
 Given I have logged in to SP as a new "workflow_managers"
-And I Open SP Manager to Document Management : SupportPoint
-When I Navigate to the Workflow Page
-Then I am at Workflow Management page
+#And I Open SP Manager to Document Management : SupportPoint
+And I Open SP Manager to Workflow Management : SupportPoint
+#When I Navigate to the Workflow Page
+And I am at Workflow Management page
 #And I Open SP Manager to Workflow Management : SupportPoint
 
 @Regression
 @WorkflowManagement_CreateNew
 Scenario: 1.1_Create New Workflow
+	
 	Given I click on Actions
 	And I select New workflow from Actions
 	When I enter the random workflow Name AutomationWorkflow

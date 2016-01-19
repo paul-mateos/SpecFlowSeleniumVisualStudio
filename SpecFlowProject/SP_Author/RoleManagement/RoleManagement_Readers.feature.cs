@@ -112,7 +112,7 @@ this.FeatureBackground();
 #line 22
  testRunner.And("I select Readers from Details & Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And("I Click on the Add Role(s) to readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Click on the Add role(s) to readers Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
  testRunner.Then("the Role Selector is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25

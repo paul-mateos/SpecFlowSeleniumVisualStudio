@@ -42,9 +42,9 @@ namespace SeleniumProject.Modules
 
         public void ToSupportPointManager(string managementPage)
         {
-            string BaseWindow = driver.CurrentWindowHandle;
+            //string BaseWindow = driver.CurrentWindowHandle;
             new NavBarPage(driver).ClickSPManagerButton();
-            SupportPoint.SwitchToBrowser(managementPage, BaseWindow);
+            SupportPoint.SwitchToBrowser(managementPage);
             SupportPoint.IsCurrentBrowser(managementPage);
         }
 

@@ -19,7 +19,7 @@ namespace SeleniumProject.PageModels
             d = driver; 
             //Wait for title to be displayed 
             System.Diagnostics.Debug.WriteLine("wait4title");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((D) => {
                 System.Diagnostics.Debug.WriteLine("testTitle:" + d.Title);
                 return d.Title.Contains("Login : SupportPoint"); });
@@ -96,9 +96,9 @@ namespace SeleniumProject.PageModels
 
         }
 
-        internal void SwitchToNewBrowserWithTitle(string title, string currentWindow)
+        internal void SwitchToNewBrowserWithTitle(string title)
         {
-            UICommon.SwitchToNewBrowserWithTitle(d, title, currentWindow);
+            UICommon.SwitchToNewBrowserWithTitle(d, title);
         }
         internal void SwitchToNewPageWithTitle(string title)
         {

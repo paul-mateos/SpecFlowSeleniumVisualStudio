@@ -18,10 +18,16 @@ using SeleniumProject.Utility;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Remote;
 using System.Threading;
+using System.Configuration;
+using System.Globalization;
+using System.ComponentModel;
+using System.Collections.Specialized;
+using SeleniumProject.PageModels.SP_Editor;
+using SeleniumProject.PageModels.SP_Viewer;
 
 namespace SeleniumProject.Tests
 {
-    static public class SupportPoint 
+     public class SupportPoint 
     {
         static public IWebDriver WebDriver {get; set;}
 
@@ -32,13 +38,16 @@ namespace SeleniumProject.Tests
         static public LogIn LogIn { get { return new LogIn(WebDriver); } set { LogIn = value; } }
         static public Nav Nav { get {return  new Nav(WebDriver);} set {Nav = value;} }
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
-        static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
-        static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
         //static public DELETEActions Actions { get { return new DELETEActions(WebDriver); } set { Actions = value; } }
         /*
          *  Page Models
          *  */
+        //SP Viewer Pages
+        static public HomePage HomePage { get { return new HomePage(WebDriver); } set { HomePage = value; } }
 
+        //SP Author Pages
+        static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
+        static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public DocumentSelectorPage DocumentSelectorPage { get { return new DocumentSelectorPage(WebDriver); } set { DocumentSelectorPage = value; } }
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
@@ -57,7 +66,30 @@ namespace SeleniumProject.Tests
         static public DocumentPreviewPage DocumentPreviewPage { get { return new DocumentPreviewPage(WebDriver); } set { DocumentPreviewPage = value; } }
         static public ChangePasswordPage ChangePasswordPage { get { return new ChangePasswordPage(WebDriver); } set { ChangePasswordPage = value; } }
 
+        //SP Editor Pages
+        static public SPEditorPage SPEditorPage { get { return new SPEditorPage(WebDriver); } set { SPEditorPage = value; } }
+        static public ImageSelectorPage ImageSelectorPage { get { return new ImageSelectorPage(WebDriver); } set { ImageSelectorPage = value; } }
+        static public ImageMappingPage ImageMappingPage { get { return new ImageMappingPage(WebDriver); } set { ImageMappingPage = value; } }
+        static public SavePage SavePage { get { return new SavePage(WebDriver); } set { SavePage = value; } }
 
+        static public string environment;
+        static public string protocol;
+        static public BrowserType browser;
+        static public int waitsec;
+        
+        public SupportPoint()
+        {
+            System.Configuration.Configuration config =
+                    ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
+
+
+            environment = ConfigurationManager.AppSettings.Get("Environment");
+            browser = (BrowserType)Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings.Get("Browser"));
+            protocol = ConfigurationManager.AppSettings.Get("Protocol");
+            waitsec = Int32.Parse(ConfigurationManager.AppSettings.Get("WaitSec"));
+
+        }
+        
         /*
          * Open Support Point app: if there is existing one, it will kill it
          */
@@ -65,14 +97,14 @@ namespace SeleniumProject.Tests
         {
             
             ExitSuportPoint(); //just in case previous test not cleanup properly
-            string environment = Properties.Settings.Default.Environment;
-            string protocol = Properties.Settings.Default.Protocol;
+
             var options = new InternetExplorerOptions()
             {
                 IntroduceInstabilityByIgnoringProtectedModeSettings = true
             };
 
-            switch (Properties.Settings.Default.Browser)
+            DesiredCapabilities capability;
+            switch (browser)//Properties.Settings.Default.Browser)
             {
                 case BrowserType.IE:
                     WebDriver = (new InternetExplorerDriver(options));
@@ -84,22 +116,34 @@ namespace SeleniumProject.Tests
                     break;
                 case BrowserType.NodeWebkit:
                     string FileLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Panviva\\SupportPoint\\Viewer\\configSPViewer.json";
-                    SPConfigFileCreator.UpdateSPConfigFile(Properties.Settings.Default.Environment, FileLocation);
+                    //SPConfigFileCreator.UpdateSPConfigFile(Properties.Settings.Default.Environment, FileLocation);
+                    SPConfigFileCreator.UpdateSPConfigFile(environment, FileLocation);
                     WebDriver = (new ChromeDriver(@"C:\Program Files (x86)\Panviva\SupportPoint Viewer\"));
                     break;
-                case BrowserType.Grid:
-                    DesiredCapabilities capability = DesiredCapabilities.Chrome();
-                    WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                case BrowserType.GridChrome:
+                    capability = DesiredCapabilities.Chrome();
+                    //WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    WebDriver = new RemoteWebDriver(new Uri("http://pvjenkins01:4444/wd/hub"), capability); 
+                    WebDriver.Navigate().GoToUrl(protocol + environment);
+                    break;
+                case BrowserType.GridIE:
+                    capability = DesiredCapabilities.InternetExplorer();
+                    //WebDriver = new RemoteWebDriver(new Uri("http://10.5.250.44:4444/wd/hub"), capability);
+                    WebDriver = new RemoteWebDriver(new Uri("http://pvjenkins01:4444/wd/hub"), capability);
                     WebDriver.Navigate().GoToUrl(protocol + environment);
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
             }
 
+            
             //Log on to site as user.
             InitialPage initialPage = new InitialPage(WebDriver);
-            string BaseWindow = WebDriver.CurrentWindowHandle;
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login", BaseWindow);
+            //string BaseWindow = WebDriver.CurrentWindowHandle;
+            if (browser.ToString() == "NodeWebkit")
+            {
+                UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Login");
+            }
 
         }
 
@@ -112,16 +156,16 @@ namespace SeleniumProject.Tests
             {
                 try
                 {
-                    string BaseWindow = WebDriver.CurrentWindowHandle;
+                    //string BaseWindow = WebDriver.CurrentWindowHandle;
                     LogIn.CloseSPManager();
-                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home", BaseWindow);
+                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home");
                     LogIn.LogOutAndCloseApp();
                     WebDriver.Quit();
                 }
                 catch (Exception) { }
             }
             WebDriver = null;
-            switch (Properties.Settings.Default.Browser)
+            switch (browser)//Properties.Settings.Default.Browser)
             {
                 case BrowserType.IE:
 
@@ -136,10 +180,11 @@ namespace SeleniumProject.Tests
                     KillProcess("chromedriver.exe");
                     KillProcess("nw.exe");
                     break;
-                case BrowserType.Grid:
-                    KillProcess("Viewer.exe");
+                case BrowserType.GridChrome:
                     KillProcess("chromedriver.exe");
-                    KillProcess("nw.exe");
+                    break;
+                case BrowserType.GridIE:
+                    KillProcess("chromedriver.exe");
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
@@ -157,9 +202,9 @@ namespace SeleniumProject.Tests
             UICommon.SwitchToNewPageWithTitle(WebDriver,PageTitle);
         }
 
-        static public void SwitchToBrowser(string PageTitle, string currentWindow)
+        static public void SwitchToBrowser(string PageTitle)
         {
-            UICommon.SwitchToNewBrowserWithTitle(WebDriver, PageTitle, currentWindow);
+            UICommon.SwitchToNewBrowserWithTitle(WebDriver, PageTitle);
         }
 
         public static void KillProcess(string processName)
@@ -179,25 +224,27 @@ namespace SeleniumProject.Tests
         public static void IsCurrentBrowser(string BrowserTitle)
         {
            
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
+            //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             string browserTitle = WebDriver.Title.ToString();
             Assert.AreEqual(BrowserTitle, browserTitle, "Current Browser is not: " + BrowserTitle + ". It is: " + browserTitle);
         }
 
-        public static string GetCurrentBrowserHandle()
-        {
+        //public static string GetCurrentBrowserHandle()
+        //{
 
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
-            return WebDriver.CurrentWindowHandle;
-        }
+        //    WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
+        //    wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
+        //    return WebDriver.CurrentWindowHandle;
+        //}
 
         public static void waitForPageLoading()
         {
             Thread.Sleep(500);
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
+            //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
             Thread.Sleep(500);
 
         }
@@ -207,7 +254,7 @@ namespace SeleniumProject.Tests
             try
             {
                 Thread.Sleep(500);
-                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5));
                 wait.Until((d) => { return WebDriver.FindElement(By.XPath("//div[@id='AjaxLoading' and @style='display: none;']")); });
                 Thread.Sleep(500);
             }

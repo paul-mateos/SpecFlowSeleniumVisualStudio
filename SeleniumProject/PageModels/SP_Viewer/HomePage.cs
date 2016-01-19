@@ -9,36 +9,39 @@ using System.Threading.Tasks;
 
 namespace SeleniumProject.PageModels.SP_Viewer
 {
-    class HomePage : BasePage
+    public class HomePage : BasePage
     {
-        //IWebDriver d;
+        //Search By
+        By loginButton = By.Id("login_btn");
+        By logoutButton = By.Id("logout_btn");
+        By folderButton = By.Id("Folder");
+
         public HomePage(IWebDriver driver)
             : base(driver)
         {
             d = driver;
             //Wait for title to be displayed 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((D) => { return d.Title.Contains("Home : SupportPoint"); }); 
         }
 
         public void ClickLoginButton()
         {
-            UICommon.ClickButton(By.Id("login_btn"), d);
+            UICommon.ClickButton(loginButton, d);
 
         }
 
 
-        internal void ClickLogOutButton()
+        public void ClickLogOutButton()
         {
-            UICommon.ClickButton(By.Id("logout_btn"), d);
+            UICommon.ClickButton(logoutButton, d);
         }
 
-        internal void ClickFolderNavButton()
+        public void ClickFolderNavButton()
         { 
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
-           // wait.Until(drv => drv.FindElement(By.XPath("//div[@class='loadmask']")));
-            wait.Until(drv => drv.FindElement(By.Id("Folder")));
-            UICommon.ClickButton(By.Id("Folder"), d);
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
+            wait.Until(drv => drv.FindElement(folderButton)).Click();
+            //UICommon.ClickButton(By.Id("Folder"), d);
         }
 
         internal bool GetWelcomeTitleDisplayProperty()

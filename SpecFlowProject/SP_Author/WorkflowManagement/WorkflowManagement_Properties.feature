@@ -6,9 +6,10 @@
 
 Background: Logon to SP and navigate to Workflow Manager
 Given I have logged in to SP as a new "workflow_managers"
-And I Open SP Manager to Document Management : SupportPoint
-And I select the Home DocumentFolder
-And I Navigate to the Workflow Page
+#And I Open SP Manager to Document Management : SupportPoint
+And I Open SP Manager to Workflow Management : SupportPoint
+#And I select the Home DocumentFolder
+#And I Navigate to the Workflow Page
 And I am at Workflow Management page
 #Create Automation Workflow required here
 

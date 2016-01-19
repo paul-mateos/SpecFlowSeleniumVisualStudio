@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject.SP_Author.DocumentManagement
 {
     [Binding]
-    public sealed class DocumentManagement_Steps
+    public class DocumentManagement_Steps
     {
 
         public string childFolder;
@@ -202,6 +202,14 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             this.WhenISelectADocumentFolder(folderString);
             string folderIconString = SupportPoint.DocumentManagementPage.GetFolderIconTitle();
             StringAssert.Contains(folderIconString, folderIcon, "Folder Icon is not as expected:" + folderIconString);
+        }
+
+        [Given(@"I edit the current document")]
+        [When(@"I edit the current document")]
+        [Then(@"I edit the current document")]
+        public void WhenIEditTheCurrentDocument()
+        {
+            SupportPoint.DocumentManagementPage.clickEditDocumentButton();
         }
 
 

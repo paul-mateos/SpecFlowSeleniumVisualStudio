@@ -12,21 +12,21 @@ namespace SpecFlowProject
     {
        // private CommonFeatureSteps common = new CommonFeatureSteps();
         
-        [Given(@"I have logged into SupportPoint")]
-        public void GivenIHaveLoggedIntoSupportPoint()
-        {
+        //[Given(@"I have logged into SupportPoint")]
+        //public void GivenIHaveLoggedIntoSupportPoint()
+        //{
 
-            if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
-            SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
+        //    if (!SupportPoint.IsSupportPointOpen()) SupportPoint.OpenSupportPoint();
+        //    SupportPoint.LogIn.Login(FeatureContext.Current.Get<string>("UserName"), FeatureContext.Current.Get<string>("Pwd"));
 
-        }
+        //}
 
-        [When(@"waitBeforeRequest")]
-        [Then(@"waitForResponse")]
-        public void ThenWaitForResponse()
-        {
-            Thread.Sleep(8000);
-        }
+        //[When(@"waitBeforeRequest")]
+        //[Then(@"waitForResponse")]
+        //public void ThenWaitForResponse()
+        //{
+        //    Thread.Sleep(8000);
+        //}
 
 
     }

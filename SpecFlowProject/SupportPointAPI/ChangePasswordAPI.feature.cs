@@ -97,7 +97,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 20
    testRunner.And("I have a request body of", "\t\"Instance\":\"localhost\",\r\n\t\"NewPassword\":\"2\",\r\n\t\"OldPassword\":\"1\",", ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
-            testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.When("I send request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
             testRunner.Then("My result is response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

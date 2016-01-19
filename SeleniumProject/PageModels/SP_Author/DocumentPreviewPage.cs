@@ -26,17 +26,17 @@ namespace SeleniumProject.PageModels.SP_Author
 
         public void confirmPreviewBrowserOpen(string documentTitle)
         {
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until((driver) => { return d.Title.Contains(documentTitle); });
         }
 
 
         public void closeOpenPreviewBrowser()
         {
-            var currentBrowser = d.CurrentWindowHandle;
+            //var currentBrowser = d.CurrentWindowHandle;
             UICommon.ClickButton(moreButton, d);
             UICommon.ClickLink(closePreview, d);
-            UICommon.SwitchToNewBrowserWithTitle(d, "Document Management", currentBrowser);
+            UICommon.SwitchToNewBrowserWithTitle(d, "Document Management");
         }
     }
 }

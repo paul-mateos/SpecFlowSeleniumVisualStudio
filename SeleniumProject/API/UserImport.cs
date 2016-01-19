@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Panviva.LiveAPI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,6 +9,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using SeleniumProject.Facade;
+using System.Configuration;
 
 namespace SeleniumProject.REST
 {
@@ -34,13 +35,18 @@ namespace SeleniumProject.REST
 
         public UserImport()
         {
-            this.username = Properties.Settings.Default.username;
-            this.password = Properties.Settings.Default.password;
+
+            
+            
             this.folderName =  Properties.Settings.Default.folderName;
             this.fileName = Properties.Settings.Default.fileName;
-            this.environment = Properties.Settings.Default.Environment;
-            this.protocol = Properties.Settings.Default.Protocol;
+            System.Configuration.Configuration config =
+                  ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
 
+            this.environment = ConfigurationManager.AppSettings.Get("Environment");
+            this.protocol = ConfigurationManager.AppSettings.Get("Protocol");
+            this.username = ConfigurationManager.AppSettings.Get("Username");
+            this.password = ConfigurationManager.AppSettings.Get("Password");
         }
 
         public void setURL(String url)
