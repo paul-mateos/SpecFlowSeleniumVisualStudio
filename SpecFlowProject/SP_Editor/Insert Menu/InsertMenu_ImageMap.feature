@@ -6,13 +6,14 @@ Background:
 	Given I have logged in to SP as a new "advanced_authors"
 	And I Open SP Manager to Document Management : SupportPoint
 	And I am at Document Management page
-	And I select the Home DocumentFolder
-	When I press Details & Actions
-	And I select New from Details & Actions
-	And I have selected Document
-	Then I have entered Type Reusable content Name docImageMapTest Description documentforimagemap
-	And I click on the Save Button
-	
+	#And I select the Home DocumentFolder
+	#When I press Details & Actions
+	#And I select New from Details & Actions
+	#And I have selected Document
+	#Then I have entered Type Reusable content Name docImageMapTest Description documentforimagemap
+	#And I click on the Save Button
+	And I have created a new document with Type Reusable content Name docImageMapTest Description documentforimagemap
+
 
 @SP_Editor
 @InsertMenu

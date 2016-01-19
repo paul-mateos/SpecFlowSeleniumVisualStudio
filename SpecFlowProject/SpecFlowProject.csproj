@@ -208,10 +208,10 @@
     </Compile>
     <Compile Include="SP_Editor\SPEditor_Steps.cs" />
     <Compile Include="SP_Editor\ImageSelector_Steps.cs" />
-    <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
+    <Compile Include="SP_Viewer\ViewerDocument_Miscellaneous.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateNewDocument.feature</DependentUpon>
+      <DependentUpon>ViewerDocument_Miscellaneous.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointAPI\GetAPIKey.feature.cs">
       <AutoGen>True</AutoGen>
@@ -434,6 +434,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>InsertMenu_ImageMap.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Viewer\ViewerDocument_Miscellaneous.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ViewerDocument_Miscellaneous.feature.cs</LastGenOutput>
+    </None>
     <None Include="SupportPointAPI\ChangePasswordAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ChangePasswordAPI.feature.cs</LastGenOutput>
@@ -441,10 +445,6 @@
     <None Include="SupportPointAPI\AccountLoginAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AccountLoginAPI.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SupportPointAPI\CreateNewDocument.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateNewDocument.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointAPI\CreateUpdateUserAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

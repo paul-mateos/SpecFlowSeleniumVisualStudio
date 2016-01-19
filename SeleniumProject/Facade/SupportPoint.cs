@@ -23,6 +23,7 @@ using System.Globalization;
 using System.ComponentModel;
 using System.Collections.Specialized;
 using SeleniumProject.PageModels.SP_Editor;
+using SeleniumProject.PageModels.SP_Viewer;
 
 namespace SeleniumProject.Tests
 {
@@ -37,13 +38,16 @@ namespace SeleniumProject.Tests
         static public LogIn LogIn { get { return new LogIn(WebDriver); } set { LogIn = value; } }
         static public Nav Nav { get {return  new Nav(WebDriver);} set {Nav = value;} }
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
-        static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
-        static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
         //static public DELETEActions Actions { get { return new DELETEActions(WebDriver); } set { Actions = value; } }
         /*
          *  Page Models
          *  */
+        //SP Viewer Pages
+        static public HomePage HomePage { get { return new HomePage(WebDriver); } set { HomePage = value; } }
+
         //SP Author Pages
+        static public SPManagerNavBarPage SPManagerNav { get { return new SPManagerNavBarPage(WebDriver); } set { SPManagerNav = value; } }
+        static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public DocumentSelectorPage DocumentSelectorPage { get { return new DocumentSelectorPage(WebDriver); } set { DocumentSelectorPage = value; } }
         static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }

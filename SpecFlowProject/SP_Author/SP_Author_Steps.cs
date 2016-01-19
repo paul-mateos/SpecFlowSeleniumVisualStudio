@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject.SP_Author
 {
     [Binding]
-    public sealed class SP_Author_Steps
+    public class SP_Author_Steps
     {
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
 
@@ -414,8 +414,6 @@ namespace SpecFlowProject.SP_Author
         {
             SupportPoint.SPAuthorPage.ClickNotificationPeriod(notificationPeriod);
         }
-
-
-
+        
     }
 }

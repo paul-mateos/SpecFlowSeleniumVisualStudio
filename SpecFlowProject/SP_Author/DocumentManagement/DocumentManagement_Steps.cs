@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject.SP_Author.DocumentManagement
 {
     [Binding]
-    public sealed class DocumentManagement_Steps
+    public class DocumentManagement_Steps
     {
 
         public string childFolder;
