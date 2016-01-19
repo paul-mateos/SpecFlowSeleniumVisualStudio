@@ -2,32 +2,11 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SeleniumProject.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Environment1" Type="SeleniumProject.Environments.EnvironmentType" Scope="User">
-      <Value Profile="(Default)">QA_A</Value>
-    </Setting>
-    <Setting Name="WaitTime" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">20</Value>
-    </Setting>
-    <Setting Name="username" Type="System.String" Scope="User">
-      <Value Profile="(Default)">panviva</Value>
-    </Setting>
-    <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Burke6368</Value>
-    </Setting>
-    <Setting Name="folderName" Type="System.String" Scope="User">
+    <Setting Name="folderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">TestAutomationData</Value>
     </Setting>
-    <Setting Name="fileName" Type="System.String" Scope="User">
+    <Setting Name="fileName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">usersList</Value>
-    </Setting>
-    <Setting Name="Environment" Type="System.String" Scope="User">
-      <Value Profile="(Default)">qa-spui-prod</Value>
-    </Setting>
-    <Setting Name="Protocol" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://</Value>
-    </Setting>
-    <Setting Name="Browser" Type="SeleniumProject.Environments.BrowserType" Scope="User">
-      <Value Profile="(Default)">Chrome</Value>
     </Setting>
   </Settings>
 </SettingsFile>

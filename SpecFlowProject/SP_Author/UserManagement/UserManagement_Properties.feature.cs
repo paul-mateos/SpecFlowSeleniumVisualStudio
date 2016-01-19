@@ -31,8 +31,8 @@ namespace SpecFlowProject.SP_Author.UserManagement
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UserManagement_Properties", "In order to manage user properties\nAs a role creator\nI want to manage the propert" +
-                    "ies of a user", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UserManagement_Properties", "In order to manage user properties\r\nAs a role creator\r\nI want to manage the prope" +
+                    "rties of a user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

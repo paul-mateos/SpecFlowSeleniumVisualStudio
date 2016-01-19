@@ -25,7 +25,7 @@ namespace SeleniumProject.PageModels.SP_Author
         public AddUserPage(IWebDriver driver)
             : base(driver)
         {
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
 
             wait.Until(ExpectedConditions.ElementExists(UserName));
         }

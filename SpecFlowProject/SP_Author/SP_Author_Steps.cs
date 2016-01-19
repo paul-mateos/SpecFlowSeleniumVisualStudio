@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace SpecFlowProject.SP_Author
 {
     [Binding]
-    public sealed class SP_Author_Steps
+    public class SP_Author_Steps
     {
         // For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
 
@@ -359,13 +359,13 @@ namespace SpecFlowProject.SP_Author
             SupportPoint.SPAuthorPage.ClickAddrolesToReadersButton();
         }
 
-        [Given(@"I Click on the Add Role\(s\) to readers Button")]
-        [When(@"I Click on the Add Role\(s\) to readers Button")]
-        [Then(@"I Click on the Add Role\(s\) to readers Button")]
-        public void WhenIClickOnTheAddRolesToReadersButton()
-        {
-            SupportPoint.SPAuthorPage.ClickAddRolesToReadersButton();
-        }
+        //[Given(@"I Click on the Add Role\(s\) to readers Button")]
+        //[When(@"I Click on the Add Role\(s\) to readers Button")]
+        //[Then(@"I Click on the Add Role\(s\) to readers Button")]
+        //public void WhenIClickOnTheAddRolesToReadersButton()
+        //{
+        //    SupportPoint.SPAuthorPage.ClickAddRolesToReadersButton();
+        //}
 
         [Given(@"I Click on the Add role to writers Button")]
         [When(@"I Click on the Add role to writers Button")]
@@ -414,8 +414,6 @@ namespace SpecFlowProject.SP_Author
         {
             SupportPoint.SPAuthorPage.ClickNotificationPeriod(notificationPeriod);
         }
-
-
-
+        
     }
 }

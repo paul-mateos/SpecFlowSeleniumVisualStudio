@@ -9,13 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SeleniumProject.Facade;
+using System.Configuration;
 
 namespace SeleniumProject.Commons
 {
     public class UICommon
     {
-        public static int waitsec = Properties.Settings.Default.WaitTime;
-        
+        //public static int waitsec = Properties.Settings.Default.WaitTime;
+          System.Configuration.Configuration config =
+          ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
+          public static int waitsec = Int32.Parse(ConfigurationManager.AppSettings.Get("WaitSec"));
 
         public static IWebElement GetElement(By searchType, IWebDriver d)
         {
@@ -114,7 +118,7 @@ namespace SeleniumProject.Commons
         }
 
 
-        public static void SwitchToNewBrowserWithTitle(IWebDriver d, string title, string currentWindow)
+        public static void SwitchToNewBrowserWithTitle(IWebDriver d, string title)
         {
             
            
@@ -135,6 +139,7 @@ namespace SeleniumProject.Commons
                         
                         if (d.SwitchTo().Window(handle).Title.Contains(title))
                         {
+                            i = 3;
                             break;
                         }
                         else
@@ -152,7 +157,7 @@ namespace SeleniumProject.Commons
 
          public static void SwitchToNewPageWithTitle(IWebDriver d, string Title)
          {
-             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
              wait.Until((driver) => { return d.Title.Contains(Title); });   
              
         }
@@ -167,7 +172,7 @@ namespace SeleniumProject.Commons
 
         public static bool ObjectNotExists(By searchType, IWebDriver d)
         {
-            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until((driver) => { return d.FindElements(searchType).Count == 0; });
             return true;
         }
@@ -304,6 +309,25 @@ namespace SeleniumProject.Commons
             return name + currentTime;
         }
 
+        public static bool confirmInterruptMessage(IWebDriver d)
+        {
+            //Read Interrupt Message Later
+            By interruptMessage = By.Id("qtip-interruptMsgModal");
+            IWebElement elem = d.FindElement(interruptMessage);
+            try
+            {
+                elem.FindElement(By.Id("cancelTitle")).Click();
+            }
+            catch { }
+            try
+            {
+                elem.FindElement(By.Id("alertMesgOkTitle")).Click();
+            }
+            catch { }
+
+            return true;
+        }
+
         public static bool confirmToastInfoMessage(string message, IWebDriver d)
         {
             //wait until toast message is exists
@@ -323,6 +347,19 @@ namespace SeleniumProject.Commons
             IWebElement elem = GetElement(infoToast, d);
             //confirm message is correct
             StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-message']")).Text, message, "Info message is invalid");
+            //wait until toast message does not exist
+            Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
+            return true;
+        }
+
+
+        public static bool confirmEditorToastSuccessMessage(string message, IWebDriver d)
+        {
+            //wait until toast message is exists
+            By infoToast = By.XPath("//div[@id='toast-container']//div[contains(@class,'toast-success')]");
+            IWebElement elem = GetElement(infoToast, d);
+            //confirm message is correct
+            StringAssert.Contains(elem.FindElement(By.XPath(".//div[@class='toast-title']")).Text, message, "Info message is invalid");
             //wait until toast message does not exist
             Assert.IsTrue(ObjectNotExists(infoToast, d), "Object still exists");
             return true;

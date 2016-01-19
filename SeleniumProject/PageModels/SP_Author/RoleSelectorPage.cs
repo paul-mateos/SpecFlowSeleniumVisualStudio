@@ -30,7 +30,7 @@ namespace SeleniumProject.PageModels.SP_Author
             : base(driver)
         {
             WebDriverWait wait;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until(ExpectedConditions.ElementExists(Title));
         }
 

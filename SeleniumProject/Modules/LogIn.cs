@@ -1,12 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using SeleniumProject.Commons;
+using SeleniumProject.Environments;
 using SeleniumProject.PageModels;
 using SeleniumProject.PageModels.SP_Author;
 using SeleniumProject.PageModels.SP_Viewer;
 using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -16,8 +18,16 @@ namespace SeleniumProject.Modules
 {
     public class LogIn : BaseWebDriverModule
     {
+        public static BrowserType browser;
+        public LogIn(IWebDriver d) : base(d) 
+        {
+            System.Configuration.Configuration config =
+                      ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None) as Configuration;
+
+            browser = (BrowserType) Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings.Get("Browser"));
+
         
-        public LogIn(IWebDriver d) : base(d) { }
+        }
 
         public void Login(String name, String password)
         {
@@ -27,26 +37,29 @@ namespace SeleniumProject.Modules
                 loginPage.ClickLoginAs();
                 loginPage.SetUserName(name);
                 loginPage.SetPassword(password);
-                string currentWindow = driver.CurrentWindowHandle;
+                //string currentWindow = driver.CurrentWindowHandle;
                 loginPage.ClickLogOnButton();
                 String warningMessage = "You are already logged in.\r\nAny unsaved data will be lost.\r\nDo you wish to continue?\r\nContinue\r\nCancel";
                 loginPage.ConfirmWarningMessage(warningMessage);
                 warningMessage = "The license limit has been exceeded. Do you want to continue?";
                 loginPage.ConfirmLicenseMessage(warningMessage);
-                if (Properties.Settings.Default.Browser.ToString() == "NodeWebkit")
+                if (browser.ToString() == "NodeWebkit")
                 {
                     SupportPoint.waitForAjaxLoading(); 
                     loginPage.SwitchToNewPageWithTitle("Home");
                     HomePage homePage = new HomePage(driver);
+                    SupportPoint.LogIn.waitForInterruptMessageClose();
                     SupportPoint.LogIn.waitForInfoMessageClose();
+                    
                 }
                 else
                 {
                     SupportPoint.waitForAjaxLoading();
-                    loginPage.SwitchToNewBrowserWithTitle("Home", currentWindow);
+                    loginPage.SwitchToNewBrowserWithTitle("Home");
                     HomePage homePage = new HomePage(driver);
+                    SupportPoint.LogIn.waitForInterruptMessageClose();
                     SupportPoint.LogIn.waitForInfoMessageClose();
-                }
+            }
         }
 
         public void LogOut()
@@ -79,6 +92,15 @@ namespace SeleniumProject.Modules
             try
             {
                 UICommon.confirmToastInfoMessage("Welcome", driver);
+            }
+            catch { }
+        }
+
+        public void waitForInterruptMessageClose()
+        {
+            try
+            {
+                UICommon.confirmInterruptMessage(driver);
             }
             catch { }
         }

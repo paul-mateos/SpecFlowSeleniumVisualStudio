@@ -27,7 +27,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By documentName = By.XPath("//input[@name='name']");
         By moveButton = By.XPath("//button[@data-automation-id='doc-details-actions-move']");
         By moveintoButton = By.XPath("//button[@title='Move into']");
-        By editButton = By.XPath("//button[@title='Edit']");
+        By editButton = By.XPath("//span[@title='Edit']");
         By docSearchQuery = By.XPath("//input[@data-automation-id='doc-explorer-search-query']");
         By searchButton = By.XPath("//button[@data-automation-id='doc-explorer-search-submit']");
         By previewDocumentButton = By.XPath("//span[@title='Preview']");
@@ -43,7 +43,7 @@ namespace SeleniumProject.PageModels.SP_Author
         public DocumentManagementPage(IWebDriver driver)
             : base(driver)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return d.Title.Contains("Document Management : SupportPoint"); });
         }
 
@@ -81,6 +81,11 @@ namespace SeleniumProject.PageModels.SP_Author
         public void clickAddDocumentButton()
         {
             UICommon.ClickButton(addDocumentButton, d);
+        }
+
+        public void clickEditDocumentButton()
+        {
+            UICommon.ClickButton(editButton, d);
         }
 
 
@@ -151,9 +156,9 @@ namespace SeleniumProject.PageModels.SP_Author
 
         public void clickPreviewDocumentButton(string documentTitle)
         {
-            var currentBrowser = d.CurrentWindowHandle;
+            //var currentBrowser = d.CurrentWindowHandle;
             UICommon.ClickButton(previewDocumentButton, d);
-            UICommon.SwitchToNewBrowserWithTitle(d, documentTitle, currentBrowser);
+            UICommon.SwitchToNewBrowserWithTitle(d, documentTitle);
         }
 
         public void ConfirmReadersPermissionsViewable()

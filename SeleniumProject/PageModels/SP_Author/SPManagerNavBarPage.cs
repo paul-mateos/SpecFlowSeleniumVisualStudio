@@ -19,7 +19,7 @@ namespace SeleniumProject.PageModels.SP_Author
         By WorkFlow = By.LinkText("Workflow");
         By Reports = By.LinkText("Reports");
         By Admin = By.LinkText("Admin");
-        By Actions = By.XPath("//div[@id='navbar-main']/ul[@title='Action']/li");
+        By Actions = By.XPath("//div[@id='navbar-main']/ul[@title='Action']/li[@class='dropdown']");
        
        
         public SPManagerNavBarPage(IWebDriver driver)

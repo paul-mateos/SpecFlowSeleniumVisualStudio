@@ -98,7 +98,7 @@ this.FeatureBackground();
 #line 15
  testRunner.And("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("I search for image by ID for 2190", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search for image by ID for 2190 text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
@@ -132,7 +132,7 @@ this.FeatureBackground();
 #line 27
  testRunner.And("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("I search for image by ID for 3027", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search for image by ID for 3027 text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
@@ -166,7 +166,7 @@ this.FeatureBackground();
 #line 39
  testRunner.And("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And("I search for image by Name for 336a28215c215237ff39636e06e035cb.gif", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search for image by Name for 336a28215c215237ff39636e06e035cb.gif text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
  testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
@@ -198,7 +198,7 @@ this.FeatureBackground();
 #line 50
  testRunner.And("I am at Image Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
- testRunner.And("I search for image by Name for 336a28215c215237ff39636e06e035cb.gif", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I search for image by Name for 336a28215c215237ff39636e06e035cb.gif text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
  testRunner.And("the search should return the image record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53

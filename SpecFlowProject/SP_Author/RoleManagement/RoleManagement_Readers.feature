@@ -20,7 +20,7 @@ Scenario: 2.5(1,2)_AddRoleToReaders
 	And I confirm the role Name
 	When I press Details & Actions
 	And I select Readers from Details & Actions
-	And I Click on the Add Role(s) to readers Button
+	And I Click on the Add role(s) to readers Button
 	Then the Role Selector is opened
 	And I search for role for authors
 	And I select the record authors using column Role from the Role Selector table

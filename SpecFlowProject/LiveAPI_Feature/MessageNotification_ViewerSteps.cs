@@ -1,6 +1,5 @@
 ﻿using System;
 using TechTalk.SpecFlow;
-using Panviva.LiveAPI;
 using SeleniumProject.Tests;
 using SeleniumProject;
 
@@ -18,7 +17,7 @@ namespace SpecFlowProject
         /**
          * key/value stored in Scenario Context
          */
-        readonly string KEY_API = "APIObject";
+        //readonly string KEY_API = "APIObject";
        
 
         [Given(@"a OpenDocument is issued with '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")]

@@ -32,15 +32,39 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6752e45808247c2, processorArchitecture=MSIL">
       <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
-      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -51,7 +75,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -73,11 +102,7 @@
         <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <ItemGroup>
     <Compile Include="SP_Author\Administration\Administration_SearchSetupSteps.cs" />
@@ -174,10 +199,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkflowManagement_CreateNew.feature</DependentUpon>
     </Compile>
-    <Compile Include="SupportPointAPI\CreateNewDocument.feature.cs">
+    <Compile Include="SP_Editor\Save_Steps.cs" />
+    <Compile Include="SP_Editor\ImageMapping_Steps.cs" />
+    <Compile Include="SP_Editor\Insert Menu\InsertMenu_ImageMap.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateNewDocument.feature</DependentUpon>
+      <DependentUpon>InsertMenu_ImageMap.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Editor\SPEditor_Steps.cs" />
+    <Compile Include="SP_Editor\ImageSelector_Steps.cs" />
+    <Compile Include="SP_Viewer\ViewerDocument_Miscellaneous.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewerDocument_Miscellaneous.feature</DependentUpon>
     </Compile>
     <Compile Include="SupportPointAPI\GetAPIKey.feature.cs">
       <AutoGen>True</AutoGen>
@@ -396,6 +430,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WorkflowManagement_Search.feature.cs</LastGenOutput>
     </None>
+    <None Include="SP_Editor\Insert Menu\InsertMenu_ImageMap.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>InsertMenu_ImageMap.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SP_Viewer\ViewerDocument_Miscellaneous.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ViewerDocument_Miscellaneous.feature.cs</LastGenOutput>
+    </None>
     <None Include="SupportPointAPI\ChangePasswordAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ChangePasswordAPI.feature.cs</LastGenOutput>
@@ -403,10 +445,6 @@
     <None Include="SupportPointAPI\AccountLoginAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AccountLoginAPI.feature.cs</LastGenOutput>
-    </None>
-    <None Include="SupportPointAPI\CreateNewDocument.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateNewDocument.feature.cs</LastGenOutput>
     </None>
     <None Include="SupportPointAPI\CreateUpdateUserAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -446,9 +484,7 @@
       <Name>SeleniumProject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SP_Editor\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\packages\Selenium.WebDriver.ChromeDriver.2.18.0.0\driver\chromedriver.exe">
       <Link>chromedriver.exe</Link>
@@ -458,6 +494,7 @@
       <Link>IEDriverServer.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Binaries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

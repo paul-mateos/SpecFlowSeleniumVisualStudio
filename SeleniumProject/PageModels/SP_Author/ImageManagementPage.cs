@@ -40,7 +40,7 @@ namespace SeleniumProject.PageModels.SP_Author
         public ImageManagementPage(IWebDriver driver)
             : base(driver)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Properties.Settings.Default.WaitTime));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
             wait.Until((d) => { return d.Title.Contains("Image Management : SupportPoint"); }); 
         }
 
