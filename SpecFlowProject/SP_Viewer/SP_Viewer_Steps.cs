@@ -10,6 +10,7 @@ namespace SpecFlowProject.SP_Viewer
     [Binding]
     public sealed class SP_Viewer_Steps
     {
+        public string childFolder;
 
         [Given(@"I am at Viewer Home")]
         [When(@"I am at Viewer Home")]
@@ -37,6 +38,32 @@ namespace SpecFlowProject.SP_Viewer
             SupportPoint.HomePage.ClickFolderNavButton();
         }
 
+        [Given(@"I select the (.*) Viewer Document Folder/File")]
+        [When(@"I select the (.*) Viewer Document Folder/File")]
+        [Then(@"I select the (.*) Viewer Document Folder/File")]
+        public void ISelectAViewerDocumentFolderFile(string folderString)
+        {
+            char[] splitter = { ',' };
+            string[] folders = folderString.Split(splitter);
+            childFolder = folders[folders.Length - 1];
+            SupportPoint.FolderPage.ClickOnFolder("Viewer", folders);
+            SupportPoint.waitForAjaxLoading();
+        }
 
+        [Given(@"I click on the Copy Cancel Button")]
+        [When(@"I click on the Copy Cancel Button")]
+        [Then(@"I click on the Copy Cancel Button")]
+        public void IClickOnTheCopyCancelButton()
+        {
+            SupportPoint.CopyPage.clickCancel();
+        }
+
+        [Given(@"I click on the Copy Location Cancel Button")]
+        [When(@"I click on the Copy Location Cancel Button")]
+        [Then(@"I click on the Copy Location Cancel Button")]
+        public void IClickOnTheCopyLocationCancelButton()
+        {
+            SupportPoint.HomePage.clickCancel();
+        }
     }
 }

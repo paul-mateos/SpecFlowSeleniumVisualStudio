@@ -155,7 +155,43 @@ namespace SeleniumProject.Commons
             
         }
 
-         public static void SwitchToNewPageWithTitle(IWebDriver d, string Title)
+        public static void SwitchToNewBrowserWithURL(IWebDriver d, string url)
+        {
+
+
+            //wait for another window to open
+            for (int i = 1; i < 30; i++)
+            {
+                if (d.WindowHandles.Count == 1)
+                {
+                    Thread.Sleep(1000);
+                }
+                else { break; }
+            }
+
+            for (int i = 1; i < 3; i++)
+            {
+                foreach (string handle in d.WindowHandles)
+                {
+
+                    if (d.SwitchTo().Window(handle).Url.Contains(url))
+                    {
+                        i = 3;
+                        break;
+                    }
+                    else
+                    {
+                        //d.SwitchTo().Window(currentWindow); 
+                        Thread.Sleep(2000);
+                    }
+                }
+
+            }
+
+
+
+        }
+        public static void SwitchToNewPageWithTitle(IWebDriver d, string Title)
          {
              WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
              wait.Until((driver) => { return d.Title.Contains(Title); });   
@@ -250,8 +286,7 @@ namespace SeleniumProject.Commons
                 foreach (IWebElement folder in folders)
                 {
                     IWebElement folderText = folder.FindElement(By.XPath(".//div/span/span"));
-                   // IWebElement folderText = folder.FindElement(By.CssSelector("div span span"));
-
+                    
                     if (folderText.Text == FolderName)
                     {
                         //Expand the folder
@@ -274,6 +309,58 @@ namespace SeleniumProject.Commons
                         }
                     }
                 } 
+                if (folderFound == false)
+                {
+                    throw new Exception("Folder could not be found");
+                }
+            }
+        }
+
+        public static void ClickOnViewerFolder(string Page, string[] Folders, By FolderTree, IWebDriver d)
+        {
+            //get folder tree element
+            IWebElement folderTree;
+            folderTree = GetFolderTree(FolderTree, d);
+            //count the number of indexes
+            int folderTreeDepth = Folders.Count();
+
+            for (int i = 0; i < folderTreeDepth; i++)
+            {
+                //get the name of the current folder
+                bool folderFound = false;
+                string FolderName = Folders[i];
+                //get the number of available parent folders in docexplorertree
+
+                IReadOnlyCollection<IWebElement> folders = folderTree.FindElements(By.XPath("./ul/li"));
+
+
+                //check each parent folder in tree. Go to exception if non are found         
+                foreach (IWebElement folder in folders)
+                {
+                    IWebElement folderText = folder.FindElement(By.XPath(".//a"));
+
+                    if (folderText.Text.Trim() == FolderName)
+                    {
+                        //Expand the folder
+                        if (folder.GetAttribute("class") == "jstree - open")
+                        {
+                            Actions action = new Actions(d);
+                            action.DoubleClick(folderText).Build().Perform();
+                            folderTree = folder;
+                            folderFound = true;
+                            break;
+                        }
+                        else
+                        {
+                            Actions action = new Actions(d);
+                            action.MoveToElement(folderText).Click().Build().Perform();
+                            Thread.Sleep(1000);
+                            folderTree = folder;
+                            folderFound = true;
+                            break;
+                        }
+                    }
+                }
                 if (folderFound == false)
                 {
                     throw new Exception("Folder could not be found");

@@ -9,20 +9,28 @@ using System.Threading.Tasks;
 
 namespace SeleniumProject.PageModels
 {
-    class InitialPage : BasePage
+    public class CopyPage : BasePage
     {
-        
+        //Search By
+        By CancelBtn = By.XPath("//div[@id='print-modal-controls']//button[text()='Cancel']");
 
-        public InitialPage(IWebDriver driver)
+
+        public CopyPage(IWebDriver driver)
             : base(driver)
         {
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
-            wait.Until((d) => { return d.Title.Contains("SupportPoint"); }); 
+            wait.Until((D) => { return d.Title.Contains("Copy"); });
+            //d.SwitchTo().Frame("print-modal-content");
 
         }
 
+        
+        public void clickCancel()
+        {
+            UICommon.ClickButton(CancelBtn, d);
 
+        }
 
     }
 }

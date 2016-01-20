@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumProject.Commons;
+using SeleniumProject.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +16,14 @@ namespace SeleniumProject.PageModels.SP_Viewer
         By loginButton = By.Id("login_btn");
         By logoutButton = By.Id("logout_btn");
         By folderButton = By.Id("Folder");
+        By CancelBtn = By.XPath("//div[@class='qtip-content']//button[text()='Cancel']");
 
         public HomePage(IWebDriver driver)
             : base(driver)
         {
-            d = driver;
             //Wait for title to be displayed 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitsec));
-            wait.Until((D) => { return d.Title.Contains("Home : SupportPoint"); }); 
+            wait.Until((D) => { return d.Url.Contains("/Viewer/"); }); 
         }
 
         public void ClickLoginButton()
@@ -41,7 +42,7 @@ namespace SeleniumProject.PageModels.SP_Viewer
         { 
             WebDriverWait wait = new WebDriverWait(d, TimeSpan.FromSeconds(waitsec));
             wait.Until(drv => drv.FindElement(folderButton)).Click();
-            //UICommon.ClickButton(By.Id("Folder"), d);
+
         }
 
         internal bool GetWelcomeTitleDisplayProperty()
@@ -50,5 +51,9 @@ namespace SeleniumProject.PageModels.SP_Viewer
             return elem.Displayed;
         }
 
+        public void clickCancel()
+        {
+            UICommon.ClickButton(CancelBtn, d);
+        }
     }
 }

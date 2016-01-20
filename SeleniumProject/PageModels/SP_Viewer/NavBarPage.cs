@@ -20,7 +20,7 @@ namespace SeleniumProject.PageModels.SP_Viewer
         By moreMenu = By.Id("more_menu");
 
         //More menu
-        By User = By.LinkText("User");
+        //By User = By.LinkText("User");
         By User_LogOff = By.LinkText("Log off");
 
         //Notification Menu
@@ -91,31 +91,10 @@ namespace SeleniumProject.PageModels.SP_Viewer
 
         public void ClickUserLogOff()
         {
-            //try
-            //{
-            //    if (!d.FindElement(User).Displayed)
-            //    {
-            //        UICommon.ClickButton(moreMenu, d);
-            //    }
-            //}
-            //catch (NoSuchElementException)
-            //{
-                UICommon.ClickButton(moreMenu, d);
-            //}
-          
-            //try
-            //{
-            //if ( ! d.FindElement(User_LogOff).Displayed )
-            //{
-            //    UICommon.ClickButton(User, d);
-            //}
-            //}
-            //catch (NoSuchElementException)
-            //{
-                UICommon.ClickButton(User, d);
-            //}
-
-            UICommon.ClickButton(User_LogOff, d);
+           
+            UICommon.ClickButton(moreMenu, d);
+            UICommon.ClickLink(By.LinkText("User"), d);// (User, d);
+            UICommon.ClickLink(By.LinkText("Log off"), d); //User_LogOff, d);
 
         }
 

@@ -13,17 +13,18 @@ using System.Threading.Tasks;
 
 namespace SeleniumProject.PageModels.SP_Author
 {
-    public class SPManagerFolderPage : BasePage
+    public class FolderPage : BasePage
     {
 
         By DocumentFolderTree = By.Id(" docexplorertree");
         By DocumentSelectorFolderTree = By.XPath("//div[@id='kWindow0']//div[@id=' docexplorertree']");
         By ImageFolderTree = By.XPath("//img-tree-drct/div");
         By ImageSelectorFolderTree = By.XPath("//*[@id='kWindow0']/div/div[1]/img-tree-drct/div");
+        By ViewerFolderTree = By.Id("folders");
         By Folder = By.XPath("./ul/li");
                           
 
-        public SPManagerFolderPage(IWebDriver driver)
+        public FolderPage(IWebDriver driver)
             : base(driver)
         {
 
@@ -45,10 +46,13 @@ namespace SeleniumProject.PageModels.SP_Author
                 case "Image Selector":
                      UICommon.ClickOnFolder(Page, Folders, ImageSelectorFolderTree, d);
                      break;
+                case "Viewer":
+                    UICommon.ClickOnViewerFolder(Page, Folders, ViewerFolderTree, d);
+                    break;
                 default:
                 throw new Exception("Invalid page");
             }
-            Thread.Sleep(3000);
+            Thread.Sleep(3000); //this needs to be removed if other waits work
 
         }
 
