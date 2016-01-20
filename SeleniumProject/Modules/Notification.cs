@@ -17,7 +17,7 @@ namespace SeleniumProject.Modules
         {
             NavBarPage pag = new NavBarPage(driver);
             pag.ClickNotification();
-            //
+            
         }
 
     }
