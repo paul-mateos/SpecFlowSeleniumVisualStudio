@@ -30,7 +30,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -136,6 +136,7 @@
     <Compile Include="Modules\LogIn.cs" />
     <Compile Include="Modules\Nav.cs" />
     <Compile Include="PageModels\BasePage.cs" />
+    <Compile Include="PageModels\CopyPage.cs" />
     <Compile Include="PageModels\SP_Author\AddUserPage.cs" />
     <Compile Include="PageModels\SP_Author\AdminPage.cs" />
     <Compile Include="PageModels\SP_Author\DocumentSelectorPage.cs" />

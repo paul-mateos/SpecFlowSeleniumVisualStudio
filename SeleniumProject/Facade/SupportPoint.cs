@@ -38,6 +38,9 @@ namespace SeleniumProject.Tests
         static public LogIn LogIn { get { return new LogIn(WebDriver); } set { LogIn = value; } }
         static public Nav Nav { get {return  new Nav(WebDriver);} set {Nav = value;} }
         static public Notification Notification { get { return new Notification(WebDriver); } set { Notification = value; } }
+        static public CopyPage CopyPage { get { return new CopyPage(WebDriver); } set { CopyPage = value; } }
+
+
         //static public DELETEActions Actions { get { return new DELETEActions(WebDriver); } set { Actions = value; } }
         /*
          *  Page Models
@@ -50,7 +53,7 @@ namespace SeleniumProject.Tests
         static public SPManagerFindBarPage SPManagerFind { get { return new SPManagerFindBarPage(WebDriver); } set { SPManagerFind = value; } }
         static public DocumentManagementPage DocumentManagementPage { get { return new DocumentManagementPage(WebDriver); } set { DocumentManagementPage = value; } }
         static public DocumentSelectorPage DocumentSelectorPage { get { return new DocumentSelectorPage(WebDriver); } set { DocumentSelectorPage = value; } }
-        static public SPManagerFolderPage SPManagerFolder { get { return new SPManagerFolderPage(WebDriver); } set { SPManagerFolder = value; } }
+        static public FolderPage FolderPage { get { return new FolderPage(WebDriver); } set { FolderPage = value; } }
         static public ImageManagementPage ImageManagementPage { get { return new ImageManagementPage(WebDriver); } set { ImageManagementPage = value; } }
         static public WorkflowManagementPage WorkflowManagementPage { get { return new WorkflowManagementPage(WebDriver); } set { WorkflowManagementPage = value; } }
         static public RoleManagementPage RoleManagementPage { get { return new RoleManagementPage(WebDriver); } set { RoleManagementPage = value; } }
@@ -157,8 +160,8 @@ namespace SeleniumProject.Tests
                 try
                 {
                     //string BaseWindow = WebDriver.CurrentWindowHandle;
-                    LogIn.CloseSPManager();
-                    UICommon.SwitchToNewBrowserWithTitle(WebDriver, "Home");
+                    //LogIn.CloseSPManager();
+                    UICommon.SwitchToNewBrowserWithURL(WebDriver, "/Viewer/");
                     LogIn.LogOutAndCloseApp();
                     WebDriver.Quit();
                 }
@@ -174,6 +177,7 @@ namespace SeleniumProject.Tests
                     break;
                 case BrowserType.Chrome:
                     KillProcess("chrome.exe");
+                    KillProcess("chromedriver.exe");
                     break;
                 case BrowserType.NodeWebkit:
                     KillProcess("Viewer.exe");
@@ -184,7 +188,8 @@ namespace SeleniumProject.Tests
                     KillProcess("chromedriver.exe");
                     break;
                 case BrowserType.GridIE:
-                    KillProcess("chromedriver.exe");
+                    KillProcess("iexplorer.exe");
+                    KillProcess("IEDriverServer.exe");
                     break;
                 default:
                     throw new ArgumentException("Browser Type Invalid");
@@ -223,12 +228,14 @@ namespace SeleniumProject.Tests
 
         public static void IsCurrentBrowser(string BrowserTitle)
         {
-           
-            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
-            wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
-            //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
+           if (!WebDriver.Url.Contains("/Viewer/"))
+                {
+                WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(waitsec));
+                wait.Until((d) => { return WebDriver.FindElement(By.XPath("//body[@aria-busy='false']")); });
+                //wait.Until((d) => { return WebDriver.FindElement(By.XPath("//html[@openrequests='0']")); });
+            }
             string browserTitle = WebDriver.Title.ToString();
-            Assert.AreEqual(BrowserTitle, browserTitle, "Current Browser is not: " + BrowserTitle + ". It is: " + browserTitle);
+            StringAssert.Contains(browserTitle, BrowserTitle, "Current Browser is not: " + BrowserTitle + ". It is: " + browserTitle);
         }
 
         //public static string GetCurrentBrowserHandle()

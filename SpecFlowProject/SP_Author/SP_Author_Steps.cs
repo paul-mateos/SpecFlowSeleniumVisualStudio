@@ -330,11 +330,6 @@ namespace SpecFlowProject.SP_Author
         }
 
 
-
-
-      
-
-
         [Given(@"I click on the Cancel Button")]
         [When(@"I click on the Cancel Button")]
         [Then(@"I click on the Cancel Button")]

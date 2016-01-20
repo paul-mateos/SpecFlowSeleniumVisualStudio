@@ -22,7 +22,7 @@ namespace SpecFlowProject.SP_Author.DocumentManagement
             char[] splitter = { ',' };
             string[] folders = folderString.Split(splitter);
             childFolder = folders[folders.Length - 1];
-            SupportPoint.SPManagerFolder.ClickOnFolder("Document", folders);
+            SupportPoint.FolderPage.ClickOnFolder("Document", folders);
         }
 
         [Given(@"I select the (.*) Grid Record")]

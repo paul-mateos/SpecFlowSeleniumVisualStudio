@@ -48,7 +48,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             string[] folders = folderString.Split(splitter);
             //childFolder = folders[folders.Length - 1];
             ScenarioContext.Current.Add("childFolder", folders[folders.Length - 1]);
-            SupportPoint.SPManagerFolder.ClickOnFolder("Image", folders);
+            SupportPoint.FolderPage.ClickOnFolder("Image", folders);
         }
 
         [Given(@"I select the (.*) Image Popup Folder")]
@@ -59,7 +59,7 @@ namespace SpecFlowProject.SP_Author.ImageManagement
             char[] splitter = { ',' };
             string[] folders = folderString.Split(splitter);
             ScenarioContext.Current.Add("childFolder", folders[folders.Length - 1]);
-            SupportPoint.SPManagerFolder.ClickOnFolder("Image Selector", folders);
+            SupportPoint.FolderPage.ClickOnFolder("Image Selector", folders);
         }
 
         [Given(@"I Click on the Image Move Button")]

@@ -31,7 +31,10 @@ namespace SpecFlowProject.SP_Viewer
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ViewerDocument_Miscellaneous", "I want to perform miscellaneous tasks on viewer documents", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ViewerDocument_Miscellaneous", "I want to perform miscellaneous tasks on viewer documents", ProgrammingLanguage.CSharp, new string[] {
+                        "Regression",
+                        "Viewer",
+                        "Document_Miscellaneous"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,10 +73,10 @@ namespace SpecFlowProject.SP_Viewer
         
         public virtual void FeatureBackground()
         {
-#line 4
-#line 5
+#line 7
+#line 8
 testRunner.Given("I have logged in to SP as a new \"advanced_authors\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
+#line 9
 testRunner.And("I am at Viewer Home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -81,25 +84,61 @@ testRunner.And("I am at Viewer Home", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("VW_Document_Misc_ViewDocumentLocation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ViewerDocument_Miscellaneous")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Viewer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Document_Miscellaneous")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("InProgress")]
         public virtual void VW_Document_Misc_ViewDocumentLocation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("VW_Document_Misc_ViewDocumentLocation", new string[] {
-                        "Viewer",
-                        "Document_Miscellaneous",
-                        "InProgress"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("VW_Document_Misc_ViewDocumentLocation", ((string[])(null)));
 #line 12
 this.ScenarioSetup(scenarioInfo);
-#line 4
+#line 7
 this.FeatureBackground();
 #line 13
  testRunner.Given("I click on the Viewer folder Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.And("I select the SupportPoint Cloud Help,SupportPoint Help / Navigation Viewer Docume" +
+                    "nt Folder/File", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Click on Editor More Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I select Miscellaneous from Editor More Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("I select Copy document location from Editor More Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.And("I click on the Copy Location Cancel Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("VW_Document_Misc_CopyDocument")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ViewerDocument_Miscellaneous")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Regression")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Viewer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Document_Miscellaneous")]
+        public virtual void VW_Document_Misc_CopyDocument()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("VW_Document_Misc_CopyDocument", ((string[])(null)));
+#line 21
+ this.ScenarioSetup(scenarioInfo);
+#line 7
+this.FeatureBackground();
+#line 22
+ testRunner.Given("I click on the Viewer folder Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+ testRunner.And("I select the SupportPoint Cloud Help,SupportPoint Help / Navigation Viewer Docume" +
+                    "nt Folder/File", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.When("I Click on Editor More Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
+ testRunner.And("I select Miscellaneous from Editor More Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("I select Copy from Editor More Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.Then("I switch to Copy Browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+ testRunner.And("I click on the Copy Cancel Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

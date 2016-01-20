@@ -14,11 +14,12 @@ namespace SeleniumProject.PageModels.SP_Editor
     {
         //Search Criteria
         By imageMapButton = By.CssSelector("span[id='btn_toolbar_imagemap']");
-        By moreMenu = By.Id("EditorMoreMenu");
+        By moreMenu = By.Id("more_menu");
         By saveButton = By.XPath("//div/span[@title='Save (Ctrl+S)']");
 
         //more menu
-        By Close = By.LinkText("Close");
+        //By Close = By.LinkText("Close");
+        //By Miscellaneous = By.LinkText("Miscellaneous");
 
         public void clickSave()
         {
@@ -51,15 +52,16 @@ namespace SeleniumProject.PageModels.SP_Editor
         
         public void SelectFromMoreMenuList(string actions)
         {
-            switch (actions)
-            {
-                case "Close":
-                    UICommon.ClickLink(Close, d);
-                    break;
-                default:
-                    break;
-            }
-            Thread.Sleep(1000);
+            //switch (actions)
+            //{
+            //    case "Close":
+            //        UICommon.ClickLink(Close, d);
+            //        break;
+            //    default:
+            //        break;
+            //}
+            UICommon.ClickLink(By.LinkText(actions), d);
+            Thread.Sleep(500);
         }
 
     }
